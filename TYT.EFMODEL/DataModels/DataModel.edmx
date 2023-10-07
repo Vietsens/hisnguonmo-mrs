@@ -1,0 +1,1453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DataModels.Store" Alias="Self" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="12.1" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="TYTDataModelsStoreContainer">
+          <EntitySet Name="TYT_DEATH" EntityType="DataModels.Store.TYT_DEATH" store:Type="Tables" Schema="TYT_RS" />
+          <EntitySet Name="TYT_FETUS_ABORTION" EntityType="DataModels.Store.TYT_FETUS_ABORTION" store:Type="Tables" Schema="TYT_RS" />
+          <EntitySet Name="TYT_FETUS_BORN" EntityType="DataModels.Store.TYT_FETUS_BORN" store:Type="Tables" Schema="TYT_RS" />
+          <EntitySet Name="TYT_FETUS_EXAM" EntityType="DataModels.Store.TYT_FETUS_EXAM" store:Type="Tables" Schema="TYT_RS" />
+          <EntitySet Name="TYT_GDSK" EntityType="DataModels.Store.TYT_GDSK" store:Type="Tables" Schema="TYT_RS" />
+          <EntitySet Name="TYT_HIV" EntityType="DataModels.Store.TYT_HIV" store:Type="Tables" Schema="TYT_RS" />
+          <EntitySet Name="TYT_KHH" EntityType="DataModels.Store.TYT_KHH" store:Type="Tables" Schema="TYT_RS" />
+          <EntitySet Name="TYT_MALARIA" EntityType="DataModels.Store.TYT_MALARIA" store:Type="Tables" Schema="TYT_RS" />
+          <EntitySet Name="TYT_NERVES" EntityType="DataModels.Store.TYT_NERVES" store:Type="Tables" Schema="TYT_RS" />
+          <EntitySet Name="TYT_TUBERCULOSIS" EntityType="DataModels.Store.TYT_TUBERCULOSIS" store:Type="Tables" Schema="TYT_RS" />
+          <EntitySet Name="TYT_UNINFECT" EntityType="DataModels.Store.TYT_UNINFECT" store:Type="Tables" Schema="TYT_RS" />
+          <EntitySet Name="TYT_UNINFECT_ICD" EntityType="DataModels.Store.TYT_UNINFECT_ICD" store:Type="Tables" Schema="TYT_RS" />
+          <EntitySet Name="TYT_UNINFECT_ICD_GROUP" EntityType="DataModels.Store.TYT_UNINFECT_ICD_GROUP" store:Type="Tables" Schema="TYT_RS" />
+          <AssociationSet Name="TYT_UNINFECT_ICD_FK1" Association="DataModels.Store.TYT_UNINFECT_ICD_FK1">
+            <End Role="TYT_UNINFECT_ICD_GROUP" EntitySet="TYT_UNINFECT_ICD_GROUP" />
+            <End Role="TYT_UNINFECT_ICD" EntitySet="TYT_UNINFECT_ICD" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="TYT_DEATH">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="BRANCH_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+          <Property Name="PATIENT_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="PERSON_CODE" Type="varchar2" MaxLength="9" />
+          <Property Name="FIRST_NAME" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="LAST_NAME" Type="varchar2" MaxLength="70" />
+          <Property Name="VIR_PERSON_NAME" Type="varchar2" MaxLength="101" StoreGeneratedPattern="Computed" />
+          <Property Name="DOB" Type="number" Nullable="false" Precision="14" />
+          <Property Name="IS_HAS_NOT_DAY_DOB" Type="number" Precision="2" />
+          <Property Name="GENDER_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="PERSON_ADDRESS" Type="varchar2" MaxLength="1000" />
+          <Property Name="CAREER_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="ETHNIC_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="DEATH_TIME" Type="number" Precision="14" />
+          <Property Name="DEATH_LOCATION_TYPE_ID" Type="number" Precision="19" />
+          <Property Name="IS_CBYT_CARE" Type="number" Precision="2" />
+          <Property Name="DEATH_CAUSE" Type="varchar2" MaxLength="500" />
+          <Property Name="COLLECTOR" Type="varchar2" MaxLength="100" />
+          <Property Name="DESCRIPTION" Type="varchar2" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="TYT_FETUS_ABORTION">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="BRANCH_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+          <Property Name="PATIENT_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="PERSON_CODE" Type="varchar2" MaxLength="9" />
+          <Property Name="FIRST_NAME" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="LAST_NAME" Type="varchar2" MaxLength="70" />
+          <Property Name="VIR_PERSON_NAME" Type="varchar2" MaxLength="101" StoreGeneratedPattern="Computed" />
+          <Property Name="DOB" Type="number" Nullable="false" Precision="14" />
+          <Property Name="IS_HAS_NOT_DAY_DOB" Type="number" Precision="2" />
+          <Property Name="GENDER_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="PERSON_ADDRESS" Type="varchar2" MaxLength="1000" />
+          <Property Name="CAREER_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="ETHNIC_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="BHYT_NUMBER" Type="varchar2" MaxLength="15" />
+          <Property Name="IS_SINGLE" Type="number" Precision="2" />
+          <Property Name="PARA_CHILD_COUNT" Type="number" Precision="19" />
+          <Property Name="LAST_MENSES_TIME" Type="number" Precision="14" />
+          <Property Name="DIAGNOSE_TEST" Type="number" Precision="19" />
+          <Property Name="ABORTION_METHOD" Type="varchar2" MaxLength="100" />
+          <Property Name="SM_RESULT" Type="number" Precision="19" />
+          <Property Name="OBSTETRIC_COMPLICATION" Type="varchar2" MaxLength="100" />
+          <Property Name="IS_DEATH" Type="number" Precision="2" />
+          <Property Name="EXECUTE_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="EXAM_AFTER_TWO_WEEK" Type="number" Precision="2" />
+          <Property Name="NOTE" Type="varchar2" MaxLength="100" />
+          <Property Name="ABORTION_TIME" Type="number" Precision="14" />
+        </EntityType>
+        <EntityType Name="TYT_FETUS_BORN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="BRANCH_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+          <Property Name="PATIENT_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="PERSON_CODE" Type="varchar2" MaxLength="9" />
+          <Property Name="FIRST_NAME" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="LAST_NAME" Type="varchar2" MaxLength="70" />
+          <Property Name="VIR_PERSON_NAME" Type="varchar2" MaxLength="101" StoreGeneratedPattern="Computed" />
+          <Property Name="DOB" Type="number" Nullable="false" Precision="14" />
+          <Property Name="IS_HAS_NOT_DAY_DOB" Type="number" Precision="2" />
+          <Property Name="GENDER_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="PERSON_ADDRESS" Type="varchar2" MaxLength="1000" />
+          <Property Name="CAREER_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="ETHNIC_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="BHYT_NUMBER" Type="varchar2" MaxLength="15" />
+          <Property Name="IS_FETUS_MANAGE" Type="number" Precision="2" />
+          <Property Name="IS_UV_FULL" Type="number" Precision="2" />
+          <Property Name="CHECK_CASE" Type="number" Precision="19" />
+          <Property Name="IS_HIV_BEFORE" Type="number" Precision="2" />
+          <Property Name="IS_HIV_BORN" Type="number" Precision="2" />
+          <Property Name="PARA_NORMAL_COUNT" Type="number" Precision="19" />
+          <Property Name="PARA_PREMATURELY_COUNT" Type="number" Precision="19" />
+          <Property Name="PARA_MISCARRIAGE_COUNT" Type="number" Precision="19" />
+          <Property Name="PARA_CHILD_COUNT" Type="number" Precision="19" />
+          <Property Name="BORN_METHOD" Type="varchar2" MaxLength="100" />
+          <Property Name="OBSTETRIC_COMPLICATION" Type="varchar2" MaxLength="100" />
+          <Property Name="IS_DEATH" Type="number" Precision="2" />
+          <Property Name="CHILD_GENDER_ID" Type="number" Precision="19" />
+          <Property Name="CHILD_WEIGHT" Type="number" Precision="19" Scale="2" />
+          <Property Name="CHILD_STATUS" Type="varchar2" MaxLength="100" />
+          <Property Name="IS_CHILD_DEATH" Type="number" Precision="2" />
+          <Property Name="BORN_PLACE" Type="varchar2" MaxLength="100" />
+          <Property Name="MIDWIFE_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="IS_BREASTFEEDING_FIRST_HOUR" Type="number" Precision="2" />
+          <Property Name="IS_K1" Type="number" Precision="2" />
+          <Property Name="FIRST_WEEK_EXAM" Type="varchar2" MaxLength="100" />
+          <Property Name="EXAM_742" Type="varchar2" MaxLength="100" />
+          <Property Name="NOTE" Type="varchar2" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TYT_FETUS_EXAM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="BRANCH_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+          <Property Name="PATIENT_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="PERSON_CODE" Type="varchar2" MaxLength="9" />
+          <Property Name="FIRST_NAME" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="LAST_NAME" Type="varchar2" MaxLength="70" />
+          <Property Name="VIR_PERSON_NAME" Type="varchar2" MaxLength="101" StoreGeneratedPattern="Computed" />
+          <Property Name="DOB" Type="number" Nullable="false" Precision="14" />
+          <Property Name="IS_HAS_NOT_DAY_DOB" Type="number" Precision="2" />
+          <Property Name="GENDER_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="PERSON_ADDRESS" Type="varchar2" MaxLength="1000" />
+          <Property Name="CAREER_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="ETHNIC_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="BHYT_NUMBER" Type="varchar2" MaxLength="15" />
+          <Property Name="LAST_MENSES_TIME" Type="number" Precision="14" />
+          <Property Name="WEEK" Type="number" Precision="19" />
+          <Property Name="BORN_TIME" Type="number" Precision="14" />
+          <Property Name="FETUS_COUNT" Type="number" Precision="19" />
+          <Property Name="WEIGHT" Type="number" Precision="19" Scale="2" />
+          <Property Name="HEIGHT" Type="number" Precision="19" Scale="2" />
+          <Property Name="BLOOD_PRESSURE_MAX" Type="number" Precision="19" />
+          <Property Name="BLOOD_PRESSURE_MIN" Type="number" Precision="19" />
+          <Property Name="UTERUS" Type="number" Precision="19" Scale="2" />
+          <Property Name="BELLY" Type="number" Precision="19" />
+          <Property Name="PELVIC" Type="number" Precision="19" />
+          <Property Name="BLOOD" Type="number" Precision="19" />
+          <Property Name="PROTEIN" Type="number" Precision="19" />
+          <Property Name="IS_HIV_TEST" Type="number" Precision="2" />
+          <Property Name="OTHER_TEST" Type="varchar2" MaxLength="100" />
+          <Property Name="BORN_GUESS" Type="varchar2" MaxLength="100" />
+          <Property Name="UV_COUNT" Type="number" Precision="19" />
+          <Property Name="IS_FOLIC" Type="number" Precision="2" />
+          <Property Name="FETUS_HEART" Type="number" Precision="19" />
+          <Property Name="FETUS_POSITION" Type="varchar2" MaxLength="100" />
+          <Property Name="DOCTOR_LOGINNAME" Type="varchar2" MaxLength="50" />
+          <Property Name="DOCTOR_USERNAME" Type="varchar2" MaxLength="100" />
+          <Property Name="NOTE" Type="varchar2" MaxLength="100" />
+          <Property Name="EXAM_TIME" Type="number" Precision="14" />
+          <Property Name="HEALTH_HISTORY" Type="varchar2" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TYT_GDSK">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="BRANCH_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+          <Property Name="GDSK_TIME" Type="number" Precision="14" />
+          <Property Name="GDSK_PLACE" Type="varchar2" MaxLength="100" />
+          <Property Name="CONTENT" Type="varchar2" MaxLength="2000" />
+          <Property Name="FORM" Type="varchar2" MaxLength="500" />
+          <Property Name="TARGET" Type="varchar2" MaxLength="500" />
+          <Property Name="AUDIENCE_COUNT" Type="number" Precision="19" />
+          <Property Name="MEDIA" Type="varchar2" MaxLength="500" />
+          <Property Name="AMOUNT_OF_TIME" Type="varchar2" MaxLength="500" />
+          <Property Name="EXECUTE_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="NOTE" Type="varchar2" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TYT_HIV">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="BRANCH_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+          <Property Name="PATIENT_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="PERSON_CODE" Type="varchar2" MaxLength="9" />
+          <Property Name="FIRST_NAME" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="LAST_NAME" Type="varchar2" MaxLength="70" />
+          <Property Name="VIR_PERSON_NAME" Type="varchar2" MaxLength="101" StoreGeneratedPattern="Computed" />
+          <Property Name="DOB" Type="number" Nullable="false" Precision="14" />
+          <Property Name="IS_HAS_NOT_DAY_DOB" Type="number" Precision="2" />
+          <Property Name="GENDER_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="PERSON_ADDRESS" Type="varchar2" MaxLength="1000" />
+          <Property Name="CAREER_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="ETHNIC_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="OBJECT_TYPE" Type="varchar2" MaxLength="100" />
+          <Property Name="FETUS_TIME" Type="number" Precision="14" />
+          <Property Name="HIV_DIAGNOSIS_TIME" Type="number" Precision="14" />
+          <Property Name="HIV_DIAGNOSIS_PLACE" Type="varchar2" MaxLength="100" />
+          <Property Name="ARV_PLACE" Type="varchar2" MaxLength="100" />
+          <Property Name="DEATH_TIME" Type="number" Precision="14" />
+          <Property Name="NOTE" Type="varchar2" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TYT_KHH">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="BRANCH_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+          <Property Name="PATIENT_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="PERSON_CODE" Type="varchar2" MaxLength="9" />
+          <Property Name="FIRST_NAME" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="LAST_NAME" Type="varchar2" MaxLength="70" />
+          <Property Name="VIR_PERSON_NAME" Type="varchar2" MaxLength="101" StoreGeneratedPattern="Computed" />
+          <Property Name="DOB" Type="number" Nullable="false" Precision="14" />
+          <Property Name="IS_HAS_NOT_DAY_DOB" Type="number" Precision="2" />
+          <Property Name="GENDER_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="PERSON_ADDRESS" Type="varchar2" MaxLength="1000" />
+          <Property Name="CAREER_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="ETHNIC_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="BHYT_NUMBER" Type="varchar2" MaxLength="15" />
+          <Property Name="IS_SINGLE" Type="number" Precision="2" />
+          <Property Name="IS_IUCD" Type="number" Precision="2" />
+          <Property Name="IS_STERILIZE" Type="number" Precision="2" />
+          <Property Name="IS_PILL_V" Type="number" Precision="2" />
+          <Property Name="IS_PILL_T" Type="number" Precision="2" />
+          <Property Name="IS_PILL_C" Type="number" Precision="2" />
+          <Property Name="IS_CONDOM" Type="number" Precision="2" />
+          <Property Name="EXECUTE_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="OBSTETRIC_COMPLICATION" Type="varchar2" MaxLength="100" />
+          <Property Name="IS_DEATH" Type="number" Precision="2" />
+          <Property Name="NOTE" Type="varchar2" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TYT_MALARIA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="BRANCH_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+          <Property Name="PATIENT_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="PERSON_CODE" Type="varchar2" MaxLength="9" />
+          <Property Name="FIRST_NAME" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="LAST_NAME" Type="varchar2" MaxLength="70" />
+          <Property Name="VIR_PERSON_NAME" Type="varchar2" MaxLength="101" StoreGeneratedPattern="Computed" />
+          <Property Name="DOB" Type="number" Nullable="false" Precision="14" />
+          <Property Name="IS_HAS_NOT_DAY_DOB" Type="number" Precision="2" />
+          <Property Name="GENDER_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="PERSON_ADDRESS" Type="varchar2" MaxLength="1000" />
+          <Property Name="CAREER_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="ETHNIC_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="IS_HAS_FETUS" Type="number" Precision="2" />
+          <Property Name="IS_FEVER" Type="number" Precision="2" />
+          <Property Name="TEST_TYPE" Type="number" Precision="19" />
+          <Property Name="TEST_RESULT" Type="varchar2" MaxLength="4000" />
+          <Property Name="DIAGNOSE" Type="varchar2" MaxLength="1000" />
+          <Property Name="TREATMENT_RESULT" Type="varchar2" MaxLength="100" />
+          <Property Name="MEDICINE" Type="varchar2" MaxLength="4000" />
+          <Property Name="MEDICINE_CTDT" Type="varchar2" MaxLength="4000" />
+          <Property Name="DIAGNOSE_TIME" Type="number" Precision="14" />
+          <Property Name="DIAGNOSE_PLACE" Type="varchar2" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TYT_NERVES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="BRANCH_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+          <Property Name="PATIENT_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="PERSON_CODE" Type="varchar2" MaxLength="9" />
+          <Property Name="FIRST_NAME" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="LAST_NAME" Type="varchar2" MaxLength="70" />
+          <Property Name="VIR_PERSON_NAME" Type="varchar2" MaxLength="101" StoreGeneratedPattern="Computed" />
+          <Property Name="DOB" Type="number" Nullable="false" Precision="14" />
+          <Property Name="IS_HAS_NOT_DAY_DOB" Type="number" Precision="2" />
+          <Property Name="GENDER_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="PERSON_ADDRESS" Type="varchar2" MaxLength="1000" />
+          <Property Name="CAREER_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="ETHNIC_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="DIAGNOSE_TTPL" Type="varchar2" MaxLength="500" />
+          <Property Name="DIAGNOSE_DK" Type="varchar2" MaxLength="500" />
+          <Property Name="DIAGNOSE_TC" Type="varchar2" MaxLength="500" />
+          <Property Name="PHCN_RESULT" Type="number" Precision="19" />
+          <Property Name="IS_HOME_CHECK" Type="number" Precision="2" />
+          <Property Name="MEDICINE_MONITOR" Type="varchar2" MaxLength="4000" />
+        </EntityType>
+        <EntityType Name="TYT_TUBERCULOSIS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="BRANCH_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+          <Property Name="PATIENT_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="PERSON_CODE" Type="varchar2" MaxLength="9" />
+          <Property Name="FIRST_NAME" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="LAST_NAME" Type="varchar2" MaxLength="70" />
+          <Property Name="VIR_PERSON_NAME" Type="varchar2" MaxLength="101" StoreGeneratedPattern="Computed" />
+          <Property Name="DOB" Type="number" Nullable="false" Precision="14" />
+          <Property Name="IS_HAS_NOT_DAY_DOB" Type="number" Precision="2" />
+          <Property Name="GENDER_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="PERSON_ADDRESS" Type="varchar2" MaxLength="1000" />
+          <Property Name="CAREER_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="ETHNIC_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="TYT_IN_TIME" Type="number" Precision="14" />
+          <Property Name="DTCKS_CODE" Type="varchar2" MaxLength="20" />
+          <Property Name="DISEASE_TYPE" Type="number" Precision="19" />
+          <Property Name="TREATMENT_RESULT" Type="number" Precision="19" />
+          <Property Name="NOTE" Type="varchar2" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TYT_UNINFECT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="BRANCH_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+          <Property Name="PATIENT_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="PERSON_CODE" Type="varchar2" MaxLength="9" />
+          <Property Name="FIRST_NAME" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="LAST_NAME" Type="varchar2" MaxLength="70" />
+          <Property Name="VIR_PERSON_NAME" Type="varchar2" MaxLength="101" StoreGeneratedPattern="Computed" />
+          <Property Name="DOB" Type="number" Nullable="false" Precision="14" />
+          <Property Name="IS_HAS_NOT_DAY_DOB" Type="number" Precision="2" />
+          <Property Name="GENDER_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="PERSON_ADDRESS" Type="varchar2" MaxLength="1000" />
+          <Property Name="CAREER_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="ETHNIC_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="ICD_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="ICD_NAME" Type="varchar2" MaxLength="500" />
+          <Property Name="DIAGNOSIS_TIME" Type="number" Precision="14" />
+          <Property Name="DIAGNOSIS_PLACE" Type="varchar2" MaxLength="100" />
+          <Property Name="NOTE" Type="varchar2" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TYT_UNINFECT_ICD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="UNINFECT_ICD_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="UNINFECT_ICD_NAME" Type="varchar2" Nullable="false" MaxLength="500" />
+          <Property Name="UNINFECT_ICD_GROUP_ID" Type="number" Nullable="false" Precision="19" />
+        </EntityType>
+        <EntityType Name="TYT_UNINFECT_ICD_GROUP">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="UNINFECT_ICD_GROUP_CODE" Type="varchar2" Nullable="false" MaxLength="2" />
+          <Property Name="UNINFECT_ICD_GROUP_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <Association Name="TYT_UNINFECT_ICD_FK1">
+          <End Role="TYT_UNINFECT_ICD_GROUP" Type="DataModels.Store.TYT_UNINFECT_ICD_GROUP" Multiplicity="1" />
+          <End Role="TYT_UNINFECT_ICD" Type="DataModels.Store.TYT_UNINFECT_ICD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TYT_UNINFECT_ICD_GROUP">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TYT_UNINFECT_ICD">
+              <PropertyRef Name="UNINFECT_ICD_GROUP_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DataModels" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="TYTEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="TYT_DEATH" EntityType="DataModels.TYT_DEATH" />
+          <EntitySet Name="TYT_FETUS_ABORTION" EntityType="DataModels.TYT_FETUS_ABORTION" />
+          <EntitySet Name="TYT_FETUS_BORN" EntityType="DataModels.TYT_FETUS_BORN" />
+          <EntitySet Name="TYT_FETUS_EXAM" EntityType="DataModels.TYT_FETUS_EXAM" />
+          <EntitySet Name="TYT_GDSK" EntityType="DataModels.TYT_GDSK" />
+          <EntitySet Name="TYT_HIV" EntityType="DataModels.TYT_HIV" />
+          <EntitySet Name="TYT_KHH" EntityType="DataModels.TYT_KHH" />
+          <EntitySet Name="TYT_MALARIA" EntityType="DataModels.TYT_MALARIA" />
+          <EntitySet Name="TYT_NERVES" EntityType="DataModels.TYT_NERVES" />
+          <EntitySet Name="TYT_TUBERCULOSIS" EntityType="DataModels.TYT_TUBERCULOSIS" />
+          <EntitySet Name="TYT_UNINFECT" EntityType="DataModels.TYT_UNINFECT" />
+          <EntitySet Name="TYT_UNINFECT_ICD" EntityType="DataModels.TYT_UNINFECT_ICD" />
+          <EntitySet Name="TYT_UNINFECT_ICD_GROUP" EntityType="DataModels.TYT_UNINFECT_ICD_GROUP" />
+          <AssociationSet Name="TYT_UNINFECT_ICD_FK1" Association="DataModels.TYT_UNINFECT_ICD_FK1">
+            <End Role="TYT_UNINFECT_ICD_GROUP" EntitySet="TYT_UNINFECT_ICD_GROUP" />
+            <End Role="TYT_UNINFECT_ICD" EntitySet="TYT_UNINFECT_ICD" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="TYT_DEATH">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="BRANCH_CODE" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="PATIENT_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="PERSON_CODE" Type="String" MaxLength="9" Unicode="false" FixedLength="false" />
+          <Property Name="FIRST_NAME" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="LAST_NAME" Type="String" MaxLength="70" Unicode="false" FixedLength="false" />
+          <Property Name="VIR_PERSON_NAME" Type="String" MaxLength="101" Unicode="false" FixedLength="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="DOB" Type="Int64" Nullable="false" />
+          <Property Name="IS_HAS_NOT_DAY_DOB" Type="Int16" />
+          <Property Name="GENDER_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="PERSON_ADDRESS" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="CAREER_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="ETHNIC_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="DEATH_TIME" Type="Int64" />
+          <Property Name="DEATH_LOCATION_TYPE_ID" Type="Int64" />
+          <Property Name="IS_CBYT_CARE" Type="Int16" />
+          <Property Name="DEATH_CAUSE" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="COLLECTOR" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TYT_FETUS_ABORTION">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="BRANCH_CODE" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="PATIENT_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="PERSON_CODE" Type="String" MaxLength="9" Unicode="false" FixedLength="false" />
+          <Property Name="FIRST_NAME" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="LAST_NAME" Type="String" MaxLength="70" Unicode="false" FixedLength="false" />
+          <Property Name="VIR_PERSON_NAME" Type="String" MaxLength="101" Unicode="false" FixedLength="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="DOB" Type="Int64" Nullable="false" />
+          <Property Name="IS_HAS_NOT_DAY_DOB" Type="Int16" />
+          <Property Name="GENDER_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="PERSON_ADDRESS" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="CAREER_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="ETHNIC_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="BHYT_NUMBER" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="IS_SINGLE" Type="Int16" />
+          <Property Name="PARA_CHILD_COUNT" Type="Int64" />
+          <Property Name="LAST_MENSES_TIME" Type="Int64" />
+          <Property Name="DIAGNOSE_TEST" Type="Int64" />
+          <Property Name="ABORTION_METHOD" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="SM_RESULT" Type="Int64" />
+          <Property Name="OBSTETRIC_COMPLICATION" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="IS_DEATH" Type="Int16" />
+          <Property Name="EXECUTE_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="EXAM_AFTER_TWO_WEEK" Type="Int16" />
+          <Property Name="NOTE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="ABORTION_TIME" Type="Int64" />
+        </EntityType>
+        <EntityType Name="TYT_FETUS_BORN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="BRANCH_CODE" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="PATIENT_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="PERSON_CODE" Type="String" MaxLength="9" Unicode="false" FixedLength="false" />
+          <Property Name="FIRST_NAME" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="LAST_NAME" Type="String" MaxLength="70" Unicode="false" FixedLength="false" />
+          <Property Name="VIR_PERSON_NAME" Type="String" MaxLength="101" Unicode="false" FixedLength="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="DOB" Type="Int64" Nullable="false" />
+          <Property Name="IS_HAS_NOT_DAY_DOB" Type="Int16" />
+          <Property Name="GENDER_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="PERSON_ADDRESS" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="CAREER_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="ETHNIC_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="BHYT_NUMBER" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="IS_FETUS_MANAGE" Type="Int16" />
+          <Property Name="IS_UV_FULL" Type="Int16" />
+          <Property Name="CHECK_CASE" Type="Int64" />
+          <Property Name="IS_HIV_BEFORE" Type="Int16" />
+          <Property Name="IS_HIV_BORN" Type="Int16" />
+          <Property Name="PARA_NORMAL_COUNT" Type="Int64" />
+          <Property Name="PARA_PREMATURELY_COUNT" Type="Int64" />
+          <Property Name="PARA_MISCARRIAGE_COUNT" Type="Int64" />
+          <Property Name="PARA_CHILD_COUNT" Type="Int64" />
+          <Property Name="BORN_METHOD" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="OBSTETRIC_COMPLICATION" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="IS_DEATH" Type="Int16" />
+          <Property Name="CHILD_GENDER_ID" Type="Int64" />
+          <Property Name="CHILD_WEIGHT" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="CHILD_STATUS" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="IS_CHILD_DEATH" Type="Int16" />
+          <Property Name="BORN_PLACE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="MIDWIFE_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="IS_BREASTFEEDING_FIRST_HOUR" Type="Int16" />
+          <Property Name="IS_K1" Type="Int16" />
+          <Property Name="FIRST_WEEK_EXAM" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="EXAM_742" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="NOTE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TYT_FETUS_EXAM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="BRANCH_CODE" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="PATIENT_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="PERSON_CODE" Type="String" MaxLength="9" Unicode="false" FixedLength="false" />
+          <Property Name="FIRST_NAME" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="LAST_NAME" Type="String" MaxLength="70" Unicode="false" FixedLength="false" />
+          <Property Name="VIR_PERSON_NAME" Type="String" MaxLength="101" Unicode="false" FixedLength="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="DOB" Type="Int64" Nullable="false" />
+          <Property Name="IS_HAS_NOT_DAY_DOB" Type="Int16" />
+          <Property Name="GENDER_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="PERSON_ADDRESS" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="CAREER_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="ETHNIC_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="BHYT_NUMBER" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="LAST_MENSES_TIME" Type="Int64" />
+          <Property Name="WEEK" Type="Int64" />
+          <Property Name="BORN_TIME" Type="Int64" />
+          <Property Name="FETUS_COUNT" Type="Int64" />
+          <Property Name="WEIGHT" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="HEIGHT" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="BLOOD_PRESSURE_MAX" Type="Int64" />
+          <Property Name="BLOOD_PRESSURE_MIN" Type="Int64" />
+          <Property Name="UTERUS" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="BELLY" Type="Int64" />
+          <Property Name="PELVIC" Type="Int64" />
+          <Property Name="BLOOD" Type="Int64" />
+          <Property Name="PROTEIN" Type="Int64" />
+          <Property Name="IS_HIV_TEST" Type="Int16" />
+          <Property Name="OTHER_TEST" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="BORN_GUESS" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="UV_COUNT" Type="Int64" />
+          <Property Name="IS_FOLIC" Type="Int16" />
+          <Property Name="FETUS_HEART" Type="Int64" />
+          <Property Name="FETUS_POSITION" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="DOCTOR_LOGINNAME" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DOCTOR_USERNAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="NOTE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="EXAM_TIME" Type="Int64" />
+          <Property Name="HEALTH_HISTORY" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TYT_GDSK">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="BRANCH_CODE" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="GDSK_TIME" Type="Int64" />
+          <Property Name="GDSK_PLACE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="CONTENT" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="FORM" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="TARGET" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="AUDIENCE_COUNT" Type="Int64" />
+          <Property Name="MEDIA" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="AMOUNT_OF_TIME" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="EXECUTE_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="NOTE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TYT_HIV">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="BRANCH_CODE" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="PATIENT_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="PERSON_CODE" Type="String" MaxLength="9" Unicode="false" FixedLength="false" />
+          <Property Name="FIRST_NAME" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="LAST_NAME" Type="String" MaxLength="70" Unicode="false" FixedLength="false" />
+          <Property Name="VIR_PERSON_NAME" Type="String" MaxLength="101" Unicode="false" FixedLength="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="DOB" Type="Int64" Nullable="false" />
+          <Property Name="IS_HAS_NOT_DAY_DOB" Type="Int16" />
+          <Property Name="GENDER_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="PERSON_ADDRESS" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="CAREER_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="ETHNIC_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="OBJECT_TYPE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="FETUS_TIME" Type="Int64" />
+          <Property Name="HIV_DIAGNOSIS_TIME" Type="Int64" />
+          <Property Name="HIV_DIAGNOSIS_PLACE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="ARV_PLACE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="DEATH_TIME" Type="Int64" />
+          <Property Name="NOTE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TYT_KHH">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="BRANCH_CODE" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="PATIENT_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="PERSON_CODE" Type="String" MaxLength="9" Unicode="false" FixedLength="false" />
+          <Property Name="FIRST_NAME" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="LAST_NAME" Type="String" MaxLength="70" Unicode="false" FixedLength="false" />
+          <Property Name="VIR_PERSON_NAME" Type="String" MaxLength="101" Unicode="false" FixedLength="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="DOB" Type="Int64" Nullable="false" />
+          <Property Name="IS_HAS_NOT_DAY_DOB" Type="Int16" />
+          <Property Name="GENDER_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="PERSON_ADDRESS" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="CAREER_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="ETHNIC_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="BHYT_NUMBER" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="IS_SINGLE" Type="Int16" />
+          <Property Name="IS_IUCD" Type="Int16" />
+          <Property Name="IS_STERILIZE" Type="Int16" />
+          <Property Name="IS_PILL_V" Type="Int16" />
+          <Property Name="IS_PILL_T" Type="Int16" />
+          <Property Name="IS_PILL_C" Type="Int16" />
+          <Property Name="IS_CONDOM" Type="Int16" />
+          <Property Name="EXECUTE_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="OBSTETRIC_COMPLICATION" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="IS_DEATH" Type="Int16" />
+          <Property Name="NOTE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TYT_MALARIA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="BRANCH_CODE" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="PATIENT_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="PERSON_CODE" Type="String" MaxLength="9" Unicode="false" FixedLength="false" />
+          <Property Name="FIRST_NAME" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="LAST_NAME" Type="String" MaxLength="70" Unicode="false" FixedLength="false" />
+          <Property Name="VIR_PERSON_NAME" Type="String" MaxLength="101" Unicode="false" FixedLength="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="DOB" Type="Int64" Nullable="false" />
+          <Property Name="IS_HAS_NOT_DAY_DOB" Type="Int16" />
+          <Property Name="GENDER_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="PERSON_ADDRESS" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="CAREER_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="ETHNIC_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="IS_HAS_FETUS" Type="Int16" />
+          <Property Name="IS_FEVER" Type="Int16" />
+          <Property Name="TEST_TYPE" Type="Int64" />
+          <Property Name="TEST_RESULT" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+          <Property Name="DIAGNOSE" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="TREATMENT_RESULT" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="MEDICINE" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+          <Property Name="MEDICINE_CTDT" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+          <Property Name="DIAGNOSE_TIME" Type="Int64" />
+          <Property Name="DIAGNOSE_PLACE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TYT_NERVES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="BRANCH_CODE" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="PATIENT_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="PERSON_CODE" Type="String" MaxLength="9" Unicode="false" FixedLength="false" />
+          <Property Name="FIRST_NAME" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="LAST_NAME" Type="String" MaxLength="70" Unicode="false" FixedLength="false" />
+          <Property Name="VIR_PERSON_NAME" Type="String" MaxLength="101" Unicode="false" FixedLength="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="DOB" Type="Int64" Nullable="false" />
+          <Property Name="IS_HAS_NOT_DAY_DOB" Type="Int16" />
+          <Property Name="GENDER_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="PERSON_ADDRESS" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="CAREER_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="ETHNIC_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="DIAGNOSE_TTPL" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="DIAGNOSE_DK" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="DIAGNOSE_TC" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="PHCN_RESULT" Type="Int64" />
+          <Property Name="IS_HOME_CHECK" Type="Int16" />
+          <Property Name="MEDICINE_MONITOR" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TYT_TUBERCULOSIS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="BRANCH_CODE" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="PATIENT_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="PERSON_CODE" Type="String" MaxLength="9" Unicode="false" FixedLength="false" />
+          <Property Name="FIRST_NAME" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="LAST_NAME" Type="String" MaxLength="70" Unicode="false" FixedLength="false" />
+          <Property Name="VIR_PERSON_NAME" Type="String" MaxLength="101" Unicode="false" FixedLength="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="DOB" Type="Int64" Nullable="false" />
+          <Property Name="IS_HAS_NOT_DAY_DOB" Type="Int16" />
+          <Property Name="GENDER_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="PERSON_ADDRESS" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="CAREER_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="ETHNIC_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="TYT_IN_TIME" Type="Int64" />
+          <Property Name="DTCKS_CODE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="DISEASE_TYPE" Type="Int64" />
+          <Property Name="TREATMENT_RESULT" Type="Int64" />
+          <Property Name="NOTE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TYT_UNINFECT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="BRANCH_CODE" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="PATIENT_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="PERSON_CODE" Type="String" MaxLength="9" Unicode="false" FixedLength="false" />
+          <Property Name="FIRST_NAME" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="LAST_NAME" Type="String" MaxLength="70" Unicode="false" FixedLength="false" />
+          <Property Name="VIR_PERSON_NAME" Type="String" MaxLength="101" Unicode="false" FixedLength="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="DOB" Type="Int64" Nullable="false" />
+          <Property Name="IS_HAS_NOT_DAY_DOB" Type="Int16" />
+          <Property Name="GENDER_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="PERSON_ADDRESS" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="CAREER_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="ETHNIC_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="ICD_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="ICD_NAME" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="DIAGNOSIS_TIME" Type="Int64" />
+          <Property Name="DIAGNOSIS_PLACE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="NOTE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TYT_UNINFECT_ICD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UNINFECT_ICD_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="UNINFECT_ICD_NAME" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="UNINFECT_ICD_GROUP_ID" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="TYT_UNINFECT_ICD_GROUP" Relationship="DataModels.TYT_UNINFECT_ICD_FK1" FromRole="TYT_UNINFECT_ICD" ToRole="TYT_UNINFECT_ICD_GROUP" />
+        </EntityType>
+        <EntityType Name="TYT_UNINFECT_ICD_GROUP">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UNINFECT_ICD_GROUP_CODE" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="UNINFECT_ICD_GROUP_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="TYT_UNINFECT_ICD" Relationship="DataModels.TYT_UNINFECT_ICD_FK1" FromRole="TYT_UNINFECT_ICD_GROUP" ToRole="TYT_UNINFECT_ICD" />
+        </EntityType>
+        <Association Name="TYT_UNINFECT_ICD_FK1">
+          <End Role="TYT_UNINFECT_ICD_GROUP" Type="DataModels.TYT_UNINFECT_ICD_GROUP" Multiplicity="1" />
+          <End Role="TYT_UNINFECT_ICD" Type="DataModels.TYT_UNINFECT_ICD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TYT_UNINFECT_ICD_GROUP">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TYT_UNINFECT_ICD">
+              <PropertyRef Name="UNINFECT_ICD_GROUP_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TYTDataModelsStoreContainer" CdmEntityContainer="TYTEntities">
+          <EntitySetMapping Name="TYT_DEATH">
+            <EntityTypeMapping TypeName="DataModels.TYT_DEATH">
+              <MappingFragment StoreEntitySet="TYT_DEATH">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="BRANCH_CODE" ColumnName="BRANCH_CODE" />
+                <ScalarProperty Name="PATIENT_CODE" ColumnName="PATIENT_CODE" />
+                <ScalarProperty Name="PERSON_CODE" ColumnName="PERSON_CODE" />
+                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+                <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+                <ScalarProperty Name="VIR_PERSON_NAME" ColumnName="VIR_PERSON_NAME" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="IS_HAS_NOT_DAY_DOB" ColumnName="IS_HAS_NOT_DAY_DOB" />
+                <ScalarProperty Name="GENDER_NAME" ColumnName="GENDER_NAME" />
+                <ScalarProperty Name="PERSON_ADDRESS" ColumnName="PERSON_ADDRESS" />
+                <ScalarProperty Name="CAREER_NAME" ColumnName="CAREER_NAME" />
+                <ScalarProperty Name="ETHNIC_NAME" ColumnName="ETHNIC_NAME" />
+                <ScalarProperty Name="DEATH_TIME" ColumnName="DEATH_TIME" />
+                <ScalarProperty Name="DEATH_LOCATION_TYPE_ID" ColumnName="DEATH_LOCATION_TYPE_ID" />
+                <ScalarProperty Name="IS_CBYT_CARE" ColumnName="IS_CBYT_CARE" />
+                <ScalarProperty Name="DEATH_CAUSE" ColumnName="DEATH_CAUSE" />
+                <ScalarProperty Name="COLLECTOR" ColumnName="COLLECTOR" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TYT_FETUS_ABORTION">
+            <EntityTypeMapping TypeName="DataModels.TYT_FETUS_ABORTION">
+              <MappingFragment StoreEntitySet="TYT_FETUS_ABORTION">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="BRANCH_CODE" ColumnName="BRANCH_CODE" />
+                <ScalarProperty Name="PATIENT_CODE" ColumnName="PATIENT_CODE" />
+                <ScalarProperty Name="PERSON_CODE" ColumnName="PERSON_CODE" />
+                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+                <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+                <ScalarProperty Name="VIR_PERSON_NAME" ColumnName="VIR_PERSON_NAME" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="IS_HAS_NOT_DAY_DOB" ColumnName="IS_HAS_NOT_DAY_DOB" />
+                <ScalarProperty Name="GENDER_NAME" ColumnName="GENDER_NAME" />
+                <ScalarProperty Name="PERSON_ADDRESS" ColumnName="PERSON_ADDRESS" />
+                <ScalarProperty Name="CAREER_NAME" ColumnName="CAREER_NAME" />
+                <ScalarProperty Name="ETHNIC_NAME" ColumnName="ETHNIC_NAME" />
+                <ScalarProperty Name="BHYT_NUMBER" ColumnName="BHYT_NUMBER" />
+                <ScalarProperty Name="IS_SINGLE" ColumnName="IS_SINGLE" />
+                <ScalarProperty Name="PARA_CHILD_COUNT" ColumnName="PARA_CHILD_COUNT" />
+                <ScalarProperty Name="LAST_MENSES_TIME" ColumnName="LAST_MENSES_TIME" />
+                <ScalarProperty Name="DIAGNOSE_TEST" ColumnName="DIAGNOSE_TEST" />
+                <ScalarProperty Name="ABORTION_METHOD" ColumnName="ABORTION_METHOD" />
+                <ScalarProperty Name="SM_RESULT" ColumnName="SM_RESULT" />
+                <ScalarProperty Name="OBSTETRIC_COMPLICATION" ColumnName="OBSTETRIC_COMPLICATION" />
+                <ScalarProperty Name="IS_DEATH" ColumnName="IS_DEATH" />
+                <ScalarProperty Name="EXECUTE_NAME" ColumnName="EXECUTE_NAME" />
+                <ScalarProperty Name="EXAM_AFTER_TWO_WEEK" ColumnName="EXAM_AFTER_TWO_WEEK" />
+                <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+                <ScalarProperty Name="ABORTION_TIME" ColumnName="ABORTION_TIME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TYT_FETUS_BORN">
+            <EntityTypeMapping TypeName="DataModels.TYT_FETUS_BORN">
+              <MappingFragment StoreEntitySet="TYT_FETUS_BORN">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="BRANCH_CODE" ColumnName="BRANCH_CODE" />
+                <ScalarProperty Name="PATIENT_CODE" ColumnName="PATIENT_CODE" />
+                <ScalarProperty Name="PERSON_CODE" ColumnName="PERSON_CODE" />
+                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+                <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+                <ScalarProperty Name="VIR_PERSON_NAME" ColumnName="VIR_PERSON_NAME" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="IS_HAS_NOT_DAY_DOB" ColumnName="IS_HAS_NOT_DAY_DOB" />
+                <ScalarProperty Name="GENDER_NAME" ColumnName="GENDER_NAME" />
+                <ScalarProperty Name="PERSON_ADDRESS" ColumnName="PERSON_ADDRESS" />
+                <ScalarProperty Name="CAREER_NAME" ColumnName="CAREER_NAME" />
+                <ScalarProperty Name="ETHNIC_NAME" ColumnName="ETHNIC_NAME" />
+                <ScalarProperty Name="BHYT_NUMBER" ColumnName="BHYT_NUMBER" />
+                <ScalarProperty Name="IS_FETUS_MANAGE" ColumnName="IS_FETUS_MANAGE" />
+                <ScalarProperty Name="IS_UV_FULL" ColumnName="IS_UV_FULL" />
+                <ScalarProperty Name="CHECK_CASE" ColumnName="CHECK_CASE" />
+                <ScalarProperty Name="IS_HIV_BEFORE" ColumnName="IS_HIV_BEFORE" />
+                <ScalarProperty Name="IS_HIV_BORN" ColumnName="IS_HIV_BORN" />
+                <ScalarProperty Name="PARA_NORMAL_COUNT" ColumnName="PARA_NORMAL_COUNT" />
+                <ScalarProperty Name="PARA_PREMATURELY_COUNT" ColumnName="PARA_PREMATURELY_COUNT" />
+                <ScalarProperty Name="PARA_MISCARRIAGE_COUNT" ColumnName="PARA_MISCARRIAGE_COUNT" />
+                <ScalarProperty Name="PARA_CHILD_COUNT" ColumnName="PARA_CHILD_COUNT" />
+                <ScalarProperty Name="BORN_METHOD" ColumnName="BORN_METHOD" />
+                <ScalarProperty Name="OBSTETRIC_COMPLICATION" ColumnName="OBSTETRIC_COMPLICATION" />
+                <ScalarProperty Name="IS_DEATH" ColumnName="IS_DEATH" />
+                <ScalarProperty Name="CHILD_GENDER_ID" ColumnName="CHILD_GENDER_ID" />
+                <ScalarProperty Name="CHILD_WEIGHT" ColumnName="CHILD_WEIGHT" />
+                <ScalarProperty Name="CHILD_STATUS" ColumnName="CHILD_STATUS" />
+                <ScalarProperty Name="IS_CHILD_DEATH" ColumnName="IS_CHILD_DEATH" />
+                <ScalarProperty Name="BORN_PLACE" ColumnName="BORN_PLACE" />
+                <ScalarProperty Name="MIDWIFE_NAME" ColumnName="MIDWIFE_NAME" />
+                <ScalarProperty Name="IS_BREASTFEEDING_FIRST_HOUR" ColumnName="IS_BREASTFEEDING_FIRST_HOUR" />
+                <ScalarProperty Name="IS_K1" ColumnName="IS_K1" />
+                <ScalarProperty Name="FIRST_WEEK_EXAM" ColumnName="FIRST_WEEK_EXAM" />
+                <ScalarProperty Name="EXAM_742" ColumnName="EXAM_742" />
+                <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TYT_FETUS_EXAM">
+            <EntityTypeMapping TypeName="DataModels.TYT_FETUS_EXAM">
+              <MappingFragment StoreEntitySet="TYT_FETUS_EXAM">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="BRANCH_CODE" ColumnName="BRANCH_CODE" />
+                <ScalarProperty Name="PATIENT_CODE" ColumnName="PATIENT_CODE" />
+                <ScalarProperty Name="PERSON_CODE" ColumnName="PERSON_CODE" />
+                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+                <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+                <ScalarProperty Name="VIR_PERSON_NAME" ColumnName="VIR_PERSON_NAME" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="IS_HAS_NOT_DAY_DOB" ColumnName="IS_HAS_NOT_DAY_DOB" />
+                <ScalarProperty Name="GENDER_NAME" ColumnName="GENDER_NAME" />
+                <ScalarProperty Name="PERSON_ADDRESS" ColumnName="PERSON_ADDRESS" />
+                <ScalarProperty Name="CAREER_NAME" ColumnName="CAREER_NAME" />
+                <ScalarProperty Name="ETHNIC_NAME" ColumnName="ETHNIC_NAME" />
+                <ScalarProperty Name="BHYT_NUMBER" ColumnName="BHYT_NUMBER" />
+                <ScalarProperty Name="LAST_MENSES_TIME" ColumnName="LAST_MENSES_TIME" />
+                <ScalarProperty Name="WEEK" ColumnName="WEEK" />
+                <ScalarProperty Name="BORN_TIME" ColumnName="BORN_TIME" />
+                <ScalarProperty Name="FETUS_COUNT" ColumnName="FETUS_COUNT" />
+                <ScalarProperty Name="WEIGHT" ColumnName="WEIGHT" />
+                <ScalarProperty Name="HEIGHT" ColumnName="HEIGHT" />
+                <ScalarProperty Name="BLOOD_PRESSURE_MAX" ColumnName="BLOOD_PRESSURE_MAX" />
+                <ScalarProperty Name="BLOOD_PRESSURE_MIN" ColumnName="BLOOD_PRESSURE_MIN" />
+                <ScalarProperty Name="UTERUS" ColumnName="UTERUS" />
+                <ScalarProperty Name="BELLY" ColumnName="BELLY" />
+                <ScalarProperty Name="PELVIC" ColumnName="PELVIC" />
+                <ScalarProperty Name="BLOOD" ColumnName="BLOOD" />
+                <ScalarProperty Name="PROTEIN" ColumnName="PROTEIN" />
+                <ScalarProperty Name="IS_HIV_TEST" ColumnName="IS_HIV_TEST" />
+                <ScalarProperty Name="OTHER_TEST" ColumnName="OTHER_TEST" />
+                <ScalarProperty Name="BORN_GUESS" ColumnName="BORN_GUESS" />
+                <ScalarProperty Name="UV_COUNT" ColumnName="UV_COUNT" />
+                <ScalarProperty Name="IS_FOLIC" ColumnName="IS_FOLIC" />
+                <ScalarProperty Name="FETUS_HEART" ColumnName="FETUS_HEART" />
+                <ScalarProperty Name="FETUS_POSITION" ColumnName="FETUS_POSITION" />
+                <ScalarProperty Name="DOCTOR_LOGINNAME" ColumnName="DOCTOR_LOGINNAME" />
+                <ScalarProperty Name="DOCTOR_USERNAME" ColumnName="DOCTOR_USERNAME" />
+                <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+                <ScalarProperty Name="EXAM_TIME" ColumnName="EXAM_TIME" />
+                <ScalarProperty Name="HEALTH_HISTORY" ColumnName="HEALTH_HISTORY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TYT_GDSK">
+            <EntityTypeMapping TypeName="DataModels.TYT_GDSK">
+              <MappingFragment StoreEntitySet="TYT_GDSK">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="BRANCH_CODE" ColumnName="BRANCH_CODE" />
+                <ScalarProperty Name="GDSK_TIME" ColumnName="GDSK_TIME" />
+                <ScalarProperty Name="GDSK_PLACE" ColumnName="GDSK_PLACE" />
+                <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+                <ScalarProperty Name="FORM" ColumnName="FORM" />
+                <ScalarProperty Name="TARGET" ColumnName="TARGET" />
+                <ScalarProperty Name="AUDIENCE_COUNT" ColumnName="AUDIENCE_COUNT" />
+                <ScalarProperty Name="MEDIA" ColumnName="MEDIA" />
+                <ScalarProperty Name="AMOUNT_OF_TIME" ColumnName="AMOUNT_OF_TIME" />
+                <ScalarProperty Name="EXECUTE_NAME" ColumnName="EXECUTE_NAME" />
+                <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TYT_HIV">
+            <EntityTypeMapping TypeName="DataModels.TYT_HIV">
+              <MappingFragment StoreEntitySet="TYT_HIV">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="BRANCH_CODE" ColumnName="BRANCH_CODE" />
+                <ScalarProperty Name="PATIENT_CODE" ColumnName="PATIENT_CODE" />
+                <ScalarProperty Name="PERSON_CODE" ColumnName="PERSON_CODE" />
+                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+                <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+                <ScalarProperty Name="VIR_PERSON_NAME" ColumnName="VIR_PERSON_NAME" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="IS_HAS_NOT_DAY_DOB" ColumnName="IS_HAS_NOT_DAY_DOB" />
+                <ScalarProperty Name="GENDER_NAME" ColumnName="GENDER_NAME" />
+                <ScalarProperty Name="PERSON_ADDRESS" ColumnName="PERSON_ADDRESS" />
+                <ScalarProperty Name="CAREER_NAME" ColumnName="CAREER_NAME" />
+                <ScalarProperty Name="ETHNIC_NAME" ColumnName="ETHNIC_NAME" />
+                <ScalarProperty Name="OBJECT_TYPE" ColumnName="OBJECT_TYPE" />
+                <ScalarProperty Name="FETUS_TIME" ColumnName="FETUS_TIME" />
+                <ScalarProperty Name="HIV_DIAGNOSIS_TIME" ColumnName="HIV_DIAGNOSIS_TIME" />
+                <ScalarProperty Name="HIV_DIAGNOSIS_PLACE" ColumnName="HIV_DIAGNOSIS_PLACE" />
+                <ScalarProperty Name="ARV_PLACE" ColumnName="ARV_PLACE" />
+                <ScalarProperty Name="DEATH_TIME" ColumnName="DEATH_TIME" />
+                <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TYT_KHH">
+            <EntityTypeMapping TypeName="DataModels.TYT_KHH">
+              <MappingFragment StoreEntitySet="TYT_KHH">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="BRANCH_CODE" ColumnName="BRANCH_CODE" />
+                <ScalarProperty Name="PATIENT_CODE" ColumnName="PATIENT_CODE" />
+                <ScalarProperty Name="PERSON_CODE" ColumnName="PERSON_CODE" />
+                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+                <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+                <ScalarProperty Name="VIR_PERSON_NAME" ColumnName="VIR_PERSON_NAME" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="IS_HAS_NOT_DAY_DOB" ColumnName="IS_HAS_NOT_DAY_DOB" />
+                <ScalarProperty Name="GENDER_NAME" ColumnName="GENDER_NAME" />
+                <ScalarProperty Name="PERSON_ADDRESS" ColumnName="PERSON_ADDRESS" />
+                <ScalarProperty Name="CAREER_NAME" ColumnName="CAREER_NAME" />
+                <ScalarProperty Name="ETHNIC_NAME" ColumnName="ETHNIC_NAME" />
+                <ScalarProperty Name="BHYT_NUMBER" ColumnName="BHYT_NUMBER" />
+                <ScalarProperty Name="IS_SINGLE" ColumnName="IS_SINGLE" />
+                <ScalarProperty Name="IS_IUCD" ColumnName="IS_IUCD" />
+                <ScalarProperty Name="IS_STERILIZE" ColumnName="IS_STERILIZE" />
+                <ScalarProperty Name="IS_PILL_V" ColumnName="IS_PILL_V" />
+                <ScalarProperty Name="IS_PILL_T" ColumnName="IS_PILL_T" />
+                <ScalarProperty Name="IS_PILL_C" ColumnName="IS_PILL_C" />
+                <ScalarProperty Name="IS_CONDOM" ColumnName="IS_CONDOM" />
+                <ScalarProperty Name="EXECUTE_NAME" ColumnName="EXECUTE_NAME" />
+                <ScalarProperty Name="OBSTETRIC_COMPLICATION" ColumnName="OBSTETRIC_COMPLICATION" />
+                <ScalarProperty Name="IS_DEATH" ColumnName="IS_DEATH" />
+                <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TYT_MALARIA">
+            <EntityTypeMapping TypeName="DataModels.TYT_MALARIA">
+              <MappingFragment StoreEntitySet="TYT_MALARIA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="BRANCH_CODE" ColumnName="BRANCH_CODE" />
+                <ScalarProperty Name="PATIENT_CODE" ColumnName="PATIENT_CODE" />
+                <ScalarProperty Name="PERSON_CODE" ColumnName="PERSON_CODE" />
+                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+                <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+                <ScalarProperty Name="VIR_PERSON_NAME" ColumnName="VIR_PERSON_NAME" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="IS_HAS_NOT_DAY_DOB" ColumnName="IS_HAS_NOT_DAY_DOB" />
+                <ScalarProperty Name="GENDER_NAME" ColumnName="GENDER_NAME" />
+                <ScalarProperty Name="PERSON_ADDRESS" ColumnName="PERSON_ADDRESS" />
+                <ScalarProperty Name="CAREER_NAME" ColumnName="CAREER_NAME" />
+                <ScalarProperty Name="ETHNIC_NAME" ColumnName="ETHNIC_NAME" />
+                <ScalarProperty Name="IS_HAS_FETUS" ColumnName="IS_HAS_FETUS" />
+                <ScalarProperty Name="IS_FEVER" ColumnName="IS_FEVER" />
+                <ScalarProperty Name="TEST_TYPE" ColumnName="TEST_TYPE" />
+                <ScalarProperty Name="TEST_RESULT" ColumnName="TEST_RESULT" />
+                <ScalarProperty Name="DIAGNOSE" ColumnName="DIAGNOSE" />
+                <ScalarProperty Name="TREATMENT_RESULT" ColumnName="TREATMENT_RESULT" />
+                <ScalarProperty Name="MEDICINE" ColumnName="MEDICINE" />
+                <ScalarProperty Name="MEDICINE_CTDT" ColumnName="MEDICINE_CTDT" />
+                <ScalarProperty Name="DIAGNOSE_TIME" ColumnName="DIAGNOSE_TIME" />
+                <ScalarProperty Name="DIAGNOSE_PLACE" ColumnName="DIAGNOSE_PLACE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TYT_NERVES">
+            <EntityTypeMapping TypeName="DataModels.TYT_NERVES">
+              <MappingFragment StoreEntitySet="TYT_NERVES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="BRANCH_CODE" ColumnName="BRANCH_CODE" />
+                <ScalarProperty Name="PATIENT_CODE" ColumnName="PATIENT_CODE" />
+                <ScalarProperty Name="PERSON_CODE" ColumnName="PERSON_CODE" />
+                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+                <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+                <ScalarProperty Name="VIR_PERSON_NAME" ColumnName="VIR_PERSON_NAME" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="IS_HAS_NOT_DAY_DOB" ColumnName="IS_HAS_NOT_DAY_DOB" />
+                <ScalarProperty Name="GENDER_NAME" ColumnName="GENDER_NAME" />
+                <ScalarProperty Name="PERSON_ADDRESS" ColumnName="PERSON_ADDRESS" />
+                <ScalarProperty Name="CAREER_NAME" ColumnName="CAREER_NAME" />
+                <ScalarProperty Name="ETHNIC_NAME" ColumnName="ETHNIC_NAME" />
+                <ScalarProperty Name="DIAGNOSE_TTPL" ColumnName="DIAGNOSE_TTPL" />
+                <ScalarProperty Name="DIAGNOSE_DK" ColumnName="DIAGNOSE_DK" />
+                <ScalarProperty Name="DIAGNOSE_TC" ColumnName="DIAGNOSE_TC" />
+                <ScalarProperty Name="PHCN_RESULT" ColumnName="PHCN_RESULT" />
+                <ScalarProperty Name="IS_HOME_CHECK" ColumnName="IS_HOME_CHECK" />
+                <ScalarProperty Name="MEDICINE_MONITOR" ColumnName="MEDICINE_MONITOR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TYT_TUBERCULOSIS">
+            <EntityTypeMapping TypeName="DataModels.TYT_TUBERCULOSIS">
+              <MappingFragment StoreEntitySet="TYT_TUBERCULOSIS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="BRANCH_CODE" ColumnName="BRANCH_CODE" />
+                <ScalarProperty Name="PATIENT_CODE" ColumnName="PATIENT_CODE" />
+                <ScalarProperty Name="PERSON_CODE" ColumnName="PERSON_CODE" />
+                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+                <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+                <ScalarProperty Name="VIR_PERSON_NAME" ColumnName="VIR_PERSON_NAME" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="IS_HAS_NOT_DAY_DOB" ColumnName="IS_HAS_NOT_DAY_DOB" />
+                <ScalarProperty Name="GENDER_NAME" ColumnName="GENDER_NAME" />
+                <ScalarProperty Name="PERSON_ADDRESS" ColumnName="PERSON_ADDRESS" />
+                <ScalarProperty Name="CAREER_NAME" ColumnName="CAREER_NAME" />
+                <ScalarProperty Name="ETHNIC_NAME" ColumnName="ETHNIC_NAME" />
+                <ScalarProperty Name="TYT_IN_TIME" ColumnName="TYT_IN_TIME" />
+                <ScalarProperty Name="DTCKS_CODE" ColumnName="DTCKS_CODE" />
+                <ScalarProperty Name="DISEASE_TYPE" ColumnName="DISEASE_TYPE" />
+                <ScalarProperty Name="TREATMENT_RESULT" ColumnName="TREATMENT_RESULT" />
+                <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TYT_UNINFECT">
+            <EntityTypeMapping TypeName="DataModels.TYT_UNINFECT">
+              <MappingFragment StoreEntitySet="TYT_UNINFECT">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="BRANCH_CODE" ColumnName="BRANCH_CODE" />
+                <ScalarProperty Name="PATIENT_CODE" ColumnName="PATIENT_CODE" />
+                <ScalarProperty Name="PERSON_CODE" ColumnName="PERSON_CODE" />
+                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+                <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+                <ScalarProperty Name="VIR_PERSON_NAME" ColumnName="VIR_PERSON_NAME" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="IS_HAS_NOT_DAY_DOB" ColumnName="IS_HAS_NOT_DAY_DOB" />
+                <ScalarProperty Name="GENDER_NAME" ColumnName="GENDER_NAME" />
+                <ScalarProperty Name="PERSON_ADDRESS" ColumnName="PERSON_ADDRESS" />
+                <ScalarProperty Name="CAREER_NAME" ColumnName="CAREER_NAME" />
+                <ScalarProperty Name="ETHNIC_NAME" ColumnName="ETHNIC_NAME" />
+                <ScalarProperty Name="ICD_CODE" ColumnName="ICD_CODE" />
+                <ScalarProperty Name="ICD_NAME" ColumnName="ICD_NAME" />
+                <ScalarProperty Name="DIAGNOSIS_TIME" ColumnName="DIAGNOSIS_TIME" />
+                <ScalarProperty Name="DIAGNOSIS_PLACE" ColumnName="DIAGNOSIS_PLACE" />
+                <ScalarProperty Name="NOTE" ColumnName="NOTE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TYT_UNINFECT_ICD">
+            <EntityTypeMapping TypeName="DataModels.TYT_UNINFECT_ICD">
+              <MappingFragment StoreEntitySet="TYT_UNINFECT_ICD">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="UNINFECT_ICD_CODE" ColumnName="UNINFECT_ICD_CODE" />
+                <ScalarProperty Name="UNINFECT_ICD_NAME" ColumnName="UNINFECT_ICD_NAME" />
+                <ScalarProperty Name="UNINFECT_ICD_GROUP_ID" ColumnName="UNINFECT_ICD_GROUP_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TYT_UNINFECT_ICD_GROUP">
+            <EntityTypeMapping TypeName="DataModels.TYT_UNINFECT_ICD_GROUP">
+              <MappingFragment StoreEntitySet="TYT_UNINFECT_ICD_GROUP">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="UNINFECT_ICD_GROUP_CODE" ColumnName="UNINFECT_ICD_GROUP_CODE" />
+                <ScalarProperty Name="UNINFECT_ICD_GROUP_NAME" ColumnName="UNINFECT_ICD_GROUP_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

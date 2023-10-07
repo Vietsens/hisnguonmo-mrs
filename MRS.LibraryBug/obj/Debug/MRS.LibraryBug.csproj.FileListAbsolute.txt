@@ -1,0 +1,6 @@
+D:\Data\Project\IVT\IMSys\REPORT\MRSv3\MRS.LibraryBug\bin\Debug\MRS.LibraryBug.dll
+D:\Data\Project\IVT\IMSys\REPORT\MRSv3\MRS.LibraryBug\bin\Debug\MRS.LibraryBug.pdb
+D:\Data\Project\IVT\IMSys\REPORT\MRSv3\MRS.LibraryBug\obj\Debug\MRS.LibraryBug.CodeResource.resources
+D:\Data\Project\IVT\IMSys\REPORT\MRSv3\MRS.LibraryBug\obj\Debug\MRS.LibraryBug.csproj.GenerateResource.Cache
+D:\Data\Project\IVT\IMSys\REPORT\MRSv3\MRS.LibraryBug\obj\Debug\MRS.LibraryBug.dll
+D:\Data\Project\IVT\IMSys\REPORT\MRSv3\MRS.LibraryBug\obj\Debug\MRS.LibraryBug.pdb

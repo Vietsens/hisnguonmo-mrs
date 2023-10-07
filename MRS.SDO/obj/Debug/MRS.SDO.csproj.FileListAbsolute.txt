@@ -1,0 +1,9 @@
+D:\Data\Project\IVT\IMSys\REPORT\MRSv3\MRS.SDO\bin\Debug\MRS.SDO.dll
+D:\Data\Project\IVT\IMSys\REPORT\MRSv3\MRS.SDO\bin\Debug\MRS.SDO.pdb
+D:\Data\Project\IVT\IMSys\REPORT\MRSv3\MRS.SDO\bin\Debug\Inventec.Common.Logging.dll
+D:\Data\Project\IVT\IMSys\REPORT\MRSv3\MRS.SDO\bin\Debug\log4net.dll
+D:\Data\Project\IVT\IMSys\REPORT\MRSv3\MRS.SDO\bin\Debug\EntityFramework.dll
+D:\Data\Project\IVT\IMSys\REPORT\MRSv3\MRS.SDO\bin\Debug\Newtonsoft.Json.dll
+D:\Data\Project\IVT\IMSys\REPORT\MRSv3\MRS.SDO\obj\Debug\MRS.SDO.csprojResolveAssemblyReference.cache
+D:\Data\Project\IVT\IMSys\REPORT\MRSv3\MRS.SDO\obj\Debug\MRS.SDO.dll
+D:\Data\Project\IVT\IMSys\REPORT\MRSv3\MRS.SDO\obj\Debug\MRS.SDO.pdb

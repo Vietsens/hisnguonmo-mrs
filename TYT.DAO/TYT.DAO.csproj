@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0CD96BE3-CC66-4CD0-85EA-7F9CFD2A897C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TYT.DAO</RootNamespace>
+    <AssemblyName>TYT.DAO</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Inventec.Backend.EFMODEL">
+      <HintPath>..\..\..\RELEASE\Inventec.Backend\Inventec.Backend.EFMODEL\Inventec.Backend.EFMODEL.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.Logging">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.Logging\Inventec.Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.Repository">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.Repository\Inventec.Common.Repository.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Core">
+      <HintPath>..\..\..\RELEASE\Inventec.Core\Inventec.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\AppContext.cs" />
+    <Compile Include="Base\BridgeDAO.cs" />
+    <Compile Include="Base\ContextUtil.cs" />
+    <Compile Include="Base\ReflectionQueryable.cs" />
+    <Compile Include="Base\StagingObjectBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StagingObject\TytDeathSO.cs" />
+    <Compile Include="StagingObject\TytFetusAbortionSO.cs" />
+    <Compile Include="StagingObject\TytFetusBornSO.cs" />
+    <Compile Include="StagingObject\TytFetusExamSO.cs" />
+    <Compile Include="StagingObject\TytGdskSO.cs" />
+    <Compile Include="StagingObject\TytHivSO.cs" />
+    <Compile Include="StagingObject\TytKhhSO.cs" />
+    <Compile Include="StagingObject\TytMalariaSO.cs" />
+    <Compile Include="StagingObject\TytNervesSO.cs" />
+    <Compile Include="StagingObject\TytTuberculosisSO.cs" />
+    <Compile Include="StagingObject\TytUninfectIcdGroupSO.cs" />
+    <Compile Include="StagingObject\TytUninfectIcdSO.cs" />
+    <Compile Include="StagingObject\TytUninfectSO.cs" />
+    <Compile Include="TytDeath\TytDeathDAO.cs" />
+    <Compile Include="TytDeath\TytDeathGet.cs" />
+    <Compile Include="TytFetusAbortion\TytFetusAbortionDAO.cs" />
+    <Compile Include="TytFetusAbortion\TytFetusAbortionGet.cs" />
+    <Compile Include="TytFetusBorn\TytFetusBornDAO.cs" />
+    <Compile Include="TytFetusBorn\TytFetusBornGet.cs" />
+    <Compile Include="TytFetusExam\TytFetusExamDAO.cs" />
+    <Compile Include="TytFetusExam\TytFetusExamGet.cs" />
+    <Compile Include="TytGdsk\TytGdskDAO.cs" />
+    <Compile Include="TytGdsk\TytGdskGet.cs" />
+    <Compile Include="TytHiv\TytHivDAO.cs" />
+    <Compile Include="TytHiv\TytHivGet.cs" />
+    <Compile Include="TytKhh\TytKhhDAO.cs" />
+    <Compile Include="TytKhh\TytKhhGet.cs" />
+    <Compile Include="TytMalaria\TytMalariaDAO.cs" />
+    <Compile Include="TytMalaria\TytMalariaGet.cs" />
+    <Compile Include="TytNerves\TytNervesDAO.cs" />
+    <Compile Include="TytNerves\TytNervesGet.cs" />
+    <Compile Include="TytTuberculosis\TytTuberculosisDAO.cs" />
+    <Compile Include="TytTuberculosis\TytTuberculosisGet.cs" />
+    <Compile Include="TytUninfectIcdGroup\TytUninfectIcdGroupDAO.cs" />
+    <Compile Include="TytUninfectIcdGroup\TytUninfectIcdGroupDAOPlus_Full_NoView.cs" />
+    <Compile Include="TytUninfectIcdGroup\TytUninfectIcdGroupGet.cs" />
+    <Compile Include="TytUninfectIcdGroup\TytUninfectIcdGroupGetByCode.cs" />
+    <Compile Include="TytUninfectIcdGroup\TytUninfectIcdGroupGetDicByCode.cs" />
+    <Compile Include="TytUninfectIcd\TytUninfectIcdDAO.cs" />
+    <Compile Include="TytUninfectIcd\TytUninfectIcdDAOPlus_Full_NoView.cs" />
+    <Compile Include="TytUninfectIcd\TytUninfectIcdGet.cs" />
+    <Compile Include="TytUninfectIcd\TytUninfectIcdGetByCode.cs" />
+    <Compile Include="TytUninfectIcd\TytUninfectIcdGetDicByCode.cs" />
+    <Compile Include="TytUninfect\TytUninfectDAO.cs" />
+    <Compile Include="TytUninfect\TytUninfectGet.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TYT.EFMODEL\TYT.EFMODEL.csproj">
+      <Project>{2f6fb8a6-b3ff-4506-8c18-a443d85a453b}</Project>
+      <Name>TYT.EFMODEL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

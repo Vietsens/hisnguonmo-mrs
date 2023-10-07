@@ -1,0 +1,7 @@
+D:\Data\Project\IVT\IMSys\REPORT\MRSv3\MRS.LibraryMessage\bin\Debug\MRS.LibraryMessage.dll
+D:\Data\Project\IVT\IMSys\REPORT\MRSv3\MRS.LibraryMessage\bin\Debug\MRS.LibraryMessage.pdb
+D:\Data\Project\IVT\IMSys\REPORT\MRSv3\MRS.LibraryMessage\obj\Debug\MRS.LibraryMessage.MessageEnResource.resources
+D:\Data\Project\IVT\IMSys\REPORT\MRSv3\MRS.LibraryMessage\obj\Debug\MRS.LibraryMessage.MessageViResource.resources
+D:\Data\Project\IVT\IMSys\REPORT\MRSv3\MRS.LibraryMessage\obj\Debug\MRS.LibraryMessage.csproj.GenerateResource.Cache
+D:\Data\Project\IVT\IMSys\REPORT\MRSv3\MRS.LibraryMessage\obj\Debug\MRS.LibraryMessage.dll
+D:\Data\Project\IVT\IMSys\REPORT\MRSv3\MRS.LibraryMessage\obj\Debug\MRS.LibraryMessage.pdb

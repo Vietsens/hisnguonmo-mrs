@@ -1,0 +1,20 @@
+using MOS.EFMODEL.DataModels;
+using System.Collections.Generic;
+using System.Reflection;
+
+namespace MOS.EFMODEL.Decorator
+{
+    public partial class DenyUpdateDecorator
+    {
+        private static void LoadHisMedicine()
+        {
+            List<string> pies = new List<string>();
+            pies.Add("CREATOR");
+            pies.Add("APP_CREATOR");
+            pies.Add("CREATE_TIME");
+            pies.Add("MEDICINE_TYPE_ID");//ko cho phep update MEDICINE_TYPE_ID
+
+            properties[typeof(HIS_MEDICINE)] = pies;
+        }
+    }
+}

@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9F031AC4-BE5C-464B-8E4F-808CB7F828D9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ACS.MANAGER</RootNamespace>
+    <AssemblyName>ACS.MANAGER</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.0.4.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_Library\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="IMSys.DbConfig.ACS_RS">
+      <HintPath>..\..\..\RELEASE\IMSys.DbConfig\IMSys.DbConfig.ACS_RS\IMSys.DbConfig.ACS_RS.dll</HintPath>
+    </Reference>
+    <Reference Include="IMSys.DbConfig.SDA_RS">
+      <HintPath>..\..\..\RELEASE\IMSys.DbConfig\IMSys.DbConfig.SDA_RS\IMSys.DbConfig.SDA_RS.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Backend.MANAGER">
+      <HintPath>..\..\..\RELEASE\Inventec.Backend\Inventec.Backend.MANAGER\Inventec.Backend.MANAGER.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.DateTime">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.DateTime\Inventec.Common.DateTime.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.FileFolder">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.FileFolder\Inventec.Common.FileFolder.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.HardDrive">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.HardDrive\Inventec.Common.HardDrive.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.JsonRedundancy">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.JsonRedundancy\Inventec.Common.JsonRedundancy.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.LicenseCrypto">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.LicenseCrypto\Inventec.Common.LicenseCrypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.Logging\Inventec.Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.Mail">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.Mail\Inventec.Common.Mail.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.Repository, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.Repository\Inventec.Common.Repository.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.TypeConvert">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.TypeConvert\Inventec.Common.TypeConvert.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.WebApiClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.WebApiClient\Inventec.Common.WebApiClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\Inventec.Core\Inventec.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Fss.Client">
+      <HintPath>..\..\..\RELEASE\Inventec.Fss.Client\Inventec.Fss.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Fss.Utility">
+      <HintPath>..\..\..\RELEASE\Inventec.Fss.Client\Inventec.Fss.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Token.AuthSystem">
+      <HintPath>..\..\..\RELEASE\Inventec.Token\Inventec.Token.AuthSystem\Inventec.Token.AuthSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Token.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\Inventec.Token\Inventec.Token.Core\Inventec.Token.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Token.ResourceSystem, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\Inventec.Token\Inventec.Token.ResourceSystem\Inventec.Token.ResourceSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="MOS.EncryptPassword">
+      <HintPath>..\_Library\MOS.EncryptPassword.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_Library\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SDA.EFMODEL">
+      <HintPath>..\..\..\RELEASE\SDA\SDA.EFMODEL.dll</HintPath>
+    </Reference>
+    <Reference Include="SDA.Filter">
+      <HintPath>..\..\..\RELEASE\SDA\SDA.Filter.dll</HintPath>
+    </Reference>
+    <Reference Include="SDA.SDO">
+      <HintPath>..\..\..\RELEASE\SDA\SDA.SDO.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\DAOWorker.cs" />
+    <Compile Include="Base\OrderProcessorBase.cs" />
+    <Compile Include="Base\TokenStore.cs" />
+    <Compile Include="Base\TroubleCache.cs" />
+    <Compile Include="Core\AcsRole\AcsRoleBO.cs" />
+    <Compile Include="Core\AcsRole\AcsRoleGet.cs" />
+    <Compile Include="Core\AcsRole\Get\AcsRoleFilterQuery.cs" />
+    <Compile Include="Core\AcsRole\Get\Ev\AcsRoleGetEvBehaviorByCode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\AcsRole\Get\Ev\AcsRoleGetEvBehaviorById.cs" />
+    <Compile Include="Core\AcsRole\Get\Ev\AcsRoleGetEvBehaviorFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\AcsRole\Get\Ev\IAcsRoleGetEv.cs" />
+    <Compile Include="Core\AcsRole\Get\ListEv\AcsRoleGetListEvBehaviorByFilterQuery.cs" />
+    <Compile Include="Core\AcsRole\Get\ListEv\AcsRoleGetListEvBehaviorFactory.cs" />
+    <Compile Include="Core\AcsRole\Get\ListEv\IAcsRoleGetListEv.cs" />
+    <Compile Include="Core\AcsRole\TypeCollection.cs" />
+    <Compile Include="Core\AcsUser\AcsUserBO.cs" />
+    <Compile Include="Core\AcsUser\AcsUserGet.cs" />
+    <Compile Include="Core\AcsUser\Get\AcsUserFilterQuery.cs" />
+    <Compile Include="Core\AcsUser\Get\Ev\AcsUserGetEvBehaviorByCode.cs" />
+    <Compile Include="Core\AcsUser\Get\Ev\AcsUserGetEvBehaviorById.cs" />
+    <Compile Include="Core\AcsUser\Get\Ev\AcsUserGetEvBehaviorFactory.cs" />
+    <Compile Include="Core\AcsUser\Get\Ev\IAcsUserGetEv.cs" />
+    <Compile Include="Core\AcsUser\Get\ListEv\AcsUserGetListEvBehaviorByFilterQuery.cs" />
+    <Compile Include="Core\AcsUser\Get\ListEv\AcsUserGetListEvBehaviorFactory.cs" />
+    <Compile Include="Core\AcsUser\Get\ListEv\IAcsUserGetListEv.cs" />
+    <Compile Include="Core\AcsUser\TypeCollection.cs" />
+    <Compile Include="Core\BeanObjectBase.cs" />
+    <Compile Include="Core\BusinessObjectBase.cs" />
+    <Compile Include="Core\IDelegacy.cs" />
+    <Compile Include="Core\IDelegacyT.cs" />
+    <Compile Include="Manager\AcsRoleManager.cs" />
+    <Compile Include="Manager\AcsUserManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ACS.DAO\ACS.DAO.csproj">
+      <Project>{a1ea0b7f-5449-442f-8d11-9b5bbfbe754f}</Project>
+      <Name>ACS.DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ACS.EFMODEL\ACS.EFMODEL.csproj">
+      <Project>{145cdada-0864-4eb1-a885-5264575be9e1}</Project>
+      <Name>ACS.EFMODEL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ACS.Filter\ACS.Filter.csproj">
+      <Project>{f15d1d8d-8c38-405a-be86-8dc7e7872a87}</Project>
+      <Name>ACS.Filter</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

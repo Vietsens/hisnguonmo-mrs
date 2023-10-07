@@ -1,0 +1,2271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A43EEE28-B0EB-412A-B7E0-72C0BE78375C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MOS.DAO</RootNamespace>
+    <AssemblyName>MOS.DAO</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_Library\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.Logging\Inventec.Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.Repository, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.Repository\Inventec.Common.Repository.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Core">
+      <HintPath>..\..\..\RELEASE\Inventec.Core\Inventec.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Token.Core">
+      <HintPath>..\..\..\RELEASE\Inventec.Token\Inventec.Token.Core\Inventec.Token.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Token.ResourceSystem">
+      <HintPath>..\..\..\RELEASE\Inventec.Token\Inventec.Token.ResourceSystem\Inventec.Token.ResourceSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="MOS.EFMODEL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\MRSv3\MOS.EFMODEL.dll</HintPath>
+    </Reference>
+    <Reference Include="MRS.ConfigManager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\MRSv3\MRS.ConfigManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_Library\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.DataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\MRSv3\Oracle.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.121.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_Library\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\AppContext.cs" />
+    <Compile Include="Base\BridgeDAO.cs" />
+    <Compile Include="Base\ContextUtil.cs" />
+    <Compile Include="Base\OrderProcessor.cs" />
+    <Compile Include="Base\ReflectionQueryable.cs" />
+    <Compile Include="Base\StagingObjectBase.cs" />
+    <Compile Include="HisSereServDebt\HisSereServDebtDAO.cs" />
+    <Compile Include="HisSereServDebt\HisSereServDebtDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisSereServDebt\HisSereServDebtGet.cs" />
+    <Compile Include="HisSereServDebt\HisSereServDebtGetView.cs" />
+    <Compile Include="HisSereServDebt\HisSereServDebtGetViewById.cs" />
+    <Compile Include="HisAccidentBodyPart\HisAccidentBodyPartDAO.cs" />
+    <Compile Include="HisAccidentBodyPart\HisAccidentBodyPartDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisAccidentBodyPart\HisAccidentBodyPartGet.cs" />
+    <Compile Include="HisAccidentBodyPart\HisAccidentBodyPartGetByCode.cs" />
+    <Compile Include="HisAccidentBodyPart\HisAccidentBodyPartGetDicByCode.cs" />
+    <Compile Include="HisAccidentCare\HisAccidentCareDAO.cs" />
+    <Compile Include="HisAccidentCare\HisAccidentCareDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisAccidentCare\HisAccidentCareGet.cs" />
+    <Compile Include="HisAccidentCare\HisAccidentCareGetByCode.cs" />
+    <Compile Include="HisAccidentCare\HisAccidentCareGetDicByCode.cs" />
+    <Compile Include="HisAccidentHelmet\HisAccidentHelmetDAO.cs" />
+    <Compile Include="HisAccidentHelmet\HisAccidentHelmetDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisAccidentHelmet\HisAccidentHelmetGet.cs" />
+    <Compile Include="HisAccidentHelmet\HisAccidentHelmetGetByCode.cs" />
+    <Compile Include="HisAccidentHelmet\HisAccidentHelmetGetDicByCode.cs" />
+    <Compile Include="HisAccidentHurtType\HisAccidentHurtTypeDAO.cs" />
+    <Compile Include="HisAccidentHurtType\HisAccidentHurtTypeDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisAccidentHurtType\HisAccidentHurtTypeGet.cs" />
+    <Compile Include="HisAccidentHurtType\HisAccidentHurtTypeGetByCode.cs" />
+    <Compile Include="HisAccidentHurtType\HisAccidentHurtTypeGetDicByCode.cs" />
+    <Compile Include="HisAccidentHurt\HisAccidentHurtDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisAccidentHurt\HisAccidentHurtGetView.cs" />
+    <Compile Include="HisAccidentHurt\HisAccidentHurtGetViewById.cs" />
+    <Compile Include="HisAccidentLocation\HisAccidentLocationDAO.cs" />
+    <Compile Include="HisAccidentLocation\HisAccidentLocationDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisAccidentLocation\HisAccidentLocationGet.cs" />
+    <Compile Include="HisAccidentLocation\HisAccidentLocationGetByCode.cs" />
+    <Compile Include="HisAccidentLocation\HisAccidentLocationGetDicByCode.cs" />
+    <Compile Include="HisAccidentPoison\HisAccidentPoisonDAO.cs" />
+    <Compile Include="HisAccidentPoison\HisAccidentPoisonDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisAccidentPoison\HisAccidentPoisonGet.cs" />
+    <Compile Include="HisAccidentPoison\HisAccidentPoisonGetByCode.cs" />
+    <Compile Include="HisAccidentPoison\HisAccidentPoisonGetDicByCode.cs" />
+    <Compile Include="HisAccidentResult\HisAccidentResultDAO.cs" />
+    <Compile Include="HisAccidentResult\HisAccidentResultDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisAccidentResult\HisAccidentResultGet.cs" />
+    <Compile Include="HisAccidentResult\HisAccidentResultGetByCode.cs" />
+    <Compile Include="HisAccidentResult\HisAccidentResultGetDicByCode.cs" />
+    <Compile Include="HisAccidentVehicle\HisAccidentVehicleDAO.cs" />
+    <Compile Include="HisAccidentVehicle\HisAccidentVehicleDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisAccidentVehicle\HisAccidentVehicleGet.cs" />
+    <Compile Include="HisAccidentVehicle\HisAccidentVehicleGetByCode.cs" />
+    <Compile Include="HisAccidentVehicle\HisAccidentVehicleGetDicByCode.cs" />
+    <Compile Include="HisAnticipateBlty\HisAnticipateBltyDAO.cs" />
+    <Compile Include="HisAnticipateBlty\HisAnticipateBltyDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisAnticipateBlty\HisAnticipateBltyGet.cs" />
+    <Compile Include="HisAnticipateBlty\HisAnticipateBltyGetView.cs" />
+    <Compile Include="HisAnticipateBlty\HisAnticipateBltyGetViewById.cs" />
+    <Compile Include="HisAnticipate\HisAnticipateDAOPlus_Full.cs" />
+    <Compile Include="HisAnticipate\HisAnticipateGetByCode.cs" />
+    <Compile Include="HisAnticipate\HisAnticipateGetDicByCode.cs" />
+    <Compile Include="HisAnticipate\HisAnticipateGetView.cs" />
+    <Compile Include="HisAnticipate\HisAnticipateGetViewByCode.cs" />
+    <Compile Include="HisAnticipate\HisAnticipateGetViewById.cs" />
+    <Compile Include="HisBaby\HisBabyDAO.cs" />
+    <Compile Include="HisBaby\HisBabyDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisBaby\HisBabyGet.cs" />
+    <Compile Include="HisBaby\HisBabyGetView.cs" />
+    <Compile Include="HisBaby\HisBabyGetViewById.cs" />
+    <Compile Include="HisBedBsty\HisBedBstyDAO.cs" />
+    <Compile Include="HisBedBsty\HisBedBstyDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisBedBsty\HisBedBstyGet.cs" />
+    <Compile Include="HisBedBsty\HisBedBstyGetView.cs" />
+    <Compile Include="HisBedBsty\HisBedBstyGetViewById.cs" />
+    <Compile Include="HisBedLog\HisBedLogDAO.cs" />
+    <Compile Include="HisBedLog\HisBedLogDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisBedLog\HisBedLogGet.cs" />
+    <Compile Include="HisBedLog\HisBedLogGetView.cs" />
+    <Compile Include="HisBedLog\HisBedLogGetViewById.cs" />
+    <Compile Include="HisBedType\HisBedTypeDAO.cs" />
+    <Compile Include="HisBedType\HisBedTypeDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisBedType\HisBedTypeGet.cs" />
+    <Compile Include="HisBedType\HisBedTypeGetByCode.cs" />
+    <Compile Include="HisBedType\HisBedTypeGetDicByCode.cs" />
+    <Compile Include="HisBed\HisBedDAO.cs" />
+    <Compile Include="HisBed\HisBedDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisBed\HisBedGet.cs" />
+    <Compile Include="HisBed\HisBedGetView.cs" />
+    <Compile Include="HisBed\HisBedGetViewById.cs" />
+    <Compile Include="HisBhytBlacklist\HisBhytBlacklistDAO.cs" />
+    <Compile Include="HisBhytBlacklist\HisBhytBlacklistDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisBhytBlacklist\HisBhytBlacklistGet.cs" />
+    <Compile Include="HisBhytBlacklist\HisBhytBlacklistGetByCode.cs" />
+    <Compile Include="HisBhytBlacklist\HisBhytBlacklistGetDicByCode.cs" />
+    <Compile Include="HisBhytWhitelist\HisBhytWhitelistDAO.cs" />
+    <Compile Include="HisBhytWhitelist\HisBhytWhitelistDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisBhytWhitelist\HisBhytWhitelistGet.cs" />
+    <Compile Include="HisBhytWhitelist\HisBhytWhitelistGetByCode.cs" />
+    <Compile Include="HisBhytWhitelist\HisBhytWhitelistGetDicByCode.cs" />
+    <Compile Include="HisBidBloodType\HisBidBloodTypeDAO.cs" />
+    <Compile Include="HisBidBloodType\HisBidBloodTypeDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisBidBloodType\HisBidBloodTypeGet.cs" />
+    <Compile Include="HisBidBloodType\HisBidBloodTypeGetView.cs" />
+    <Compile Include="HisBidBloodType\HisBidBloodTypeGetViewById.cs" />
+    <Compile Include="HisBidMaterialType\HisBidMaterialTypeDAO.cs" />
+    <Compile Include="HisBidMaterialType\HisBidMaterialTypeDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisBidMaterialType\HisBidMaterialTypeGet.cs" />
+    <Compile Include="HisBidMaterialType\HisBidMaterialTypeGetView.cs" />
+    <Compile Include="HisBidMaterialType\HisBidMaterialTypeGetViewById.cs" />
+    <Compile Include="HisBidMedicineType\HisBidMedicineTypeDAO.cs" />
+    <Compile Include="HisBidMedicineType\HisBidMedicineTypeDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisBidMedicineType\HisBidMedicineTypeGet.cs" />
+    <Compile Include="HisBidMedicineType\HisBidMedicineTypeGetView.cs" />
+    <Compile Include="HisBidMedicineType\HisBidMedicineTypeGetViewById.cs" />
+    <Compile Include="HisBidType\HisBidTypeDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HisBidType\HisBidTypeDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisBidType\HisBidTypeGet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HisBidType\HisBidTypeGetByCode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HisBidType\HisBidTypeGetDicByCode.cs" />
+    <Compile Include="HisBid\HisBidDAO.cs" />
+    <Compile Include="HisBid\HisBidDAOPlus_Full.cs" />
+    <Compile Include="HisBid\HisBidGet.cs" />
+    <Compile Include="HisBid\HisBidGetByCode.cs" />
+    <Compile Include="HisBid\HisBidGetDicByCode.cs" />
+    <Compile Include="HisBid\HisBidGetView.cs" />
+    <Compile Include="HisBid\HisBidGetViewByCode.cs" />
+    <Compile Include="HisBid\HisBidGetViewById.cs" />
+    <Compile Include="HisBillFund\HisBillFundDAO.cs" />
+    <Compile Include="HisBillFund\HisBillFundDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisBillFund\HisBillFundGet.cs" />
+    <Compile Include="HisBillFund\HisBillFundGetView.cs" />
+    <Compile Include="HisBillFund\HisBillFundGetViewById.cs" />
+    <Compile Include="HisBillGoods\HisBillGoodsDAO.cs" />
+    <Compile Include="HisBillGoods\HisBillGoodsGet.cs" />
+    <Compile Include="HisBloodAbo\HisBloodAboDAO.cs" />
+    <Compile Include="HisBloodAbo\HisBloodAboDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisBloodAbo\HisBloodAboGet.cs" />
+    <Compile Include="HisBloodAbo\HisBloodAboGetByCode.cs" />
+    <Compile Include="HisBloodAbo\HisBloodAboGetDicByCode.cs" />
+    <Compile Include="HisBloodGroup\HisBloodGroupDAO.cs" />
+    <Compile Include="HisBloodGroup\HisBloodGroupDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisBloodGroup\HisBloodGroupGet.cs" />
+    <Compile Include="HisBloodGroup\HisBloodGroupGetByCode.cs" />
+    <Compile Include="HisBloodGroup\HisBloodGroupGetDicByCode.cs" />
+    <Compile Include="HisBloodType\HisBloodTypeDAO.cs" />
+    <Compile Include="HisBloodType\HisBloodTypeDAOPlus_Full.cs" />
+    <Compile Include="HisBloodType\HisBloodTypeGet.cs" />
+    <Compile Include="HisBloodType\HisBloodTypeGetByCode.cs" />
+    <Compile Include="HisBloodType\HisBloodTypeGetDicByCode.cs" />
+    <Compile Include="HisBloodType\HisBloodTypeGetView.cs" />
+    <Compile Include="HisBloodType\HisBloodTypeGetViewByCode.cs" />
+    <Compile Include="HisBloodType\HisBloodTypeGetViewById.cs" />
+    <Compile Include="HisBloodVolume\HisBloodVolumeDAO.cs" />
+    <Compile Include="HisBloodVolume\HisBloodVolumeGet.cs" />
+    <Compile Include="HisBlood\HisBloodDAO.cs" />
+    <Compile Include="HisBlood\HisBloodDAOPlus_Full.cs" />
+    <Compile Include="HisBlood\HisBloodGet.cs" />
+    <Compile Include="HisBlood\HisBloodGetByCode.cs" />
+    <Compile Include="HisBlood\HisBloodGetDicByCode.cs" />
+    <Compile Include="HisBlood\HisBloodGetView.cs" />
+    <Compile Include="HisBlood\HisBloodGetViewByCode.cs" />
+    <Compile Include="HisBlood\HisBloodGetViewById.cs" />
+    <Compile Include="HisBornPosition\HisBornPositionDAO.cs" />
+    <Compile Include="HisBornPosition\HisBornPositionDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisBornPosition\HisBornPositionGet.cs" />
+    <Compile Include="HisBornPosition\HisBornPositionGetByCode.cs" />
+    <Compile Include="HisBornPosition\HisBornPositionGetDicByCode.cs" />
+    <Compile Include="HisBornResult\HisBornResultDAO.cs" />
+    <Compile Include="HisBornResult\HisBornResultDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisBornResult\HisBornResultGet.cs" />
+    <Compile Include="HisBornResult\HisBornResultGetByCode.cs" />
+    <Compile Include="HisBornResult\HisBornResultGetDicByCode.cs" />
+    <Compile Include="HisBornType\HisBornTypeDAO.cs" />
+    <Compile Include="HisBornType\HisBornTypeDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisBornType\HisBornTypeGet.cs" />
+    <Compile Include="HisBornType\HisBornTypeGetByCode.cs" />
+    <Compile Include="HisBornType\HisBornTypeGetDicByCode.cs" />
+    <Compile Include="HisBranch\HisBranchDAO.cs" />
+    <Compile Include="HisBranch\HisBranchDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisBranch\HisBranchGet.cs" />
+    <Compile Include="HisBranch\HisBranchGetByCode.cs" />
+    <Compile Include="HisBranch\HisBranchGetDicByCode.cs" />
+    <Compile Include="HisCacheMonitor\HisCacheMonitorDAO.cs" />
+    <Compile Include="HisCacheMonitor\HisCacheMonitorGet.cs" />
+    <Compile Include="HisCaroDepartment\HisCaroDepartmentDAO.cs" />
+    <Compile Include="HisCaroDepartment\HisCaroDepartmentGet.cs" />
+    <Compile Include="HisCashierRoom\HisCashierRoomDAO.cs" />
+    <Compile Include="HisCashierRoom\HisCashierRoomDAOPlus_Full.cs" />
+    <Compile Include="HisCashierRoom\HisCashierRoomGet.cs" />
+    <Compile Include="HisCashierRoom\HisCashierRoomGetByCode.cs" />
+    <Compile Include="HisCashierRoom\HisCashierRoomGetDicByCode.cs" />
+    <Compile Include="HisCashierRoom\HisCashierRoomGetView.cs" />
+    <Compile Include="HisCashierRoom\HisCashierRoomGetViewByCode.cs" />
+    <Compile Include="HisCashierRoom\HisCashierRoomGetViewById.cs" />
+    <Compile Include="HisCashout\HisCashoutDAO.cs" />
+    <Compile Include="HisCashout\HisCashoutGet.cs" />
+    <Compile Include="HisConfig\HisConfigDAO.cs" />
+    <Compile Include="HisConfig\HisConfigDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisConfig\HisConfigGet.cs" />
+    <Compile Include="HisConfig\HisConfigGetByCode.cs" />
+    <Compile Include="HisConfig\HisConfigGetDicByCode.cs" />
+    <Compile Include="HisCoTreatment\HisCoTreatmentDAO.cs" />
+    <Compile Include="HisCoTreatment\HisCoTreatmentDAOPlus_Full.cs" />
+    <Compile Include="HisCoTreatment\HisCoTreatmentGet.cs" />
+    <Compile Include="HisCoTreatment\HisCoTreatmentGetView.cs" />
+    <Compile Include="HisCoTreatment\HisCoTreatmentGetViewById.cs" />
+    <Compile Include="HisDepartment\HisDepartmentDAOPlus_View1.cs" />
+    <Compile Include="HisDepartment\HisDepartmentGetView1.cs" />
+    <Compile Include="HisDepartment\HisDepartmentGetView1ByCode.cs" />
+    <Compile Include="HisDepartment\HisDepartmentGetView1ById.cs" />
+    <Compile Include="HisDepartment\HisDepartmentDAOPlus_Full.cs" />
+    <Compile Include="HisDepartment\HisDepartmentGetView.cs" />
+    <Compile Include="HisDepartment\HisDepartmentGetViewByCode.cs" />
+    <Compile Include="HisDepartment\HisDepartmentGetViewById.cs" />
+    <Compile Include="HisDepositReq\HisDepositReqDAO.cs" />
+    <Compile Include="HisDepositReq\HisDepositReqDAOPlus_Full.cs" />
+    <Compile Include="HisDepositReq\HisDepositReqGet.cs" />
+    <Compile Include="HisDepositReq\HisDepositReqGetByCode.cs" />
+    <Compile Include="HisDepositReq\HisDepositReqGetDicByCode.cs" />
+    <Compile Include="HisDepositReq\HisDepositReqGetView.cs" />
+    <Compile Include="HisDepositReq\HisDepositReqGetViewByCode.cs" />
+    <Compile Include="HisDepositReq\HisDepositReqGetViewById.cs" />
+    <Compile Include="HisEkipTempUser\HisEkipTempUserDAO.cs" />
+    <Compile Include="HisEkipTempUser\HisEkipTempUserDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisEkipTempUser\HisEkipTempUserGet.cs" />
+    <Compile Include="HisEkipTempUser\HisEkipTempUserGetView.cs" />
+    <Compile Include="HisEkipTempUser\HisEkipTempUserGetViewById.cs" />
+    <Compile Include="HisEkipTemp\HisEkipTempDAO.cs" />
+    <Compile Include="HisEkipTemp\HisEkipTempGet.cs" />
+    <Compile Include="HisEkipUser\HisEkipUserDAO.cs" />
+    <Compile Include="HisEkipUser\HisEkipUserDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisEkipUser\HisEkipUserGet.cs" />
+    <Compile Include="HisEkipUser\HisEkipUserGetView.cs" />
+    <Compile Include="HisEkipUser\HisEkipUserGetViewById.cs" />
+    <Compile Include="HisEkip\HisEkipDAO.cs" />
+    <Compile Include="HisEkip\HisEkipGet.cs" />
+    <Compile Include="HisEmotionlessResult\HisEmotionlessResultDAO.cs" />
+    <Compile Include="HisEmotionlessResult\HisEmotionlessResultDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisEmotionlessResult\HisEmotionlessResultGet.cs" />
+    <Compile Include="HisEmotionlessResult\HisEmotionlessResultGetByCode.cs" />
+    <Compile Include="HisEmotionlessResult\HisEmotionlessResultGetDicByCode.cs" />
+    <Compile Include="HisEmployee\HisEmployeeDAO.cs" />
+    <Compile Include="HisEmployee\HisEmployeeGet.cs" />
+    <Compile Include="HisEquipmentSetMaty\HisEquipmentSetMatyDAO.cs" />
+    <Compile Include="HisEquipmentSetMaty\HisEquipmentSetMatyDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisEquipmentSetMaty\HisEquipmentSetMatyGet.cs" />
+    <Compile Include="HisEquipmentSetMaty\HisEquipmentSetMatyGetView.cs" />
+    <Compile Include="HisEquipmentSetMaty\HisEquipmentSetMatyGetViewById.cs" />
+    <Compile Include="HisEquipmentSet\HisEquipmentSetDAO.cs" />
+    <Compile Include="HisEquipmentSet\HisEquipmentSetGet.cs" />
+    <Compile Include="HisExamServiceTemp\HisExamServiceTempDAO.cs" />
+    <Compile Include="HisExamServiceTemp\HisExamServiceTempDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisExamServiceTemp\HisExamServiceTempGet.cs" />
+    <Compile Include="HisExamServiceTemp\HisExamServiceTempGetByCode.cs" />
+    <Compile Include="HisExamServiceTemp\HisExamServiceTempGetDicByCode.cs" />
+    <Compile Include="HisExecuteGroup\HisExecuteGroupDAO.cs" />
+    <Compile Include="HisExecuteGroup\HisExecuteGroupDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisExecuteGroup\HisExecuteGroupGet.cs" />
+    <Compile Include="HisExecuteGroup\HisExecuteGroupGetByCode.cs" />
+    <Compile Include="HisExecuteGroup\HisExecuteGroupGetDicByCode.cs" />
+    <Compile Include="HisExecuteRoleUser\HisExecuteRoleUserDAO.cs" />
+    <Compile Include="HisExecuteRoleUser\HisExecuteRoleUserGet.cs" />
+    <Compile Include="HisExecuteRole\HisExecuteRoleDAO.cs" />
+    <Compile Include="HisExecuteRole\HisExecuteRoleDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisExecuteRole\HisExecuteRoleGet.cs" />
+    <Compile Include="HisExecuteRole\HisExecuteRoleGetByCode.cs" />
+    <Compile Include="HisExecuteRole\HisExecuteRoleGetDicByCode.cs" />
+    <Compile Include="HisExecuteRoom\HisExecuteRoomGetView1ByCode.cs" />
+    <Compile Include="HisExecuteRoom\HisExecuteRoomDAOPlus_View1.cs" />
+    <Compile Include="HisExecuteRoom\HisExecuteRoomGetView1.cs" />
+    <Compile Include="HisExecuteRoom\HisExecuteRoomGetView1ById.cs" />
+    <Compile Include="HisExpMestBlood\HisExpMestBloodDAO.cs" />
+    <Compile Include="HisExpMestBlood\HisExpMestBloodDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisExpMestBlood\HisExpMestBloodGet.cs" />
+    <Compile Include="HisExpMestBlood\HisExpMestBloodGetView.cs" />
+    <Compile Include="HisExpMestBlood\HisExpMestBloodGetViewById.cs" />
+    <Compile Include="HisExpMestBltyReq\HisExpMestBltyReqDAOPlus_View1.cs" />
+    <Compile Include="HisExpMestBltyReq\HisExpMestBltyReqGetView1.cs" />
+    <Compile Include="HisExpMestBltyReq\HisExpMestBltyReqGetView1ById.cs" />
+    <Compile Include="HisExpMestBltyReq\HisExpMestBltyReqDAO.cs" />
+    <Compile Include="HisExpMestBltyReq\HisExpMestBltyReqDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisExpMestBltyReq\HisExpMestBltyReqGet.cs" />
+    <Compile Include="HisExpMestBltyReq\HisExpMestBltyReqGetView.cs" />
+    <Compile Include="HisExpMestBltyReq\HisExpMestBltyReqGetViewById.cs" />
+    <Compile Include="HisExpMestMaterial\HisExpMestMaterialDAOPlus_View4.cs" />
+    <Compile Include="HisExpMestMaterial\HisExpMestMaterialGetView4.cs" />
+    <Compile Include="HisExpMestMaterial\HisExpMestMaterialGetView4ById.cs" />
+    <Compile Include="HisExpMestMaterial\HisExpMestMaterialDAOPlus_View3.cs" />
+    <Compile Include="HisExpMestMaterial\HisExpMestMaterialGetView3.cs" />
+    <Compile Include="HisExpMestMaterial\HisExpMestMaterialGetView3ById.cs" />
+    <Compile Include="HisExpMestMaterial\HisExpMestMaterialDAOPlus_View1.cs" />
+    <Compile Include="HisExpMestMaterial\HisExpMestMaterialGetView1.cs" />
+    <Compile Include="HisExpMestMaterial\HisExpMestMaterialGetView1ById.cs" />
+    <Compile Include="HisExpMestMatyReq\HisExpMestMatyReqDAO.cs" />
+    <Compile Include="HisExpMestMatyReq\HisExpMestMatyReqDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisExpMestMatyReq\HisExpMestMatyReqGet.cs" />
+    <Compile Include="HisExpMestMatyReq\HisExpMestMatyReqGetView.cs" />
+    <Compile Include="HisExpMestMatyReq\HisExpMestMatyReqGetViewById.cs" />
+    <Compile Include="HisExpMestMedicine\HisExpMestMedicineDAOPlus_View4.cs" />
+    <Compile Include="HisExpMestMedicine\HisExpMestMedicineGetView4.cs" />
+    <Compile Include="HisExpMestMedicine\HisExpMestMedicineGetView4ById.cs" />
+    <Compile Include="HisExpMestMedicine\HisExpMestMedicineDAOPlus_View3.cs" />
+    <Compile Include="HisExpMestMedicine\HisExpMestMedicineGetView3.cs" />
+    <Compile Include="HisExpMestMedicine\HisExpMestMedicineGetView3ById.cs" />
+    <Compile Include="HisExpMestMedicine\HisExpMestMedicineDAOPlus_View1.cs" />
+    <Compile Include="HisExpMestMedicine\HisExpMestMedicineGetView1.cs" />
+    <Compile Include="HisExpMestMedicine\HisExpMestMedicineGetView1ById.cs" />
+    <Compile Include="HisExpMestMetyReq\HisExpMestMetyReqDAOPlus_View1.cs" />
+    <Compile Include="HisExpMestMetyReq\HisExpMestMetyReqGetView1.cs" />
+    <Compile Include="HisExpMestMetyReq\HisExpMestMetyReqGetView1ById.cs" />
+    <Compile Include="HisExpMestMetyReq\HisExpMestMetyReqDAO.cs" />
+    <Compile Include="HisExpMestMetyReq\HisExpMestMetyReqDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisExpMestMetyReq\HisExpMestMetyReqGet.cs" />
+    <Compile Include="HisExpMestMetyReq\HisExpMestMetyReqGetView.cs" />
+    <Compile Include="HisExpMestMetyReq\HisExpMestMetyReqGetViewById.cs" />
+    <Compile Include="HisExpMestReason\HisExpMestReasonDAO.cs" />
+    <Compile Include="HisExpMestReason\HisExpMestReasonDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisExpMestReason\HisExpMestReasonGet.cs" />
+    <Compile Include="HisExpMestReason\HisExpMestReasonGetByCode.cs" />
+    <Compile Include="HisExpMestReason\HisExpMestReasonGetDicByCode.cs" />
+    <Compile Include="HisExpMestUser\HisExpMestUserDAO.cs" />
+    <Compile Include="HisExpMestUser\HisExpMestUserDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisExpMestUser\HisExpMestUserGet.cs" />
+    <Compile Include="HisExpMestUser\HisExpMestUserGetView.cs" />
+    <Compile Include="HisExpMestUser\HisExpMestUserGetViewById.cs" />
+    <Compile Include="HisExpMest\HisExpMestDAOPlus_ManuView.cs" />
+    <Compile Include="HisExpMest\HisExpMestGetManuView.cs" />
+    <Compile Include="HisExpMest\HisExpMestGetManuViewByCode.cs" />
+    <Compile Include="HisExpMest\HisExpMestGetManuViewById.cs" />
+    <Compile Include="HisExpMest\HisExpMestGetChmsView2.cs" />
+    <Compile Include="HisExpMest\HisExpMestGetChmsView2ByCode.cs" />
+    <Compile Include="HisExpMest\HisExpMestGetChmsView2ById.cs" />
+    <Compile Include="HisExpMest\HisExpMestDAOPlus_ChmsView2.cs" />
+    <Compile Include="HisExpMest\HisExpMestGetChmsView1.cs" />
+    <Compile Include="HisExpMest\HisExpMestGetChmsView1ByCode.cs" />
+    <Compile Include="HisExpMest\HisExpMestGetChmsView1ById.cs" />
+    <Compile Include="HisExpMest\HisExpMestDAOPlus_ChmsView1.cs" />
+    <Compile Include="HisExpMest\HisExpMestDAOPlus_ChmsView.cs" />
+    <Compile Include="HisExpMest\HisExpMestGetChmsView.cs" />
+    <Compile Include="HisExpMest\HisExpMestGetChmsViewByCode.cs" />
+    <Compile Include="HisExpMest\HisExpMestGetChmsViewById.cs" />
+    <Compile Include="HisExpMest\HisExpMestDAOPlus_View1.cs" />
+    <Compile Include="HisExpMest\HisExpMestGetView1.cs" />
+    <Compile Include="HisExpMest\HisExpMestGetView1ByCode.cs" />
+    <Compile Include="HisExpMest\HisExpMestGetView1ById.cs" />
+    <Compile Include="HisFilmSize\HisFilmSizeDAO.cs" />
+    <Compile Include="HisFilmSize\HisFilmSizeDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisFilmSize\HisFilmSizeGet.cs" />
+    <Compile Include="HisFilmSize\HisFilmSizeGetByCode.cs" />
+    <Compile Include="HisFilmSize\HisFilmSizeGetDicByCode.cs" />
+    <Compile Include="HisFund\HisFundDAO.cs" />
+    <Compile Include="HisFund\HisFundDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisFund\HisFundGet.cs" />
+    <Compile Include="HisFund\HisFundGetByCode.cs" />
+    <Compile Include="HisFund\HisFundGetDicByCode.cs" />
+    <Compile Include="HisHeinApproval\HisHeinApprovalDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisHeinApproval\HisHeinApprovalGetView.cs" />
+    <Compile Include="HisHeinApproval\HisHeinApprovalGetViewById.cs" />
+    <Compile Include="HisHtu\HisHtuDAO.cs" />
+    <Compile Include="HisHtu\HisHtuGet.cs" />
+    <Compile Include="HisIcdCm\HisIcdCmDAO.cs" />
+    <Compile Include="HisIcdCm\HisIcdCmDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisIcdCm\HisIcdCmGet.cs" />
+    <Compile Include="HisIcdCm\HisIcdCmGetByCode.cs" />
+    <Compile Include="HisIcdCm\HisIcdCmGetDicByCode.cs" />
+    <Compile Include="HisIcdService\HisIcdServiceDAO.cs" />
+    <Compile Include="HisIcdService\HisIcdServiceGet.cs" />
+    <Compile Include="HisImpMestBlood\HisImpMestBloodDAO.cs" />
+    <Compile Include="HisImpMestBlood\HisImpMestBloodDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisImpMestBlood\HisImpMestBloodGet.cs" />
+    <Compile Include="HisImpMestBlood\HisImpMestBloodGetView.cs" />
+    <Compile Include="HisImpMestBlood\HisImpMestBloodGetViewById.cs" />
+    <Compile Include="HisImpMestMaterial\HisImpMestMaterialDAOPlus_View3.cs" />
+    <Compile Include="HisImpMestMaterial\HisImpMestMaterialGetView3.cs" />
+    <Compile Include="HisImpMestMaterial\HisImpMestMaterialGetView3ById.cs" />
+    <Compile Include="HisImpMestMaterial\HisImpMestMaterialDAOPlus_View2.cs" />
+    <Compile Include="HisImpMestMaterial\HisImpMestMaterialGetView2.cs" />
+    <Compile Include="HisImpMestMaterial\HisImpMestMaterialGetView2ById.cs" />
+    <Compile Include="HisImpMestMedicine\HisImpMestMedicineDAOPlus_View3.cs" />
+    <Compile Include="HisImpMestMedicine\HisImpMestMedicineGetView3.cs" />
+    <Compile Include="HisImpMestMedicine\HisImpMestMedicineGetView3ById.cs" />
+    <Compile Include="HisImpMestMedicine\HisImpMestMedicineDAOPlus_View2.cs" />
+    <Compile Include="HisImpMestMedicine\HisImpMestMedicineGetView2.cs" />
+    <Compile Include="HisImpMestMedicine\HisImpMestMedicineGetView2ById.cs" />
+    <Compile Include="HisImpMestTypeUser\HisImpMestTypeUserDAO.cs" />
+    <Compile Include="HisImpMestTypeUser\HisImpMestTypeUserGet.cs" />
+    <Compile Include="HisImpMestUser\HisImpMestUserDAO.cs" />
+    <Compile Include="HisImpMestUser\HisImpMestUserDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisImpMestUser\HisImpMestUserGet.cs" />
+    <Compile Include="HisImpMestUser\HisImpMestUserGetView.cs" />
+    <Compile Include="HisImpMestUser\HisImpMestUserGetViewById.cs" />
+    <Compile Include="HisImpMest\HisImpMestDAOPlus_View1.cs" />
+    <Compile Include="HisImpMest\HisImpMestGetView1.cs" />
+    <Compile Include="HisImpMest\HisImpMestGetView1ByCode.cs" />
+    <Compile Include="HisImpMest\HisImpMestGetView1ById.cs" />
+    <Compile Include="HisImpMest\HisImpMestDAOPlus_ManuView.cs" />
+    <Compile Include="HisImpMest\HisImpMestGetManuView.cs" />
+    <Compile Include="HisImpMest\HisImpMestGetManuViewByCode.cs" />
+    <Compile Include="HisImpMest\HisImpMestGetManuViewById.cs" />
+    <Compile Include="HisImpSource\HisImpSourceDAO.cs" />
+    <Compile Include="HisImpSource\HisImpSourceDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisImpSource\HisImpSourceGet.cs" />
+    <Compile Include="HisImpSource\HisImpSourceGetByCode.cs" />
+    <Compile Include="HisImpSource\HisImpSourceGetDicByCode.cs" />
+    <Compile Include="HisInfusion\HisInfusionDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisInvoicePrint\HisInvoicePrintDAO.cs" />
+    <Compile Include="HisInvoicePrint\HisInvoicePrintGet.cs" />
+    <Compile Include="HisMachine\HisMachineDAO.cs" />
+    <Compile Include="HisMachine\HisMachineGet.cs" />
+    <Compile Include="HisMachine\HisMachineGetByCode.cs" />
+    <Compile Include="HisMaterialBean\HisMaterialBeanDAOPlus_View2.cs" />
+    <Compile Include="HisMaterialBean\HisMaterialBeanGetView2.cs" />
+    <Compile Include="HisMaterialBean\HisMaterialBeanGetView2ById.cs" />
+    <Compile Include="HisMaterialBean\HisMaterialBeanDAOPlus_View1.cs" />
+    <Compile Include="HisMaterialBean\HisMaterialBeanGetView1.cs" />
+    <Compile Include="HisMaterialBean\HisMaterialBeanGetView1ById.cs" />
+    <Compile Include="HisMaterial\HisMaterialDAOPlus_View2.cs" />
+    <Compile Include="HisMaterial\HisMaterialGetView2.cs" />
+    <Compile Include="HisMaterial\HisMaterialGetView2ById.cs" />
+    <Compile Include="HisMaterial\HisMaterialDAOPlus_View1.cs" />
+    <Compile Include="HisMaterial\HisMaterialGetView1.cs" />
+    <Compile Include="HisMaterial\HisMaterialGetView1ById.cs" />
+    <Compile Include="HisMedicineBean\HisMedicineBeanDAOPlus_View2.cs" />
+    <Compile Include="HisMedicineBean\HisMedicineBeanGetView2.cs" />
+    <Compile Include="HisMedicineBean\HisMedicineBeanGetView2ById.cs" />
+    <Compile Include="HisMedicineBean\HisMedicineBeanDAOPlus_View1.cs" />
+    <Compile Include="HisMedicineBean\HisMedicineBeanGetView1.cs" />
+    <Compile Include="HisMedicineBean\HisMedicineBeanGetView1ById.cs" />
+    <Compile Include="HisMedicineGroup\HisMedicineGroupDAO.cs" />
+    <Compile Include="HisMedicineGroup\HisMedicineGroupGet.cs" />
+    <Compile Include="HisMedicineTypeTut\HisMedicineTypeTutDAO.cs" />
+    <Compile Include="HisMedicineTypeTut\HisMedicineTypeTutDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisMedicineTypeTut\HisMedicineTypeTutGet.cs" />
+    <Compile Include="HisMedicineTypeTut\HisMedicineTypeTutGetView.cs" />
+    <Compile Include="HisMedicineTypeTut\HisMedicineTypeTutGetViewById.cs" />
+    <Compile Include="HisMedicine\HisMedicineDAOPlus_View1.cs" />
+    <Compile Include="HisMedicine\HisMedicineDAOPlus_View2.cs" />
+    <Compile Include="HisMedicine\HisMedicineGetView1.cs" />
+    <Compile Include="HisMedicine\HisMedicineGetView1ById.cs" />
+    <Compile Include="HisMedicine\HisMedicineGetView2.cs" />
+    <Compile Include="HisMedicine\HisMedicineGetView2ById.cs" />
+    <Compile Include="HisMediOrg\HisMediOrgDAO.cs" />
+    <Compile Include="HisMediOrg\HisMediOrgDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisMediOrg\HisMediOrgGet.cs" />
+    <Compile Include="HisMediOrg\HisMediOrgGetByCode.cs" />
+    <Compile Include="HisMediOrg\HisMediOrgGetDicByCode.cs" />
+    <Compile Include="HisMediReactSum\HisMediReactSumDAO.cs" />
+    <Compile Include="HisMediReactSum\HisMediReactSumDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisMediReactSum\HisMediReactSumGet.cs" />
+    <Compile Include="HisMediReactSum\HisMediReactSumGetView.cs" />
+    <Compile Include="HisMediReactSum\HisMediReactSumGetViewById.cs" />
+    <Compile Include="HisMediReact\HisMediReactDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisMediStockExty\HisMediStockExtyDAO.cs" />
+    <Compile Include="HisMediStockExty\HisMediStockExtyDAOPlus_Full.cs" />
+    <Compile Include="HisMediStockExty\HisMediStockExtyGet.cs" />
+    <Compile Include="HisMediStockExty\HisMediStockExtyGetView.cs" />
+    <Compile Include="HisMediStockExty\HisMediStockExtyGetViewById.cs" />
+    <Compile Include="HisMediStockImty\HisMediStockImtyDAO.cs" />
+    <Compile Include="HisMediStockImty\HisMediStockImtyDAOPlus_Full.cs" />
+    <Compile Include="HisMediStockImty\HisMediStockImtyGet.cs" />
+    <Compile Include="HisMediStockImty\HisMediStockImtyGetView.cs" />
+    <Compile Include="HisMediStockImty\HisMediStockImtyGetViewById.cs" />
+    <Compile Include="HisMediStockPeriod\HisMediStockPeriodDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisMemaGroup\HisMemaGroupDAO.cs" />
+    <Compile Include="HisMemaGroup\HisMemaGroupDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisMemaGroup\HisMemaGroupGet.cs" />
+    <Compile Include="HisMemaGroup\HisMemaGroupGetByCode.cs" />
+    <Compile Include="HisMemaGroup\HisMemaGroupGetDicByCode.cs" />
+    <Compile Include="HisMestInventory\HisMestInventoryDAO.cs" />
+    <Compile Include="HisMestInventory\HisMestInventoryGet.cs" />
+    <Compile Include="HisMestInveUser\HisMestInveUserDAO.cs" />
+    <Compile Include="HisMestInveUser\HisMestInveUserDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisMestInveUser\HisMestInveUserGet.cs" />
+    <Compile Include="HisMestInveUser\HisMestInveUserGetView.cs" />
+    <Compile Include="HisMestInveUser\HisMestInveUserGetViewById.cs" />
+    <Compile Include="HisMestMetyDepa\HisMestMetyDepaDAO.cs" />
+    <Compile Include="HisMestMetyDepa\HisMestMetyDepaDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisMestMetyDepa\HisMestMetyDepaGet.cs" />
+    <Compile Include="HisMestMetyDepa\HisMestMetyDepaGetView.cs" />
+    <Compile Include="HisMestMetyDepa\HisMestMetyDepaGetViewById.cs" />
+    <Compile Include="HisMestPatySub\HisMestPatySubDAO.cs" />
+    <Compile Include="HisMestPatySub\HisMestPatySubDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisMestPatySub\HisMestPatySubGet.cs" />
+    <Compile Include="HisMestPatySub\HisMestPatySubGetView.cs" />
+    <Compile Include="HisMestPatySub\HisMestPatySubGetViewById.cs" />
+    <Compile Include="HisMestPeriodBlood\HisMestPeriodBloodDAO.cs" />
+    <Compile Include="HisMestPeriodBlood\HisMestPeriodBloodGet.cs" />
+    <Compile Include="HisMestPeriodBlty\HisMestPeriodBltyDAO.cs" />
+    <Compile Include="HisMestPeriodBlty\HisMestPeriodBltyGet.cs" />
+    <Compile Include="HisOtherPaySource\HisOtherPaySourceDAO.cs" />
+    <Compile Include="HisOtherPaySource\HisOtherPaySourceGet.cs" />
+    <Compile Include="HisOtherPaySource\HisOtherPaySourceGetByCode.cs" />
+    <Compile Include="HisOtherPaySource\HisOtherPaySourceGetDicByCode.cs" />
+    <Compile Include="HisOweType\HisOweTypeDAO.cs" />
+    <Compile Include="HisOweType\HisOweTypeDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisOweType\HisOweTypeGet.cs" />
+    <Compile Include="HisOweType\HisOweTypeGetByCode.cs" />
+    <Compile Include="HisOweType\HisOweTypeGetDicByCode.cs" />
+    <Compile Include="HisPaanLiquid\HisPaanLiquidDAO.cs" />
+    <Compile Include="HisPaanLiquid\HisPaanLiquidDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisPaanLiquid\HisPaanLiquidGet.cs" />
+    <Compile Include="HisPaanLiquid\HisPaanLiquidGetByCode.cs" />
+    <Compile Include="HisPaanLiquid\HisPaanLiquidGetDicByCode.cs" />
+    <Compile Include="HisPaanPosition\HisPaanPositionDAO.cs" />
+    <Compile Include="HisPaanPosition\HisPaanPositionDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisPaanPosition\HisPaanPositionGet.cs" />
+    <Compile Include="HisPaanPosition\HisPaanPositionGetByCode.cs" />
+    <Compile Include="HisPaanPosition\HisPaanPositionGetDicByCode.cs" />
+    <Compile Include="HisPackage\HisPackageDAO.cs" />
+    <Compile Include="HisPackage\HisPackageDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisPackage\HisPackageGet.cs" />
+    <Compile Include="HisPackage\HisPackageGetByCode.cs" />
+    <Compile Include="HisPatientCase\HisPatientCaseDAO.cs" />
+    <Compile Include="HisPatientCase\HisPatientCaseDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisPatientCase\HisPatientCaseGet.cs" />
+    <Compile Include="HisPatientCase\HisPatientCaseGetByCode.cs" />
+    <Compile Include="HisPatientCase\HisPatientCaseGetDicByCode.cs" />
+    <Compile Include="HisPatientProgram\HisPatientProgramDAO.cs" />
+    <Compile Include="HisPatientProgram\HisPatientProgramDAOPlus_Full.cs" />
+    <Compile Include="HisPatientProgram\HisPatientProgramGet.cs" />
+    <Compile Include="HisPatientProgram\HisPatientProgramGetByCode.cs" />
+    <Compile Include="HisPatientProgram\HisPatientProgramGetDicByCode.cs" />
+    <Compile Include="HisPatientProgram\HisPatientProgramGetView.cs" />
+    <Compile Include="HisPatientProgram\HisPatientProgramGetViewByCode.cs" />
+    <Compile Include="HisPatientProgram\HisPatientProgramGetViewById.cs" />
+    <Compile Include="HisPatientTypeSub\HisPatientTypeSubDAO.cs" />
+    <Compile Include="HisPatientTypeSub\HisPatientTypeSubDAOPlus_Full.cs" />
+    <Compile Include="HisPatientTypeSub\HisPatientTypeSubGet.cs" />
+    <Compile Include="HisPatientTypeSub\HisPatientTypeSubGetByCode.cs" />
+    <Compile Include="HisPatientTypeSub\HisPatientTypeSubGetDicByCode.cs" />
+    <Compile Include="HisPatientTypeSub\HisPatientTypeSubGetView.cs" />
+    <Compile Include="HisPatientTypeSub\HisPatientTypeSubGetViewByCode.cs" />
+    <Compile Include="HisPatientTypeSub\HisPatientTypeSubGetViewById.cs" />
+    <Compile Include="HisProgram\HisProgramDAO.cs" />
+    <Compile Include="HisProgram\HisProgramDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisProgram\HisProgramGet.cs" />
+    <Compile Include="HisProgram\HisProgramGetByCode.cs" />
+    <Compile Include="HisProgram\HisProgramGetDicByCode.cs" />
+    <Compile Include="HisPtttGroup\HisPtttGroupDAO.cs" />
+    <Compile Include="HisPtttGroup\HisPtttGroupDAOPlus_Full.cs" />
+    <Compile Include="HisPtttGroup\HisPtttGroupGet.cs" />
+    <Compile Include="HisPtttGroup\HisPtttGroupGetByCode.cs" />
+    <Compile Include="HisPtttGroup\HisPtttGroupGetDicByCode.cs" />
+    <Compile Include="HisPtttPriority\HisPtttPriorityDAO.cs" />
+    <Compile Include="HisPtttPriority\HisPtttPriorityDAOPlus_Full.cs" />
+    <Compile Include="HisPtttPriority\HisPtttPriorityGet.cs" />
+    <Compile Include="HisPtttPriority\HisPtttPriorityGetByCode.cs" />
+    <Compile Include="HisPtttPriority\HisPtttPriorityGetDicByCode.cs" />
+    <Compile Include="HisPtttTable\HisPtttTableDAO.cs" />
+    <Compile Include="HisPtttTable\HisPtttTableDAOPlus_Full.cs" />
+    <Compile Include="HisPtttTable\HisPtttTableGet.cs" />
+    <Compile Include="HisPtttTable\HisPtttTableGetByCode.cs" />
+    <Compile Include="HisPtttTable\HisPtttTableGetDicByCode.cs" />
+    <Compile Include="HisRegisterGate\HisRegisterGateDAO.cs" />
+    <Compile Include="HisRegisterGate\HisRegisterGateDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisRegisterGate\HisRegisterGateGet.cs" />
+    <Compile Include="HisRegisterGate\HisRegisterGateGetByCode.cs" />
+    <Compile Include="HisRegisterGate\HisRegisterGateGetDicByCode.cs" />
+    <Compile Include="HisRegisterReq\HisRegisterReqDAO.cs" />
+    <Compile Include="HisRegisterReq\HisRegisterReqDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisRegisterReq\HisRegisterReqGet.cs" />
+    <Compile Include="HisRegisterReq\HisRegisterReqGetView.cs" />
+    <Compile Include="HisRegisterReq\HisRegisterReqGetViewById.cs" />
+    <Compile Include="HisRemuneration\HisRemunerationDAO.cs" />
+    <Compile Include="HisRemuneration\HisRemunerationDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisRemuneration\HisRemunerationGet.cs" />
+    <Compile Include="HisRemuneration\HisRemunerationGetView.cs" />
+    <Compile Include="HisRemuneration\HisRemunerationGetViewById.cs" />
+    <Compile Include="HisRepayReason\HisRepayReasonDAO.cs" />
+    <Compile Include="HisRepayReason\HisRepayReasonDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisRepayReason\HisRepayReasonGet.cs" />
+    <Compile Include="HisRepayReason\HisRepayReasonGetByCode.cs" />
+    <Compile Include="HisRepayReason\HisRepayReasonGetDicByCode.cs" />
+    <Compile Include="HisRoomGroup\HisRoomGroupDAO.cs" />
+    <Compile Include="HisRoomGroup\HisRoomGroupGet.cs" />
+    <Compile Include="HisRoomTypeModule\HisRoomTypeModuleDAO.cs" />
+    <Compile Include="HisRoomTypeModule\HisRoomTypeModuleDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisRoomTypeModule\HisRoomTypeModuleGet.cs" />
+    <Compile Include="HisRoomTypeModule\HisRoomTypeModuleGetView.cs" />
+    <Compile Include="HisRoomTypeModule\HisRoomTypeModuleGetViewById.cs" />
+    <Compile Include="HisSampleRoom\HisSampleRoomDAO.cs" />
+    <Compile Include="HisSampleRoom\HisSampleRoomDAOPlus_Full.cs" />
+    <Compile Include="HisSampleRoom\HisSampleRoomGet.cs" />
+    <Compile Include="HisSampleRoom\HisSampleRoomGetByCode.cs" />
+    <Compile Include="HisSampleRoom\HisSampleRoomGetDicByCode.cs" />
+    <Compile Include="HisSampleRoom\HisSampleRoomGetView.cs" />
+    <Compile Include="HisSampleRoom\HisSampleRoomGetViewByCode.cs" />
+    <Compile Include="HisSampleRoom\HisSampleRoomGetViewById.cs" />
+    <Compile Include="HisAnticipateMaty\HisAnticipateMatyDAO.cs" />
+    <Compile Include="HisAnticipateMaty\HisAnticipateMatyDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisAnticipateMaty\HisAnticipateMatyGet.cs" />
+    <Compile Include="HisAnticipateMaty\HisAnticipateMatyGetView.cs" />
+    <Compile Include="HisAnticipateMaty\HisAnticipateMatyGetViewById.cs" />
+    <Compile Include="HisAnticipateMety\HisAnticipateMetyDAO.cs" />
+    <Compile Include="HisAnticipateMety\HisAnticipateMetyDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisAnticipateMety\HisAnticipateMetyGet.cs" />
+    <Compile Include="HisAnticipateMety\HisAnticipateMetyGetView.cs" />
+    <Compile Include="HisAnticipateMety\HisAnticipateMetyGetViewById.cs" />
+    <Compile Include="HisAnticipate\HisAnticipateDAO.cs" />
+    <Compile Include="HisAnticipate\HisAnticipateGet.cs" />
+    <Compile Include="HisAwareness\HisAwarenessDAO.cs" />
+    <Compile Include="HisAwareness\HisAwarenessDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisAwareness\HisAwarenessGet.cs" />
+    <Compile Include="HisAwareness\HisAwarenessGetByCode.cs" />
+    <Compile Include="HisAwareness\HisAwarenessGetDicByCode.cs" />
+    <Compile Include="HisCareDetail\HisCareDetailDAO.cs" />
+    <Compile Include="HisCareDetail\HisCareDetailDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisCareDetail\HisCareDetailGet.cs" />
+    <Compile Include="HisCareDetail\HisCareDetailGetView.cs" />
+    <Compile Include="HisCareDetail\HisCareDetailGetViewById.cs" />
+    <Compile Include="HisCareSum\HisCareSumDAO.cs" />
+    <Compile Include="HisCareSum\HisCareSumGet.cs" />
+    <Compile Include="HisCareType\HisCareTypeDAO.cs" />
+    <Compile Include="HisCareType\HisCareTypeDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisCareType\HisCareTypeGet.cs" />
+    <Compile Include="HisCareType\HisCareTypeGetByCode.cs" />
+    <Compile Include="HisCareType\HisCareTypeGetDicByCode.cs" />
+    <Compile Include="HisDebateUser\HisDebateUserDAO.cs" />
+    <Compile Include="HisDebateUser\HisDebateUserGet.cs" />
+    <Compile Include="HisDebate\HisDebateDAO.cs" />
+    <Compile Include="HisDebate\HisDebateGet.cs" />
+    <Compile Include="HisEmergencyWtime\HisEmergencyWtimeDAO.cs" />
+    <Compile Include="HisEmergencyWtime\HisEmergencyWtimeDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisEmergencyWtime\HisEmergencyWtimeGet.cs" />
+    <Compile Include="HisEmergencyWtime\HisEmergencyWtimeGetByCode.cs" />
+    <Compile Include="HisEmergencyWtime\HisEmergencyWtimeGetDicByCode.cs" />
+    <Compile Include="HisIcdGroup\HisIcdGroupDAO.cs" />
+    <Compile Include="HisIcdGroup\HisIcdGroupDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisIcdGroup\HisIcdGroupGet.cs" />
+    <Compile Include="HisIcdGroup\HisIcdGroupGetByCode.cs" />
+    <Compile Include="HisIcdGroup\HisIcdGroupGetDicByCode.cs" />
+    <Compile Include="HisInfusionSum\HisInfusionSumDAO.cs" />
+    <Compile Include="HisInfusionSum\HisInfusionSumDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisInfusionSum\HisInfusionSumGet.cs" />
+    <Compile Include="HisInfusionSum\HisInfusionSumGetView.cs" />
+    <Compile Include="HisInfusionSum\HisInfusionSumGetViewById.cs" />
+    <Compile Include="HisInvoiceBook\HisInvoiceBookDAO.cs" />
+    <Compile Include="HisInvoiceBook\HisInvoiceBookDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisInvoiceBook\HisInvoiceBookGet.cs" />
+    <Compile Include="HisInvoiceBook\HisInvoiceBookGetView.cs" />
+    <Compile Include="HisInvoiceBook\HisInvoiceBookGetViewById.cs" />
+    <Compile Include="HisInvoiceDetail\HisInvoiceDetailDAO.cs" />
+    <Compile Include="HisInvoiceDetail\HisInvoiceDetailGet.cs" />
+    <Compile Include="HisInvoice\HisInvoiceDAO.cs" />
+    <Compile Include="HisInvoice\HisInvoiceDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisInvoice\HisInvoiceGet.cs" />
+    <Compile Include="HisInvoice\HisInvoiceGetView.cs" />
+    <Compile Include="HisInvoice\HisInvoiceGetViewById.cs" />
+    <Compile Include="HisKskContract\HisKskContractDAO.cs" />
+    <Compile Include="HisKskContract\HisKskContractDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisKskContract\HisKskContractGet.cs" />
+    <Compile Include="HisKskContract\HisKskContractGetByCode.cs" />
+    <Compile Include="HisKskContract\HisKskContractGetDicByCode.cs" />
+    <Compile Include="HisMedicineLine\HisMedicineLineDAO.cs" />
+    <Compile Include="HisMedicineLine\HisMedicineLineDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisMedicineLine\HisMedicineLineGet.cs" />
+    <Compile Include="HisMedicineLine\HisMedicineLineGetByCode.cs" />
+    <Compile Include="HisMedicineLine\HisMedicineLineGetDicByCode.cs" />
+    <Compile Include="HisMedicineType\HisMedicineTypeGetView.cs" />
+    <Compile Include="HisMilitaryRank\HisMilitaryRankDAO.cs" />
+    <Compile Include="HisMilitaryRank\HisMilitaryRankDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisMilitaryRank\HisMilitaryRankGet.cs" />
+    <Compile Include="HisMilitaryRank\HisMilitaryRankGetByCode.cs" />
+    <Compile Include="HisMilitaryRank\HisMilitaryRankGetDicByCode.cs" />
+    <Compile Include="HisPackingType\HisPackingTypeDAO.cs" />
+    <Compile Include="HisPackingType\HisPackingTypeDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisPackingType\HisPackingTypeGet.cs" />
+    <Compile Include="HisPackingType\HisPackingTypeGetByCode.cs" />
+    <Compile Include="HisPackingType\HisPackingTypeGetDicByCode.cs" />
+    <Compile Include="HisRehaSum\HisRehaSumDAO.cs" />
+    <Compile Include="HisRehaSum\HisRehaSumGet.cs" />
+    <Compile Include="HisRehaTrainType\HisRehaTrainTypeDAO.cs" />
+    <Compile Include="HisRehaTrainType\HisRehaTrainTypeDAOPlus_Full.cs" />
+    <Compile Include="HisRehaTrainType\HisRehaTrainTypeGet.cs" />
+    <Compile Include="HisRehaTrainType\HisRehaTrainTypeGetByCode.cs" />
+    <Compile Include="HisRehaTrainType\HisRehaTrainTypeGetDicByCode.cs" />
+    <Compile Include="HisRehaTrainType\HisRehaTrainTypeGetView.cs" />
+    <Compile Include="HisRehaTrainType\HisRehaTrainTypeGetViewByCode.cs" />
+    <Compile Include="HisRehaTrainType\HisRehaTrainTypeGetViewById.cs" />
+    <Compile Include="HisRehaTrainUnit\HisRehaTrainUnitDAO.cs" />
+    <Compile Include="HisRehaTrainUnit\HisRehaTrainUnitDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisRehaTrainUnit\HisRehaTrainUnitGet.cs" />
+    <Compile Include="HisRehaTrainUnit\HisRehaTrainUnitGetByCode.cs" />
+    <Compile Include="HisRehaTrainUnit\HisRehaTrainUnitGetDicByCode.cs" />
+    <Compile Include="HisRehaTrain\HisRehaTrainDAO.cs" />
+    <Compile Include="HisRehaTrain\HisRehaTrainDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisRehaTrain\HisRehaTrainGet.cs" />
+    <Compile Include="HisRehaTrain\HisRehaTrainGetView.cs" />
+    <Compile Include="HisRehaTrain\HisRehaTrainGetViewById.cs" />
+    <Compile Include="HisReportTypeCat\HisReportTypeCatDAO.cs" />
+    <Compile Include="HisReportTypeCat\HisReportTypeCatGet.cs" />
+    <Compile Include="HisRestRetrType\HisRestRetrTypeDAO.cs" />
+    <Compile Include="HisRestRetrType\HisRestRetrTypeDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisRestRetrType\HisRestRetrTypeGet.cs" />
+    <Compile Include="HisRestRetrType\HisRestRetrTypeGetView.cs" />
+    <Compile Include="HisRestRetrType\HisRestRetrTypeGetViewById.cs" />
+    <Compile Include="HisRoom\HisRoomGetView.cs" />
+    <Compile Include="HisRoom\HisRoomDAOPlus_Full.cs" />
+    <Compile Include="HisSaroExro\HisSaroExroDAO.cs" />
+    <Compile Include="HisSaroExro\HisSaroExroDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisSaroExro\HisSaroExroGet.cs" />
+    <Compile Include="HisSaroExro\HisSaroExroGetView.cs" />
+    <Compile Include="HisSaroExro\HisSaroExroGetViewById.cs" />
+    <Compile Include="HisSereServBill\HisSereServBillDAO.cs" />
+    <Compile Include="HisSereServBill\HisSereServBillDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisSereServBill\HisSereServBillGet.cs" />
+    <Compile Include="HisSereServBill\HisSereServBillGetView.cs" />
+    <Compile Include="HisSereServBill\HisSereServBillGetViewById.cs" />
+    <Compile Include="HisSereServDeposit\HisSereServDepositDAO.cs" />
+    <Compile Include="HisSereServDeposit\HisSereServDepositDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisSereServDeposit\HisSereServDepositGet.cs" />
+    <Compile Include="HisSereServDeposit\HisSereServDepositGetView.cs" />
+    <Compile Include="HisSereServDeposit\HisSereServDepositGetViewById.cs" />
+    <Compile Include="HisSereServExt\HisSereServExtDAO.cs" />
+    <Compile Include="HisSereServExt\HisSereServExtGet.cs" />
+    <Compile Include="HisSereServMaty\HisSereServMatyDAO.cs" />
+    <Compile Include="HisSereServMaty\HisSereServMatyDAOPlus_Full.cs" />
+    <Compile Include="HisSereServMaty\HisSereServMatyGet.cs" />
+    <Compile Include="HisSereServMaty\HisSereServMatyGetView.cs" />
+    <Compile Include="HisSereServMaty\HisSereServMatyGetViewById.cs" />
+    <Compile Include="HisSereServReha\HisSereServRehaDAO.cs" />
+    <Compile Include="HisSereServReha\HisSereServRehaDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisSereServReha\HisSereServRehaGet.cs" />
+    <Compile Include="HisSereServReha\HisSereServRehaGetView.cs" />
+    <Compile Include="HisSereServReha\HisSereServRehaGetViewById.cs" />
+    <Compile Include="HisSereServTemp\HisSereServTempDAO.cs" />
+    <Compile Include="HisSereServTemp\HisSereServTempDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisSereServTemp\HisSereServTempGet.cs" />
+    <Compile Include="HisSereServTemp\HisSereServTempGetByCode.cs" />
+    <Compile Include="HisSereServTemp\HisSereServTempGetDicByCode.cs" />
+    <Compile Include="HisSereServ\HisSereServDAOPlus_View12.cs" />
+    <Compile Include="HisSereServ\HisSereServGetView12.cs" />
+    <Compile Include="HisSereServ\HisSereServGetView12ById.cs" />
+    <Compile Include="HisSereServ\HisSereServDAOPlus_View11.cs" />
+    <Compile Include="HisSereServ\HisSereServGetView11.cs" />
+    <Compile Include="HisSereServ\HisSereServGetView11ById.cs" />
+    <Compile Include="HisSereServ\HisSereServDAOPlus_View9.cs" />
+    <Compile Include="HisSereServ\HisSereServGetView9.cs" />
+    <Compile Include="HisSereServ\HisSereServGetView9ById.cs" />
+    <Compile Include="HisSereServ\HisSereServDAOPlus_View7.cs" />
+    <Compile Include="HisSereServ\HisSereServGetView7.cs" />
+    <Compile Include="HisSereServ\HisSereServGetView7ById.cs" />
+    <Compile Include="HisSereServ\HisSereServDAOPlus_View6.cs" />
+    <Compile Include="HisSereServ\HisSereServGetView6.cs" />
+    <Compile Include="HisSereServ\HisSereServGetView6ById.cs" />
+    <Compile Include="HisSereServ\HisSereServDAOPlus_View5.cs" />
+    <Compile Include="HisSereServ\HisSereServGetView5.cs" />
+    <Compile Include="HisSereServ\HisSereServGetView5ById.cs" />
+    <Compile Include="HisSereServ\HisSereServDAOPlus_View4.cs" />
+    <Compile Include="HisSereServ\HisSereServGetView4.cs" />
+    <Compile Include="HisSereServ\HisSereServGetView4ById.cs" />
+    <Compile Include="HisSereServ\HisSereServGetView3ById.cs" />
+    <Compile Include="HisSereServ\HisSereServDAOPlus_View3.cs" />
+    <Compile Include="HisSereServ\HisSereServGetView3.cs" />
+    <Compile Include="HisSereServ\HisSereServDAOPlus_View2.cs" />
+    <Compile Include="HisSereServ\HisSereServGetView2.cs" />
+    <Compile Include="HisSereServ\HisSereServGetView2ById.cs" />
+    <Compile Include="HisSereServ\HisSereServGetView1ById.cs" />
+    <Compile Include="HisSereServ\HisSereServGetView1.cs" />
+    <Compile Include="HisSereServ\HisSereServDAOPlus_View1.cs" />
+    <Compile Include="HisServiceFollow\HisServiceFollowDAO.cs" />
+    <Compile Include="HisServiceFollow\HisServiceFollowDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisServiceFollow\HisServiceFollowGet.cs" />
+    <Compile Include="HisServiceFollow\HisServiceFollowGetView.cs" />
+    <Compile Include="HisServiceFollow\HisServiceFollowGetViewById.cs" />
+    <Compile Include="HisServiceMachine\HisServiceMachineDAO.cs" />
+    <Compile Include="HisServiceMachine\HisServiceMachineGet.cs" />
+    <Compile Include="HisServiceMaty\HisServiceMatyDAO.cs" />
+    <Compile Include="HisServiceMaty\HisServiceMatyDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisServiceMaty\HisServiceMatyGet.cs" />
+    <Compile Include="HisServiceMaty\HisServiceMatyGetView.cs" />
+    <Compile Include="HisServiceMaty\HisServiceMatyGetViewById.cs" />
+    <Compile Include="HisServiceMety\HisServiceMetyDAO.cs" />
+    <Compile Include="HisServiceMety\HisServiceMetyDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisServiceMety\HisServiceMetyGet.cs" />
+    <Compile Include="HisServiceMety\HisServiceMetyGetView.cs" />
+    <Compile Include="HisServiceMety\HisServiceMetyGetViewById.cs" />
+    <Compile Include="HisHeinServiceType\HisHeinServiceTypeDAO.cs" />
+    <Compile Include="HisHeinServiceType\HisHeinServiceTypeDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisHeinServiceType\HisHeinServiceTypeGet.cs" />
+    <Compile Include="HisHeinServiceType\HisHeinServiceTypeGetByCode.cs" />
+    <Compile Include="HisHeinServiceType\HisHeinServiceTypeGetDicByCode.cs" />
+    <Compile Include="HisAccidentHurt\HisAccidentHurtDAO.cs" />
+    <Compile Include="HisAccidentHurt\HisAccidentHurtGet.cs" />
+    <Compile Include="HisAccountBook\HisAccountBookDAO.cs" />
+    <Compile Include="HisAccountBook\HisAccountBookDAOPlus_Full.cs" />
+    <Compile Include="HisAccountBook\HisAccountBookGet.cs" />
+    <Compile Include="HisAccountBook\HisAccountBookGetByCode.cs" />
+    <Compile Include="HisAccountBook\HisAccountBookGetDicByCode.cs" />
+    <Compile Include="HisAccountBook\HisAccountBookGetView.cs" />
+    <Compile Include="HisAccountBook\HisAccountBookGetViewByCode.cs" />
+    <Compile Include="HisAccountBook\HisAccountBookGetViewById.cs" />
+    <Compile Include="HisAcinInteractive\HisAcinInteractiveDAO.cs" />
+    <Compile Include="HisAcinInteractive\HisAcinInteractiveDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisAcinInteractive\HisAcinInteractiveGet.cs" />
+    <Compile Include="HisAcinInteractive\HisAcinInteractiveGetView.cs" />
+    <Compile Include="HisAcinInteractive\HisAcinInteractiveGetViewById.cs" />
+    <Compile Include="HisActiveIngredient\HisActiveIngredientDAO.cs" />
+    <Compile Include="HisActiveIngredient\HisActiveIngredientDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisActiveIngredient\HisActiveIngredientGet.cs" />
+    <Compile Include="HisActiveIngredient\HisActiveIngredientGetByCode.cs" />
+    <Compile Include="HisActiveIngredient\HisActiveIngredientGetDicByCode.cs" />
+    <Compile Include="HisBedRoom\HisBedRoomDAO.cs" />
+    <Compile Include="HisBedRoom\HisBedRoomDAOPlus_Full.cs" />
+    <Compile Include="HisBedRoom\HisBedRoomGet.cs" />
+    <Compile Include="HisBedRoom\HisBedRoomGetByCode.cs" />
+    <Compile Include="HisBedRoom\HisBedRoomGetDicByCode.cs" />
+    <Compile Include="HisBedRoom\HisBedRoomGetViewPlus.cs" />
+    <Compile Include="HisBedRoom\HisBedRoomGetViewByCode.cs" />
+    <Compile Include="HisBedRoom\HisBedRoomGetViewById.cs" />
+    <Compile Include="HisBloodRh\HisBloodRhDAO.cs" />
+    <Compile Include="HisBloodRh\HisBloodRhDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisBloodRh\HisBloodRhGet.cs" />
+    <Compile Include="HisBloodRh\HisBloodRhGetByCode.cs" />
+    <Compile Include="HisBloodRh\HisBloodRhGetDicByCode.cs" />
+    <Compile Include="HisCard\HisCardDAO.cs" />
+    <Compile Include="HisCard\HisCardDAOPlus_Full.cs" />
+    <Compile Include="HisCard\HisCardGet.cs" />
+    <Compile Include="HisCard\HisCardGetByCode.cs" />
+    <Compile Include="HisCard\HisCardGetDicByCode.cs" />
+    <Compile Include="HisCard\HisCardGetView.cs" />
+    <Compile Include="HisCard\HisCardGetViewByCode.cs" />
+    <Compile Include="HisCard\HisCardGetViewById.cs" />
+    <Compile Include="HisCareer\HisCareerDAO.cs" />
+    <Compile Include="HisCareer\HisCareerDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisCareer\HisCareerGet.cs" />
+    <Compile Include="HisCareer\HisCareerGetByCode.cs" />
+    <Compile Include="HisCareer\HisCareerGetDicByCode.cs" />
+    <Compile Include="HisCare\HisCareDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HisCare\HisCareGet.cs" />
+    <Compile Include="HisDataStore\HisDataStoreDAO.cs" />
+    <Compile Include="HisDataStore\HisDataStoreDAOPlus_Full.cs" />
+    <Compile Include="HisDataStore\HisDataStoreGet.cs" />
+    <Compile Include="HisDataStore\HisDataStoreGetByCode.cs" />
+    <Compile Include="HisDataStore\HisDataStoreGetDicByCode.cs" />
+    <Compile Include="HisDataStore\HisDataStoreGetView.cs" />
+    <Compile Include="HisDataStore\HisDataStoreGetViewByCode.cs" />
+    <Compile Include="HisDataStore\HisDataStoreGetViewById.cs" />
+    <Compile Include="HisDeathCause\HisDeathCauseDAO.cs" />
+    <Compile Include="HisDeathCause\HisDeathCauseDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisDeathCause\HisDeathCauseGet.cs" />
+    <Compile Include="HisDeathCause\HisDeathCauseGetByCode.cs" />
+    <Compile Include="HisDeathCause\HisDeathCauseGetDicByCode.cs" />
+    <Compile Include="HisDeathWithin\HisDeathWithinDAO.cs" />
+    <Compile Include="HisDeathWithin\HisDeathWithinDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisDeathWithin\HisDeathWithinGet.cs" />
+    <Compile Include="HisDeathWithin\HisDeathWithinGetByCode.cs" />
+    <Compile Include="HisDeathWithin\HisDeathWithinGetDicByCode.cs" />
+    <Compile Include="HisDepartmentTran\HisDepartmentTranDAO.cs" />
+    <Compile Include="HisDepartmentTran\HisDepartmentTranDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisDepartmentTran\HisDepartmentTranGet.cs" />
+    <Compile Include="HisDepartmentTran\HisDepartmentTranGetView.cs" />
+    <Compile Include="HisDepartmentTran\HisDepartmentTranGetViewById.cs" />
+    <Compile Include="HisDepartment\HisDepartmentDAO.cs" />
+    <Compile Include="HisDepartment\HisDepartmentGet.cs" />
+    <Compile Include="HisDepartment\HisDepartmentGetByCode.cs" />
+    <Compile Include="HisDepartment\HisDepartmentGetDicByCode.cs" />
+    <Compile Include="HisDhst\HisDhstDAO.cs" />
+    <Compile Include="HisDhst\HisDhstGet.cs" />
+    <Compile Include="HisDiseaseRelation\HisDiseaseRelationDAO.cs" />
+    <Compile Include="HisDiseaseRelation\HisDiseaseRelationDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisDiseaseRelation\HisDiseaseRelationGet.cs" />
+    <Compile Include="HisDiseaseRelation\HisDiseaseRelationGetByCode.cs" />
+    <Compile Include="HisDiseaseRelation\HisDiseaseRelationGetDicByCode.cs" />
+    <Compile Include="HisEmotionlessMethod\HisEmotionlessMethodDAO.cs" />
+    <Compile Include="HisEmotionlessMethod\HisEmotionlessMethodDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisEmotionlessMethod\HisEmotionlessMethodGet.cs" />
+    <Compile Include="HisEmotionlessMethod\HisEmotionlessMethodGetByCode.cs" />
+    <Compile Include="HisEmotionlessMethod\HisEmotionlessMethodGetDicByCode.cs" />
+    <Compile Include="HisEmteMaterialType\HisEmteMaterialTypeDAO.cs" />
+    <Compile Include="HisEmteMaterialType\HisEmteMaterialTypeDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisEmteMaterialType\HisEmteMaterialTypeGet.cs" />
+    <Compile Include="HisEmteMaterialType\HisEmteMaterialTypeGetView.cs" />
+    <Compile Include="HisEmteMaterialType\HisEmteMaterialTypeGetViewById.cs" />
+    <Compile Include="HisEmteMedicineType\HisEmteMedicineTypeDAO.cs" />
+    <Compile Include="HisEmteMedicineType\HisEmteMedicineTypeDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisEmteMedicineType\HisEmteMedicineTypeGet.cs" />
+    <Compile Include="HisEmteMedicineType\HisEmteMedicineTypeGetView.cs" />
+    <Compile Include="HisEmteMedicineType\HisEmteMedicineTypeGetViewById.cs" />
+    <Compile Include="HisExamSereDire\HisExamSereDireDAO.cs" />
+    <Compile Include="HisExamSereDire\HisExamSereDireDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisExamSereDire\HisExamSereDireGet.cs" />
+    <Compile Include="HisExamSereDire\HisExamSereDireGetView.cs" />
+    <Compile Include="HisExamSereDire\HisExamSereDireGetViewById.cs" />
+    <Compile Include="HisExecuteRoom\HisExecuteRoomDAO.cs" />
+    <Compile Include="HisExecuteRoom\HisExecuteRoomDAOPlus_Full.cs" />
+    <Compile Include="HisExecuteRoom\HisExecuteRoomGet.cs" />
+    <Compile Include="HisExecuteRoom\HisExecuteRoomGetByCode.cs" />
+    <Compile Include="HisExecuteRoom\HisExecuteRoomGetDicByCode.cs" />
+    <Compile Include="HisExecuteRoom\HisExecuteRoomGetView.cs" />
+    <Compile Include="HisExecuteRoom\HisExecuteRoomGetViewByCode.cs" />
+    <Compile Include="HisExecuteRoom\HisExecuteRoomGetViewById.cs" />
+    <Compile Include="HisExpMestMaterial\HisExpMestMaterialDAO.cs" />
+    <Compile Include="HisExpMestMaterial\HisExpMestMaterialDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisExpMestMaterial\HisExpMestMaterialGet.cs" />
+    <Compile Include="HisExpMestMaterial\HisExpMestMaterialGetView.cs" />
+    <Compile Include="HisExpMestMaterial\HisExpMestMaterialGetViewById.cs" />
+    <Compile Include="HisExpMestMedicine\HisExpMestMedicineDAO.cs" />
+    <Compile Include="HisExpMestMedicine\HisExpMestMedicineDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisExpMestMedicine\HisExpMestMedicineGet.cs" />
+    <Compile Include="HisExpMestMedicine\HisExpMestMedicineGetView.cs" />
+    <Compile Include="HisExpMestMedicine\HisExpMestMedicineGetViewById.cs" />
+    <Compile Include="HisExpMestStt\HisExpMestSttDAO.cs" />
+    <Compile Include="HisExpMestStt\HisExpMestSttDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisExpMestStt\HisExpMestSttGet.cs" />
+    <Compile Include="HisExpMestStt\HisExpMestSttGetByCode.cs" />
+    <Compile Include="HisExpMestStt\HisExpMestSttGetDicByCode.cs" />
+    <Compile Include="HisExpMestTemplate\HisExpMestTemplateDAO.cs" />
+    <Compile Include="HisExpMestTemplate\HisExpMestTemplateDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisExpMestTemplate\HisExpMestTemplateGet.cs" />
+    <Compile Include="HisExpMestTemplate\HisExpMestTemplateGetByCode.cs" />
+    <Compile Include="HisExpMestTemplate\HisExpMestTemplateGetDicByCode.cs" />
+    <Compile Include="HisExpMestType\HisExpMestTypeDAO.cs" />
+    <Compile Include="HisExpMestType\HisExpMestTypeDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisExpMestType\HisExpMestTypeGet.cs" />
+    <Compile Include="HisExpMestType\HisExpMestTypeGetByCode.cs" />
+    <Compile Include="HisExpMestType\HisExpMestTypeGetDicByCode.cs" />
+    <Compile Include="HisExpMest\HisExpMestDAO.cs" />
+    <Compile Include="HisExpMest\HisExpMestDAOPlus_Full.cs" />
+    <Compile Include="HisExpMest\HisExpMestGet.cs" />
+    <Compile Include="HisExpMest\HisExpMestGetByCode.cs" />
+    <Compile Include="HisExpMest\HisExpMestGetDicByCode.cs" />
+    <Compile Include="HisExpMest\HisExpMestGetView.cs" />
+    <Compile Include="HisExpMest\HisExpMestGetViewByCode.cs" />
+    <Compile Include="HisExpMest\HisExpMestGetViewById.cs" />
+    <Compile Include="HisGender\HisGenderDAO.cs" />
+    <Compile Include="HisGender\HisGenderDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisGender\HisGenderGet.cs" />
+    <Compile Include="HisGender\HisGenderGetByCode.cs" />
+    <Compile Include="HisGender\HisGenderGetDicByCode.cs" />
+    <Compile Include="HisHeinApproval\HisHeinApprovalDAO.cs" />
+    <Compile Include="HisHeinApproval\HisHeinApprovalGet.cs" />
+    <Compile Include="HisIcd\HisIcdDAO.cs" />
+    <Compile Include="HisIcd\HisIcdDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisIcd\HisIcdGet.cs" />
+    <Compile Include="HisIcd\HisIcdGetByCode.cs" />
+    <Compile Include="HisIcd\HisIcdGetDicByCode.cs" />
+    <Compile Include="HisImpMestMaterial\HisImpMestMaterialDAO.cs" />
+    <Compile Include="HisImpMestMaterial\HisImpMestMaterialDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisImpMestMaterial\HisImpMestMaterialGet.cs" />
+    <Compile Include="HisImpMestMaterial\HisImpMestMaterialGetView.cs" />
+    <Compile Include="HisImpMestMaterial\HisImpMestMaterialGetViewById.cs" />
+    <Compile Include="HisImpMestMedicine\HisImpMestMedicineDAO.cs" />
+    <Compile Include="HisImpMestMedicine\HisImpMestMedicineDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisImpMestMedicine\HisImpMestMedicineGet.cs" />
+    <Compile Include="HisImpMestMedicine\HisImpMestMedicineGetView.cs" />
+    <Compile Include="HisImpMestMedicine\HisImpMestMedicineGetViewById.cs" />
+    <Compile Include="HisImpMestStt\HisImpMestSttDAO.cs" />
+    <Compile Include="HisImpMestStt\HisImpMestSttDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisImpMestStt\HisImpMestSttGet.cs" />
+    <Compile Include="HisImpMestStt\HisImpMestSttGetByCode.cs" />
+    <Compile Include="HisImpMestStt\HisImpMestSttGetDicByCode.cs" />
+    <Compile Include="HisImpMestType\HisImpMestTypeDAO.cs" />
+    <Compile Include="HisImpMestType\HisImpMestTypeDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisImpMestType\HisImpMestTypeGet.cs" />
+    <Compile Include="HisImpMestType\HisImpMestTypeGetByCode.cs" />
+    <Compile Include="HisImpMestType\HisImpMestTypeGetDicByCode.cs" />
+    <Compile Include="HisImpMest\HisImpMestDAO.cs" />
+    <Compile Include="HisImpMest\HisImpMestDAOPlus_Full.cs" />
+    <Compile Include="HisImpMest\HisImpMestGet.cs" />
+    <Compile Include="HisImpMest\HisImpMestGetByCode.cs" />
+    <Compile Include="HisImpMest\HisImpMestGetDicByCode.cs" />
+    <Compile Include="HisImpMest\HisImpMestGetView.cs" />
+    <Compile Include="HisImpMest\HisImpMestGetViewByCode.cs" />
+    <Compile Include="HisImpMest\HisImpMestGetViewById.cs" />
+    <Compile Include="HisInfusion\HisInfusionDAO.cs" />
+    <Compile Include="HisInfusion\HisInfusionGet.cs" />
+    <Compile Include="HisInfusion\HisInfusionGetView.cs" />
+    <Compile Include="HisInfusion\HisInfusionGetViewById.cs" />
+    <Compile Include="HisManufacturer\HisManufacturerDAO.cs" />
+    <Compile Include="HisManufacturer\HisManufacturerDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisManufacturer\HisManufacturerGet.cs" />
+    <Compile Include="HisManufacturer\HisManufacturerGetByCode.cs" />
+    <Compile Include="HisManufacturer\HisManufacturerGetDicByCode.cs" />
+    <Compile Include="HisMaterialBean\HisMaterialBeanDAO.cs" />
+    <Compile Include="HisMaterialBean\HisMaterialBeanDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisMaterialBean\HisMaterialBeanGet.cs" />
+    <Compile Include="HisMaterialBean\HisMaterialBeanGetView.cs" />
+    <Compile Include="HisMaterialBean\HisMaterialBeanGetViewById.cs" />
+    <Compile Include="HisMaterialPaty\HisMaterialPatyDAO.cs" />
+    <Compile Include="HisMaterialPaty\HisMaterialPatyDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisMaterialPaty\HisMaterialPatyGet.cs" />
+    <Compile Include="HisMaterialPaty\HisMaterialPatyGetView.cs" />
+    <Compile Include="HisMaterialPaty\HisMaterialPatyGetViewById.cs" />
+    <Compile Include="HisMaterialType\HisMaterialTypeDAO.cs" />
+    <Compile Include="HisMaterialType\HisMaterialTypeDAOPlus_Full.cs" />
+    <Compile Include="HisMaterialType\HisMaterialTypeGet.cs" />
+    <Compile Include="HisMaterialType\HisMaterialTypeGetByCode.cs" />
+    <Compile Include="HisMaterialType\HisMaterialTypeGetDicByCode.cs" />
+    <Compile Include="HisMaterialType\HisMaterialTypeGetView.cs" />
+    <Compile Include="HisMaterialType\HisMaterialTypeGetViewByCode.cs" />
+    <Compile Include="HisMaterialType\HisMaterialTypeGetViewById.cs" />
+    <Compile Include="HisMaterial\HisMaterialDAO.cs" />
+    <Compile Include="HisMaterial\HisMaterialDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisMaterial\HisMaterialGet.cs" />
+    <Compile Include="HisMaterial\HisMaterialGetView.cs" />
+    <Compile Include="HisMaterial\HisMaterialGetViewById.cs" />
+    <Compile Include="HisMedicineBean\HisMedicineBeanDAO.cs" />
+    <Compile Include="HisMedicineBean\HisMedicineBeanDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisMedicineBean\HisMedicineBeanGet.cs" />
+    <Compile Include="HisMedicineBean\HisMedicineBeanGetView.cs" />
+    <Compile Include="HisMedicineBean\HisMedicineBeanGetViewById.cs" />
+    <Compile Include="HisMedicinePaty\HisMedicinePatyDAO.cs" />
+    <Compile Include="HisMedicinePaty\HisMedicinePatyDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisMedicinePaty\HisMedicinePatyGet.cs" />
+    <Compile Include="HisMedicinePaty\HisMedicinePatyGetView.cs" />
+    <Compile Include="HisMedicinePaty\HisMedicinePatyGetViewById.cs" />
+    <Compile Include="HisMedicineTypeAcin\HisMedicineTypeAcinDAO.cs" />
+    <Compile Include="HisMedicineTypeAcin\HisMedicineTypeAcinDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisMedicineTypeAcin\HisMedicineTypeAcinGet.cs" />
+    <Compile Include="HisMedicineTypeAcin\HisMedicineTypeAcinGetView.cs" />
+    <Compile Include="HisMedicineTypeAcin\HisMedicineTypeAcinGetViewById.cs" />
+    <Compile Include="HisMedicineType\HisMedicineTypeDAO.cs" />
+    <Compile Include="HisMedicineType\HisMedicineTypeDAOPlus_Full.cs" />
+    <Compile Include="HisMedicineType\HisMedicineTypeGet.cs" />
+    <Compile Include="HisMedicineType\HisMedicineTypeGetByCode.cs" />
+    <Compile Include="HisMedicineType\HisMedicineTypeGetDicByCode.cs" />
+    <Compile Include="HisMedicineType\HisMedicineTypeGetViewByCode.cs" />
+    <Compile Include="HisMedicineType\HisMedicineTypeGetViewById.cs" />
+    <Compile Include="HisMedicineUseForm\HisMedicineUseFormDAO.cs" />
+    <Compile Include="HisMedicineUseForm\HisMedicineUseFormDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisMedicineUseForm\HisMedicineUseFormGet.cs" />
+    <Compile Include="HisMedicineUseForm\HisMedicineUseFormGetByCode.cs" />
+    <Compile Include="HisMedicineUseForm\HisMedicineUseFormGetDicByCode.cs" />
+    <Compile Include="HisMedicine\HisMedicineDAO.cs" />
+    <Compile Include="HisMedicine\HisMedicineDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisMedicine\HisMedicineGet.cs" />
+    <Compile Include="HisMedicine\HisMedicineGetView.cs" />
+    <Compile Include="HisMedicine\HisMedicineGetViewById.cs" />
+    <Compile Include="HisMediReactType\HisMediReactTypeDAO.cs" />
+    <Compile Include="HisMediReactType\HisMediReactTypeDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisMediReactType\HisMediReactTypeGet.cs" />
+    <Compile Include="HisMediReactType\HisMediReactTypeGetByCode.cs" />
+    <Compile Include="HisMediReactType\HisMediReactTypeGetDicByCode.cs" />
+    <Compile Include="HisMediReact\HisMediReactDAO.cs" />
+    <Compile Include="HisMediReact\HisMediReactGet.cs" />
+    <Compile Include="HisMediReact\HisMediReactGetView.cs" />
+    <Compile Include="HisMediReact\HisMediReactGetViewById.cs" />
+    <Compile Include="HisMediStockMaty\HisMediStockMatyDAO.cs" />
+    <Compile Include="HisMediStockMaty\HisMediStockMatyDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisMediStockMaty\HisMediStockMatyGet.cs" />
+    <Compile Include="HisMediStockMaty\HisMediStockMatyGetView.cs" />
+    <Compile Include="HisMediStockMaty\HisMediStockMatyGetViewById.cs" />
+    <Compile Include="HisMediStockMety\HisMediStockMetyDAO.cs" />
+    <Compile Include="HisMediStockMety\HisMediStockMetyDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisMediStockMety\HisMediStockMetyGet.cs" />
+    <Compile Include="HisMediStockMety\HisMediStockMetyGetView.cs" />
+    <Compile Include="HisMediStockMety\HisMediStockMetyGetViewById.cs" />
+    <Compile Include="HisMediStockPeriod\HisMediStockPeriodDAO.cs" />
+    <Compile Include="HisMediStockPeriod\HisMediStockPeriodGet.cs" />
+    <Compile Include="HisMediStockPeriod\HisMediStockPeriodGetView.cs" />
+    <Compile Include="HisMediStockPeriod\HisMediStockPeriodGetViewById.cs" />
+    <Compile Include="HisMediStock\HisMediStockDAO.cs" />
+    <Compile Include="HisMediStock\HisMediStockDAOPlus_Full.cs" />
+    <Compile Include="HisMediStock\HisMediStockGet.cs" />
+    <Compile Include="HisMediStock\HisMediStockGetByCode.cs" />
+    <Compile Include="HisMediStock\HisMediStockGetDicByCode.cs" />
+    <Compile Include="HisMediStock\HisMediStockGetView.cs" />
+    <Compile Include="HisMediStock\HisMediStockGetViewByCode.cs" />
+    <Compile Include="HisMediStock\HisMediStockGetViewById.cs" />
+    <Compile Include="HisMestPatientType\HisMestPatientTypeDAO.cs" />
+    <Compile Include="HisMestPatientType\HisMestPatientTypeDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisMestPatientType\HisMestPatientTypeGet.cs" />
+    <Compile Include="HisMestPatientType\HisMestPatientTypeGetView.cs" />
+    <Compile Include="HisMestPatientType\HisMestPatientTypeGetViewById.cs" />
+    <Compile Include="HisMestPeriodMate\HisMestPeriodMateDAO.cs" />
+    <Compile Include="HisMestPeriodMate\HisMestPeriodMateDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisMestPeriodMate\HisMestPeriodMateGet.cs" />
+    <Compile Include="HisMestPeriodMate\HisMestPeriodMateGetView.cs" />
+    <Compile Include="HisMestPeriodMate\HisMestPeriodMateGetViewById.cs" />
+    <Compile Include="HisMestPeriodMaty\HisMestPeriodMatyDAO.cs" />
+    <Compile Include="HisMestPeriodMaty\HisMestPeriodMatyDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisMestPeriodMaty\HisMestPeriodMatyGet.cs" />
+    <Compile Include="HisMestPeriodMaty\HisMestPeriodMatyGetView.cs" />
+    <Compile Include="HisMestPeriodMaty\HisMestPeriodMatyGetViewById.cs" />
+    <Compile Include="HisMestPeriodMedi\HisMestPeriodMediDAO.cs" />
+    <Compile Include="HisMestPeriodMedi\HisMestPeriodMediDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisMestPeriodMedi\HisMestPeriodMediGet.cs" />
+    <Compile Include="HisMestPeriodMedi\HisMestPeriodMediGetView.cs" />
+    <Compile Include="HisMestPeriodMedi\HisMestPeriodMediGetViewById.cs" />
+    <Compile Include="HisMestPeriodMety\HisMestPeriodMetyDAO.cs" />
+    <Compile Include="HisMestPeriodMety\HisMestPeriodMetyDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisMestPeriodMety\HisMestPeriodMetyGet.cs" />
+    <Compile Include="HisMestPeriodMety\HisMestPeriodMetyGetView.cs" />
+    <Compile Include="HisMestPeriodMety\HisMestPeriodMetyGetViewById.cs" />
+    <Compile Include="HisMestRoom\HisMestRoomDAO.cs" />
+    <Compile Include="HisMestRoom\HisMestRoomDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisMestRoom\HisMestRoomGet.cs" />
+    <Compile Include="HisMestRoom\HisMestRoomGetView.cs" />
+    <Compile Include="HisMestRoom\HisMestRoomGetViewById.cs" />
+    <Compile Include="HisPatientTypeAllow\HisPatientTypeAllowDAO.cs" />
+    <Compile Include="HisPatientTypeAllow\HisPatientTypeAllowDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisPatientTypeAllow\HisPatientTypeAllowGet.cs" />
+    <Compile Include="HisPatientTypeAllow\HisPatientTypeAllowGetView.cs" />
+    <Compile Include="HisPatientTypeAllow\HisPatientTypeAllowGetViewById.cs" />
+    <Compile Include="HisPatientTypeAlter\HisPatientTypeAlterDAO.cs" />
+    <Compile Include="HisPatientTypeAlter\HisPatientTypeAlterDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisPatientTypeAlter\HisPatientTypeAlterGet.cs" />
+    <Compile Include="HisPatientTypeAlter\HisPatientTypeAlterGetView.cs" />
+    <Compile Include="HisPatientTypeAlter\HisPatientTypeAlterGetViewById.cs" />
+    <Compile Include="HisPatientType\HisPatientTypeDAO.cs" />
+    <Compile Include="HisPatientType\HisPatientTypeDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisPatientType\HisPatientTypeGet.cs" />
+    <Compile Include="HisPatientType\HisPatientTypeGetByCode.cs" />
+    <Compile Include="HisPatientType\HisPatientTypeGetDicByCode.cs" />
+    <Compile Include="HisPatient\HisPatientDAO.cs" />
+    <Compile Include="HisPatient\HisPatientDAOPlus_Full.cs" />
+    <Compile Include="HisPatient\HisPatientGet.cs" />
+    <Compile Include="HisPatient\HisPatientGetByCode.cs" />
+    <Compile Include="HisPatient\HisPatientGetDicByCode.cs" />
+    <Compile Include="HisPatient\HisPatientGetView.cs" />
+    <Compile Include="HisPatient\HisPatientGetViewByCode.cs" />
+    <Compile Include="HisPatient\HisPatientGetViewById.cs" />
+    <Compile Include="HisPayForm\HisPayFormDAO.cs" />
+    <Compile Include="HisPayForm\HisPayFormDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisPayForm\HisPayFormGet.cs" />
+    <Compile Include="HisPayForm\HisPayFormGetByCode.cs" />
+    <Compile Include="HisPayForm\HisPayFormGetDicByCode.cs" />
+    <Compile Include="HisPtttCatastrophe\HisPtttCatastropheDAO.cs" />
+    <Compile Include="HisPtttCatastrophe\HisPtttCatastropheDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisPtttCatastrophe\HisPtttCatastropheGet.cs" />
+    <Compile Include="HisPtttCatastrophe\HisPtttCatastropheGetByCode.cs" />
+    <Compile Include="HisPtttCatastrophe\HisPtttCatastropheGetDicByCode.cs" />
+    <Compile Include="HisPtttCondition\HisPtttConditionDAO.cs" />
+    <Compile Include="HisPtttCondition\HisPtttConditionDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisPtttCondition\HisPtttConditionGet.cs" />
+    <Compile Include="HisPtttCondition\HisPtttConditionGetByCode.cs" />
+    <Compile Include="HisPtttCondition\HisPtttConditionGetDicByCode.cs" />
+    <Compile Include="HisPtttMethod\HisPtttMethodDAO.cs" />
+    <Compile Include="HisPtttMethod\HisPtttMethodDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisPtttMethod\HisPtttMethodGet.cs" />
+    <Compile Include="HisPtttMethod\HisPtttMethodGetByCode.cs" />
+    <Compile Include="HisPtttMethod\HisPtttMethodGetDicByCode.cs" />
+    <Compile Include="HisReceptionRoom\HisReceptionRoomDAO.cs" />
+    <Compile Include="HisReceptionRoom\HisReceptionRoomDAOPlus_Full.cs" />
+    <Compile Include="HisReceptionRoom\HisReceptionRoomGet.cs" />
+    <Compile Include="HisReceptionRoom\HisReceptionRoomGetByCode.cs" />
+    <Compile Include="HisReceptionRoom\HisReceptionRoomGetDicByCode.cs" />
+    <Compile Include="HisReceptionRoom\HisReceptionRoomGetView.cs" />
+    <Compile Include="HisReceptionRoom\HisReceptionRoomGetViewByCode.cs" />
+    <Compile Include="HisReceptionRoom\HisReceptionRoomGetViewById.cs" />
+    <Compile Include="HisRoomType\HisRoomTypeDAO.cs" />
+    <Compile Include="HisRoomType\HisRoomTypeDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisRoomType\HisRoomTypeGet.cs" />
+    <Compile Include="HisRoomType\HisRoomTypeGetByCode.cs" />
+    <Compile Include="HisRoomType\HisRoomTypeGetDicByCode.cs" />
+    <Compile Include="HisRoom\HisRoomDAO.cs" />
+    <Compile Include="HisRoom\HisRoomDAOPlus_FullPlus.cs" />
+    <Compile Include="HisRoom\HisRoomGet.cs" />
+    <Compile Include="HisRoom\HisRoomGetViewPlus.cs" />
+    <Compile Include="HisRoom\HisRoomGetViewByCode.cs" />
+    <Compile Include="HisRoom\HisRoomGetViewById.cs" />
+    <Compile Include="HisSereServFile\HisSereServFileDAO.cs" />
+    <Compile Include="HisSereServFile\HisSereServFileGet.cs" />
+    <Compile Include="HisSereServPttt\HisSereServPtttDAO.cs" />
+    <Compile Include="HisSereServPttt\HisSereServPtttDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisSereServPttt\HisSereServPtttGet.cs" />
+    <Compile Include="HisSereServPttt\HisSereServPtttGetView.cs" />
+    <Compile Include="HisSereServPttt\HisSereServPtttGetViewById.cs" />
+    <Compile Include="HisSereServSuin\HisSereServSuinDAO.cs" />
+    <Compile Include="HisSereServSuin\HisSereServSuinDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisSereServSuin\HisSereServSuinGet.cs" />
+    <Compile Include="HisSereServSuin\HisSereServSuinGetView.cs" />
+    <Compile Include="HisSereServSuin\HisSereServSuinGetViewById.cs" />
+    <Compile Include="HisSereServTein\HisSereServTeinDAO.cs" />
+    <Compile Include="HisSereServTein\HisSereServTeinDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisSereServTein\HisSereServTeinGet.cs" />
+    <Compile Include="HisSereServTein\HisSereServTeinGetView.cs" />
+    <Compile Include="HisSereServTein\HisSereServTeinGetViewById.cs" />
+    <Compile Include="HisSereServ\HisSereServDAO.cs" />
+    <Compile Include="HisSereServ\HisSereServDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisSereServ\HisSereServGet.cs" />
+    <Compile Include="HisSereServ\HisSereServGetView.cs" />
+    <Compile Include="HisSereServ\HisSereServGetViewById.cs" />
+    <Compile Include="HisServiceGroup\HisServiceGroupDAO.cs" />
+    <Compile Include="HisServiceGroup\HisServiceGroupDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisServiceGroup\HisServiceGroupGet.cs" />
+    <Compile Include="HisServiceGroup\HisServiceGroupGetByCode.cs" />
+    <Compile Include="HisServiceGroup\HisServiceGroupGetDicByCode.cs" />
+    <Compile Include="HisServicePackage\HisServicePackageDAO.cs" />
+    <Compile Include="HisServicePackage\HisServicePackageDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisServicePackage\HisServicePackageGet.cs" />
+    <Compile Include="HisServicePackage\HisServicePackageGetView.cs" />
+    <Compile Include="HisServicePackage\HisServicePackageGetViewById.cs" />
+    <Compile Include="HisServicePaty\HisServicePatyDAO.cs" />
+    <Compile Include="HisServicePaty\HisServicePatyDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisServicePaty\HisServicePatyGet.cs" />
+    <Compile Include="HisServicePaty\HisServicePatyGetView.cs" />
+    <Compile Include="HisServicePaty\HisServicePatyGetViewById.cs" />
+    <Compile Include="HisServiceReqMaty\HisServiceReqMatyDAO.cs" />
+    <Compile Include="HisServiceReqMaty\HisServiceReqMatyGet.cs" />
+    <Compile Include="HisServiceReqMety\HisServiceReqMetyDAO.cs" />
+    <Compile Include="HisServiceReqMety\HisServiceReqMetyGet.cs" />
+    <Compile Include="HisServiceReqStt\HisServiceReqSttDAO.cs" />
+    <Compile Include="HisServiceReqStt\HisServiceReqSttDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisServiceReqStt\HisServiceReqSttGet.cs" />
+    <Compile Include="HisServiceReqStt\HisServiceReqSttGetByCode.cs" />
+    <Compile Include="HisServiceReqStt\HisServiceReqSttGetDicByCode.cs" />
+    <Compile Include="HisServiceReqType\HisServiceReqTypeDAO.cs" />
+    <Compile Include="HisServiceReqType\HisServiceReqTypeDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisServiceReqType\HisServiceReqTypeGet.cs" />
+    <Compile Include="HisServiceReqType\HisServiceReqTypeGetByCode.cs" />
+    <Compile Include="HisServiceReqType\HisServiceReqTypeGetDicByCode.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqDAOPlus_View9.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqGetView9.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqGetView7.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqGetView7ByCode.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqGetView7ById.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqDAOPlus_View7.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqDAOPlus_View6.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqGetView6.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqGetView6ByCode.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqGetView6ById.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqDAOPlus_View3.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqGetView3.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqGetView3ByCode.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqGetView3ById.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqDAOPlus_View1.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqGetView1.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqGetView1ByCode.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqGetView1ById.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqDAOPlus_View2.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqGetView2.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqGetView2ByCode.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqGetView2ById.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqDAO.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqDAOPlus_Full.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqGet.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqGetByCode.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqGetDicByCode.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqGetView.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqGetViewByCode.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqGetViewById.cs" />
+    <Compile Include="HisServiceRetyCat\HisServiceRetyCatDAO.cs" />
+    <Compile Include="HisServiceRetyCat\HisServiceRetyCatDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisServiceRetyCat\HisServiceRetyCatGet.cs" />
+    <Compile Include="HisServiceRetyCat\HisServiceRetyCatGetView.cs" />
+    <Compile Include="HisServiceRetyCat\HisServiceRetyCatGetViewById.cs" />
+    <Compile Include="HisServiceRoom\HisServiceRoomDAO.cs" />
+    <Compile Include="HisServiceRoom\HisServiceRoomDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisServiceRoom\HisServiceRoomGet.cs" />
+    <Compile Include="HisServiceRoom\HisServiceRoomGetView.cs" />
+    <Compile Include="HisServiceRoom\HisServiceRoomGetViewById.cs" />
+    <Compile Include="HisServiceType\HisServiceTypeDAO.cs" />
+    <Compile Include="HisServiceType\HisServiceTypeDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisServiceType\HisServiceTypeGet.cs" />
+    <Compile Include="HisServiceType\HisServiceTypeGetByCode.cs" />
+    <Compile Include="HisServiceType\HisServiceTypeGetDicByCode.cs" />
+    <Compile Include="HisServiceUnit\HisServiceUnitDAO.cs" />
+    <Compile Include="HisServiceUnit\HisServiceUnitDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisServiceUnit\HisServiceUnitGet.cs" />
+    <Compile Include="HisServiceUnit\HisServiceUnitGetByCode.cs" />
+    <Compile Include="HisServiceUnit\HisServiceUnitGetDicByCode.cs" />
+    <Compile Include="HisService\HisServiceDAO.cs" />
+    <Compile Include="HisService\HisServiceDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisService\HisServiceGet.cs" />
+    <Compile Include="HisService\HisServiceGetView.cs" />
+    <Compile Include="HisService\HisServiceGetViewById.cs" />
+    <Compile Include="HisServSegr\HisServSegrDAO.cs" />
+    <Compile Include="HisServSegr\HisServSegrDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisServSegr\HisServSegrGet.cs" />
+    <Compile Include="HisServSegr\HisServSegrGetView.cs" />
+    <Compile Include="HisServSegr\HisServSegrGetViewById.cs" />
+    <Compile Include="HisSeseDepoRepay\HisSeseDepoRepayDAO.cs" />
+    <Compile Include="HisSeseDepoRepay\HisSeseDepoRepayDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisSeseDepoRepay\HisSeseDepoRepayGet.cs" />
+    <Compile Include="HisSeseDepoRepay\HisSeseDepoRepayGetView.cs" />
+    <Compile Include="HisSeseDepoRepay\HisSeseDepoRepayGetViewById.cs" />
+    <Compile Include="HisVitaminA\HisVitaminADAO.cs" />
+    <Compile Include="HisVitaminA\HisVitaminADAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisVitaminA\HisVitaminAGet.cs" />
+    <Compile Include="HisVitaminA\HisVitaminAGetView.cs" />
+    <Compile Include="HisVitaminA\HisVitaminAGetViewByCode.cs" />
+    <Compile Include="HisVitaminA\HisVitaminAGetViewById.cs" />
+    <Compile Include="Sql\ProcessDelegate.cs" />
+    <Compile Include="Sql\AnalysisDb.cs" />
+    <Compile Include="Sql\Delegate.cs" />
+    <Compile Include="Sql\MyAppContext.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sql\DbConnect.cs" />
+    <Compile Include="Sql\GetEntitiesName.cs" />
+    <Compile Include="Sql\SqlDAO.cs" />
+    <Compile Include="Sql\SqlExecute.cs" />
+    <Compile Include="HisSuimIndexUnit\HisSuimIndexUnitDAO.cs" />
+    <Compile Include="HisSuimIndexUnit\HisSuimIndexUnitDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisSuimIndexUnit\HisSuimIndexUnitGet.cs" />
+    <Compile Include="HisSuimIndexUnit\HisSuimIndexUnitGetByCode.cs" />
+    <Compile Include="HisSuimIndexUnit\HisSuimIndexUnitGetDicByCode.cs" />
+    <Compile Include="HisSuimIndex\HisSuimIndexDAO.cs" />
+    <Compile Include="HisSuimIndex\HisSuimIndexDAOPlus_Full.cs" />
+    <Compile Include="HisSuimIndex\HisSuimIndexGet.cs" />
+    <Compile Include="HisSuimIndex\HisSuimIndexGetByCode.cs" />
+    <Compile Include="HisSuimIndex\HisSuimIndexGetDicByCode.cs" />
+    <Compile Include="HisSuimIndex\HisSuimIndexGetView.cs" />
+    <Compile Include="HisSuimIndex\HisSuimIndexGetViewByCode.cs" />
+    <Compile Include="HisSuimIndex\HisSuimIndexGetViewById.cs" />
+    <Compile Include="HisSuimSetySuin\HisSuimSetySuinDAO.cs" />
+    <Compile Include="HisSuimSetySuin\HisSuimSetySuinDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisSuimSetySuin\HisSuimSetySuinGet.cs" />
+    <Compile Include="HisSuimSetySuin\HisSuimSetySuinGetView.cs" />
+    <Compile Include="HisSuimSetySuin\HisSuimSetySuinGetViewById.cs" />
+    <Compile Include="HisSupplier\HisSupplierDAO.cs" />
+    <Compile Include="HisSupplier\HisSupplierDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisSupplier\HisSupplierGet.cs" />
+    <Compile Include="HisSupplier\HisSupplierGetByCode.cs" />
+    <Compile Include="HisSupplier\HisSupplierGetDicByCode.cs" />
+    <Compile Include="HisTestIndexRange\HisTestIndexRangeDAO.cs" />
+    <Compile Include="HisTestIndexRange\HisTestIndexRangeDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisTestIndexRange\HisTestIndexRangeGet.cs" />
+    <Compile Include="HisTestIndexRange\HisTestIndexRangeGetView.cs" />
+    <Compile Include="HisTestIndexRange\HisTestIndexRangeGetViewById.cs" />
+    <Compile Include="HisTestIndexUnit\HisTestIndexUnitDAO.cs" />
+    <Compile Include="HisTestIndexUnit\HisTestIndexUnitDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisTestIndexUnit\HisTestIndexUnitGet.cs" />
+    <Compile Include="HisTestIndexUnit\HisTestIndexUnitGetByCode.cs" />
+    <Compile Include="HisTestIndexUnit\HisTestIndexUnitGetDicByCode.cs" />
+    <Compile Include="HisTestIndex\HisTestIndexDAO.cs" />
+    <Compile Include="HisTestIndex\HisTestIndexDAOPlus_Full.cs" />
+    <Compile Include="HisTestIndex\HisTestIndexGet.cs" />
+    <Compile Include="HisTestIndex\HisTestIndexGetByCode.cs" />
+    <Compile Include="HisTestIndex\HisTestIndexGetDicByCode.cs" />
+    <Compile Include="HisTestIndex\HisTestIndexGetView.cs" />
+    <Compile Include="HisTestIndex\HisTestIndexGetViewByCode.cs" />
+    <Compile Include="HisTestIndex\HisTestIndexGetViewById.cs" />
+    <Compile Include="HisTextLib\HisTextLibDAO.cs" />
+    <Compile Include="HisTextLib\HisTextLibGet.cs" />
+    <Compile Include="HisTracking\HisTrackingDAO.cs" />
+    <Compile Include="HisTracking\HisTrackingDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisTracking\HisTrackingGet.cs" />
+    <Compile Include="HisTracking\HisTrackingGetView.cs" />
+    <Compile Include="HisTracking\HisTrackingGetViewById.cs" />
+    <Compile Include="HisTranPatiForm\HisTranPatiFormDAO.cs" />
+    <Compile Include="HisTranPatiForm\HisTranPatiFormDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisTranPatiForm\HisTranPatiFormGet.cs" />
+    <Compile Include="HisTranPatiForm\HisTranPatiFormGetByCode.cs" />
+    <Compile Include="HisTranPatiForm\HisTranPatiFormGetDicByCode.cs" />
+    <Compile Include="HisTranPatiReason\HisTranPatiReasonDAO.cs" />
+    <Compile Include="HisTranPatiReason\HisTranPatiReasonDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisTranPatiReason\HisTranPatiReasonGet.cs" />
+    <Compile Include="HisTranPatiReason\HisTranPatiReasonGetByCode.cs" />
+    <Compile Include="HisTranPatiReason\HisTranPatiReasonGetDicByCode.cs" />
+    <Compile Include="HisTransactionType\HisTransactionTypeDAO.cs" />
+    <Compile Include="HisTransactionType\HisTransactionTypeDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisTransactionType\HisTransactionTypeGet.cs" />
+    <Compile Include="HisTransactionType\HisTransactionTypeGetByCode.cs" />
+    <Compile Include="HisTransactionType\HisTransactionTypeGetDicByCode.cs" />
+    <Compile Include="HisTransaction\HisTransactionDAOPlus_View5.cs" />
+    <Compile Include="HisTransaction\HisTransactionGetView5ByCode.cs" />
+    <Compile Include="HisTransaction\HisTransactionGetView5ById.cs" />
+    <Compile Include="HisTransaction\HisTransactionGetView5.cs" />
+    <Compile Include="HisTransaction\HisTransactionDAO.cs" />
+    <Compile Include="HisTransaction\HisTransactionDAOPlus_Full.cs" />
+    <Compile Include="HisTransaction\HisTransactionGet.cs" />
+    <Compile Include="HisTransaction\HisTransactionGetByCode.cs" />
+    <Compile Include="HisTransaction\HisTransactionGetDicByCode.cs" />
+    <Compile Include="HisTransaction\HisTransactionGetView.cs" />
+    <Compile Include="HisTransaction\HisTransactionGetViewByCode.cs" />
+    <Compile Include="HisTransaction\HisTransactionGetViewById.cs" />
+    <Compile Include="HisTreatmentBedRoom\HisTreatmentBedRoomDAO.cs" />
+    <Compile Include="HisTreatmentBedRoom\HisTreatmentBedRoomDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisTreatmentBedRoom\HisTreatmentBedRoomGet.cs" />
+    <Compile Include="HisTreatmentBedRoom\HisTreatmentBedRoomGetView.cs" />
+    <Compile Include="HisTreatmentBedRoom\HisTreatmentBedRoomGetViewById.cs" />
+    <Compile Include="HisTreatmentEndType\HisTreatmentEndTypeDAO.cs" />
+    <Compile Include="HisTreatmentEndType\HisTreatmentEndTypeDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisTreatmentEndType\HisTreatmentEndTypeGet.cs" />
+    <Compile Include="HisTreatmentEndType\HisTreatmentEndTypeGetByCode.cs" />
+    <Compile Include="HisTreatmentEndType\HisTreatmentEndTypeGetDicByCode.cs" />
+    <Compile Include="HisTreatmentLogging\HisTreatmentLoggingDAO.cs" />
+    <Compile Include="HisTreatmentLogging\HisTreatmentLoggingDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisTreatmentLogging\HisTreatmentLoggingGet.cs" />
+    <Compile Include="HisTreatmentLogging\HisTreatmentLoggingGetView.cs" />
+    <Compile Include="HisTreatmentLogging\HisTreatmentLoggingGetViewById.cs" />
+    <Compile Include="HisTreatmentLogType\HisTreatmentLogTypeDAO.cs" />
+    <Compile Include="HisTreatmentLogType\HisTreatmentLogTypeDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisTreatmentLogType\HisTreatmentLogTypeGet.cs" />
+    <Compile Include="HisTreatmentLogType\HisTreatmentLogTypeGetByCode.cs" />
+    <Compile Include="HisTreatmentLogType\HisTreatmentLogTypeGetDicByCode.cs" />
+    <Compile Include="HisTreatmentResult\HisTreatmentResultDAO.cs" />
+    <Compile Include="HisTreatmentResult\HisTreatmentResultDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisTreatmentResult\HisTreatmentResultGet.cs" />
+    <Compile Include="HisTreatmentResult\HisTreatmentResultGetByCode.cs" />
+    <Compile Include="HisTreatmentResult\HisTreatmentResultGetDicByCode.cs" />
+    <Compile Include="HisTreatmentType\HisTreatmentTypeDAO.cs" />
+    <Compile Include="HisTreatmentType\HisTreatmentTypeDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisTreatmentType\HisTreatmentTypeGet.cs" />
+    <Compile Include="HisTreatmentType\HisTreatmentTypeGetByCode.cs" />
+    <Compile Include="HisTreatmentType\HisTreatmentTypeGetDicByCode.cs" />
+    <Compile Include="HisTreatment\HisTreatmentDAOPlus_ViewFee1.cs" />
+    <Compile Include="HisTreatment\HisTreatmentGetViewFee1ById.cs" />
+    <Compile Include="HisTreatment\HisTreatmentGetViewFee1.cs" />
+    <Compile Include="HisTreatment\HisTreatmentDAOPlus_View7.cs" />
+    <Compile Include="HisTreatment\HisTreatmentGetView7.cs" />
+    <Compile Include="HisTreatment\HisTreatmentGetView7ByCode.cs" />
+    <Compile Include="HisTreatment\HisTreatmentGetView7ById.cs" />
+    <Compile Include="HisTreatment\HisTreatmentDAOPlus_View6.cs" />
+    <Compile Include="HisTreatment\HisTreatmentGetView6.cs" />
+    <Compile Include="HisTreatment\HisTreatmentGetView6ByCode.cs" />
+    <Compile Include="HisTreatment\HisTreatmentGetView6ById.cs" />
+    <Compile Include="HisTreatment\HisTreatmentDAOPlus_View4.cs" />
+    <Compile Include="HisTreatment\HisTreatmentGetView4.cs" />
+    <Compile Include="HisTreatment\HisTreatmentGetView4ByCode.cs" />
+    <Compile Include="HisTreatment\HisTreatmentGetView4ById.cs" />
+    <Compile Include="HisTreatment\HisTreatmentDAOPlus_View3.cs" />
+    <Compile Include="HisTreatment\HisTreatmentGetView3.cs" />
+    <Compile Include="HisTreatment\HisTreatmentGetView3ByCode.cs" />
+    <Compile Include="HisTreatment\HisTreatmentGetView3ById.cs" />
+    <Compile Include="HisTreatment\HisTreatmentDAOPlus_View2.cs" />
+    <Compile Include="HisTreatment\HisTreatmentGetView2.cs" />
+    <Compile Include="HisTreatment\HisTreatmentGetView2ByCode.cs" />
+    <Compile Include="HisTreatment\HisTreatmentGetView2ById.cs" />
+    <Compile Include="HisTreatment\HisTreatmentGetView1.cs" />
+    <Compile Include="HisTreatment\HisTreatmentGetView1ByCode.cs" />
+    <Compile Include="HisTreatment\HisTreatmentGetView1ById.cs" />
+    <Compile Include="HisTreatment\HisTreatmentDAOPlus_View1.cs" />
+    <Compile Include="HisTreatment\HisTreatmentGetViewByIdFee.cs" />
+    <Compile Include="HisTreatment\HisTreatmentGetViewFee.cs" />
+    <Compile Include="HisTreatment\HisTreatmentDAOPlus_ViewFee.cs" />
+    <Compile Include="HisTreatment\HisTreatmentDAO.cs" />
+    <Compile Include="HisTreatment\HisTreatmentDAOPlus_Full.cs" />
+    <Compile Include="HisTreatment\HisTreatmentGet.cs" />
+    <Compile Include="HisTreatment\HisTreatmentGetByCode.cs" />
+    <Compile Include="HisTreatment\HisTreatmentGetDicByCode.cs" />
+    <Compile Include="HisTreatment\HisTreatmentGetView.cs" />
+    <Compile Include="HisTreatment\HisTreatmentGetViewByCode.cs" />
+    <Compile Include="HisTreatment\HisTreatmentGetViewById.cs" />
+    <Compile Include="HisUserInvoiceBook\HisUserInvoiceBookDAO.cs" />
+    <Compile Include="HisUserInvoiceBook\HisUserInvoiceBookDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisUserInvoiceBook\HisUserInvoiceBookGet.cs" />
+    <Compile Include="HisUserInvoiceBook\HisUserInvoiceBookGetView.cs" />
+    <Compile Include="HisUserInvoiceBook\HisUserInvoiceBookGetViewById.cs" />
+    <Compile Include="HisUserRoom\HisUserRoomDAO.cs" />
+    <Compile Include="HisUserRoom\HisUserRoomDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HisUserRoom\HisUserRoomGet.cs" />
+    <Compile Include="HisUserRoom\HisUserRoomGetView.cs" />
+    <Compile Include="HisUserRoom\HisUserRoomGetViewById.cs" />
+    <Compile Include="HisWorkPlace\HisWorkPlaceDAO.cs" />
+    <Compile Include="HisWorkPlace\HisWorkPlaceDAOPlus_Full_NoView.cs" />
+    <Compile Include="HisWorkPlace\HisWorkPlaceGet.cs" />
+    <Compile Include="HisWorkPlace\HisWorkPlaceGetByCode.cs" />
+    <Compile Include="HisWorkPlace\HisWorkPlaceGetDicByCode.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sql\Translate.cs" />
+    <Compile Include="Sql\EditStatement.cs" />
+    <Compile Include="Sql\ValidateStatement.cs" />
+    <Compile Include="StagingObject\HisSereServDebtSO_Full.cs" />
+    <Compile Include="StagingObject\HisFilmSizeSO.cs" />
+    <Compile Include="StagingObject\HisOtherPaySourceSO.cs" />
+    <Compile Include="StagingObject\HisPatientCaseSO.cs" />
+    <Compile Include="StagingObject\HisPtttTableSO_Full.cs" />
+    <Compile Include="StagingObject\HisEmotionlessResultSO_Full.cs" />
+    <Compile Include="StagingObject\HisPtttPrioritySO_Full.cs" />
+    <Compile Include="StagingObject\HisAccidentBodyPartSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisAccidentCareSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisAccidentHelmetSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisAccidentHurtSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisAccidentHurtTypeSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisAccidentLocationSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisAccidentPoisonSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisAccidentResultSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisAccidentVehicleSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisAccountBookSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisAcinInteractiveSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisActiveIngredientSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisAnticipateBltySO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisAnticipateMatySO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisAnticipateMetySO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisAnticipateSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisAwarenessSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisBabySO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisBedBstySO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisBedLogSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisBedRoomSO_FullPlus.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisBedSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisBedTypeSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisBhytBlacklistSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisBhytWhitelistSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisBidBloodTypeSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisBidMaterialTypeSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisBidMedicineTypeSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisBidSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisBidTypeSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisBillFundSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisBillGoodsSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisBloodAboSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisBloodGroupSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisBloodRhSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisBloodSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisBloodTypeSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisBloodVolumeSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisBornPositionSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisBornResultSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisBornTypeSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisBranchSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisCacheMonitorSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisCardSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisCareDetailSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisCareerSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisCareSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisCareSumSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisCareTypeSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisCaroDepartmentSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisCashierRoomSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisCashoutSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisConfigSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisCoTreatmentSO.cs" />
+    <Compile Include="StagingObject\HisDataStoreSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisDbLogSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisDeathCauseSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisDeathWithinSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisDebateSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisDebateUserSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisDepartmentSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisDepartmentTranSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisDepositReqSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisDhstSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisDiseaseRelationSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisEkipSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisEkipTempSO.cs" />
+    <Compile Include="StagingObject\HisEkipTempUserSO_Full.cs" />
+    <Compile Include="StagingObject\HisEkipUserSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisEmergencyWtimeSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisEmotionlessMethodSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisEmployeeSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisEmteMaterialTypeSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisEmteMedicineTypeSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisEquipmentSetMatySO_Full.cs" />
+    <Compile Include="StagingObject\HisEquipmentSetSO.cs" />
+    <Compile Include="StagingObject\HisExamSereDireSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisExamServiceTempSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisExecuteGroupSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisExecuteRoleSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisExecuteRoleUserSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisExecuteRoomSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisExpMestBloodSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisExpMestBltyReqSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisExpMestMaterialSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisExpMestMatyReqSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisExpMestMedicineSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisExpMestMetyReqSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisExpMestReasonSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisExpMestSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisExpMestSttSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisExpMestTemplateSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisExpMestTypeSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisExpMestUserSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisFundSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisGenderSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisHeinApprovalSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisHeinServiceTypeSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisHtuSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisIcdCmSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisIcdGroupSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisIcdServiceSO.cs" />
+    <Compile Include="StagingObject\HisIcdSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisImpMestBloodSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisImpMestMaterialSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisImpMestMedicineSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisImpMestSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisImpMestSttSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisImpMestTypeSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisImpMestTypeUserSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisImpMestUserSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisImpSourceSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisInfusionSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisInfusionSumSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisInvoiceBookSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisInvoiceDetailSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisInvoicePrintSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisInvoiceSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisKskContractSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisMachineSO.cs" />
+    <Compile Include="StagingObject\HisManufacturerSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisMaterialBeanSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisMaterialPatySO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisMaterialSO_FullPlus.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisMaterialTypeSO_FullPlus.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisMedicineBeanSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisMedicineGroupSO.cs" />
+    <Compile Include="StagingObject\HisMedicineLineSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisMedicinePatySO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisMedicineSO_FullPlus.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisMedicineTypeAcinSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisMedicineTypeSO_FullPlus.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisMedicineTypeTutSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisMedicineUseFormSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisMediOrgSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisMediReactSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisMediReactSumSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisMediReactTypeSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisMediStockExtySO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisMediStockImtySO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisMediStockMatySO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisMediStockMetySO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisMediStockPeriodSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisMediStockSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisMemaGroupSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisMestInventorySO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisMestInveUserSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisMestMetyDepaSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisMestPatientTypeSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisMestPatySubSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisMestPeriodBloodSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisMestPeriodBltySO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisMestPeriodMateSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisMestPeriodMatySO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisMestPeriodMediSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisMestPeriodMetySO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisMestRoomSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisMilitaryRankSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisOweTypeSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisPaanLiquidSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisPaanPositionSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisPackageSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisPackingTypeSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisPatientProgramSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisPatientSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisPatientTypeAllowSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisPatientTypeAlterSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisPatientTypeSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisPatientTypeSubSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisPayFormSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisProgramSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisPtttCatastropheSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisPtttConditionSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisPtttGroupSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisPtttMethodSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisReceptionRoomSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisRegisterGateSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisRegisterReqSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisRehaSumSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisRehaTrainSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisRehaTrainTypeSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisRehaTrainUnitSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisRemunerationSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisRepayReasonSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisReportTypeCatSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisRestRetrTypeSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisRoomGroupSO.cs" />
+    <Compile Include="StagingObject\HisRoomSO_FullPlus.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisRoomTypeModuleSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisRoomTypeSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisSampleRoomSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisSaroExroSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisSereServBillSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisSereServDepositSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisSereServExtSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisSereServFileSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisSereServMatySO_Full.cs" />
+    <Compile Include="StagingObject\HisSereServPtttSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisSereServRehaSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisSereServSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisSereServSuinSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisSereServTeinSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisSereServTempSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisServiceFollowSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisServiceGroupSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisServiceMachineSO.cs" />
+    <Compile Include="StagingObject\HisServiceMatySO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisServiceMetySO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisServicePackageSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisServicePatySO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisServiceReqMatySO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisServiceReqMetySO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisServiceReqSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisServiceReqSttSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisServiceReqTypeSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisServiceRetyCatSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisServiceRoomSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisServiceSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisServiceTypeSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisServiceUnitSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisServSegrSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisSeseDepoRepaySO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisSuimIndexSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisSuimIndexUnitSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisSuimSetySuinSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisSupplierSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisTestIndexRangeSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisTestIndexSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisTestIndexUnitSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisTextLibSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisTrackingSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisTranPatiFormSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisTranPatiReasonSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisTransactionSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisTransactionTypeSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisTreatmentBedRoomSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisTreatmentEndTypeSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisTreatmentLoggingSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisTreatmentLogTypeSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisTreatmentResultSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisTreatmentSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisTreatmentTypeSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisUserInvoiceBookSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisUserRoomSO_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StagingObject\HisVitaminASO_Full.cs" />
+    <Compile Include="StagingObject\HisWorkPlaceSO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

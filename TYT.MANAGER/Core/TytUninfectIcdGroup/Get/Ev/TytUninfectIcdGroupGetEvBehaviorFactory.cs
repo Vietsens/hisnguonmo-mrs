@@ -1,0 +1,36 @@
+using Inventec.Core;
+using System;
+
+namespace TYT.MANAGER.Core.TytUninfectIcdGroup.Get.Ev
+{
+    class TytUninfectIcdGroupGetEvBehaviorFactory
+    {
+        internal static ITytUninfectIcdGroupGetEv MakeITytUninfectIcdGroupGetEv(CommonParam param, object data)
+        {
+            ITytUninfectIcdGroupGetEv result = null;
+            try
+            {
+                if (data.GetType() == typeof(string))
+                {
+                    result = new TytUninfectIcdGroupGetEvBehaviorByCode(param, data.ToString());
+                }
+                else if (data.GetType() == typeof(long))
+                {
+                    result = new TytUninfectIcdGroupGetEvBehaviorById(param, long.Parse(data.ToString()));
+                }
+                if (result == null) throw new NullReferenceException();
+            }
+            catch (NullReferenceException ex)
+            {
+                Inventec.Common.Logging.LogSystem.Error("Factory khong khoi tao duoc doi tuong." + data.GetType().ToString() + Inventec.Common.Logging.LogUtil.TraceData(Inventec.Common.Logging.LogUtil.GetMemberName(() => data), data), ex);
+                result = null;
+            }
+            catch (Exception ex)
+            {
+                Inventec.Common.Logging.LogSystem.Error(ex);
+                result = null;
+            }
+            return result;
+        }
+    }
+}

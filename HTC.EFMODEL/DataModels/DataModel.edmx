@@ -1,0 +1,1114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DataModels.Store" Alias="Self" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="12.1" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="HTCDataModelsStoreContainer">
+          <EntitySet Name="HTC_EXPENSE" EntityType="DataModels.Store.HTC_EXPENSE" store:Type="Tables" Schema="HTC_RS" />
+          <EntitySet Name="HTC_EXPENSE_TYPE" EntityType="DataModels.Store.HTC_EXPENSE_TYPE" store:Type="Tables" Schema="HTC_RS" />
+          <EntitySet Name="HTC_PERIOD" EntityType="DataModels.Store.HTC_PERIOD" store:Type="Tables" Schema="HTC_RS" />
+          <EntitySet Name="HTC_PERIOD_DEPARTMENT" EntityType="DataModels.Store.HTC_PERIOD_DEPARTMENT" store:Type="Tables" Schema="HTC_RS" />
+          <EntitySet Name="HTC_REPARTITION_RATIO" EntityType="DataModels.Store.HTC_REPARTITION_RATIO" store:Type="Tables" Schema="HTC_RS" />
+          <EntitySet Name="HTC_REPARTITION_TYPE" EntityType="DataModels.Store.HTC_REPARTITION_TYPE" store:Type="Tables" Schema="HTC_RS" />
+          <EntitySet Name="HTC_REVENUE" EntityType="DataModels.Store.HTC_REVENUE" store:Type="Tables" Schema="HTC_RS" />
+          <EntitySet Name="V_HTC_EXPENSE" EntityType="DataModels.Store.V_HTC_EXPENSE" store:Type="Views" Schema="HTC_RS" />
+          <EntitySet Name="V_HTC_PERIOD_DEPARTMENT" EntityType="DataModels.Store.V_HTC_PERIOD_DEPARTMENT" store:Type="Views" Schema="HTC_RS" />
+          <EntitySet Name="V_HTC_REPARTITION_RATIO" EntityType="DataModels.Store.V_HTC_REPARTITION_RATIO" store:Type="Views" Schema="HTC_RS" />
+          <AssociationSet Name="HTC_EXPENSE_FK1" Association="DataModels.Store.HTC_EXPENSE_FK1">
+            <End Role="HTC_EXPENSE_TYPE" EntitySet="HTC_EXPENSE_TYPE" />
+            <End Role="HTC_EXPENSE" EntitySet="HTC_EXPENSE" />
+          </AssociationSet>
+          <AssociationSet Name="HTC_EXPENSE_FK2" Association="DataModels.Store.HTC_EXPENSE_FK2">
+            <End Role="HTC_PERIOD" EntitySet="HTC_PERIOD" />
+            <End Role="HTC_EXPENSE" EntitySet="HTC_EXPENSE" />
+          </AssociationSet>
+          <AssociationSet Name="HTC_EXPENSE_TYPE_FK1" Association="DataModels.Store.HTC_EXPENSE_TYPE_FK1">
+            <End Role="HTC_EXPENSE_TYPE" EntitySet="HTC_EXPENSE_TYPE" />
+            <End Role="HTC_EXPENSE_TYPE1" EntitySet="HTC_EXPENSE_TYPE" />
+          </AssociationSet>
+          <AssociationSet Name="HTC_PERIOD_DEPARTMENT_FK1" Association="DataModels.Store.HTC_PERIOD_DEPARTMENT_FK1">
+            <End Role="HTC_PERIOD" EntitySet="HTC_PERIOD" />
+            <End Role="HTC_PERIOD_DEPARTMENT" EntitySet="HTC_PERIOD_DEPARTMENT" />
+          </AssociationSet>
+          <AssociationSet Name="HTC_REPARTITION_RATIO_FK1" Association="DataModels.Store.HTC_REPARTITION_RATIO_FK1">
+            <End Role="HTC_PERIOD" EntitySet="HTC_PERIOD" />
+            <End Role="HTC_REPARTITION_RATIO" EntitySet="HTC_REPARTITION_RATIO" />
+          </AssociationSet>
+          <AssociationSet Name="HTC_REPARTITION_RATIO_FK2" Association="DataModels.Store.HTC_REPARTITION_RATIO_FK2">
+            <End Role="HTC_REPARTITION_TYPE" EntitySet="HTC_REPARTITION_TYPE" />
+            <End Role="HTC_REPARTITION_RATIO" EntitySet="HTC_REPARTITION_RATIO" />
+          </AssociationSet>
+          <AssociationSet Name="HTC_REVENUE_FK1" Association="DataModels.Store.HTC_REVENUE_FK1">
+            <End Role="HTC_PERIOD" EntitySet="HTC_PERIOD" />
+            <End Role="HTC_REVENUE" EntitySet="HTC_REVENUE" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="HTC_EXPENSE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="EXPENSE_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+          <Property Name="EXPENSE_TIME" Type="number" Nullable="false" Precision="14" />
+          <Property Name="EXPENSE_TYPE_ID" Type="number" Nullable="false" Precision="19" />
+          <Property Name="PRICE" Type="number" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="PERIOD_ID" Type="number" Nullable="false" Precision="19" />
+          <Property Name="DEPARTMENT_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="DEPARTMENT_NAME" Type="varchar2" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="HTC_EXPENSE_TYPE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="EXPENSE_TYPE_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+          <Property Name="EXPENSE_TYPE_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="PARENT_ID" Type="number" Precision="19" />
+          <Property Name="IS_ALLOW_EXPENSE" Type="number" Precision="2" />
+          <Property Name="IS_PLUS" Type="number" Precision="2" />
+        </EntityType>
+        <EntityType Name="HTC_PERIOD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="PERIOD_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+          <Property Name="FROM_TIME" Type="number" Precision="14" />
+          <Property Name="TO_TIME" Type="number" Precision="14" />
+          <Property Name="PERIOD_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="YEAR" Type="number" Precision="4" />
+          <Property Name="MONTH" Type="number" Precision="2" />
+        </EntityType>
+        <EntityType Name="HTC_PERIOD_DEPARTMENT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="PERIOD_ID" Type="number" Nullable="false" Precision="19" />
+          <Property Name="DEPARTMENT_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="DEPARTMENT_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="LABOR_AMOUNT" Type="number" Precision="19" />
+          <Property Name="CLINICAL_DAY_AMOUNT" Type="number" Precision="19" />
+          <Property Name="CLINICAL_AMOUNT" Type="number" Precision="19" />
+          <Property Name="FROM_EXAM_CLINICAL_AMOUNT" Type="number" Precision="19" />
+          <Property Name="END_TREATMENT_AMOUNT" Type="number" Precision="19" />
+          <Property Name="VIR_FROM_OTHER_CLINICAL_AMOUNT" Type="number" StoreGeneratedPattern="Computed" />
+          <Property Name="VIR_NOT_END_TREATMENT_AMOUNT" Type="number" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="HTC_REPARTITION_RATIO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="PERIOD_ID" Type="number" Nullable="false" Precision="19" />
+          <Property Name="REPARTITION_TYPE_ID" Type="number" Nullable="false" Precision="19" />
+          <Property Name="RATIO" Type="number" Nullable="false" Precision="5" Scale="4" />
+          <Property Name="DEPARTMENT_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="DEPARTMENT_NAME" Type="varchar2" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="HTC_REPARTITION_TYPE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="REPARTITION_TYPE_CODE" Type="varchar2" Nullable="false" MaxLength="2" />
+          <Property Name="REPARTITION_TYPE_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="IS_HAS_NOT_RATIO" Type="number" Precision="2" />
+        </EntityType>
+        <EntityType Name="HTC_REVENUE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="REVENUE_CODE" Type="varchar2" Nullable="false" MaxLength="14" />
+          <Property Name="REVENUE_TIME" Type="number" Nullable="false" Precision="14" />
+          <Property Name="PERIOD_ID" Type="number" Nullable="false" Precision="19" />
+          <Property Name="AMOUNT" Type="number" Nullable="false" Precision="19" Scale="2" />
+          <Property Name="PRICE" Type="number" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="SERVICE_CODE" Type="varchar2" Nullable="false" MaxLength="25" />
+          <Property Name="SERVICE_NAME" Type="varchar2" MaxLength="500" />
+          <Property Name="PATIENT_TYPE_CODE" Type="varchar2" Nullable="false" MaxLength="2" />
+          <Property Name="PATIENT_TYPE_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="SERVICE_TYPE_CODE" Type="varchar2" Nullable="false" MaxLength="2" />
+          <Property Name="SERVICE_TYPE_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="SERVICE_UNIT_CODE" Type="varchar2" MaxLength="3" />
+          <Property Name="SERVICE_UNIT_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="REQUEST_DEPARTMENT_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="REQUEST_DEPARTMENT_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="REQUEST_ROOM_CODE" Type="varchar2" MaxLength="10" />
+          <Property Name="REQUEST_ROOM_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="REQUEST_ROOM_TYPE_CODE" Type="varchar2" MaxLength="2" />
+          <Property Name="REQUEST_ROOM_TYPE_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="REQUEST_LOGINNAME" Type="varchar2" MaxLength="50" />
+          <Property Name="REQUEST_USERNAME" Type="varchar2" MaxLength="100" />
+          <Property Name="EXECUTE_DEPARTMENT_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="EXECUTE_DEPARTMENT_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="EXECUTE_ROOM_CODE" Type="varchar2" MaxLength="10" />
+          <Property Name="EXECUTE_ROOM_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="EXECUTE_ROOM_TYPE_CODE" Type="varchar2" MaxLength="2" />
+          <Property Name="EXECUTE_ROOM_TYPE_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="EXECUTE_LOGINNAME" Type="varchar2" MaxLength="50" />
+          <Property Name="EXECUTE_USERNAME" Type="varchar2" MaxLength="100" />
+          <Property Name="SERE_SERV_ID" Type="number" Precision="19" />
+          <Property Name="HEIN_PRICE" Type="number" Precision="19" Scale="4" />
+          <Property Name="VIR_PATIENT_PRICE" Type="number" StoreGeneratedPattern="Computed" />
+          <Property Name="VIR_TOTAL_PRICE" Type="number" StoreGeneratedPattern="Computed" />
+          <Property Name="VIR_TOTAL_HEIN_PRICE" Type="number" StoreGeneratedPattern="Computed" />
+          <Property Name="VIR_TOTAL_PATIENT_PRICE" Type="number" StoreGeneratedPattern="Computed" />
+          <Property Name="PATIENT_CODE" Type="varchar2" MaxLength="10" />
+          <Property Name="PATIENT_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="DOB" Type="number" Precision="14" />
+          <Property Name="IN_TIME" Type="number" Precision="14" />
+          <Property Name="OUT_TIME" Type="number" Precision="14" />
+          <Property Name="XANHPON_SYMBOL" Type="varchar2" MaxLength="20" />
+          <Property Name="BILL_NUMBER" Type="number" Precision="19" />
+        </EntityType>
+        <EntityType Name="V_HTC_EXPENSE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="EXPENSE_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+          <Property Name="EXPENSE_TIME" Type="number" Nullable="false" Precision="14" />
+          <Property Name="EXPENSE_TYPE_ID" Type="number" Nullable="false" Precision="19" />
+          <Property Name="PRICE" Type="number" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="PERIOD_ID" Type="number" Nullable="false" Precision="19" />
+          <Property Name="DEPARTMENT_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="DEPARTMENT_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="EXPENSE_TYPE_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+          <Property Name="EXPENSE_TYPE_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="PARENT_ID" Type="number" Precision="19" />
+          <Property Name="IS_ALLOW_EXPENSE" Type="number" Precision="2" />
+          <Property Name="IS_PLUS" Type="number" Precision="2" />
+          <Property Name="PERIOD_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+          <Property Name="FROM_TIME" Type="number" Precision="14" />
+          <Property Name="TO_TIME" Type="number" Precision="14" />
+          <Property Name="PERIOD_NAME" Type="varchar2" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="V_HTC_PERIOD_DEPARTMENT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="PERIOD_ID" Type="number" Nullable="false" Precision="19" />
+          <Property Name="DEPARTMENT_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="DEPARTMENT_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="LABOR_AMOUNT" Type="number" Precision="19" />
+          <Property Name="CLINICAL_DAY_AMOUNT" Type="number" Precision="19" />
+          <Property Name="CLINICAL_AMOUNT" Type="number" Precision="19" />
+          <Property Name="FROM_EXAM_CLINICAL_AMOUNT" Type="number" Precision="19" />
+          <Property Name="END_TREATMENT_AMOUNT" Type="number" Precision="19" />
+          <Property Name="VIR_FROM_OTHER_CLINICAL_AMOUNT" Type="number" StoreGeneratedPattern="Computed" />
+          <Property Name="VIR_NOT_END_TREATMENT_AMOUNT" Type="number" StoreGeneratedPattern="Computed" />
+          <Property Name="PERIOD_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+          <Property Name="FROM_TIME" Type="number" Precision="14" />
+          <Property Name="TO_TIME" Type="number" Precision="14" />
+          <Property Name="PERIOD_NAME" Type="varchar2" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="V_HTC_REPARTITION_RATIO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="PERIOD_ID" Type="number" Nullable="false" Precision="19" />
+          <Property Name="REPARTITION_TYPE_ID" Type="number" Nullable="false" Precision="19" />
+          <Property Name="RATIO" Type="number" Nullable="false" Precision="5" Scale="4" />
+          <Property Name="DEPARTMENT_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="DEPARTMENT_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="REPARTITION_TYPE_CODE" Type="varchar2" Nullable="false" MaxLength="2" />
+          <Property Name="REPARTITION_TYPE_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="PERIOD_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+          <Property Name="PERIOD_NAME" Type="varchar2" MaxLength="100" />
+        </EntityType>
+        <Association Name="HTC_EXPENSE_FK1">
+          <End Role="HTC_EXPENSE_TYPE" Type="DataModels.Store.HTC_EXPENSE_TYPE" Multiplicity="1" />
+          <End Role="HTC_EXPENSE" Type="DataModels.Store.HTC_EXPENSE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HTC_EXPENSE_TYPE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HTC_EXPENSE">
+              <PropertyRef Name="EXPENSE_TYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HTC_EXPENSE_FK2">
+          <End Role="HTC_PERIOD" Type="DataModels.Store.HTC_PERIOD" Multiplicity="1" />
+          <End Role="HTC_EXPENSE" Type="DataModels.Store.HTC_EXPENSE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HTC_PERIOD">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HTC_EXPENSE">
+              <PropertyRef Name="PERIOD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HTC_EXPENSE_TYPE_FK1">
+          <End Role="HTC_EXPENSE_TYPE" Type="DataModels.Store.HTC_EXPENSE_TYPE" Multiplicity="0..1" />
+          <End Role="HTC_EXPENSE_TYPE1" Type="DataModels.Store.HTC_EXPENSE_TYPE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HTC_EXPENSE_TYPE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HTC_EXPENSE_TYPE1">
+              <PropertyRef Name="PARENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HTC_PERIOD_DEPARTMENT_FK1">
+          <End Role="HTC_PERIOD" Type="DataModels.Store.HTC_PERIOD" Multiplicity="1" />
+          <End Role="HTC_PERIOD_DEPARTMENT" Type="DataModels.Store.HTC_PERIOD_DEPARTMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HTC_PERIOD">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HTC_PERIOD_DEPARTMENT">
+              <PropertyRef Name="PERIOD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HTC_REPARTITION_RATIO_FK1">
+          <End Role="HTC_PERIOD" Type="DataModels.Store.HTC_PERIOD" Multiplicity="1" />
+          <End Role="HTC_REPARTITION_RATIO" Type="DataModels.Store.HTC_REPARTITION_RATIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HTC_PERIOD">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HTC_REPARTITION_RATIO">
+              <PropertyRef Name="PERIOD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HTC_REPARTITION_RATIO_FK2">
+          <End Role="HTC_REPARTITION_TYPE" Type="DataModels.Store.HTC_REPARTITION_TYPE" Multiplicity="1" />
+          <End Role="HTC_REPARTITION_RATIO" Type="DataModels.Store.HTC_REPARTITION_RATIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HTC_REPARTITION_TYPE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HTC_REPARTITION_RATIO">
+              <PropertyRef Name="REPARTITION_TYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HTC_REVENUE_FK1">
+          <End Role="HTC_PERIOD" Type="DataModels.Store.HTC_PERIOD" Multiplicity="1" />
+          <End Role="HTC_REVENUE" Type="DataModels.Store.HTC_REVENUE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HTC_PERIOD">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HTC_REVENUE">
+              <PropertyRef Name="PERIOD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DataModels" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="HTCEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="HTC_EXPENSE" EntityType="DataModels.HTC_EXPENSE" />
+          <EntitySet Name="HTC_EXPENSE_TYPE" EntityType="DataModels.HTC_EXPENSE_TYPE" />
+          <EntitySet Name="HTC_PERIOD" EntityType="DataModels.HTC_PERIOD" />
+          <EntitySet Name="HTC_PERIOD_DEPARTMENT" EntityType="DataModels.HTC_PERIOD_DEPARTMENT" />
+          <EntitySet Name="HTC_REPARTITION_RATIO" EntityType="DataModels.HTC_REPARTITION_RATIO" />
+          <EntitySet Name="HTC_REPARTITION_TYPE" EntityType="DataModels.HTC_REPARTITION_TYPE" />
+          <EntitySet Name="HTC_REVENUE" EntityType="DataModels.HTC_REVENUE" />
+          <EntitySet Name="V_HTC_EXPENSE" EntityType="DataModels.V_HTC_EXPENSE" />
+          <EntitySet Name="V_HTC_PERIOD_DEPARTMENT" EntityType="DataModels.V_HTC_PERIOD_DEPARTMENT" />
+          <EntitySet Name="V_HTC_REPARTITION_RATIO" EntityType="DataModels.V_HTC_REPARTITION_RATIO" />
+          <AssociationSet Name="HTC_EXPENSE_FK1" Association="DataModels.HTC_EXPENSE_FK1">
+            <End Role="HTC_EXPENSE_TYPE" EntitySet="HTC_EXPENSE_TYPE" />
+            <End Role="HTC_EXPENSE" EntitySet="HTC_EXPENSE" />
+          </AssociationSet>
+          <AssociationSet Name="HTC_EXPENSE_FK2" Association="DataModels.HTC_EXPENSE_FK2">
+            <End Role="HTC_PERIOD" EntitySet="HTC_PERIOD" />
+            <End Role="HTC_EXPENSE" EntitySet="HTC_EXPENSE" />
+          </AssociationSet>
+          <AssociationSet Name="HTC_EXPENSE_TYPE_FK1" Association="DataModels.HTC_EXPENSE_TYPE_FK1">
+            <End Role="HTC_EXPENSE_TYPE" EntitySet="HTC_EXPENSE_TYPE" />
+            <End Role="HTC_EXPENSE_TYPE1" EntitySet="HTC_EXPENSE_TYPE" />
+          </AssociationSet>
+          <AssociationSet Name="HTC_PERIOD_DEPARTMENT_FK1" Association="DataModels.HTC_PERIOD_DEPARTMENT_FK1">
+            <End Role="HTC_PERIOD" EntitySet="HTC_PERIOD" />
+            <End Role="HTC_PERIOD_DEPARTMENT" EntitySet="HTC_PERIOD_DEPARTMENT" />
+          </AssociationSet>
+          <AssociationSet Name="HTC_REPARTITION_RATIO_FK1" Association="DataModels.HTC_REPARTITION_RATIO_FK1">
+            <End Role="HTC_PERIOD" EntitySet="HTC_PERIOD" />
+            <End Role="HTC_REPARTITION_RATIO" EntitySet="HTC_REPARTITION_RATIO" />
+          </AssociationSet>
+          <AssociationSet Name="HTC_REVENUE_FK1" Association="DataModels.HTC_REVENUE_FK1">
+            <End Role="HTC_PERIOD" EntitySet="HTC_PERIOD" />
+            <End Role="HTC_REVENUE" EntitySet="HTC_REVENUE" />
+          </AssociationSet>
+          <AssociationSet Name="HTC_REPARTITION_RATIO_FK2" Association="DataModels.HTC_REPARTITION_RATIO_FK2">
+            <End Role="HTC_REPARTITION_TYPE" EntitySet="HTC_REPARTITION_TYPE" />
+            <End Role="HTC_REPARTITION_RATIO" EntitySet="HTC_REPARTITION_RATIO" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="HTC_EXPENSE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="EXPENSE_CODE" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="EXPENSE_TIME" Type="Int64" Nullable="false" />
+          <Property Name="EXPENSE_TYPE_ID" Type="Int64" Nullable="false" />
+          <Property Name="PRICE" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="PERIOD_ID" Type="Int64" Nullable="false" />
+          <Property Name="DEPARTMENT_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="DEPARTMENT_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="HTC_EXPENSE_TYPE" Relationship="DataModels.HTC_EXPENSE_FK1" FromRole="HTC_EXPENSE" ToRole="HTC_EXPENSE_TYPE" />
+          <NavigationProperty Name="HTC_PERIOD" Relationship="DataModels.HTC_EXPENSE_FK2" FromRole="HTC_EXPENSE" ToRole="HTC_PERIOD" />
+        </EntityType>
+        <EntityType Name="HTC_EXPENSE_TYPE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="EXPENSE_TYPE_CODE" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="EXPENSE_TYPE_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="PARENT_ID" Type="Int64" />
+          <Property Name="IS_ALLOW_EXPENSE" Type="Int16" />
+          <Property Name="IS_PLUS" Type="Int16" />
+          <NavigationProperty Name="HTC_EXPENSE" Relationship="DataModels.HTC_EXPENSE_FK1" FromRole="HTC_EXPENSE_TYPE" ToRole="HTC_EXPENSE" />
+          <NavigationProperty Name="HTC_EXPENSE_TYPE1" Relationship="DataModels.HTC_EXPENSE_TYPE_FK1" FromRole="HTC_EXPENSE_TYPE" ToRole="HTC_EXPENSE_TYPE1" />
+          <NavigationProperty Name="HTC_EXPENSE_TYPE2" Relationship="DataModels.HTC_EXPENSE_TYPE_FK1" FromRole="HTC_EXPENSE_TYPE1" ToRole="HTC_EXPENSE_TYPE" />
+        </EntityType>
+        <EntityType Name="HTC_PERIOD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PERIOD_CODE" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="FROM_TIME" Type="Int64" />
+          <Property Name="TO_TIME" Type="Int64" />
+          <Property Name="PERIOD_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="YEAR" Type="Int16" />
+          <Property Name="MONTH" Type="Int16" />
+          <NavigationProperty Name="HTC_EXPENSE" Relationship="DataModels.HTC_EXPENSE_FK2" FromRole="HTC_PERIOD" ToRole="HTC_EXPENSE" />
+          <NavigationProperty Name="HTC_PERIOD_DEPARTMENT" Relationship="DataModels.HTC_PERIOD_DEPARTMENT_FK1" FromRole="HTC_PERIOD" ToRole="HTC_PERIOD_DEPARTMENT" />
+          <NavigationProperty Name="HTC_REPARTITION_RATIO" Relationship="DataModels.HTC_REPARTITION_RATIO_FK1" FromRole="HTC_PERIOD" ToRole="HTC_REPARTITION_RATIO" />
+          <NavigationProperty Name="HTC_REVENUE" Relationship="DataModels.HTC_REVENUE_FK1" FromRole="HTC_PERIOD" ToRole="HTC_REVENUE" />
+        </EntityType>
+        <EntityType Name="HTC_PERIOD_DEPARTMENT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PERIOD_ID" Type="Int64" Nullable="false" />
+          <Property Name="DEPARTMENT_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="DEPARTMENT_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="LABOR_AMOUNT" Type="Int64" />
+          <Property Name="CLINICAL_DAY_AMOUNT" Type="Int64" />
+          <Property Name="CLINICAL_AMOUNT" Type="Int64" />
+          <Property Name="FROM_EXAM_CLINICAL_AMOUNT" Type="Int64" />
+          <Property Name="END_TREATMENT_AMOUNT" Type="Int64" />
+          <Property Name="VIR_FROM_OTHER_CLINICAL_AMOUNT" Type="Decimal" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="VIR_NOT_END_TREATMENT_AMOUNT" Type="Decimal" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="HTC_PERIOD" Relationship="DataModels.HTC_PERIOD_DEPARTMENT_FK1" FromRole="HTC_PERIOD_DEPARTMENT" ToRole="HTC_PERIOD" />
+        </EntityType>
+        <EntityType Name="HTC_REPARTITION_RATIO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PERIOD_ID" Type="Int64" Nullable="false" />
+          <Property Name="REPARTITION_TYPE_ID" Type="Int64" Nullable="false" />
+          <Property Name="RATIO" Type="Decimal" Nullable="false" Precision="5" Scale="4" />
+          <Property Name="DEPARTMENT_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="DEPARTMENT_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="HTC_PERIOD" Relationship="DataModels.HTC_REPARTITION_RATIO_FK1" FromRole="HTC_REPARTITION_RATIO" ToRole="HTC_PERIOD" />
+          <NavigationProperty Name="HTC_REPARTITION_TYPE" Relationship="DataModels.HTC_REPARTITION_RATIO_FK2" FromRole="HTC_REPARTITION_RATIO" ToRole="HTC_REPARTITION_TYPE" />
+        </EntityType>
+        <EntityType Name="HTC_REPARTITION_TYPE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="REPARTITION_TYPE_CODE" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="REPARTITION_TYPE_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="IS_HAS_NOT_RATIO" Type="Int16" />
+          <NavigationProperty Name="HTC_REPARTITION_RATIO" Relationship="DataModels.HTC_REPARTITION_RATIO_FK2" FromRole="HTC_REPARTITION_TYPE" ToRole="HTC_REPARTITION_RATIO" />
+        </EntityType>
+        <EntityType Name="HTC_REVENUE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="REVENUE_CODE" Type="String" Nullable="false" MaxLength="14" Unicode="false" FixedLength="false" />
+          <Property Name="REVENUE_TIME" Type="Int64" Nullable="false" />
+          <Property Name="PERIOD_ID" Type="Int64" Nullable="false" />
+          <Property Name="AMOUNT" Type="Decimal" Nullable="false" Precision="19" Scale="2" />
+          <Property Name="PRICE" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="SERVICE_CODE" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="SERVICE_NAME" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="PATIENT_TYPE_CODE" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="PATIENT_TYPE_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="SERVICE_TYPE_CODE" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="SERVICE_TYPE_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="SERVICE_UNIT_CODE" Type="String" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="SERVICE_UNIT_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="REQUEST_DEPARTMENT_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="REQUEST_DEPARTMENT_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="REQUEST_ROOM_CODE" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="REQUEST_ROOM_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="REQUEST_ROOM_TYPE_CODE" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="REQUEST_ROOM_TYPE_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="REQUEST_LOGINNAME" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="REQUEST_USERNAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="EXECUTE_DEPARTMENT_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="EXECUTE_DEPARTMENT_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="EXECUTE_ROOM_CODE" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="EXECUTE_ROOM_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="EXECUTE_ROOM_TYPE_CODE" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="EXECUTE_ROOM_TYPE_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="EXECUTE_LOGINNAME" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="EXECUTE_USERNAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="SERE_SERV_ID" Type="Int64" />
+          <Property Name="HEIN_PRICE" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="VIR_PATIENT_PRICE" Type="Decimal" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="VIR_TOTAL_PRICE" Type="Decimal" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="VIR_TOTAL_HEIN_PRICE" Type="Decimal" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="VIR_TOTAL_PATIENT_PRICE" Type="Decimal" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="PATIENT_CODE" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="PATIENT_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="DOB" Type="Int64" />
+          <Property Name="IN_TIME" Type="Int64" />
+          <Property Name="OUT_TIME" Type="Int64" />
+          <Property Name="XANHPON_SYMBOL" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="BILL_NUMBER" Type="Int64" />
+          <NavigationProperty Name="HTC_PERIOD" Relationship="DataModels.HTC_REVENUE_FK1" FromRole="HTC_REVENUE" ToRole="HTC_PERIOD" />
+        </EntityType>
+        <EntityType Name="V_HTC_EXPENSE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="EXPENSE_CODE" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="EXPENSE_TIME" Type="Int64" Nullable="false" />
+          <Property Name="EXPENSE_TYPE_ID" Type="Int64" Nullable="false" />
+          <Property Name="PRICE" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="PERIOD_ID" Type="Int64" Nullable="false" />
+          <Property Name="DEPARTMENT_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="DEPARTMENT_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="EXPENSE_TYPE_CODE" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="EXPENSE_TYPE_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="PARENT_ID" Type="Int64" />
+          <Property Name="IS_ALLOW_EXPENSE" Type="Int16" />
+          <Property Name="IS_PLUS" Type="Int16" />
+          <Property Name="PERIOD_CODE" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="FROM_TIME" Type="Int64" />
+          <Property Name="TO_TIME" Type="Int64" />
+          <Property Name="PERIOD_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="V_HTC_PERIOD_DEPARTMENT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PERIOD_ID" Type="Int64" Nullable="false" />
+          <Property Name="DEPARTMENT_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="DEPARTMENT_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="LABOR_AMOUNT" Type="Int64" />
+          <Property Name="CLINICAL_DAY_AMOUNT" Type="Int64" />
+          <Property Name="CLINICAL_AMOUNT" Type="Int64" />
+          <Property Name="FROM_EXAM_CLINICAL_AMOUNT" Type="Int64" />
+          <Property Name="END_TREATMENT_AMOUNT" Type="Int64" />
+          <Property Name="VIR_FROM_OTHER_CLINICAL_AMOUNT" Type="Decimal" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="VIR_NOT_END_TREATMENT_AMOUNT" Type="Decimal" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="PERIOD_CODE" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="FROM_TIME" Type="Int64" />
+          <Property Name="TO_TIME" Type="Int64" />
+          <Property Name="PERIOD_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="V_HTC_REPARTITION_RATIO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PERIOD_ID" Type="Int64" Nullable="false" />
+          <Property Name="REPARTITION_TYPE_ID" Type="Int64" Nullable="false" />
+          <Property Name="RATIO" Type="Decimal" Nullable="false" Precision="5" Scale="4" />
+          <Property Name="DEPARTMENT_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="DEPARTMENT_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="REPARTITION_TYPE_CODE" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="REPARTITION_TYPE_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="PERIOD_CODE" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="PERIOD_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <Association Name="HTC_EXPENSE_FK1">
+          <End Role="HTC_EXPENSE_TYPE" Type="DataModels.HTC_EXPENSE_TYPE" Multiplicity="1" />
+          <End Role="HTC_EXPENSE" Type="DataModels.HTC_EXPENSE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HTC_EXPENSE_TYPE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HTC_EXPENSE">
+              <PropertyRef Name="EXPENSE_TYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HTC_EXPENSE_FK2">
+          <End Role="HTC_PERIOD" Type="DataModels.HTC_PERIOD" Multiplicity="1" />
+          <End Role="HTC_EXPENSE" Type="DataModels.HTC_EXPENSE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HTC_PERIOD">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HTC_EXPENSE">
+              <PropertyRef Name="PERIOD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HTC_EXPENSE_TYPE_FK1">
+          <End Role="HTC_EXPENSE_TYPE" Type="DataModels.HTC_EXPENSE_TYPE" Multiplicity="0..1" />
+          <End Role="HTC_EXPENSE_TYPE1" Type="DataModels.HTC_EXPENSE_TYPE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HTC_EXPENSE_TYPE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HTC_EXPENSE_TYPE1">
+              <PropertyRef Name="PARENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HTC_PERIOD_DEPARTMENT_FK1">
+          <End Role="HTC_PERIOD" Type="DataModels.HTC_PERIOD" Multiplicity="1" />
+          <End Role="HTC_PERIOD_DEPARTMENT" Type="DataModels.HTC_PERIOD_DEPARTMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HTC_PERIOD">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HTC_PERIOD_DEPARTMENT">
+              <PropertyRef Name="PERIOD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HTC_REPARTITION_RATIO_FK1">
+          <End Role="HTC_PERIOD" Type="DataModels.HTC_PERIOD" Multiplicity="1" />
+          <End Role="HTC_REPARTITION_RATIO" Type="DataModels.HTC_REPARTITION_RATIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HTC_PERIOD">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HTC_REPARTITION_RATIO">
+              <PropertyRef Name="PERIOD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HTC_REVENUE_FK1">
+          <End Role="HTC_PERIOD" Type="DataModels.HTC_PERIOD" Multiplicity="1" />
+          <End Role="HTC_REVENUE" Type="DataModels.HTC_REVENUE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HTC_PERIOD">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HTC_REVENUE">
+              <PropertyRef Name="PERIOD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HTC_REPARTITION_RATIO_FK2">
+          <End Role="HTC_REPARTITION_TYPE" Type="DataModels.HTC_REPARTITION_TYPE" Multiplicity="1" />
+          <End Role="HTC_REPARTITION_RATIO" Type="DataModels.HTC_REPARTITION_RATIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HTC_REPARTITION_TYPE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HTC_REPARTITION_RATIO">
+              <PropertyRef Name="REPARTITION_TYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HTCDataModelsStoreContainer" CdmEntityContainer="HTCEntities">
+          <EntitySetMapping Name="HTC_EXPENSE">
+            <EntityTypeMapping TypeName="DataModels.HTC_EXPENSE">
+              <MappingFragment StoreEntitySet="HTC_EXPENSE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="EXPENSE_CODE" ColumnName="EXPENSE_CODE" />
+                <ScalarProperty Name="EXPENSE_TIME" ColumnName="EXPENSE_TIME" />
+                <ScalarProperty Name="EXPENSE_TYPE_ID" ColumnName="EXPENSE_TYPE_ID" />
+                <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+                <ScalarProperty Name="PERIOD_ID" ColumnName="PERIOD_ID" />
+                <ScalarProperty Name="DEPARTMENT_CODE" ColumnName="DEPARTMENT_CODE" />
+                <ScalarProperty Name="DEPARTMENT_NAME" ColumnName="DEPARTMENT_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HTC_EXPENSE_TYPE">
+            <EntityTypeMapping TypeName="DataModels.HTC_EXPENSE_TYPE">
+              <MappingFragment StoreEntitySet="HTC_EXPENSE_TYPE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="EXPENSE_TYPE_CODE" ColumnName="EXPENSE_TYPE_CODE" />
+                <ScalarProperty Name="EXPENSE_TYPE_NAME" ColumnName="EXPENSE_TYPE_NAME" />
+                <ScalarProperty Name="PARENT_ID" ColumnName="PARENT_ID" />
+                <ScalarProperty Name="IS_ALLOW_EXPENSE" ColumnName="IS_ALLOW_EXPENSE" />
+                <ScalarProperty Name="IS_PLUS" ColumnName="IS_PLUS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HTC_PERIOD">
+            <EntityTypeMapping TypeName="DataModels.HTC_PERIOD">
+              <MappingFragment StoreEntitySet="HTC_PERIOD">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="PERIOD_CODE" ColumnName="PERIOD_CODE" />
+                <ScalarProperty Name="FROM_TIME" ColumnName="FROM_TIME" />
+                <ScalarProperty Name="TO_TIME" ColumnName="TO_TIME" />
+                <ScalarProperty Name="PERIOD_NAME" ColumnName="PERIOD_NAME" />
+                <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+                <ScalarProperty Name="MONTH" ColumnName="MONTH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HTC_PERIOD_DEPARTMENT">
+            <EntityTypeMapping TypeName="DataModels.HTC_PERIOD_DEPARTMENT">
+              <MappingFragment StoreEntitySet="HTC_PERIOD_DEPARTMENT">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="PERIOD_ID" ColumnName="PERIOD_ID" />
+                <ScalarProperty Name="DEPARTMENT_CODE" ColumnName="DEPARTMENT_CODE" />
+                <ScalarProperty Name="DEPARTMENT_NAME" ColumnName="DEPARTMENT_NAME" />
+                <ScalarProperty Name="LABOR_AMOUNT" ColumnName="LABOR_AMOUNT" />
+                <ScalarProperty Name="CLINICAL_DAY_AMOUNT" ColumnName="CLINICAL_DAY_AMOUNT" />
+                <ScalarProperty Name="CLINICAL_AMOUNT" ColumnName="CLINICAL_AMOUNT" />
+                <ScalarProperty Name="FROM_EXAM_CLINICAL_AMOUNT" ColumnName="FROM_EXAM_CLINICAL_AMOUNT" />
+                <ScalarProperty Name="END_TREATMENT_AMOUNT" ColumnName="END_TREATMENT_AMOUNT" />
+                <ScalarProperty Name="VIR_FROM_OTHER_CLINICAL_AMOUNT" ColumnName="VIR_FROM_OTHER_CLINICAL_AMOUNT" />
+                <ScalarProperty Name="VIR_NOT_END_TREATMENT_AMOUNT" ColumnName="VIR_NOT_END_TREATMENT_AMOUNT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HTC_REPARTITION_RATIO">
+            <EntityTypeMapping TypeName="DataModels.HTC_REPARTITION_RATIO">
+              <MappingFragment StoreEntitySet="HTC_REPARTITION_RATIO">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="PERIOD_ID" ColumnName="PERIOD_ID" />
+                <ScalarProperty Name="REPARTITION_TYPE_ID" ColumnName="REPARTITION_TYPE_ID" />
+                <ScalarProperty Name="RATIO" ColumnName="RATIO" />
+                <ScalarProperty Name="DEPARTMENT_CODE" ColumnName="DEPARTMENT_CODE" />
+                <ScalarProperty Name="DEPARTMENT_NAME" ColumnName="DEPARTMENT_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HTC_REPARTITION_TYPE">
+            <EntityTypeMapping TypeName="DataModels.HTC_REPARTITION_TYPE">
+              <MappingFragment StoreEntitySet="HTC_REPARTITION_TYPE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="REPARTITION_TYPE_CODE" ColumnName="REPARTITION_TYPE_CODE" />
+                <ScalarProperty Name="REPARTITION_TYPE_NAME" ColumnName="REPARTITION_TYPE_NAME" />
+                <ScalarProperty Name="IS_HAS_NOT_RATIO" ColumnName="IS_HAS_NOT_RATIO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HTC_REVENUE">
+            <EntityTypeMapping TypeName="DataModels.HTC_REVENUE">
+              <MappingFragment StoreEntitySet="HTC_REVENUE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="REVENUE_CODE" ColumnName="REVENUE_CODE" />
+                <ScalarProperty Name="REVENUE_TIME" ColumnName="REVENUE_TIME" />
+                <ScalarProperty Name="PERIOD_ID" ColumnName="PERIOD_ID" />
+                <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
+                <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+                <ScalarProperty Name="SERVICE_CODE" ColumnName="SERVICE_CODE" />
+                <ScalarProperty Name="SERVICE_NAME" ColumnName="SERVICE_NAME" />
+                <ScalarProperty Name="PATIENT_TYPE_CODE" ColumnName="PATIENT_TYPE_CODE" />
+                <ScalarProperty Name="PATIENT_TYPE_NAME" ColumnName="PATIENT_TYPE_NAME" />
+                <ScalarProperty Name="SERVICE_TYPE_CODE" ColumnName="SERVICE_TYPE_CODE" />
+                <ScalarProperty Name="SERVICE_TYPE_NAME" ColumnName="SERVICE_TYPE_NAME" />
+                <ScalarProperty Name="SERVICE_UNIT_CODE" ColumnName="SERVICE_UNIT_CODE" />
+                <ScalarProperty Name="SERVICE_UNIT_NAME" ColumnName="SERVICE_UNIT_NAME" />
+                <ScalarProperty Name="REQUEST_DEPARTMENT_CODE" ColumnName="REQUEST_DEPARTMENT_CODE" />
+                <ScalarProperty Name="REQUEST_DEPARTMENT_NAME" ColumnName="REQUEST_DEPARTMENT_NAME" />
+                <ScalarProperty Name="REQUEST_ROOM_CODE" ColumnName="REQUEST_ROOM_CODE" />
+                <ScalarProperty Name="REQUEST_ROOM_NAME" ColumnName="REQUEST_ROOM_NAME" />
+                <ScalarProperty Name="REQUEST_ROOM_TYPE_CODE" ColumnName="REQUEST_ROOM_TYPE_CODE" />
+                <ScalarProperty Name="REQUEST_ROOM_TYPE_NAME" ColumnName="REQUEST_ROOM_TYPE_NAME" />
+                <ScalarProperty Name="REQUEST_LOGINNAME" ColumnName="REQUEST_LOGINNAME" />
+                <ScalarProperty Name="REQUEST_USERNAME" ColumnName="REQUEST_USERNAME" />
+                <ScalarProperty Name="EXECUTE_DEPARTMENT_CODE" ColumnName="EXECUTE_DEPARTMENT_CODE" />
+                <ScalarProperty Name="EXECUTE_DEPARTMENT_NAME" ColumnName="EXECUTE_DEPARTMENT_NAME" />
+                <ScalarProperty Name="EXECUTE_ROOM_CODE" ColumnName="EXECUTE_ROOM_CODE" />
+                <ScalarProperty Name="EXECUTE_ROOM_NAME" ColumnName="EXECUTE_ROOM_NAME" />
+                <ScalarProperty Name="EXECUTE_ROOM_TYPE_CODE" ColumnName="EXECUTE_ROOM_TYPE_CODE" />
+                <ScalarProperty Name="EXECUTE_ROOM_TYPE_NAME" ColumnName="EXECUTE_ROOM_TYPE_NAME" />
+                <ScalarProperty Name="EXECUTE_LOGINNAME" ColumnName="EXECUTE_LOGINNAME" />
+                <ScalarProperty Name="EXECUTE_USERNAME" ColumnName="EXECUTE_USERNAME" />
+                <ScalarProperty Name="SERE_SERV_ID" ColumnName="SERE_SERV_ID" />
+                <ScalarProperty Name="HEIN_PRICE" ColumnName="HEIN_PRICE" />
+                <ScalarProperty Name="VIR_PATIENT_PRICE" ColumnName="VIR_PATIENT_PRICE" />
+                <ScalarProperty Name="VIR_TOTAL_PRICE" ColumnName="VIR_TOTAL_PRICE" />
+                <ScalarProperty Name="VIR_TOTAL_HEIN_PRICE" ColumnName="VIR_TOTAL_HEIN_PRICE" />
+                <ScalarProperty Name="VIR_TOTAL_PATIENT_PRICE" ColumnName="VIR_TOTAL_PATIENT_PRICE" />
+                <ScalarProperty Name="PATIENT_CODE" ColumnName="PATIENT_CODE" />
+                <ScalarProperty Name="PATIENT_NAME" ColumnName="PATIENT_NAME" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="IN_TIME" ColumnName="IN_TIME" />
+                <ScalarProperty Name="OUT_TIME" ColumnName="OUT_TIME" />
+                <ScalarProperty Name="XANHPON_SYMBOL" ColumnName="XANHPON_SYMBOL" />
+                <ScalarProperty Name="BILL_NUMBER" ColumnName="BILL_NUMBER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_HTC_EXPENSE">
+            <EntityTypeMapping TypeName="DataModels.V_HTC_EXPENSE">
+              <MappingFragment StoreEntitySet="V_HTC_EXPENSE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="EXPENSE_CODE" ColumnName="EXPENSE_CODE" />
+                <ScalarProperty Name="EXPENSE_TIME" ColumnName="EXPENSE_TIME" />
+                <ScalarProperty Name="EXPENSE_TYPE_ID" ColumnName="EXPENSE_TYPE_ID" />
+                <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+                <ScalarProperty Name="PERIOD_ID" ColumnName="PERIOD_ID" />
+                <ScalarProperty Name="DEPARTMENT_CODE" ColumnName="DEPARTMENT_CODE" />
+                <ScalarProperty Name="DEPARTMENT_NAME" ColumnName="DEPARTMENT_NAME" />
+                <ScalarProperty Name="EXPENSE_TYPE_CODE" ColumnName="EXPENSE_TYPE_CODE" />
+                <ScalarProperty Name="EXPENSE_TYPE_NAME" ColumnName="EXPENSE_TYPE_NAME" />
+                <ScalarProperty Name="PARENT_ID" ColumnName="PARENT_ID" />
+                <ScalarProperty Name="IS_ALLOW_EXPENSE" ColumnName="IS_ALLOW_EXPENSE" />
+                <ScalarProperty Name="IS_PLUS" ColumnName="IS_PLUS" />
+                <ScalarProperty Name="PERIOD_CODE" ColumnName="PERIOD_CODE" />
+                <ScalarProperty Name="FROM_TIME" ColumnName="FROM_TIME" />
+                <ScalarProperty Name="TO_TIME" ColumnName="TO_TIME" />
+                <ScalarProperty Name="PERIOD_NAME" ColumnName="PERIOD_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_HTC_PERIOD_DEPARTMENT">
+            <EntityTypeMapping TypeName="DataModels.V_HTC_PERIOD_DEPARTMENT">
+              <MappingFragment StoreEntitySet="V_HTC_PERIOD_DEPARTMENT">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="PERIOD_ID" ColumnName="PERIOD_ID" />
+                <ScalarProperty Name="DEPARTMENT_CODE" ColumnName="DEPARTMENT_CODE" />
+                <ScalarProperty Name="DEPARTMENT_NAME" ColumnName="DEPARTMENT_NAME" />
+                <ScalarProperty Name="LABOR_AMOUNT" ColumnName="LABOR_AMOUNT" />
+                <ScalarProperty Name="CLINICAL_DAY_AMOUNT" ColumnName="CLINICAL_DAY_AMOUNT" />
+                <ScalarProperty Name="CLINICAL_AMOUNT" ColumnName="CLINICAL_AMOUNT" />
+                <ScalarProperty Name="FROM_EXAM_CLINICAL_AMOUNT" ColumnName="FROM_EXAM_CLINICAL_AMOUNT" />
+                <ScalarProperty Name="END_TREATMENT_AMOUNT" ColumnName="END_TREATMENT_AMOUNT" />
+                <ScalarProperty Name="VIR_FROM_OTHER_CLINICAL_AMOUNT" ColumnName="VIR_FROM_OTHER_CLINICAL_AMOUNT" />
+                <ScalarProperty Name="VIR_NOT_END_TREATMENT_AMOUNT" ColumnName="VIR_NOT_END_TREATMENT_AMOUNT" />
+                <ScalarProperty Name="PERIOD_CODE" ColumnName="PERIOD_CODE" />
+                <ScalarProperty Name="FROM_TIME" ColumnName="FROM_TIME" />
+                <ScalarProperty Name="TO_TIME" ColumnName="TO_TIME" />
+                <ScalarProperty Name="PERIOD_NAME" ColumnName="PERIOD_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_HTC_REPARTITION_RATIO">
+            <EntityTypeMapping TypeName="DataModels.V_HTC_REPARTITION_RATIO">
+              <MappingFragment StoreEntitySet="V_HTC_REPARTITION_RATIO">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="PERIOD_ID" ColumnName="PERIOD_ID" />
+                <ScalarProperty Name="REPARTITION_TYPE_ID" ColumnName="REPARTITION_TYPE_ID" />
+                <ScalarProperty Name="RATIO" ColumnName="RATIO" />
+                <ScalarProperty Name="DEPARTMENT_CODE" ColumnName="DEPARTMENT_CODE" />
+                <ScalarProperty Name="DEPARTMENT_NAME" ColumnName="DEPARTMENT_NAME" />
+                <ScalarProperty Name="REPARTITION_TYPE_CODE" ColumnName="REPARTITION_TYPE_CODE" />
+                <ScalarProperty Name="REPARTITION_TYPE_NAME" ColumnName="REPARTITION_TYPE_NAME" />
+                <ScalarProperty Name="PERIOD_CODE" ColumnName="PERIOD_CODE" />
+                <ScalarProperty Name="PERIOD_NAME" ColumnName="PERIOD_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

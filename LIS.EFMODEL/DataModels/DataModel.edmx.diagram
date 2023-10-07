@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="83543815364445f2b23c99b5220e52f3" Name="Diagram1">
+        <EntityTypeShape EntityType="DataModels.LIS_ANTIBIOTIC" Width="1.5" PointX="8" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.LIS_BAC_ANTIBIOTIC" Width="1.5" PointX="10.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.LIS_BACTERIUM" Width="1.5" PointX="8" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.LIS_BACTERIUM_FAMILY" Width="1.5" PointX="5.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.LIS_BARCODE" Width="1.5" PointX="10.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.LIS_CONFIG" Width="1.5" PointX="10.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.LIS_MACHINE" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.LIS_MACHINE_INDEX" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.LIS_ORDINAL" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.LIS_RESULT" Width="1.5" PointX="8" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.LIS_SAMPLE" Width="1.5" PointX="0.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.LIS_SAMPLE_CONDITION" Width="1.5" PointX="1.5" PointY="30.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.LIS_SAMPLE_SERVICE" Width="1.5" PointX="3" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.LIS_SAMPLE_SERVICE_STT" Width="1.5" PointX="0.75" PointY="43.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.LIS_SAMPLE_STT" Width="1.5" PointX="1.5" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.LIS_SAMPLE_TYPE" Width="1.5" PointX="1.5" PointY="39" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.LIS_TEST_INDEX_MAP" Width="1.5" PointX="5.25" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.V_LIS_BAC_ANTIBIOTIC" Width="1.5" PointX="12.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.V_LIS_RESULT" Width="1.5" PointX="12.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.V_LIS_SAMPLE" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.V_LIS_SAMPLE_SERVICE" Width="1.5" PointX="2.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.V_LIS_TEST_INDEX_MAP" Width="1.5" PointX="4.75" PointY="14.75" IsExpanded="true" />
+        <AssociationConnector Association="DataModels.LIS_BAC_ANTIBIOTIC_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DataModels.LIS_BAC_ANTIBIOTIC_FK2" ManuallyRouted="false" />
+        <AssociationConnector Association="DataModels.LIS_BACTERIUM_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DataModels.LIS_MACHINE_INDEX_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DataModels.LIS_RESULT_FK2" ManuallyRouted="false" />
+        <AssociationConnector Association="DataModels.LIS_SAMPLE_SERVICE_FK3" ManuallyRouted="false" />
+        <AssociationConnector Association="DataModels.LIS_TEST_INDEX_MAP_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DataModels.LIS_RESULT_FK3" ManuallyRouted="false" />
+        <AssociationConnector Association="DataModels.LIS_SAMPLE_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DataModels.LIS_SAMPLE_FK2" ManuallyRouted="false" />
+        <AssociationConnector Association="DataModels.LIS_SAMPLE_FK3" ManuallyRouted="false" />
+        <AssociationConnector Association="DataModels.LIS_SAMPLE_SERVICE_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DataModels.LIS_SAMPLE_SERVICE_FK2" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

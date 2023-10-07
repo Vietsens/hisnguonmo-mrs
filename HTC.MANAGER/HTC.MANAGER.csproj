@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0E1EF159-AB66-4396-A035-7B064ED7C125}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HTC.MANAGER</RootNamespace>
+    <AssemblyName>HTC.MANAGER</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="IMSys.DbConfig.HTC_RS">
+      <HintPath>..\..\..\RELEASE\IMSys.DbConfig\IMSys.DbConfig.HTC_RS\IMSys.DbConfig.HTC_RS.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Backend.MANAGER">
+      <HintPath>..\..\..\RELEASE\Inventec.Backend\Inventec.Backend.MANAGER\Inventec.Backend.MANAGER.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.DateTime">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.DateTime\Inventec.Common.DateTime.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.HardDrive">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.HardDrive\Inventec.Common.HardDrive.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.LicenseCrypto">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.LicenseCrypto\Inventec.Common.LicenseCrypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.Logging">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.Logging\Inventec.Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.Repository">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.Repository\Inventec.Common.Repository.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.WebApiClient">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.WebApiClient\Inventec.Common.WebApiClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Core">
+      <HintPath>..\..\..\RELEASE\Inventec.Core\Inventec.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Token.ResourceSystem">
+      <HintPath>..\..\..\RELEASE\Inventec.Token\Inventec.Token.ResourceSystem\Inventec.Token.ResourceSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="MOS.EFMODEL">
+      <HintPath>..\..\..\RELEASE\MOS\MOS.EFMODEL.dll</HintPath>
+    </Reference>
+    <Reference Include="MOS.Filter">
+      <HintPath>..\..\..\RELEASE\MOS\MOS.Filter.dll</HintPath>
+    </Reference>
+    <Reference Include="MOS.SDO">
+      <HintPath>..\..\..\RELEASE\MOS\MOS.SDO.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\HTC.API\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SDA.EFMODEL">
+      <HintPath>..\..\..\RELEASE\SDA\SDA.EFMODEL.dll</HintPath>
+    </Reference>
+    <Reference Include="SDA.Filter">
+      <HintPath>..\..\..\RELEASE\SDA\SDA.Filter.dll</HintPath>
+    </Reference>
+    <Reference Include="SDA.SDO">
+      <HintPath>..\..\..\RELEASE\SDA\SDA.SDO.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\BusinessBase.cs" />
+    <Compile Include="Base\DAOWorker.cs" />
+    <Compile Include="Base\OrderProcessorBase.cs" />
+    <Compile Include="Core\BeanObjectBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\BusinessObjectBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ExpenseBO\BusinessObject.cs" />
+    <Compile Include="Core\ExpenseBO\Get.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ExpenseBO\HtcExpenseType\Get\Ev\HtcExpenseTypeGetEvBehaviorById.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ExpenseBO\HtcExpenseType\Get\Ev\HtcExpenseTypeGetEvBehaviorFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ExpenseBO\HtcExpenseType\Get\Ev\IHtcExpenseTypeGetEv.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ExpenseBO\HtcExpenseType\Get\HtcExpenseTypeFilterQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ExpenseBO\HtcExpenseType\Get\ListEv\HtcExpenseTypeGetListEvBehaviorByFilterQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ExpenseBO\HtcExpenseType\Get\ListEv\HtcExpenseTypeGetListEvBehaviorFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ExpenseBO\HtcExpenseType\Get\ListEv\IHtcExpenseTypeGetListEv.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ExpenseBO\HtcExpense\Get\Ev\HtcExpenseGetEvBehaviorById.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ExpenseBO\HtcExpense\Get\Ev\HtcExpenseGetEvBehaviorFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ExpenseBO\HtcExpense\Get\Ev\IHtcExpenseGetEv.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ExpenseBO\HtcExpense\Get\HtcExpenseFilterQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ExpenseBO\HtcExpense\Get\HtcExpenseViewFilterQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ExpenseBO\HtcExpense\Get\ListEv\HtcExpenseGetListEvBehaviorByFilterQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ExpenseBO\HtcExpense\Get\ListEv\HtcExpenseGetListEvBehaviorFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ExpenseBO\HtcExpense\Get\ListEv\IHtcExpenseGetListEv.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ExpenseBO\HtcExpense\Get\ListV\HtcExpenseGetListVBehaviorByViewFilterQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ExpenseBO\HtcExpense\Get\ListV\HtcExpenseGetListVBehaviorFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ExpenseBO\HtcExpense\Get\ListV\IHtcExpenseGetListV.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ExpenseBO\HtcExpense\Get\V\HtcExpenseGetVBehaviorById.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ExpenseBO\HtcExpense\Get\V\HtcExpenseGetVBehaviorFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ExpenseBO\HtcExpense\Get\V\IHtcExpenseGetV.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\ExpenseBO\TypeCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\IDelegacy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\IDelegacyT.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\PeriodBO\BusinessObject.cs" />
+    <Compile Include="Core\PeriodBO\Get.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\PeriodBO\HtcPeriodDepartment\Get\Ev\HtcPeriodDepartmentGetEvBehaviorById.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\PeriodBO\HtcPeriodDepartment\Get\Ev\HtcPeriodDepartmentGetEvBehaviorFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\PeriodBO\HtcPeriodDepartment\Get\Ev\IHtcPeriodDepartmentGetEv.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\PeriodBO\HtcPeriodDepartment\Get\HtcPeriodDepartmentFilterQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\PeriodBO\HtcPeriodDepartment\Get\HtcPeriodDepartmentViewFilterQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\PeriodBO\HtcPeriodDepartment\Get\ListEv\HtcPeriodDepartmentGetListEvBehaviorByFilterQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\PeriodBO\HtcPeriodDepartment\Get\ListEv\HtcPeriodDepartmentGetListEvBehaviorFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\PeriodBO\HtcPeriodDepartment\Get\ListEv\IHtcPeriodDepartmentGetListEv.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\PeriodBO\HtcPeriodDepartment\Get\ListV\HtcPeriodDepartmentGetListVBehaviorByFilterQuery.cs" />
+    <Compile Include="Core\PeriodBO\HtcPeriodDepartment\Get\ListV\HtcPeriodDepartmentGetListVBehaviorFactory.cs" />
+    <Compile Include="Core\PeriodBO\HtcPeriodDepartment\Get\ListV\IHtcPeriodDepartmentGetListV.cs" />
+    <Compile Include="Core\PeriodBO\HtcPeriodDepartment\Get\V\HtcPeriodDepartmentGetVBehaviorById.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\PeriodBO\HtcPeriodDepartment\Get\V\HtcPeriodDepartmentGetVBehaviorFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\PeriodBO\HtcPeriodDepartment\Get\V\IHtcPeriodDepartmentGetV.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\PeriodBO\HtcPeriod\Get\Ev\HtcPeriodGetEvBehaviorById.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\PeriodBO\HtcPeriod\Get\Ev\HtcPeriodGetEvBehaviorFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\PeriodBO\HtcPeriod\Get\Ev\IHtcPeriodGetEv.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\PeriodBO\HtcPeriod\Get\HtcPeriodFilterQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\PeriodBO\HtcPeriod\Get\ListEv\HtcPeriodGetListEvBehaviorByFilterQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\PeriodBO\HtcPeriod\Get\ListEv\HtcPeriodGetListEvBehaviorFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\PeriodBO\HtcPeriod\Get\ListEv\IHtcPeriodGetListEv.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\PeriodBO\TypeCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\RevenueBO\BusinessObject.cs" />
+    <Compile Include="Core\RevenueBO\Get.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\RevenueBO\HtcRevenue\Get\Ev\HtcRevenueGetEvBehaviorById.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\RevenueBO\HtcRevenue\Get\Ev\HtcRevenueGetEvBehaviorFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\RevenueBO\HtcRevenue\Get\Ev\IHtcRevenueGetEv.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\RevenueBO\HtcRevenue\Get\HtcRevenueFilterQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\RevenueBO\HtcRevenue\Get\ListEv\HtcRevenueGetListEvBehaviorByFilterQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\RevenueBO\HtcRevenue\Get\ListEv\HtcRevenueGetListEvBehaviorFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\RevenueBO\HtcRevenue\Get\ListEv\IHtcRevenueGetListEv.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\RevenueBO\TypeCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Manager\HtcExpenseManager.cs" />
+    <Compile Include="Manager\HtcExpenseTypeManager.cs" />
+    <Compile Include="Manager\HtcPeriodDepartmentManager.cs" />
+    <Compile Include="Manager\HtcPeriodManager.cs" />
+    <Compile Include="Manager\HtcRevenueManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HTC.DAO\HTC.DAO.csproj">
+      <Project>{fb8b48e3-3677-4667-b6d8-697602b557c6}</Project>
+      <Name>HTC.DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HTC.EFMODEL\HTC.EFMODEL.csproj">
+      <Project>{a1c16277-7eb5-41d3-8d76-7d763277b3b1}</Project>
+      <Name>HTC.EFMODEL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HTC.Filter\HTC.Filter.csproj">
+      <Project>{a500ef49-edca-405b-a583-e139c1004a68}</Project>
+      <Name>HTC.Filter</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

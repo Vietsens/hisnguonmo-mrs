@@ -1,0 +1,1686 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DataModels.Store" Alias="Self" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="12.1" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="SDADataModelsStoreContainer">
+          <EntitySet Name="SDA_COMMUNE" EntityType="DataModels.Store.SDA_COMMUNE" store:Type="Tables" Schema="SDA_RS" />
+          <EntitySet Name="SDA_CONFIG" EntityType="DataModels.Store.SDA_CONFIG" store:Type="Tables" Schema="SDA_RS" />
+          <EntitySet Name="SDA_CONFIG_APP" EntityType="DataModels.Store.SDA_CONFIG_APP" store:Type="Tables" Schema="SDA_RS" />
+          <EntitySet Name="SDA_CONFIG_APP_USER" EntityType="DataModels.Store.SDA_CONFIG_APP_USER" store:Type="Tables" Schema="SDA_RS" />
+          <EntitySet Name="SDA_DISTRICT" EntityType="DataModels.Store.SDA_DISTRICT" store:Type="Tables" Schema="SDA_RS" />
+          <EntitySet Name="SDA_ETHNIC" EntityType="DataModels.Store.SDA_ETHNIC" store:Type="Tables" Schema="SDA_RS" />
+          <EntitySet Name="SDA_EVENT_LOG" EntityType="DataModels.Store.SDA_EVENT_LOG" store:Type="Tables" Schema="SDA_RS" />
+          <EntitySet Name="SDA_GROUP" EntityType="DataModels.Store.SDA_GROUP" store:Type="Tables" Schema="SDA_RS" />
+          <EntitySet Name="SDA_GROUP_TYPE" EntityType="DataModels.Store.SDA_GROUP_TYPE" store:Type="Tables" Schema="SDA_RS" />
+          <EntitySet Name="SDA_LANGUAGE" EntityType="DataModels.Store.SDA_LANGUAGE" store:Type="Tables" Schema="SDA_RS" />
+          <EntitySet Name="SDA_LICENSE" EntityType="DataModels.Store.SDA_LICENSE" store:Type="Tables" Schema="SDA_RS" />
+          <EntitySet Name="SDA_NATIONAL" EntityType="DataModels.Store.SDA_NATIONAL" store:Type="Tables" Schema="SDA_RS" />
+          <EntitySet Name="SDA_NOTIFY" EntityType="DataModels.Store.SDA_NOTIFY" store:Type="Tables" Schema="SDA_RS" />
+          <EntitySet Name="SDA_PROVINCE" EntityType="DataModels.Store.SDA_PROVINCE" store:Type="Tables" Schema="SDA_RS" />
+          <EntitySet Name="SDA_RELIGION" EntityType="DataModels.Store.SDA_RELIGION" store:Type="Tables" Schema="SDA_RS" />
+          <EntitySet Name="SDA_TRANSLATE" EntityType="DataModels.Store.SDA_TRANSLATE" store:Type="Tables" Schema="SDA_RS" />
+          <EntitySet Name="SDA_TROUBLE" EntityType="DataModels.Store.SDA_TROUBLE" store:Type="Tables" Schema="SDA_RS" />
+          <EntitySet Name="V_SDA_COMMUNE" EntityType="DataModels.Store.V_SDA_COMMUNE" store:Type="Views" Schema="SDA_RS" />
+          <EntitySet Name="V_SDA_CONFIG_APP_USER" EntityType="DataModels.Store.V_SDA_CONFIG_APP_USER" store:Type="Views" Schema="SDA_RS" />
+          <EntitySet Name="V_SDA_DISTRICT" EntityType="DataModels.Store.V_SDA_DISTRICT" store:Type="Views" Schema="SDA_RS" />
+          <EntitySet Name="V_SDA_GROUP" EntityType="DataModels.Store.V_SDA_GROUP" store:Type="Views" Schema="SDA_RS" />
+          <EntitySet Name="V_SDA_NATIONAL" EntityType="DataModels.Store.V_SDA_NATIONAL" store:Type="Views" Schema="SDA_RS" />
+          <EntitySet Name="V_SDA_PROVINCE" EntityType="DataModels.Store.V_SDA_PROVINCE" store:Type="Views" Schema="SDA_RS" />
+          <AssociationSet Name="SDA_COMMUNE_FK1" Association="DataModels.Store.SDA_COMMUNE_FK1">
+            <End Role="SDA_DISTRICT" EntitySet="SDA_DISTRICT" />
+            <End Role="SDA_COMMUNE" EntitySet="SDA_COMMUNE" />
+          </AssociationSet>
+          <AssociationSet Name="SDA_CONFIG_APP_USER_FK1" Association="DataModels.Store.SDA_CONFIG_APP_USER_FK1">
+            <End Role="SDA_CONFIG_APP" EntitySet="SDA_CONFIG_APP" />
+            <End Role="SDA_CONFIG_APP_USER" EntitySet="SDA_CONFIG_APP_USER" />
+          </AssociationSet>
+          <AssociationSet Name="SDA_DISTRICT_FK1" Association="DataModels.Store.SDA_DISTRICT_FK1">
+            <End Role="SDA_PROVINCE" EntitySet="SDA_PROVINCE" />
+            <End Role="SDA_DISTRICT" EntitySet="SDA_DISTRICT" />
+          </AssociationSet>
+          <AssociationSet Name="SDA_PROVINCE_FK1" Association="DataModels.Store.SDA_PROVINCE_FK1">
+            <End Role="SDA_NATIONAL" EntitySet="SDA_NATIONAL" />
+            <End Role="SDA_PROVINCE" EntitySet="SDA_PROVINCE" />
+          </AssociationSet>
+          <AssociationSet Name="SDA_TRANSLATE_FK1" Association="DataModels.Store.SDA_TRANSLATE_FK1">
+            <End Role="SDA_LANGUAGE" EntitySet="SDA_LANGUAGE" />
+            <End Role="SDA_TRANSLATE" EntitySet="SDA_TRANSLATE" />
+          </AssociationSet>
+        </EntityContainer>
+                <EntityType Name="SDA_COMMUNE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="COMMUNE_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+          <Property Name="COMMUNE_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="INITIAL_NAME" Type="varchar2" MaxLength="20" />
+          <Property Name="DISTRICT_ID" Type="number" Nullable="false" Precision="19" />
+          <Property Name="SEARCH_CODE" Type="varchar2" MaxLength="10" />
+        </EntityType>
+                <EntityType Name="SDA_CONFIG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="20" />
+          <Property Name="KEY" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="VALUE" Type="varchar2" MaxLength="2000" />
+          <Property Name="DEFAULT_VALUE" Type="varchar2" MaxLength="2000" />
+          <Property Name="DESCRIPTION" Type="varchar2" MaxLength="2000" />
+        </EntityType>
+                <EntityType Name="SDA_CONFIG_APP">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="20" />
+          <Property Name="KEY" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="DEFAULT_VALUE" Type="varchar2" MaxLength="100" />
+          <Property Name="VALUE_TYPE" Type="varchar2" MaxLength="20" />
+          <Property Name="VALUE_ALLOW_MIN" Type="varchar2" MaxLength="100" />
+          <Property Name="VALUE_ALLOW_MAX" Type="varchar2" MaxLength="100" />
+          <Property Name="VALUE_ALLOW_IN" Type="varchar2" MaxLength="100" />
+          <Property Name="DESCRIPTION" Type="varchar2" MaxLength="4000" />
+          <Property Name="APP_CODE" Type="varchar2" MaxLength="3" />
+        </EntityType>
+                <EntityType Name="SDA_CONFIG_APP_USER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="20" />
+          <Property Name="CONFIG_APP_ID" Type="number" Nullable="false" Precision="19" />
+          <Property Name="LOGINNAME" Type="varchar2" Nullable="false" MaxLength="50" />
+          <Property Name="VALUE" Type="varchar2" Nullable="false" MaxLength="100" />
+        </EntityType>
+                <EntityType Name="SDA_DISTRICT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="DISTRICT_CODE" Type="varchar2" Nullable="false" MaxLength="4" />
+          <Property Name="DISTRICT_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="INITIAL_NAME" Type="varchar2" MaxLength="20" />
+          <Property Name="PROVINCE_ID" Type="number" Nullable="false" Precision="19" />
+          <Property Name="SEARCH_CODE" Type="varchar2" MaxLength="10" />
+        </EntityType>
+                <EntityType Name="SDA_ETHNIC">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="ETHNIC_CODE" Type="varchar2" Nullable="false" MaxLength="2" />
+          <Property Name="ETHNIC_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="OTHER_NAME" Type="varchar2" MaxLength="500" />
+        </EntityType>
+                <EntityType Name="SDA_EVENT_LOG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="LOGIN_NAME" Type="varchar2" MaxLength="50" />
+          <Property Name="IP" Type="varchar2" MaxLength="20" />
+          <Property Name="DESCRIPTION" Type="varchar2" MaxLength="4000" />
+          <Property Name="APP_CODE" Type="varchar2" MaxLength="3" />
+          <Property Name="EVENT_TIME" Type="number" Precision="14" />
+        </EntityType>
+                <EntityType Name="SDA_GROUP">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="10" StoreGeneratedPattern="Identity" />
+          <Property Name="G_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="GROUP_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="GROUP_TYPE_ID" Type="number" Precision="19" />
+          <Property Name="PARENT_ID" Type="number" Precision="19" />
+          <Property Name="CODE_PATH" Type="varchar2" MaxLength="2000" />
+          <Property Name="ID_PATH" Type="varchar2" MaxLength="2000" />
+        </EntityType>
+        
+        <EntityType Name="SDA_GROUP_TYPE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="GROUP_TYPE_CODE" Type="varchar2" Nullable="false" MaxLength="3" />
+          <Property Name="GROUP_TYPE_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+        </EntityType>
+                <EntityType Name="SDA_LANGUAGE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="20" />
+          <Property Name="LANGUAGE_CODE" Type="varchar2" Nullable="false" MaxLength="2" />
+          <Property Name="LANGUAGE_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="IS_BASE" Type="number" Precision="2" />
+        </EntityType>
+                <EntityType Name="SDA_LICENSE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="PUK" Type="varchar2" Nullable="false" MaxLength="40" />
+          <Property Name="SN_HDD" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="LICENSE" Type="varchar2" Nullable="false" MaxLength="2000" />
+          <Property Name="APP_CODE" Type="varchar2" Nullable="false" MaxLength="3" />
+          <Property Name="DESCRIPTION" Type="varchar2" MaxLength="500" />
+        </EntityType>
+                <EntityType Name="SDA_NATIONAL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="NATIONAL_CODE" Type="varchar2" Nullable="false" MaxLength="3" />
+          <Property Name="NATIONAL_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+        </EntityType>
+                <EntityType Name="SDA_NOTIFY">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="20" />
+          <Property Name="CONTENT" Type="varchar2" Nullable="false" MaxLength="2000" />
+          <Property Name="FROM_TIME" Type="number" Nullable="false" Precision="14" />
+          <Property Name="TO_TIME" Type="number" Nullable="false" Precision="14" />
+        </EntityType>
+                <EntityType Name="SDA_PROVINCE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="PROVINCE_CODE" Type="varchar2" Nullable="false" MaxLength="3" />
+          <Property Name="PROVINCE_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="NATIONAL_ID" Type="number" Nullable="false" Precision="19" />
+          <Property Name="SEARCH_CODE" Type="varchar2" MaxLength="10" />
+        </EntityType>
+                <EntityType Name="SDA_RELIGION">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="RELIGION_CODE" Type="varchar2" Nullable="false" MaxLength="2" />
+          <Property Name="RELIGION_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+        </EntityType>
+                <EntityType Name="SDA_TRANSLATE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="LANGUAGE_ID" Type="number" Nullable="false" Precision="19" />
+          <Property Name="SCHEMA" Type="varchar2" Nullable="false" MaxLength="6" />
+          <Property Name="TABLE_NAME" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="COLUMN_NAME" Type="varchar2" Nullable="false" MaxLength="50" />
+          <Property Name="DATA_CODE" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="DATA_VALUE" Type="varchar2" MaxLength="500" />
+        </EntityType>
+                <EntityType Name="SDA_TROUBLE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="20" />
+          <Property Name="TROUBLE_CODE" Type="varchar2" Nullable="false" MaxLength="12" StoreGeneratedPattern="Identity" />
+          <Property Name="IS_EXECUTE" Type="number" Precision="2" />
+          <Property Name="OVERCOME" Type="varchar2" MaxLength="2000" />
+          <Property Name="EXECUTE_TIME" Type="number" Precision="14" />
+          <Property Name="EXECUTE_LOGINNAME" Type="varchar2" MaxLength="50" />
+          <Property Name="EXECUTE_USERNAME" Type="varchar2" MaxLength="100" />
+          <Property Name="MESSAGE" Type="varchar2" MaxLength="4000" />
+        </EntityType>
+        
+        <EntityType Name="V_SDA_COMMUNE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="COMMUNE_CODE" Type="varchar2" Nullable="false" MaxLength="6" />
+          <Property Name="COMMUNE_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="INITIAL_NAME" Type="varchar2" MaxLength="20" />
+          <Property Name="DISTRICT_ID" Type="number" Nullable="false" Precision="19" />
+          <Property Name="SEARCH_CODE" Type="varchar2" MaxLength="10" />
+          <Property Name="DISTRICT_CODE" Type="varchar2" Nullable="false" MaxLength="4" />
+          <Property Name="DISTRICT_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="DISTRICT_INITIAL_NAME" Type="varchar2" MaxLength="20" />
+          <Property Name="ID_PATH" Type="varchar2" MaxLength="165" />
+          <Property Name="CODE_PATH" Type="varchar2" MaxLength="21" />
+        </EntityType>
+                <EntityType Name="V_SDA_CONFIG_APP_USER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="20" />
+          <Property Name="CONFIG_APP_ID" Type="number" Nullable="false" Precision="19" />
+          <Property Name="LOGINNAME" Type="varchar2" Nullable="false" MaxLength="50" />
+          <Property Name="VALUE" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="KEY" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="DEFAULT_VALUE" Type="varchar2" MaxLength="100" />
+        </EntityType>
+                <EntityType Name="V_SDA_DISTRICT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="DISTRICT_CODE" Type="varchar2" Nullable="false" MaxLength="4" />
+          <Property Name="DISTRICT_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="INITIAL_NAME" Type="varchar2" MaxLength="20" />
+          <Property Name="PROVINCE_ID" Type="number" Nullable="false" Precision="19" />
+          <Property Name="SEARCH_CODE" Type="varchar2" MaxLength="10" />
+          <Property Name="PROVINCE_CODE" Type="varchar2" Nullable="false" MaxLength="3" />
+          <Property Name="PROVINCE_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="ID_PATH" Type="varchar2" MaxLength="124" />
+          <Property Name="CODE_PATH" Type="varchar2" MaxLength="14" />
+        </EntityType>
+                <EntityType Name="V_SDA_GROUP">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="10" />
+          <Property Name="G_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="GROUP_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="GROUP_TYPE_ID" Type="number" Precision="19" />
+          <Property Name="PARENT_ID" Type="number" Precision="19" />
+          <Property Name="CODE_PATH" Type="varchar2" MaxLength="2000" />
+          <Property Name="ID_PATH" Type="varchar2" MaxLength="2000" />
+          <Property Name="PARENT_CODE" Type="varchar2" MaxLength="10" />
+          <Property Name="PARENT_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="PARENT_ID_PATH" Type="varchar2" MaxLength="2000" />
+          <Property Name="PARENT_CODE_PATH" Type="varchar2" MaxLength="2000" />
+          <Property Name="GROUP_TYPE_CODE" Type="varchar2" MaxLength="3" />
+          <Property Name="GROUP_TYPE_NAME" Type="varchar2" MaxLength="100" />
+        </EntityType>
+                <EntityType Name="V_SDA_NATIONAL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="NATIONAL_CODE" Type="varchar2" Nullable="false" MaxLength="3" />
+          <Property Name="NATIONAL_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="ID_PATH" Type="varchar2" MaxLength="42" />
+          <Property Name="CODE_PATH" Type="varchar2" MaxLength="5" />
+        </EntityType>
+                <EntityType Name="V_SDA_PROVINCE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="PROVINCE_CODE" Type="varchar2" Nullable="false" MaxLength="3" />
+          <Property Name="PROVINCE_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="NATIONAL_ID" Type="number" Nullable="false" Precision="19" />
+          <Property Name="SEARCH_CODE" Type="varchar2" MaxLength="10" />
+          <Property Name="NATIONAL_CODE" Type="varchar2" Nullable="false" MaxLength="3" />
+          <Property Name="NATIONAL_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="ID_PATH" Type="varchar2" MaxLength="83" />
+          <Property Name="CODE_PATH" Type="varchar2" MaxLength="9" />
+        </EntityType>
+        <Association Name="SDA_COMMUNE_FK1">
+          <End Role="SDA_DISTRICT" Type="DataModels.Store.SDA_DISTRICT" Multiplicity="1" />
+          <End Role="SDA_COMMUNE" Type="DataModels.Store.SDA_COMMUNE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SDA_DISTRICT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SDA_COMMUNE">
+              <PropertyRef Name="DISTRICT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SDA_CONFIG_APP_USER_FK1">
+          <End Role="SDA_CONFIG_APP" Type="DataModels.Store.SDA_CONFIG_APP" Multiplicity="1" />
+          <End Role="SDA_CONFIG_APP_USER" Type="DataModels.Store.SDA_CONFIG_APP_USER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SDA_CONFIG_APP">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SDA_CONFIG_APP_USER">
+              <PropertyRef Name="CONFIG_APP_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SDA_DISTRICT_FK1">
+          <End Role="SDA_PROVINCE" Type="DataModels.Store.SDA_PROVINCE" Multiplicity="1" />
+          <End Role="SDA_DISTRICT" Type="DataModels.Store.SDA_DISTRICT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SDA_PROVINCE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SDA_DISTRICT">
+              <PropertyRef Name="PROVINCE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SDA_PROVINCE_FK1">
+          <End Role="SDA_NATIONAL" Type="DataModels.Store.SDA_NATIONAL" Multiplicity="1" />
+          <End Role="SDA_PROVINCE" Type="DataModels.Store.SDA_PROVINCE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SDA_NATIONAL">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SDA_PROVINCE">
+              <PropertyRef Name="NATIONAL_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SDA_TRANSLATE_FK1">
+          <End Role="SDA_LANGUAGE" Type="DataModels.Store.SDA_LANGUAGE" Multiplicity="1" />
+          <End Role="SDA_TRANSLATE" Type="DataModels.Store.SDA_TRANSLATE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SDA_LANGUAGE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SDA_TRANSLATE">
+              <PropertyRef Name="LANGUAGE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DataModels" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="SDAEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="SDA_COMMUNE" EntityType="DataModels.SDA_COMMUNE" />
+          <EntitySet Name="SDA_CONFIG" EntityType="DataModels.SDA_CONFIG" />
+          <EntitySet Name="SDA_CONFIG_APP" EntityType="DataModels.SDA_CONFIG_APP" />
+          <EntitySet Name="SDA_CONFIG_APP_USER" EntityType="DataModels.SDA_CONFIG_APP_USER" />
+          <EntitySet Name="SDA_DISTRICT" EntityType="DataModels.SDA_DISTRICT" />
+          <EntitySet Name="SDA_ETHNIC" EntityType="DataModels.SDA_ETHNIC" />
+          <EntitySet Name="SDA_EVENT_LOG" EntityType="DataModels.SDA_EVENT_LOG" />
+          <EntitySet Name="SDA_GROUP" EntityType="DataModels.SDA_GROUP" />
+          <EntitySet Name="SDA_GROUP_TYPE" EntityType="DataModels.SDA_GROUP_TYPE" />
+          <EntitySet Name="SDA_LANGUAGE" EntityType="DataModels.SDA_LANGUAGE" />
+          <EntitySet Name="SDA_LICENSE" EntityType="DataModels.SDA_LICENSE" />
+          <EntitySet Name="SDA_NATIONAL" EntityType="DataModels.SDA_NATIONAL" />
+          <EntitySet Name="SDA_NOTIFY" EntityType="DataModels.SDA_NOTIFY" />
+          <EntitySet Name="SDA_PROVINCE" EntityType="DataModels.SDA_PROVINCE" />
+          <EntitySet Name="SDA_RELIGION" EntityType="DataModels.SDA_RELIGION" />
+          <EntitySet Name="SDA_TRANSLATE" EntityType="DataModels.SDA_TRANSLATE" />
+          <EntitySet Name="SDA_TROUBLE" EntityType="DataModels.SDA_TROUBLE" />
+          <EntitySet Name="V_SDA_COMMUNE" EntityType="DataModels.V_SDA_COMMUNE" />
+          <EntitySet Name="V_SDA_CONFIG_APP_USER" EntityType="DataModels.V_SDA_CONFIG_APP_USER" />
+          <EntitySet Name="V_SDA_DISTRICT" EntityType="DataModels.V_SDA_DISTRICT" />
+          <EntitySet Name="V_SDA_GROUP" EntityType="DataModels.V_SDA_GROUP" />
+          <EntitySet Name="V_SDA_NATIONAL" EntityType="DataModels.V_SDA_NATIONAL" />
+          <EntitySet Name="V_SDA_PROVINCE" EntityType="DataModels.V_SDA_PROVINCE" />
+          <AssociationSet Name="SDA_COMMUNE_FK1" Association="DataModels.SDA_COMMUNE_FK1">
+            <End Role="SDA_DISTRICT" EntitySet="SDA_DISTRICT" />
+            <End Role="SDA_COMMUNE" EntitySet="SDA_COMMUNE" />
+          </AssociationSet>
+          <AssociationSet Name="SDA_CONFIG_APP_USER_FK1" Association="DataModels.SDA_CONFIG_APP_USER_FK1">
+            <End Role="SDA_CONFIG_APP" EntitySet="SDA_CONFIG_APP" />
+            <End Role="SDA_CONFIG_APP_USER" EntitySet="SDA_CONFIG_APP_USER" />
+          </AssociationSet>
+          <AssociationSet Name="SDA_DISTRICT_FK1" Association="DataModels.SDA_DISTRICT_FK1">
+            <End Role="SDA_PROVINCE" EntitySet="SDA_PROVINCE" />
+            <End Role="SDA_DISTRICT" EntitySet="SDA_DISTRICT" />
+          </AssociationSet>
+          <AssociationSet Name="SDA_TRANSLATE_FK1" Association="DataModels.SDA_TRANSLATE_FK1">
+            <End Role="SDA_LANGUAGE" EntitySet="SDA_LANGUAGE" />
+            <End Role="SDA_TRANSLATE" EntitySet="SDA_TRANSLATE" />
+          </AssociationSet>
+          <AssociationSet Name="SDA_PROVINCE_FK1" Association="DataModels.SDA_PROVINCE_FK1">
+            <End Role="SDA_NATIONAL" EntitySet="SDA_NATIONAL" />
+            <End Role="SDA_PROVINCE" EntitySet="SDA_PROVINCE" />
+          </AssociationSet>
+        </EntityContainer>
+                <EntityType Name="SDA_COMMUNE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="COMMUNE_CODE" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="COMMUNE_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="INITIAL_NAME" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="DISTRICT_ID" Type="Int64" Nullable="false" />
+          <Property Name="SEARCH_CODE" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="SDA_DISTRICT" Relationship="DataModels.SDA_COMMUNE_FK1" FromRole="SDA_COMMUNE" ToRole="SDA_DISTRICT" />
+        </EntityType>
+                <EntityType Name="SDA_CONFIG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="KEY" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="VALUE" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="DEFAULT_VALUE" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+        </EntityType>
+                <EntityType Name="SDA_CONFIG_APP">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="KEY" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="DEFAULT_VALUE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="VALUE_TYPE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="VALUE_ALLOW_MIN" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="VALUE_ALLOW_MAX" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="VALUE_ALLOW_IN" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CODE" Type="String" MaxLength="3" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="SDA_CONFIG_APP_USER" Relationship="DataModels.SDA_CONFIG_APP_USER_FK1" FromRole="SDA_CONFIG_APP" ToRole="SDA_CONFIG_APP_USER" />
+        </EntityType>
+                <EntityType Name="SDA_CONFIG_APP_USER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="CONFIG_APP_ID" Type="Int64" Nullable="false" />
+          <Property Name="LOGINNAME" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="VALUE" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="SDA_CONFIG_APP" Relationship="DataModels.SDA_CONFIG_APP_USER_FK1" FromRole="SDA_CONFIG_APP_USER" ToRole="SDA_CONFIG_APP" />
+        </EntityType>
+                <EntityType Name="SDA_DISTRICT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DISTRICT_CODE" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="false" />
+          <Property Name="DISTRICT_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="INITIAL_NAME" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="PROVINCE_ID" Type="Int64" Nullable="false" />
+          <Property Name="SEARCH_CODE" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="SDA_COMMUNE" Relationship="DataModels.SDA_COMMUNE_FK1" FromRole="SDA_DISTRICT" ToRole="SDA_COMMUNE" />
+          <NavigationProperty Name="SDA_PROVINCE" Relationship="DataModels.SDA_DISTRICT_FK1" FromRole="SDA_DISTRICT" ToRole="SDA_PROVINCE" />
+        </EntityType>
+                <EntityType Name="SDA_ETHNIC">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ETHNIC_CODE" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="ETHNIC_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="OTHER_NAME" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+        </EntityType>
+                <EntityType Name="SDA_EVENT_LOG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LOGIN_NAME" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IP" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CODE" Type="String" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="EVENT_TIME" Type="Int64" />
+        </EntityType>
+                <EntityType Name="SDA_GROUP">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="10" Unicode="false" FixedLength="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="G_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="GROUP_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="GROUP_TYPE_ID" Type="Int64" />
+          <Property Name="PARENT_ID" Type="Int64" />
+          <Property Name="CODE_PATH" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="ID_PATH" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+        </EntityType>
+        
+        <EntityType Name="SDA_GROUP_TYPE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="GROUP_TYPE_CODE" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="GROUP_TYPE_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+                <EntityType Name="SDA_LANGUAGE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="LANGUAGE_CODE" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="LANGUAGE_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="IS_BASE" Type="Int16" />
+          <NavigationProperty Name="SDA_TRANSLATE" Relationship="DataModels.SDA_TRANSLATE_FK1" FromRole="SDA_LANGUAGE" ToRole="SDA_TRANSLATE" />
+        </EntityType>
+                <EntityType Name="SDA_LICENSE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PUK" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="SN_HDD" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="LICENSE" Type="String" Nullable="false" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CODE" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+        </EntityType>
+                <EntityType Name="SDA_NATIONAL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="NATIONAL_CODE" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="NATIONAL_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="SDA_PROVINCE" Relationship="DataModels.SDA_PROVINCE_FK1" FromRole="SDA_NATIONAL" ToRole="SDA_PROVINCE" />
+        </EntityType>
+                <EntityType Name="SDA_NOTIFY">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="CONTENT" Type="String" Nullable="false" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="FROM_TIME" Type="Int64" Nullable="false" />
+          <Property Name="TO_TIME" Type="Int64" Nullable="false" />
+        </EntityType>
+                <EntityType Name="SDA_PROVINCE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PROVINCE_CODE" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="PROVINCE_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="NATIONAL_ID" Type="Int64" Nullable="false" />
+          <Property Name="SEARCH_CODE" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="SDA_DISTRICT" Relationship="DataModels.SDA_DISTRICT_FK1" FromRole="SDA_PROVINCE" ToRole="SDA_DISTRICT" />
+          <NavigationProperty Name="SDA_NATIONAL" Relationship="DataModels.SDA_PROVINCE_FK1" FromRole="SDA_PROVINCE" ToRole="SDA_NATIONAL" />
+        </EntityType>
+                <EntityType Name="SDA_RELIGION">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="RELIGION_CODE" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="RELIGION_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+                <EntityType Name="SDA_TRANSLATE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LANGUAGE_ID" Type="Int64" Nullable="false" />
+          <Property Name="SCHEMA" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="TABLE_NAME" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="COLUMN_NAME" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DATA_CODE" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="DATA_VALUE" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="SDA_LANGUAGE" Relationship="DataModels.SDA_TRANSLATE_FK1" FromRole="SDA_TRANSLATE" ToRole="SDA_LANGUAGE" />
+        </EntityType>
+                <EntityType Name="SDA_TROUBLE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="TROUBLE_CODE" Type="String" Nullable="false" MaxLength="12" Unicode="false" FixedLength="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IS_EXECUTE" Type="Int16" />
+          <Property Name="OVERCOME" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="EXECUTE_TIME" Type="Int64" />
+          <Property Name="EXECUTE_LOGINNAME" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="EXECUTE_USERNAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="MESSAGE" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+        </EntityType>
+        
+        <EntityType Name="V_SDA_COMMUNE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="COMMUNE_CODE" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="COMMUNE_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="INITIAL_NAME" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="DISTRICT_ID" Type="Int64" Nullable="false" />
+          <Property Name="SEARCH_CODE" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="DISTRICT_CODE" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="false" />
+          <Property Name="DISTRICT_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="DISTRICT_INITIAL_NAME" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ID_PATH" Type="String" MaxLength="165" Unicode="false" FixedLength="false" />
+          <Property Name="CODE_PATH" Type="String" MaxLength="21" Unicode="false" FixedLength="false" />
+        </EntityType>
+                <EntityType Name="V_SDA_CONFIG_APP_USER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="CONFIG_APP_ID" Type="Int64" Nullable="false" />
+          <Property Name="LOGINNAME" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="VALUE" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="KEY" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="DEFAULT_VALUE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+                <EntityType Name="V_SDA_DISTRICT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DISTRICT_CODE" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="false" />
+          <Property Name="DISTRICT_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="INITIAL_NAME" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="PROVINCE_ID" Type="Int64" Nullable="false" />
+          <Property Name="SEARCH_CODE" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="PROVINCE_CODE" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="PROVINCE_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="ID_PATH" Type="String" MaxLength="124" Unicode="false" FixedLength="false" />
+          <Property Name="CODE_PATH" Type="String" MaxLength="14" Unicode="false" FixedLength="false" />
+        </EntityType>
+                <EntityType Name="V_SDA_GROUP">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="G_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="GROUP_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="GROUP_TYPE_ID" Type="Int64" />
+          <Property Name="PARENT_ID" Type="Int64" />
+          <Property Name="CODE_PATH" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="ID_PATH" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="PARENT_CODE" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="PARENT_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="PARENT_ID_PATH" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="PARENT_CODE_PATH" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="GROUP_TYPE_CODE" Type="String" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="GROUP_TYPE_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+                <EntityType Name="V_SDA_NATIONAL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="NATIONAL_CODE" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="NATIONAL_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="ID_PATH" Type="String" MaxLength="42" Unicode="false" FixedLength="false" />
+          <Property Name="CODE_PATH" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+        </EntityType>
+                <EntityType Name="V_SDA_PROVINCE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PROVINCE_CODE" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="PROVINCE_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="NATIONAL_ID" Type="Int64" Nullable="false" />
+          <Property Name="SEARCH_CODE" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="NATIONAL_CODE" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="NATIONAL_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="ID_PATH" Type="String" MaxLength="83" Unicode="false" FixedLength="false" />
+          <Property Name="CODE_PATH" Type="String" MaxLength="9" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <Association Name="SDA_COMMUNE_FK1">
+          <End Role="SDA_DISTRICT" Type="DataModels.SDA_DISTRICT" Multiplicity="1" />
+          <End Role="SDA_COMMUNE" Type="DataModels.SDA_COMMUNE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SDA_DISTRICT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SDA_COMMUNE">
+              <PropertyRef Name="DISTRICT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SDA_CONFIG_APP_USER_FK1">
+          <End Role="SDA_CONFIG_APP" Type="DataModels.SDA_CONFIG_APP" Multiplicity="1" />
+          <End Role="SDA_CONFIG_APP_USER" Type="DataModels.SDA_CONFIG_APP_USER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SDA_CONFIG_APP">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SDA_CONFIG_APP_USER">
+              <PropertyRef Name="CONFIG_APP_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SDA_DISTRICT_FK1">
+          <End Role="SDA_PROVINCE" Type="DataModels.SDA_PROVINCE" Multiplicity="1" />
+          <End Role="SDA_DISTRICT" Type="DataModels.SDA_DISTRICT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SDA_PROVINCE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SDA_DISTRICT">
+              <PropertyRef Name="PROVINCE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SDA_TRANSLATE_FK1">
+          <End Role="SDA_LANGUAGE" Type="DataModels.SDA_LANGUAGE" Multiplicity="1" />
+          <End Role="SDA_TRANSLATE" Type="DataModels.SDA_TRANSLATE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SDA_LANGUAGE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SDA_TRANSLATE">
+              <PropertyRef Name="LANGUAGE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SDA_PROVINCE_FK1">
+          <End Role="SDA_NATIONAL" Type="DataModels.SDA_NATIONAL" Multiplicity="1" />
+          <End Role="SDA_PROVINCE" Type="DataModels.SDA_PROVINCE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SDA_NATIONAL">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SDA_PROVINCE">
+              <PropertyRef Name="NATIONAL_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SDADataModelsStoreContainer" CdmEntityContainer="SDAEntities">
+          <EntitySetMapping Name="SDA_COMMUNE">
+            <EntityTypeMapping TypeName="DataModels.SDA_COMMUNE">
+              <MappingFragment StoreEntitySet="SDA_COMMUNE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="COMMUNE_CODE" ColumnName="COMMUNE_CODE" />
+                <ScalarProperty Name="COMMUNE_NAME" ColumnName="COMMUNE_NAME" />
+                <ScalarProperty Name="INITIAL_NAME" ColumnName="INITIAL_NAME" />
+                <ScalarProperty Name="DISTRICT_ID" ColumnName="DISTRICT_ID" />
+                <ScalarProperty Name="SEARCH_CODE" ColumnName="SEARCH_CODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SDA_CONFIG">
+            <EntityTypeMapping TypeName="DataModels.SDA_CONFIG">
+              <MappingFragment StoreEntitySet="SDA_CONFIG">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="KEY" ColumnName="KEY" />
+                <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+                <ScalarProperty Name="DEFAULT_VALUE" ColumnName="DEFAULT_VALUE" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SDA_CONFIG_APP">
+            <EntityTypeMapping TypeName="DataModels.SDA_CONFIG_APP">
+              <MappingFragment StoreEntitySet="SDA_CONFIG_APP">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="KEY" ColumnName="KEY" />
+                <ScalarProperty Name="DEFAULT_VALUE" ColumnName="DEFAULT_VALUE" />
+                <ScalarProperty Name="VALUE_TYPE" ColumnName="VALUE_TYPE" />
+                <ScalarProperty Name="VALUE_ALLOW_MIN" ColumnName="VALUE_ALLOW_MIN" />
+                <ScalarProperty Name="VALUE_ALLOW_MAX" ColumnName="VALUE_ALLOW_MAX" />
+                <ScalarProperty Name="VALUE_ALLOW_IN" ColumnName="VALUE_ALLOW_IN" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="APP_CODE" ColumnName="APP_CODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SDA_CONFIG_APP_USER">
+            <EntityTypeMapping TypeName="DataModels.SDA_CONFIG_APP_USER">
+              <MappingFragment StoreEntitySet="SDA_CONFIG_APP_USER">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="CONFIG_APP_ID" ColumnName="CONFIG_APP_ID" />
+                <ScalarProperty Name="LOGINNAME" ColumnName="LOGINNAME" />
+                <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SDA_DISTRICT">
+            <EntityTypeMapping TypeName="DataModels.SDA_DISTRICT">
+              <MappingFragment StoreEntitySet="SDA_DISTRICT">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="DISTRICT_CODE" ColumnName="DISTRICT_CODE" />
+                <ScalarProperty Name="DISTRICT_NAME" ColumnName="DISTRICT_NAME" />
+                <ScalarProperty Name="INITIAL_NAME" ColumnName="INITIAL_NAME" />
+                <ScalarProperty Name="PROVINCE_ID" ColumnName="PROVINCE_ID" />
+                <ScalarProperty Name="SEARCH_CODE" ColumnName="SEARCH_CODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SDA_ETHNIC">
+            <EntityTypeMapping TypeName="DataModels.SDA_ETHNIC">
+              <MappingFragment StoreEntitySet="SDA_ETHNIC">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="ETHNIC_CODE" ColumnName="ETHNIC_CODE" />
+                <ScalarProperty Name="ETHNIC_NAME" ColumnName="ETHNIC_NAME" />
+                <ScalarProperty Name="OTHER_NAME" ColumnName="OTHER_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SDA_EVENT_LOG">
+            <EntityTypeMapping TypeName="DataModels.SDA_EVENT_LOG">
+              <MappingFragment StoreEntitySet="SDA_EVENT_LOG">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="LOGIN_NAME" ColumnName="LOGIN_NAME" />
+                <ScalarProperty Name="IP" ColumnName="IP" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="APP_CODE" ColumnName="APP_CODE" />
+                <ScalarProperty Name="EVENT_TIME" ColumnName="EVENT_TIME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SDA_GROUP">
+            <EntityTypeMapping TypeName="DataModels.SDA_GROUP">
+              <MappingFragment StoreEntitySet="SDA_GROUP">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="G_CODE" ColumnName="G_CODE" />
+                <ScalarProperty Name="GROUP_NAME" ColumnName="GROUP_NAME" />
+                <ScalarProperty Name="GROUP_TYPE_ID" ColumnName="GROUP_TYPE_ID" />
+                <ScalarProperty Name="PARENT_ID" ColumnName="PARENT_ID" />
+                <ScalarProperty Name="CODE_PATH" ColumnName="CODE_PATH" />
+                <ScalarProperty Name="ID_PATH" ColumnName="ID_PATH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SDA_GROUP_TYPE">
+            <EntityTypeMapping TypeName="DataModels.SDA_GROUP_TYPE">
+              <MappingFragment StoreEntitySet="SDA_GROUP_TYPE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="GROUP_TYPE_CODE" ColumnName="GROUP_TYPE_CODE" />
+                <ScalarProperty Name="GROUP_TYPE_NAME" ColumnName="GROUP_TYPE_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SDA_LANGUAGE">
+            <EntityTypeMapping TypeName="DataModels.SDA_LANGUAGE">
+              <MappingFragment StoreEntitySet="SDA_LANGUAGE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="LANGUAGE_CODE" ColumnName="LANGUAGE_CODE" />
+                <ScalarProperty Name="LANGUAGE_NAME" ColumnName="LANGUAGE_NAME" />
+                <ScalarProperty Name="IS_BASE" ColumnName="IS_BASE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SDA_LICENSE">
+            <EntityTypeMapping TypeName="DataModels.SDA_LICENSE">
+              <MappingFragment StoreEntitySet="SDA_LICENSE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="PUK" ColumnName="PUK" />
+                <ScalarProperty Name="SN_HDD" ColumnName="SN_HDD" />
+                <ScalarProperty Name="LICENSE" ColumnName="LICENSE" />
+                <ScalarProperty Name="APP_CODE" ColumnName="APP_CODE" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SDA_NATIONAL">
+            <EntityTypeMapping TypeName="DataModels.SDA_NATIONAL">
+              <MappingFragment StoreEntitySet="SDA_NATIONAL">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="NATIONAL_CODE" ColumnName="NATIONAL_CODE" />
+                <ScalarProperty Name="NATIONAL_NAME" ColumnName="NATIONAL_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SDA_NOTIFY">
+            <EntityTypeMapping TypeName="DataModels.SDA_NOTIFY">
+              <MappingFragment StoreEntitySet="SDA_NOTIFY">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+                <ScalarProperty Name="FROM_TIME" ColumnName="FROM_TIME" />
+                <ScalarProperty Name="TO_TIME" ColumnName="TO_TIME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SDA_PROVINCE">
+            <EntityTypeMapping TypeName="DataModels.SDA_PROVINCE">
+              <MappingFragment StoreEntitySet="SDA_PROVINCE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="PROVINCE_CODE" ColumnName="PROVINCE_CODE" />
+                <ScalarProperty Name="PROVINCE_NAME" ColumnName="PROVINCE_NAME" />
+                <ScalarProperty Name="NATIONAL_ID" ColumnName="NATIONAL_ID" />
+                <ScalarProperty Name="SEARCH_CODE" ColumnName="SEARCH_CODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SDA_RELIGION">
+            <EntityTypeMapping TypeName="DataModels.SDA_RELIGION">
+              <MappingFragment StoreEntitySet="SDA_RELIGION">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="RELIGION_CODE" ColumnName="RELIGION_CODE" />
+                <ScalarProperty Name="RELIGION_NAME" ColumnName="RELIGION_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SDA_TRANSLATE">
+            <EntityTypeMapping TypeName="DataModels.SDA_TRANSLATE">
+              <MappingFragment StoreEntitySet="SDA_TRANSLATE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="LANGUAGE_ID" ColumnName="LANGUAGE_ID" />
+                <ScalarProperty Name="SCHEMA" ColumnName="SCHEMA" />
+                <ScalarProperty Name="TABLE_NAME" ColumnName="TABLE_NAME" />
+                <ScalarProperty Name="COLUMN_NAME" ColumnName="COLUMN_NAME" />
+                <ScalarProperty Name="DATA_CODE" ColumnName="DATA_CODE" />
+                <ScalarProperty Name="DATA_VALUE" ColumnName="DATA_VALUE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SDA_TROUBLE">
+            <EntityTypeMapping TypeName="DataModels.SDA_TROUBLE">
+              <MappingFragment StoreEntitySet="SDA_TROUBLE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="TROUBLE_CODE" ColumnName="TROUBLE_CODE" />
+                <ScalarProperty Name="IS_EXECUTE" ColumnName="IS_EXECUTE" />
+                <ScalarProperty Name="OVERCOME" ColumnName="OVERCOME" />
+                <ScalarProperty Name="EXECUTE_TIME" ColumnName="EXECUTE_TIME" />
+                <ScalarProperty Name="EXECUTE_LOGINNAME" ColumnName="EXECUTE_LOGINNAME" />
+                <ScalarProperty Name="EXECUTE_USERNAME" ColumnName="EXECUTE_USERNAME" />
+                <ScalarProperty Name="MESSAGE" ColumnName="MESSAGE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_SDA_COMMUNE">
+            <EntityTypeMapping TypeName="DataModels.V_SDA_COMMUNE">
+              <MappingFragment StoreEntitySet="V_SDA_COMMUNE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="COMMUNE_CODE" ColumnName="COMMUNE_CODE" />
+                <ScalarProperty Name="COMMUNE_NAME" ColumnName="COMMUNE_NAME" />
+                <ScalarProperty Name="INITIAL_NAME" ColumnName="INITIAL_NAME" />
+                <ScalarProperty Name="DISTRICT_ID" ColumnName="DISTRICT_ID" />
+                <ScalarProperty Name="SEARCH_CODE" ColumnName="SEARCH_CODE" />
+                <ScalarProperty Name="DISTRICT_CODE" ColumnName="DISTRICT_CODE" />
+                <ScalarProperty Name="DISTRICT_NAME" ColumnName="DISTRICT_NAME" />
+                <ScalarProperty Name="DISTRICT_INITIAL_NAME" ColumnName="DISTRICT_INITIAL_NAME" />
+                <ScalarProperty Name="ID_PATH" ColumnName="ID_PATH" />
+                <ScalarProperty Name="CODE_PATH" ColumnName="CODE_PATH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_SDA_CONFIG_APP_USER">
+            <EntityTypeMapping TypeName="DataModels.V_SDA_CONFIG_APP_USER">
+              <MappingFragment StoreEntitySet="V_SDA_CONFIG_APP_USER">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="CONFIG_APP_ID" ColumnName="CONFIG_APP_ID" />
+                <ScalarProperty Name="LOGINNAME" ColumnName="LOGINNAME" />
+                <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+                <ScalarProperty Name="KEY" ColumnName="KEY" />
+                <ScalarProperty Name="DEFAULT_VALUE" ColumnName="DEFAULT_VALUE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_SDA_DISTRICT">
+            <EntityTypeMapping TypeName="DataModels.V_SDA_DISTRICT">
+              <MappingFragment StoreEntitySet="V_SDA_DISTRICT">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="DISTRICT_CODE" ColumnName="DISTRICT_CODE" />
+                <ScalarProperty Name="DISTRICT_NAME" ColumnName="DISTRICT_NAME" />
+                <ScalarProperty Name="INITIAL_NAME" ColumnName="INITIAL_NAME" />
+                <ScalarProperty Name="PROVINCE_ID" ColumnName="PROVINCE_ID" />
+                <ScalarProperty Name="SEARCH_CODE" ColumnName="SEARCH_CODE" />
+                <ScalarProperty Name="PROVINCE_CODE" ColumnName="PROVINCE_CODE" />
+                <ScalarProperty Name="PROVINCE_NAME" ColumnName="PROVINCE_NAME" />
+                <ScalarProperty Name="ID_PATH" ColumnName="ID_PATH" />
+                <ScalarProperty Name="CODE_PATH" ColumnName="CODE_PATH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_SDA_GROUP">
+            <EntityTypeMapping TypeName="DataModels.V_SDA_GROUP">
+              <MappingFragment StoreEntitySet="V_SDA_GROUP">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="G_CODE" ColumnName="G_CODE" />
+                <ScalarProperty Name="GROUP_NAME" ColumnName="GROUP_NAME" />
+                <ScalarProperty Name="GROUP_TYPE_ID" ColumnName="GROUP_TYPE_ID" />
+                <ScalarProperty Name="PARENT_ID" ColumnName="PARENT_ID" />
+                <ScalarProperty Name="CODE_PATH" ColumnName="CODE_PATH" />
+                <ScalarProperty Name="ID_PATH" ColumnName="ID_PATH" />
+                <ScalarProperty Name="PARENT_CODE" ColumnName="PARENT_CODE" />
+                <ScalarProperty Name="PARENT_NAME" ColumnName="PARENT_NAME" />
+                <ScalarProperty Name="PARENT_ID_PATH" ColumnName="PARENT_ID_PATH" />
+                <ScalarProperty Name="PARENT_CODE_PATH" ColumnName="PARENT_CODE_PATH" />
+                <ScalarProperty Name="GROUP_TYPE_CODE" ColumnName="GROUP_TYPE_CODE" />
+                <ScalarProperty Name="GROUP_TYPE_NAME" ColumnName="GROUP_TYPE_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_SDA_NATIONAL">
+            <EntityTypeMapping TypeName="DataModels.V_SDA_NATIONAL">
+              <MappingFragment StoreEntitySet="V_SDA_NATIONAL">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="NATIONAL_CODE" ColumnName="NATIONAL_CODE" />
+                <ScalarProperty Name="NATIONAL_NAME" ColumnName="NATIONAL_NAME" />
+                <ScalarProperty Name="ID_PATH" ColumnName="ID_PATH" />
+                <ScalarProperty Name="CODE_PATH" ColumnName="CODE_PATH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_SDA_PROVINCE">
+            <EntityTypeMapping TypeName="DataModels.V_SDA_PROVINCE">
+              <MappingFragment StoreEntitySet="V_SDA_PROVINCE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="PROVINCE_CODE" ColumnName="PROVINCE_CODE" />
+                <ScalarProperty Name="PROVINCE_NAME" ColumnName="PROVINCE_NAME" />
+                <ScalarProperty Name="NATIONAL_ID" ColumnName="NATIONAL_ID" />
+                <ScalarProperty Name="SEARCH_CODE" ColumnName="SEARCH_CODE" />
+                <ScalarProperty Name="NATIONAL_CODE" ColumnName="NATIONAL_CODE" />
+                <ScalarProperty Name="NATIONAL_NAME" ColumnName="NATIONAL_NAME" />
+                <ScalarProperty Name="ID_PATH" ColumnName="ID_PATH" />
+                <ScalarProperty Name="CODE_PATH" ColumnName="CODE_PATH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

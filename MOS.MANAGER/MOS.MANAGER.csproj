@@ -1,0 +1,1513 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4C003AB6-895F-4C05-9A5A-F760C553BBB8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MOS.MANAGER</RootNamespace>
+    <AssemblyName>MOS.MANAGER</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <DontImportPostSharp>True</DontImportPostSharp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ACS.EFMODEL">
+      <HintPath>..\..\..\RELEASE\MRSv3\ACS.EFMODEL.dll</HintPath>
+    </Reference>
+    <Reference Include="ACS.Filter">
+      <HintPath>..\..\..\RELEASE\MRSv3\ACS.Filter.dll</HintPath>
+    </Reference>
+    <Reference Include="ACS.MANAGER">
+      <HintPath>..\..\..\RELEASE\MRSv3\ACS.MANAGER.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=5.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_Library\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="IMSys.DbConfig.HIS_RS">
+      <HintPath>..\..\..\RELEASE\IMSys.DbConfig\IMSys.DbConfig.HIS_RS\IMSys.DbConfig.HIS_RS.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.DateTime">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.DateTime\Inventec.Common.DateTime.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.FileFolder">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.FileFolder\Inventec.Common.FileFolder.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.HardDrive, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.HardDrive\Inventec.Common.HardDrive.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.JsonRedundancy">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.JsonRedundancy\Inventec.Common.JsonRedundancy.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.LicenseCrypto">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.LicenseCrypto\Inventec.Common.LicenseCrypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.Logging\Inventec.Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.ObjectChecker">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.ObjectChecker\Inventec.Common.ObjectChecker.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.Repository, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.Repository\Inventec.Common.Repository.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.WebApiClient">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.WebApiClient\Inventec.Common.WebApiClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\Inventec.Core\Inventec.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Fss.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\Inventec.Fss.Client\Inventec.Fss.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Fss.Utility">
+      <HintPath>..\..\..\RELEASE\Inventec.Fss.Client\Inventec.Fss.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Token.ClientSystem">
+      <HintPath>..\..\..\RELEASE\Inventec.Token\Inventec.Token.ClientSystem\Inventec.Token.ClientSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Token.Core">
+      <HintPath>..\..\..\RELEASE\Inventec.Token\Inventec.Token.ResourceSystem\Inventec.Token.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Token.ResourceSystem, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\Inventec.Token\Inventec.Token.ResourceSystem\Inventec.Token.ResourceSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MOS.DAO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\MRSv3\MOS.DAO.dll</HintPath>
+    </Reference>
+    <Reference Include="MOS.EFMODEL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\MRSv3\MOS.EFMODEL.dll</HintPath>
+    </Reference>
+    <Reference Include="MOS.LibraryHein.Bhyt">
+      <HintPath>..\..\..\RELEASE\MRSv3\MOS.LibraryHein.Bhyt.dll</HintPath>
+    </Reference>
+    <Reference Include="MOS.LibraryHein.Factory">
+      <HintPath>..\..\..\RELEASE\MRSv3\MOS.LibraryHein.Factory.dll</HintPath>
+    </Reference>
+    <Reference Include="MOS.LibraryHein.HcmPoorFund">
+      <HintPath>..\..\..\RELEASE\MRSv3\MOS.LibraryHein.HcmPoorFund.dll</HintPath>
+    </Reference>
+    <Reference Include="MOS.LibraryHein.Ksk">
+      <HintPath>..\..\..\RELEASE\MRSv3\MOS.LibraryHein.Ksk.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_Library\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.121.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_Library\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="SDA.EFMODEL">
+      <HintPath>..\..\..\RELEASE\MRSv3\SDA.EFMODEL.dll</HintPath>
+    </Reference>
+    <Reference Include="SDA.Filter">
+      <HintPath>..\..\..\RELEASE\MRSv3\SDA.Filter.dll</HintPath>
+    </Reference>
+    <Reference Include="SDA.MANAGER">
+      <HintPath>..\..\..\RELEASE\MRSv3\SDA.MANAGER.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\BusinessBase.cs" />
+    <Compile Include="Base\DAOWorker.cs" />
+    <Compile Include="Base\FileStoreLocation.cs" />
+    <Compile Include="Base\GetBase.cs" />
+    <Compile Include="Base\ReflectionQueryable.cs" />
+    <Compile Include="Base\ManagerConstant.cs" />
+    <Compile Include="Base\OrderProcessorBase.cs" />
+    <Compile Include="ConsumerManager\ApiConsumerStore.cs" />
+    <Compile Include="ConsumerManager\CosApiConsumerStore.cs" />
+    <Compile Include="HisMedicineGroup\HisMedicineGroupFilterQuery.cs" />
+    <Compile Include="HisMedicineGroup\HisMedicineGroupGet.cs" />
+    <Compile Include="HisMedicineGroup\HisMedicineGroupManager.cs" />
+    <Compile Include="HisAccidentBodyPart\HisAccidentBodyPartFilterQuery.cs" />
+    <Compile Include="HisAccidentBodyPart\HisAccidentBodyPartGet.cs" />
+    <Compile Include="HisAccidentBodyPart\HisAccidentBodyPartGetByCode.cs" />
+    <Compile Include="HisAccidentBodyPart\HisAccidentBodyPartManager.cs" />
+    <Compile Include="HisAccidentCare\HisAccidentCareFilterQuery.cs" />
+    <Compile Include="HisAccidentCare\HisAccidentCareGet.cs" />
+    <Compile Include="HisAccidentCare\HisAccidentCareGetByCode.cs" />
+    <Compile Include="HisAccidentCare\HisAccidentCareManager.cs" />
+    <Compile Include="HisAccidentHelmet\HisAccidentHelmetFilterQuery.cs" />
+    <Compile Include="HisAccidentHelmet\HisAccidentHelmetGet.cs" />
+    <Compile Include="HisAccidentHelmet\HisAccidentHelmetGetByCode.cs" />
+    <Compile Include="HisAccidentHelmet\HisAccidentHelmetManager.cs" />
+    <Compile Include="HisAccidentHurtType\HisAccidentHurtTypeManager.cs" />
+    <Compile Include="HisAccidentHurt\HisAccidentHurtGetView.cs" />
+    <Compile Include="HisAccidentHurt\HisAccidentHurtManagerView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HisAccidentHurt\HisAccidentHurtViewFilterQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HisAccidentLocation\HisAccidentLocationFilterQuery.cs" />
+    <Compile Include="HisAccidentLocation\HisAccidentLocationGet.cs" />
+    <Compile Include="HisAccidentLocation\HisAccidentLocationGetByCode.cs" />
+    <Compile Include="HisAccidentLocation\HisAccidentLocationManager.cs" />
+    <Compile Include="HisAccidentPoison\HisAccidentPoisonFilterQuery.cs" />
+    <Compile Include="HisAccidentPoison\HisAccidentPoisonGet.cs" />
+    <Compile Include="HisAccidentPoison\HisAccidentPoisonGetByCode.cs" />
+    <Compile Include="HisAccidentPoison\HisAccidentPoisonManager.cs" />
+    <Compile Include="HisAccidentResult\HisAccidentResultFilterQuery.cs" />
+    <Compile Include="HisAccidentResult\HisAccidentResultGet.cs" />
+    <Compile Include="HisAccidentResult\HisAccidentResultGetByCode.cs" />
+    <Compile Include="HisAccidentResult\HisAccidentResultManager.cs" />
+    <Compile Include="HisAccidentVehicle\HisAccidentVehicleFilterQuery.cs" />
+    <Compile Include="HisAccidentVehicle\HisAccidentVehicleGet.cs" />
+    <Compile Include="HisAccidentVehicle\HisAccidentVehicleGetByCode.cs" />
+    <Compile Include="HisAccidentVehicle\HisAccidentVehicleManager.cs" />
+    <Compile Include="HisAccountBook\HisAccountBookManagerView.cs" />
+    <Compile Include="HisAcinInteractive\HisAcinInteractiveManagerView.cs" />
+    <Compile Include="HisAnticipateBlty\HisAnticipateBltyFilterQuery.cs" />
+    <Compile Include="HisAnticipateBlty\HisAnticipateBltyGet.cs" />
+    <Compile Include="HisAnticipateBlty\HisAnticipateBltyGetView.cs" />
+    <Compile Include="HisAnticipateBlty\HisAnticipateBltyManager.cs" />
+    <Compile Include="HisAnticipateBlty\HisAnticipateBltyManagerView.cs" />
+    <Compile Include="HisAnticipateBlty\HisAnticipateBltyViewFilterQuery.cs" />
+    <Compile Include="HisAnticipateMaty\HisAnticipateMatyGetView.cs" />
+    <Compile Include="HisAnticipateMaty\HisAnticipateMatyManagerView.cs" />
+    <Compile Include="HisAnticipateMety\HisAnticipateMetyGetView.cs" />
+    <Compile Include="HisAnticipate\HisAnticipateGetViewByCode.cs" />
+    <Compile Include="HisAnticipate\HisAnticipateManagerView.cs" />
+    <Compile Include="HisAnticipate\HisAnticipateGetView.cs" />
+    <Compile Include="HisAnticipate\HisAnticipateViewFilterQuery.cs" />
+    <Compile Include="HisBaby\HisBabyFilterQuery.cs" />
+    <Compile Include="HisBaby\HisBabyGet.cs" />
+    <Compile Include="HisBaby\HisBabyGetView.cs" />
+    <Compile Include="HisBaby\HisBabyManager.cs" />
+    <Compile Include="HisBaby\HisBabyManagerView.cs" />
+    <Compile Include="HisBaby\HisBabyViewFilterQuery.cs" />
+    <Compile Include="HisBedBsty\HisBedBstyFilterQuery.cs" />
+    <Compile Include="HisBedBsty\HisBedBstyGet.cs" />
+    <Compile Include="HisBedBsty\HisBedBstyGetView.cs" />
+    <Compile Include="HisBedBsty\HisBedBstyManager.cs" />
+    <Compile Include="HisBedBsty\HisBedBstyManagerView.cs" />
+    <Compile Include="HisBedBsty\HisBedBstyViewFilterQuery.cs" />
+    <Compile Include="HisBedLog\HisBedLogFilterQuery.cs" />
+    <Compile Include="HisBedLog\HisBedLogGet.cs" />
+    <Compile Include="HisBedLog\HisBedLogGetView.cs" />
+    <Compile Include="HisBedLog\HisBedLogManager.cs" />
+    <Compile Include="HisBedLog\HisBedLogManagerView.cs" />
+    <Compile Include="HisBedLog\HisBedLogViewFilterQuery.cs" />
+    <Compile Include="HisBedRoom\HisBedRoomManagerView.cs" />
+    <Compile Include="HisBedType\HisBedTypeFilterQuery.cs" />
+    <Compile Include="HisBedType\HisBedTypeGet.cs" />
+    <Compile Include="HisBedType\HisBedTypeGetByCode.cs" />
+    <Compile Include="HisBedType\HisBedTypeManager.cs" />
+    <Compile Include="HisBed\HisBedFilterQuery.cs" />
+    <Compile Include="HisBed\HisBedGet.cs" />
+    <Compile Include="HisBed\HisBedGetView.cs" />
+    <Compile Include="HisBed\HisBedManager.cs" />
+    <Compile Include="HisBed\HisBedManagerView.cs" />
+    <Compile Include="HisBed\HisBedViewFilterQuery.cs" />
+    <Compile Include="HisBhytBlacklist\HisBhytBlacklistFilterQuery.cs" />
+    <Compile Include="HisBhytBlacklist\HisBhytBlacklistGet.cs" />
+    <Compile Include="HisBhytBlacklist\HisBhytBlacklistGetByCode.cs" />
+    <Compile Include="HisBhytBlacklist\HisBhytBlacklistManager.cs" />
+    <Compile Include="HisBhytWhitelist\HisBhytWhitelistFilterQuery.cs" />
+    <Compile Include="HisBhytWhitelist\HisBhytWhitelistGet.cs" />
+    <Compile Include="HisBhytWhitelist\HisBhytWhitelistGetByCode.cs" />
+    <Compile Include="HisBhytWhitelist\HisBhytWhitelistManager.cs" />
+    <Compile Include="HisBidBloodType\HisBidBloodTypeFilterQuery.cs" />
+    <Compile Include="HisBidBloodType\HisBidBloodTypeGet.cs" />
+    <Compile Include="HisBidBloodType\HisBidBloodTypeGetView.cs" />
+    <Compile Include="HisBidBloodType\HisBidBloodTypeManager.cs" />
+    <Compile Include="HisBidBloodType\HisBidBloodTypeManagerView.cs" />
+    <Compile Include="HisBidBloodType\HisBidBloodTypeViewFilterQuery.cs" />
+    <Compile Include="HisBidMaterialType\HisBidMaterialTypeFilterQuery.cs" />
+    <Compile Include="HisBidMaterialType\HisBidMaterialTypeGet.cs" />
+    <Compile Include="HisBidMaterialType\HisBidMaterialTypeGetView.cs" />
+    <Compile Include="HisBidMaterialType\HisBidMaterialTypeManager.cs" />
+    <Compile Include="HisBidMaterialType\HisBidMaterialTypeManagerView.cs" />
+    <Compile Include="HisBidMaterialType\HisBidMaterialTypeViewFilterQuery.cs" />
+    <Compile Include="HisBidMedicineType\HisBidMedicineTypeFilterQuery.cs" />
+    <Compile Include="HisBidMedicineType\HisBidMedicineTypeGet.cs" />
+    <Compile Include="HisBidMedicineType\HisBidMedicineTypeGetView.cs" />
+    <Compile Include="HisBidMedicineType\HisBidMedicineTypeManager.cs" />
+    <Compile Include="HisBidMedicineType\HisBidMedicineTypeManagerView.cs" />
+    <Compile Include="HisBidMedicineType\HisBidMedicineTypeViewFilterQuery.cs" />
+    <Compile Include="HisBidType\HisBidTypeFilterQuery.cs" />
+    <Compile Include="HisBidType\HisBidTypeGet.cs" />
+    <Compile Include="HisBidType\HisBidTypeGetByCode.cs" />
+    <Compile Include="HisBidType\HisBidTypeManager.cs" />
+    <Compile Include="HisBid\HisBidFilterQuery.cs" />
+    <Compile Include="HisBid\HisBidGet.cs" />
+    <Compile Include="HisBid\HisBidGetByCode.cs" />
+    <Compile Include="HisBid\HisBidGetView.cs" />
+    <Compile Include="HisBid\HisBidGetViewByCode.cs" />
+    <Compile Include="HisBid\HisBidManager.cs" />
+    <Compile Include="HisBid\HisBidManagerView.cs" />
+    <Compile Include="HisBid\HisBidViewFilterQuery.cs" />
+    <Compile Include="HisBillFund\HisBillFundFilterQuery.cs" />
+    <Compile Include="HisBillFund\HisBillFundGet.cs" />
+    <Compile Include="HisBillFund\HisBillFundGetPrice.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HisBillFund\HisBillFundGetView.cs" />
+    <Compile Include="HisBillFund\HisBillFundManager.cs" />
+    <Compile Include="HisBillFund\HisBillFundManagerView.cs" />
+    <Compile Include="HisBillFund\HisBillFundViewFilterQuery.cs" />
+    <Compile Include="HisBillGoods\HisBillGoodsFilterQuery.cs" />
+    <Compile Include="HisBillGoods\HisBillGoodsGet.cs" />
+    <Compile Include="HisBillGoods\HisBillGoodsManager.cs" />
+    <Compile Include="HisBloodAbo\HisBloodAboFilterQuery.cs" />
+    <Compile Include="HisBloodAbo\HisBloodAboGet.cs" />
+    <Compile Include="HisBloodAbo\HisBloodAboGetByCode.cs" />
+    <Compile Include="HisBloodAbo\HisBloodAboManager.cs" />
+    <Compile Include="HisBloodGroup\HisBloodGroupFilterQuery.cs" />
+    <Compile Include="HisBloodGroup\HisBloodGroupGet.cs" />
+    <Compile Include="HisBloodGroup\HisBloodGroupGetByCode.cs" />
+    <Compile Include="HisBloodGroup\HisBloodGroupManager.cs" />
+    <Compile Include="HisBloodType\HisBloodTypeFilterQuery.cs" />
+    <Compile Include="HisBloodType\HisBloodTypeGet.cs" />
+    <Compile Include="HisBloodType\HisBloodTypeGetByCode.cs" />
+    <Compile Include="HisBloodType\HisBloodTypeGetView.cs" />
+    <Compile Include="HisBloodType\HisBloodTypeGetViewByCode.cs" />
+    <Compile Include="HisBloodType\HisBloodTypeManager.cs" />
+    <Compile Include="HisBloodType\HisBloodTypeManagerView.cs" />
+    <Compile Include="HisBloodType\HisBloodTypeViewFilterQuery.cs" />
+    <Compile Include="HisBloodVolume\HisBloodVolumeFilterQuery.cs" />
+    <Compile Include="HisBloodVolume\HisBloodVolumeGet.cs" />
+    <Compile Include="HisBloodVolume\HisBloodVolumeManager.cs" />
+    <Compile Include="HisBlood\HisBloodFilterQuery.cs" />
+    <Compile Include="HisBlood\HisBloodGet.cs" />
+    <Compile Include="HisBlood\HisBloodGetByCode.cs" />
+    <Compile Include="HisBlood\HisBloodGetView.cs" />
+    <Compile Include="HisBlood\HisBloodGetViewByCode.cs" />
+    <Compile Include="HisBlood\HisBloodManager.cs" />
+    <Compile Include="HisBlood\HisBloodManagerView.cs" />
+    <Compile Include="HisBlood\HisBloodViewFilterQuery.cs" />
+    <Compile Include="HisBornPosition\HisBornPositionFilterQuery.cs" />
+    <Compile Include="HisBornPosition\HisBornPositionGet.cs" />
+    <Compile Include="HisBornPosition\HisBornPositionGetByCode.cs" />
+    <Compile Include="HisBornPosition\HisBornPositionManager.cs" />
+    <Compile Include="HisBornResult\HisBornResultFilterQuery.cs" />
+    <Compile Include="HisBornResult\HisBornResultGet.cs" />
+    <Compile Include="HisBornResult\HisBornResultGetByCode.cs" />
+    <Compile Include="HisBornResult\HisBornResultManager.cs" />
+    <Compile Include="HisBornType\HisBornTypeFilterQuery.cs" />
+    <Compile Include="HisBornType\HisBornTypeGet.cs" />
+    <Compile Include="HisBornType\HisBornTypeGetByCode.cs" />
+    <Compile Include="HisBornType\HisBornTypeManager.cs" />
+    <Compile Include="HisBranch\HisBranchFilterQuery.cs" />
+    <Compile Include="HisBranch\HisBranchGet.cs" />
+    <Compile Include="HisBranch\HisBranchGetByCode.cs" />
+    <Compile Include="HisBranch\HisBranchManager.cs" />
+    <Compile Include="HisCacheMonitor\HisCacheMonitorFilterQuery.cs" />
+    <Compile Include="HisCacheMonitor\HisCacheMonitorGet.cs" />
+    <Compile Include="HisCacheMonitor\HisCacheMonitorManager.cs" />
+    <Compile Include="HisCard\HisCardManagerView.cs" />
+    <Compile Include="HisCareDetail\HisCareDetailGetView.cs" />
+    <Compile Include="HisCareDetail\HisCareDetailManagerView.cs" />
+    <Compile Include="HisCaroDepartment\HisCaroDepartmentFilterQuery.cs" />
+    <Compile Include="HisCaroDepartment\HisCaroDepartmentGet.cs" />
+    <Compile Include="HisCaroDepartment\HisCaroDepartmentManager.cs" />
+    <Compile Include="HisCashierRoom\HisCashierRoomFilterQuery.cs" />
+    <Compile Include="HisCashierRoom\HisCashierRoomGet.cs" />
+    <Compile Include="HisCashierRoom\HisCashierRoomManager.cs" />
+    <Compile Include="HisCashierRoom\HisCashierRoomManagerView.cs" />
+    <Compile Include="HisCashierRoom\HisCashierRoomViewFilterQuery.cs" />
+    <Compile Include="HisCashout\HisCashoutFilterQuery.cs" />
+    <Compile Include="HisCashout\HisCashoutGet.cs" />
+    <Compile Include="HisCashout\HisCashoutManager.cs" />
+    <Compile Include="HisConfig\HisConfigFilterQuery.cs" />
+    <Compile Include="HisConfig\HisConfigGet.cs" />
+    <Compile Include="HisConfig\HisConfigManager.cs" />
+    <Compile Include="HisCoTreatment\HisCoTreatmentFilterQuery.cs" />
+    <Compile Include="HisCoTreatment\HisCoTreatmentGet.cs" />
+    <Compile Include="HisCoTreatment\HisCoTreatmentGetView.cs" />
+    <Compile Include="HisCoTreatment\HisCoTreatmentManager.cs" />
+    <Compile Include="HisCoTreatment\HisCoTreatmentManagerView.cs" />
+    <Compile Include="HisCoTreatment\HisCoTreatmentViewFilterQuery.cs" />
+    <Compile Include="HisDataStore\HisDataStoreManagerView.cs" />
+    <Compile Include="HisDepartmentTran\HisDepartmentTranManagerView.cs" />
+    <Compile Include="HisDepartment\HisDepartmentGetView1.cs" />
+    <Compile Include="HisDepartment\HisDepartmentGetViewByCode.cs" />
+    <Compile Include="HisDepartment\HisDepartmentManagerView1.cs" />
+    <Compile Include="HisDepartment\HisDepartmentView1FilterQuery.cs" />
+    <Compile Include="HisDepartment\HisDepartmentViewFilterQuery.cs" />
+    <Compile Include="HisDepartment\HisDepartmentGetView.cs" />
+    <Compile Include="HisDepartment\HisDepartmentManagerView.cs" />
+    <Compile Include="HisDepositReq\HisDepositReqFilterQuery.cs" />
+    <Compile Include="HisDepositReq\HisDepositReqGet.cs" />
+    <Compile Include="HisDepositReq\HisDepositReqGetByCode.cs" />
+    <Compile Include="HisDepositReq\HisDepositReqGetView.cs" />
+    <Compile Include="HisDepositReq\HisDepositReqGetViewByCode.cs" />
+    <Compile Include="HisDepositReq\HisDepositReqManager.cs" />
+    <Compile Include="HisDepositReq\HisDepositReqManagerView.cs" />
+    <Compile Include="HisDepositReq\HisDepositReqViewFilterQuery.cs" />
+    <Compile Include="HisEkipTempUser\HisEkipTempUserFilterQuery.cs" />
+    <Compile Include="HisEkipTempUser\HisEkipTempUserGet.cs" />
+    <Compile Include="HisEkipTempUser\HisEkipTempUserGetView.cs" />
+    <Compile Include="HisEkipTempUser\HisEkipTempUserManager.cs" />
+    <Compile Include="HisEkipTempUser\HisEkipTempUserManagerView.cs" />
+    <Compile Include="HisEkipTempUser\HisEkipTempUserViewFilterQuery.cs" />
+    <Compile Include="HisEkipTemp\HisEkipTempFilterQuery.cs" />
+    <Compile Include="HisEkipTemp\HisEkipTempGet.cs" />
+    <Compile Include="HisEkipTemp\HisEkipTempManager.cs" />
+    <Compile Include="HisEkipUser\HisEkipUserFilterQuery.cs" />
+    <Compile Include="HisEkipUser\HisEkipUserGet.cs" />
+    <Compile Include="HisEkipUser\HisEkipUserGetView.cs" />
+    <Compile Include="HisEkipUser\HisEkipUserManager.cs" />
+    <Compile Include="HisEkipUser\HisEkipUserManagerView.cs" />
+    <Compile Include="HisEkipUser\HisEkipUserViewFilterQuery.cs" />
+    <Compile Include="HisEkip\HisEkipFilterQuery.cs" />
+    <Compile Include="HisEkip\HisEkipGet.cs" />
+    <Compile Include="HisEkip\HisEkipManager.cs" />
+    <Compile Include="HisEmotionlessResult\HisEmotionlessResultFilterQuery.cs" />
+    <Compile Include="HisEmotionlessResult\HisEmotionlessResultGet.cs" />
+    <Compile Include="HisEmotionlessResult\HisEmotionlessResultManager.cs" />
+    <Compile Include="HisEmployee\HisEmployeeFilterQuery.cs" />
+    <Compile Include="HisEmployee\HisEmployeeGet.cs" />
+    <Compile Include="HisEmployee\HisEmployeeManager.cs" />
+    <Compile Include="HisEmteMaterialType\HisEmteMaterialTypeManagerView.cs" />
+    <Compile Include="HisEmteMedicineType\HisEmteMedicineTypeManagerView.cs" />
+    <Compile Include="HisEquipmentSetMaty\HisEquipmentSetMatyFilterQuery.cs" />
+    <Compile Include="HisEquipmentSetMaty\HisEquipmentSetMatyGet.cs" />
+    <Compile Include="HisEquipmentSetMaty\HisEquipmentSetMatyGetView.cs" />
+    <Compile Include="HisEquipmentSetMaty\HisEquipmentSetMatyManager.cs" />
+    <Compile Include="HisEquipmentSetMaty\HisEquipmentSetMatyManagerView.cs" />
+    <Compile Include="HisEquipmentSetMaty\HisEquipmentSetMatyViewFilterQuery.cs" />
+    <Compile Include="HisEquipmentSet\HisEquipmentSetFilterQuery.cs" />
+    <Compile Include="HisEquipmentSet\HisEquipmentSetGet.cs" />
+    <Compile Include="HisEquipmentSet\HisEquipmentSetManager.cs" />
+    <Compile Include="HisExamSereDire\HisExamSereDireManagerView.cs" />
+    <Compile Include="HisExamServiceTemp\HisExamServiceTempFilterQuery.cs" />
+    <Compile Include="HisExamServiceTemp\HisExamServiceTempGet.cs" />
+    <Compile Include="HisExamServiceTemp\HisExamServiceTempGetByCode.cs" />
+    <Compile Include="HisExamServiceTemp\HisExamServiceTempManager.cs" />
+    <Compile Include="HisExecuteRoleUser\HisExecuteRoleUserFilterQuery.cs" />
+    <Compile Include="HisExecuteRoleUser\HisExecuteRoleUserGet.cs" />
+    <Compile Include="HisExecuteRoleUser\HisExecuteRoleUserManager.cs" />
+    <Compile Include="HisExecuteRole\HisExecuteRoleFilterQuery.cs" />
+    <Compile Include="HisExecuteRole\HisExecuteRoleGet.cs" />
+    <Compile Include="HisExecuteRole\HisExecuteRoleGetByCode.cs" />
+    <Compile Include="HisExecuteRole\HisExecuteRoleManager.cs" />
+    <Compile Include="HisExecuteRoom\HisExecuteRoomGetView1.cs" />
+    <Compile Include="HisExecuteRoom\HisExecuteRoomManagerView.cs" />
+    <Compile Include="HisExecuteRoom\HisExecuteRoomManagerView1.cs" />
+    <Compile Include="HisExecuteRoom\HisExecuteRoomView1FilterQuery.cs" />
+    <Compile Include="HisExpMestBlood\HisExpMestBloodFilterQuery.cs" />
+    <Compile Include="HisExpMestBlood\HisExpMestBloodGet.cs" />
+    <Compile Include="HisExpMestBlood\HisExpMestBloodGetView.cs" />
+    <Compile Include="HisExpMestBlood\HisExpMestBloodManager.cs" />
+    <Compile Include="HisExpMestBlood\HisExpMestBloodManagerView.cs" />
+    <Compile Include="HisExpMestBlood\HisExpMestBloodViewFilterQuery.cs" />
+    <Compile Include="HisExpMestBltyReq\HisExpMestBltyReqGetView1.cs" />
+    <Compile Include="HisExpMestBltyReq\HisExpMestBltyReqManagerView1.cs" />
+    <Compile Include="HisExpMestBltyReq\HisExpMestBltyReqView1FilterQuery.cs" />
+    <Compile Include="HisExpMestBltyReq\HisExpMestBltyReqFilterQuery.cs" />
+    <Compile Include="HisExpMestBltyReq\HisExpMestBltyReqGet.cs" />
+    <Compile Include="HisExpMestBltyReq\HisExpMestBltyReqGetView.cs" />
+    <Compile Include="HisExpMestBltyReq\HisExpMestBltyReqManager.cs" />
+    <Compile Include="HisExpMestBltyReq\HisExpMestBltyReqManagerView.cs" />
+    <Compile Include="HisExpMestBltyReq\HisExpMestBltyReqViewFilterQuery.cs" />
+    <Compile Include="HisExpMestMaterial\HisExpMestMaterialGetView4.cs" />
+    <Compile Include="HisExpMestMaterial\HisExpMestMaterialManagerView.cs" />
+    <Compile Include="HisExpMestMaterial\HisExpMestMaterialManagerView4.cs" />
+    <Compile Include="HisExpMestMaterial\HisExpMestMaterialView4FilterQuery.cs" />
+    <Compile Include="HisExpMestMaterial\HisExpMestMaterialFilterQuery.cs" />
+    <Compile Include="HisExpMestMaterial\HisExpMestMaterialGet.cs" />
+    <Compile Include="HisExpMestMaterial\HisExpMestMaterialGetView1.cs" />
+    <Compile Include="HisExpMestMaterial\HisExpMestMaterialGetView3.cs" />
+    <Compile Include="HisExpMestMaterial\HisExpMestMaterialManager.cs" />
+    <Compile Include="HisExpMestMaterial\HisExpMestMaterialManagerView1.cs" />
+    <Compile Include="HisExpMestMaterial\HisExpMestMaterialManagerView3.cs" />
+    <Compile Include="HisExpMestMaterial\HisExpMestMaterialView1FilterQuery.cs" />
+    <Compile Include="HisExpMestMaterial\HisExpMestMaterialView3FilterQuery.cs" />
+    <Compile Include="HisExpMestMaterial\HisExpMestMaterialViewFilterQuery.cs" />
+    <Compile Include="HisExpMestMatyReq\HisExpMestMatyReqFilterQuery.cs" />
+    <Compile Include="HisExpMestMatyReq\HisExpMestMatyReqGet.cs" />
+    <Compile Include="HisExpMestMatyReq\HisExpMestMatyReqGetView.cs" />
+    <Compile Include="HisExpMestMatyReq\HisExpMestMatyReqManager.cs" />
+    <Compile Include="HisExpMestMatyReq\HisExpMestMatyReqManagerView.cs" />
+    <Compile Include="HisExpMestMatyReq\HisExpMestMatyReqViewFilterQuery.cs" />
+    <Compile Include="HisExpMestMedicine\HisExpMestMedicineFilterQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HisExpMestMedicine\HisExpMestMedicineGet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HisExpMestMedicine\HisExpMestMedicineGetView1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HisExpMestMedicine\HisExpMestMedicineGetView3.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HisExpMestMedicine\HisExpMestMedicineGetView4.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HisExpMestMedicine\HisExpMestMedicineManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HisExpMestMedicine\HisExpMestMedicineManagerView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HisExpMestMedicine\HisExpMestMedicineManagerView1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HisExpMestMedicine\HisExpMestMedicineManagerView3.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HisExpMestMedicine\HisExpMestMedicineManagerView4.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HisExpMestMedicine\HisExpMestMedicineView1FilterQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HisExpMestMedicine\HisExpMestMedicineView3FilterQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HisExpMestMedicine\HisExpMestMedicineView4FilterQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HisExpMestMedicine\HisExpMestMedicineViewFilterQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HisExpMestMetyReq\HisExpMestMetyReqGetView1.cs" />
+    <Compile Include="HisExpMestMetyReq\HisExpMestMetyReqManagerView1.cs" />
+    <Compile Include="HisExpMestMetyReq\HisExpMestMetyReqView1FilterQuery.cs" />
+    <Compile Include="HisExpMestMetyReq\HisExpMestMetyReqFilterQuery.cs" />
+    <Compile Include="HisExpMestMetyReq\HisExpMestMetyReqGet.cs" />
+    <Compile Include="HisExpMestMetyReq\HisExpMestMetyReqGetView.cs" />
+    <Compile Include="HisExpMestMetyReq\HisExpMestMetyReqManager.cs" />
+    <Compile Include="HisExpMestMetyReq\HisExpMestMetyReqManagerView.cs" />
+    <Compile Include="HisExpMestMetyReq\HisExpMestMetyReqViewFilterQuery.cs" />
+    <Compile Include="HisExpMestReason\HisExpMestReasonFilterQuery.cs" />
+    <Compile Include="HisExpMestReason\HisExpMestReasonGet.cs" />
+    <Compile Include="HisExpMestReason\HisExpMestReasonGetByCode.cs" />
+    <Compile Include="HisExpMestReason\HisExpMestReasonManager.cs" />
+    <Compile Include="HisExpMestUser\HisExpMestUserFilterQuery.cs" />
+    <Compile Include="HisExpMestUser\HisExpMestUserGet.cs" />
+    <Compile Include="HisExpMestUser\HisExpMestUserGetView.cs" />
+    <Compile Include="HisExpMestUser\HisExpMestUserManager.cs" />
+    <Compile Include="HisExpMestUser\HisExpMestUserManagerView.cs" />
+    <Compile Include="HisExpMestUser\HisExpMestUserViewFilterQuery.cs" />
+    <Compile Include="HisExpMest\Common\Get\HisExpMestChmsView1FilterQuery.cs" />
+    <Compile Include="HisExpMest\Common\Get\HisExpMestChmsView2FilterQuery.cs" />
+    <Compile Include="HisExpMest\Common\Get\HisExpMestChmsViewFilterQuery.cs" />
+    <Compile Include="HisExpMest\Common\Get\HisExpMestFilterQuery.cs" />
+    <Compile Include="HisExpMest\Common\Get\HisExpMestGet.cs" />
+    <Compile Include="HisExpMest\Common\Get\HisExpMestGetChmsView.cs" />
+    <Compile Include="HisExpMest\Common\Get\HisExpMestGetChmsView1.cs" />
+    <Compile Include="HisExpMest\Common\Get\HisExpMestGetChmsView2.cs" />
+    <Compile Include="HisExpMest\Common\Get\HisExpMestGetManuView.cs" />
+    <Compile Include="HisExpMest\Common\Get\HisExpMestGetView1.cs" />
+    <Compile Include="HisExpMest\Common\Get\HisExpMestView1FilterQuery.cs" />
+    <Compile Include="HisExpMest\Common\Get\HisExpMestViewFilterQuery.cs" />
+    <Compile Include="HisExpMest\HisExpMestManagerManuView.cs" />
+    <Compile Include="HisExpMest\Common\Get\HisExpMestManuViewFilterQuery.cs" />
+    <Compile Include="HisExpMest\HisExpMestManagerChmsView2.cs" />
+    <Compile Include="HisExpMest\HisExpMestManagerChmsView1.cs" />
+    <Compile Include="HisExpMest\HisExpMestManagerChmsView.cs" />
+    <Compile Include="HisExpMest\HisExpMestManager.cs" />
+    <Compile Include="HisExpMest\HisExpMestManagerView.cs" />
+    <Compile Include="HisExpMest\HisExpMestManagerView1.cs" />
+    <Compile Include="HisFilmSize\HisFilmSizeFilterQuery.cs" />
+    <Compile Include="HisFilmSize\HisFilmSizeGet.cs" />
+    <Compile Include="HisFilmSize\HisFilmSizeGetByCode.cs" />
+    <Compile Include="HisFilmSize\HisFilmSizeManager.cs" />
+    <Compile Include="HisFund\HisFundFilterQuery.cs" />
+    <Compile Include="HisFund\HisFundGet.cs" />
+    <Compile Include="HisFund\HisFundGetByCode.cs" />
+    <Compile Include="HisFund\HisFundManager.cs" />
+    <Compile Include="HisHeinApproval\HisHeinApprovalManagerView.cs" />
+    <Compile Include="HisHeinApproval\HisHeinApprovalViewFilterQuery.cs" />
+    <Compile Include="HisHtu\HisHtuFilterQuery.cs" />
+    <Compile Include="HisHtu\HisHtuGet.cs" />
+    <Compile Include="HisHtu\HisHtuManager.cs" />
+    <Compile Include="HisIcdCm\HisIcdCmFilterQuery.cs" />
+    <Compile Include="HisIcdCm\HisIcdCmGet.cs" />
+    <Compile Include="HisIcdCm\HisIcdCmGetByCode.cs" />
+    <Compile Include="HisIcdCm\HisIcdCmManager.cs" />
+    <Compile Include="HisIcdService\HisIcdServiceFilterQuery.cs" />
+    <Compile Include="HisIcdService\HisIcdServiceGet.cs" />
+    <Compile Include="HisIcdService\HisIcdServiceManager.cs" />
+    <Compile Include="HisImpMestBlood\HisImpMestBloodFilterQuery.cs" />
+    <Compile Include="HisImpMestBlood\HisImpMestBloodGet.cs" />
+    <Compile Include="HisImpMestBlood\HisImpMestBloodGetView.cs" />
+    <Compile Include="HisImpMestBlood\HisImpMestBloodManager.cs" />
+    <Compile Include="HisImpMestBlood\HisImpMestBloodManagerView.cs" />
+    <Compile Include="HisImpMestBlood\HisImpMestBloodViewFilterQuery.cs" />
+    <Compile Include="HisImpMestMaterial\HisImpMestMaterialFilterQuery.cs" />
+    <Compile Include="HisImpMestMaterial\HisImpMestMaterialGet.cs" />
+    <Compile Include="HisImpMestMaterial\HisImpMestMaterialGetView2.cs" />
+    <Compile Include="HisImpMestMaterial\HisImpMestMaterialGetView3.cs" />
+    <Compile Include="HisImpMestMaterial\HisImpMestMaterialManager.cs" />
+    <Compile Include="HisImpMestMaterial\HisImpMestMaterialManagerView.cs" />
+    <Compile Include="HisImpMestMaterial\HisImpMestMaterialManagerView2.cs" />
+    <Compile Include="HisImpMestMaterial\HisImpMestMaterialManagerView3.cs" />
+    <Compile Include="HisImpMestMaterial\HisImpMestMaterialView2FilterQuery.cs" />
+    <Compile Include="HisImpMestMaterial\HisImpMestMaterialView3FilterQuery.cs" />
+    <Compile Include="HisImpMestMaterial\HisImpMestMaterialViewFilterQuery.cs" />
+    <Compile Include="HisImpMestMedicine\HisImpMestMedicineFilterQuery.cs" />
+    <Compile Include="HisImpMestMedicine\HisImpMestMedicineGet.cs" />
+    <Compile Include="HisImpMestMedicine\HisImpMestMedicineGetView2.cs" />
+    <Compile Include="HisImpMestMedicine\HisImpMestMedicineGetView3.cs" />
+    <Compile Include="HisImpMestMedicine\HisImpMestMedicineManager.cs" />
+    <Compile Include="HisImpMestMedicine\HisImpMestMedicineManagerView.cs" />
+    <Compile Include="HisImpMestMedicine\HisImpMestMedicineManagerView2.cs" />
+    <Compile Include="HisImpMestMedicine\HisImpMestMedicineManagerView3.cs" />
+    <Compile Include="HisImpMestMedicine\HisImpMestMedicineView2FilterQuery.cs" />
+    <Compile Include="HisImpMestMedicine\HisImpMestMedicineView3FilterQuery.cs" />
+    <Compile Include="HisImpMestMedicine\HisImpMestMedicineViewFilterQuery.cs" />
+    <Compile Include="HisImpMestTypeUser\HisImpMestTypeUserFilterQuery.cs" />
+    <Compile Include="HisImpMestTypeUser\HisImpMestTypeUserGet.cs" />
+    <Compile Include="HisImpMestTypeUser\HisImpMestTypeUserManager.cs" />
+    <Compile Include="HisImpMestUser\HisImpMestUserFilterQuery.cs" />
+    <Compile Include="HisImpMestUser\HisImpMestUserGet.cs" />
+    <Compile Include="HisImpMestUser\HisImpMestUserGetView.cs" />
+    <Compile Include="HisImpMestUser\HisImpMestUserManager.cs" />
+    <Compile Include="HisImpMestUser\HisImpMestUserManagerView.cs" />
+    <Compile Include="HisImpMestUser\HisImpMestUserViewFilterQuery.cs" />
+    <Compile Include="HisImpMest\Get\HisImpMestGetView1.cs" />
+    <Compile Include="HisImpMest\Get\HisImpMestView1FilterQuery.cs" />
+    <Compile Include="HisImpMest\Get\HisImpMestGetManuView.cs" />
+    <Compile Include="HisImpMest\Get\HisImpMestManuViewFilterQuery.cs" />
+    <Compile Include="HisImpMest\Get\HisImpMestFilterQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HisImpMest\Get\HisImpMestGet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HisImpMest\HisImpMestManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HisImpMest\HisImpMestManagerView.cs" />
+    <Compile Include="HisImpMest\Get\HisImpMestViewFilterQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HisImpSource\HisImpSourceFilterQuery.cs" />
+    <Compile Include="HisImpSource\HisImpSourceGet.cs" />
+    <Compile Include="HisImpSource\HisImpSourceGetByCode.cs" />
+    <Compile Include="HisImpSource\HisImpSourceManager.cs" />
+    <Compile Include="HisInfusionSum\HisInfusionSumFilterQuery.cs" />
+    <Compile Include="HisInfusionSum\HisInfusionSumGet.cs" />
+    <Compile Include="HisInfusionSum\HisInfusionSumGetView.cs" />
+    <Compile Include="HisInfusionSum\HisInfusionSumManager.cs" />
+    <Compile Include="HisInfusionSum\HisInfusionSumManagerView.cs" />
+    <Compile Include="HisInfusionSum\HisInfusionSumViewFilterQuery.cs" />
+    <Compile Include="HisInfusion\HisInfusionManagerView.cs" />
+    <Compile Include="HisInvoiceBook\HisInvoiceBookManagerView.cs" />
+    <Compile Include="HisInvoicePrint\HisInvoicePrintFilterQuery.cs" />
+    <Compile Include="HisInvoicePrint\HisInvoicePrintGet.cs" />
+    <Compile Include="HisInvoicePrint\HisInvoicePrintManager.cs" />
+    <Compile Include="HisInvoice\HisInvoiceManagerView.cs" />
+    <Compile Include="HisMachine\HisMachineFilterQuery.cs" />
+    <Compile Include="HisMachine\HisMachineGet.cs" />
+    <Compile Include="HisMachine\HisMachineManager.cs" />
+    <Compile Include="HisMaterialBean\Get\HisMaterialBeanGetView2.cs" />
+    <Compile Include="HisMaterialBean\HisMaterialBeanManagerView.cs" />
+    <Compile Include="HisMaterialBean\HisMaterialBeanManagerView2.cs" />
+    <Compile Include="HisMaterialBean\Get\HisMaterialBeanView2FilterQuery.cs" />
+    <Compile Include="HisMaterialBean\Get\HisMaterialBeanGetView1.cs" />
+    <Compile Include="HisMaterialBean\Get\HisMaterialBeanView1FilterQuery.cs" />
+    <Compile Include="HisMaterialPaty\HisMaterialPatyManagerView.cs" />
+    <Compile Include="HisMaterialType\HisMaterialTypeManagerView.cs" />
+    <Compile Include="HisMaterial\HisMaterialGetView2.cs" />
+    <Compile Include="HisMaterial\HisMaterialManagerView.cs" />
+    <Compile Include="HisMaterial\HisMaterialManagerView2.cs" />
+    <Compile Include="HisMaterial\HisMaterialView2FilterQuery.cs" />
+    <Compile Include="HisMaterial\HisMaterialGetView1.cs" />
+    <Compile Include="HisMaterial\HisMaterialManagerView1.cs" />
+    <Compile Include="HisMaterial\HisMaterialView1FilterQuery.cs" />
+    <Compile Include="HisMedicineBean\Get\HisMedicineBeanFilterQuery.cs" />
+    <Compile Include="HisMedicineBean\Get\HisMedicineBeanGet.cs" />
+    <Compile Include="HisMedicineBean\Get\HisMedicineBeanGetView1.cs" />
+    <Compile Include="HisMedicineBean\Get\HisMedicineBeanGetView2.cs" />
+    <Compile Include="HisMedicineBean\Get\HisMedicineBeanView1FilterQuery.cs" />
+    <Compile Include="HisMedicineBean\Get\HisMedicineBeanView2FilterQuery.cs" />
+    <Compile Include="HisMedicineBean\Get\HisMedicineBeanViewFilterQuery.cs" />
+    <Compile Include="HisMedicineBean\HisMedicineBeanManagerView.cs" />
+    <Compile Include="HisMedicineBean\HisMedicineBeanManagerView2.cs" />
+    <Compile Include="HisMedicinePaty\HisMedicinePatyManagerView.cs" />
+    <Compile Include="HisMedicineTypeAcin\HisMedicineTypeAcinManagerView.cs" />
+    <Compile Include="HisMedicineTypeTut\HisMedicineTypeTutFilterQuery.cs" />
+    <Compile Include="HisMedicineTypeTut\HisMedicineTypeTutGet.cs" />
+    <Compile Include="HisMedicineTypeTut\HisMedicineTypeTutGetView.cs" />
+    <Compile Include="HisMedicineTypeTut\HisMedicineTypeTutManager.cs" />
+    <Compile Include="HisMedicineTypeTut\HisMedicineTypeTutManagerView.cs" />
+    <Compile Include="HisMedicineTypeTut\HisMedicineTypeTutViewFilterQuery.cs" />
+    <Compile Include="HisMedicineType\HisMedicineTypeManagerView.cs" />
+    <Compile Include="HisMedicine\HisMedicineGetView2.cs" />
+    <Compile Include="HisMedicine\HisMedicineManagerView.cs" />
+    <Compile Include="HisMedicine\HisMedicineManagerView2.cs" />
+    <Compile Include="HisMedicine\HisMedicineView2FilterQuery.cs" />
+    <Compile Include="HisMedicine\HisMedicineGetView1.cs" />
+    <Compile Include="HisMedicine\HisMedicineManagerView1.cs" />
+    <Compile Include="HisMedicine\HisMedicineView1FilterQuery.cs" />
+    <Compile Include="HisMediOrg\HisMediOrgFilterQuery.cs" />
+    <Compile Include="HisMediOrg\HisMediOrgGet.cs" />
+    <Compile Include="HisMediOrg\HisMediOrgGetByCode.cs" />
+    <Compile Include="HisMediOrg\HisMediOrgManager.cs" />
+    <Compile Include="HisMediReactSum\HisMediReactSumFilterQuery.cs" />
+    <Compile Include="HisMediReactSum\HisMediReactSumGet.cs" />
+    <Compile Include="HisMediReactSum\HisMediReactSumGetView.cs" />
+    <Compile Include="HisMediReactSum\HisMediReactSumManager.cs" />
+    <Compile Include="HisMediReactSum\HisMediReactSumManagerView.cs" />
+    <Compile Include="HisMediReactSum\HisMediReactSumViewFilterQuery.cs" />
+    <Compile Include="HisMediReact\HisMediReactManagerView.cs" />
+    <Compile Include="HisMediStockExty\HisMediStockExtyFilterQuery.cs" />
+    <Compile Include="HisMediStockExty\HisMediStockExtyGet.cs" />
+    <Compile Include="HisMediStockExty\HisMediStockExtyGetView.cs" />
+    <Compile Include="HisMediStockExty\HisMediStockExtyManager.cs" />
+    <Compile Include="HisMediStockExty\HisMediStockExtyManagerView.cs" />
+    <Compile Include="HisMediStockExty\HisMediStockExtyViewFilterQuery.cs" />
+    <Compile Include="HisMediStockImty\HisMediStockImtyFilterQuery.cs" />
+    <Compile Include="HisMediStockImty\HisMediStockImtyGet.cs" />
+    <Compile Include="HisMediStockImty\HisMediStockImtyGetView.cs" />
+    <Compile Include="HisMediStockImty\HisMediStockImtyManager.cs" />
+    <Compile Include="HisMediStockImty\HisMediStockImtyManagerView.cs" />
+    <Compile Include="HisMediStockImty\HisMediStockImtyViewFilterQuery.cs" />
+    <Compile Include="HisMediStockMaty\HisMediStockMatyFilterQuery.cs" />
+    <Compile Include="HisMediStockMaty\HisMediStockMatyGet.cs" />
+    <Compile Include="HisMediStockMaty\HisMediStockMatyManager.cs" />
+    <Compile Include="HisMediStockMaty\HisMediStockMatyManagerView.cs" />
+    <Compile Include="HisMediStockMaty\HisMediStockMatyViewFilterQuery.cs" />
+    <Compile Include="HisMediStockMety\HisMediStockMetyFilterQuery.cs" />
+    <Compile Include="HisMediStockMety\HisMediStockMetyGet.cs" />
+    <Compile Include="HisMediStockMety\HisMediStockMetyManager.cs" />
+    <Compile Include="HisMediStockMety\HisMediStockMetyManagerView.cs" />
+    <Compile Include="HisMediStockMety\HisMediStockMetyViewFilterQuery.cs" />
+    <Compile Include="HisMediStockPeriod\HisMediStockPeriodFilterQuery.cs" />
+    <Compile Include="HisMediStockPeriod\HisMediStockPeriodGet.cs" />
+    <Compile Include="HisMediStockPeriod\HisMediStockPeriodManager.cs" />
+    <Compile Include="HisMediStockPeriod\HisMediStockPeriodManagerView.cs" />
+    <Compile Include="HisMediStockPeriod\HisMediStockPeriodViewFilterQuery.cs" />
+    <Compile Include="HisMediStock\HisMediStockFilterQuery.cs" />
+    <Compile Include="HisMediStock\HisMediStockGet.cs" />
+    <Compile Include="HisMediStock\HisMediStockGetSql.cs" />
+    <Compile Include="HisMediStock\HisMediStockManager.cs" />
+    <Compile Include="HisMediStock\HisMediStockManagerView.cs" />
+    <Compile Include="HisMediStock\HisMediStockViewFilterQuery.cs" />
+    <Compile Include="HisMemaGroup\HisMemaGroupFilterQuery.cs" />
+    <Compile Include="HisMemaGroup\HisMemaGroupGet.cs" />
+    <Compile Include="HisMemaGroup\HisMemaGroupGetByCode.cs" />
+    <Compile Include="HisMemaGroup\HisMemaGroupManager.cs" />
+    <Compile Include="HisMestInventory\HisMestInventoryFilterQuery.cs" />
+    <Compile Include="HisMestInventory\HisMestInventoryGet.cs" />
+    <Compile Include="HisMestInventory\HisMestInventoryManager.cs" />
+    <Compile Include="HisMestInveUser\HisMestInveUserFilterQuery.cs" />
+    <Compile Include="HisMestInveUser\HisMestInveUserGet.cs" />
+    <Compile Include="HisMestInveUser\HisMestInveUserGetView.cs" />
+    <Compile Include="HisMestInveUser\HisMestInveUserManager.cs" />
+    <Compile Include="HisMestInveUser\HisMestInveUserManagerView.cs" />
+    <Compile Include="HisMestInveUser\HisMestInveUserViewFilterQuery.cs" />
+    <Compile Include="HisMestMetyDepa\HisMestMetyDepaFilterQuery.cs" />
+    <Compile Include="HisMestMetyDepa\HisMestMetyDepaGet.cs" />
+    <Compile Include="HisMestMetyDepa\HisMestMetyDepaGetView.cs" />
+    <Compile Include="HisMestMetyDepa\HisMestMetyDepaManager.cs" />
+    <Compile Include="HisMestMetyDepa\HisMestMetyDepaManagerView.cs" />
+    <Compile Include="HisMestMetyDepa\HisMestMetyDepaViewFilterQuery.cs" />
+    <Compile Include="HisMestPatientType\HisMestPatientTypeManagerView.cs" />
+    <Compile Include="HisMestPatySub\HisMestPatySubFilterQuery.cs" />
+    <Compile Include="HisMestPatySub\HisMestPatySubGet.cs" />
+    <Compile Include="HisMestPatySub\HisMestPatySubGetView.cs" />
+    <Compile Include="HisMestPatySub\HisMestPatySubManager.cs" />
+    <Compile Include="HisMestPatySub\HisMestPatySubManagerView.cs" />
+    <Compile Include="HisMestPatySub\HisMestPatySubViewFilterQuery.cs" />
+    <Compile Include="HisMestPeriodBlood\HisMestPeriodBloodFilterQuery.cs" />
+    <Compile Include="HisMestPeriodBlood\HisMestPeriodBloodGet.cs" />
+    <Compile Include="HisMestPeriodBlood\HisMestPeriodBloodManager.cs" />
+    <Compile Include="HisMestPeriodBlty\HisMestPeriodBltyFilterQuery.cs" />
+    <Compile Include="HisMestPeriodBlty\HisMestPeriodBltyGet.cs" />
+    <Compile Include="HisMestPeriodBlty\HisMestPeriodBltyManager.cs" />
+    <Compile Include="HisMestPeriodMate\HisMestPeriodMateManagerView.cs" />
+    <Compile Include="HisMestPeriodMaty\HisMestPeriodMatyManagerView.cs" />
+    <Compile Include="HisMestPeriodMedi\HisMestPeriodMediManagerView.cs" />
+    <Compile Include="HisMestPeriodMety\HisMestPeriodMetyManagerView.cs" />
+    <Compile Include="HisMestRoom\HisMestRoomManagerView.cs" />
+    <Compile Include="HisOtherPaySource\HisOtherPaySourceFilterQuery.cs" />
+    <Compile Include="HisOtherPaySource\HisOtherPaySourceGet.cs" />
+    <Compile Include="HisOtherPaySource\HisOtherPaySourceManager.cs" />
+    <Compile Include="HisOweType\HisOweTypeFilterQuery.cs" />
+    <Compile Include="HisOweType\HisOweTypeGet.cs" />
+    <Compile Include="HisOweType\HisOweTypeGetByCode.cs" />
+    <Compile Include="HisOweType\HisOweTypeManager.cs" />
+    <Compile Include="HisPaanLiquid\HisPaanLiquidFilterQuery.cs" />
+    <Compile Include="HisPaanLiquid\HisPaanLiquidGet.cs" />
+    <Compile Include="HisPaanLiquid\HisPaanLiquidGetByCode.cs" />
+    <Compile Include="HisPaanLiquid\HisPaanLiquidManager.cs" />
+    <Compile Include="HisPaanPosition\HisPaanPositionFilterQuery.cs" />
+    <Compile Include="HisPaanPosition\HisPaanPositionGet.cs" />
+    <Compile Include="HisPaanPosition\HisPaanPositionGetByCode.cs" />
+    <Compile Include="HisPaanPosition\HisPaanPositionManager.cs" />
+    <Compile Include="HisPackage\HisPackageFilterQuery.cs" />
+    <Compile Include="HisPackage\HisPackageGet.cs" />
+    <Compile Include="HisPackage\HisPackageManager.cs" />
+    <Compile Include="HisPatientCase\HisPatientCaseFilterQuery.cs" />
+    <Compile Include="HisPatientCase\HisPatientCaseGet.cs" />
+    <Compile Include="HisPatientCase\HisPatientCaseGetByCode.cs" />
+    <Compile Include="HisPatientCase\HisPatientCaseManager.cs" />
+    <Compile Include="HisPatientProgram\HisPatientProgramGetViewByCode.cs" />
+    <Compile Include="HisPatientProgram\HisPatientProgramFilterQuery.cs" />
+    <Compile Include="HisPatientProgram\HisPatientProgramGet.cs" />
+    <Compile Include="HisPatientProgram\HisPatientProgramGetByCode.cs" />
+    <Compile Include="HisPatientProgram\HisPatientProgramGetView.cs" />
+    <Compile Include="HisPatientProgram\HisPatientProgramManager.cs" />
+    <Compile Include="HisPatientProgram\HisPatientProgramManagerView.cs" />
+    <Compile Include="HisPatientProgram\HisPatientProgramViewFilterQuery.cs" />
+    <Compile Include="HisPatientTypeAllow\HisPatientTypeAllowManagerView.cs" />
+    <Compile Include="HisPatientTypeAlter\HisPatientTypeAlterManagerSql.cs" />
+    <Compile Include="HisPatientTypeAlter\HisPatientTypeAlterGetSql.cs" />
+    <Compile Include="HisPatientTypeAlter\HisPatientTypeAlterManagerView.cs" />
+    <Compile Include="HisPatientTypeSub\HisPatientTypeSubFilterQuery.cs" />
+    <Compile Include="HisPatientTypeSub\HisPatientTypeSubGet.cs" />
+    <Compile Include="HisPatientTypeSub\HisPatientTypeSubGetByCode.cs" />
+    <Compile Include="HisPatientTypeSub\HisPatientTypeSubGetView.cs" />
+    <Compile Include="HisPatientTypeSub\HisPatientTypeSubManager.cs" />
+    <Compile Include="HisPatientTypeSub\HisPatientTypeSubManagerView.cs" />
+    <Compile Include="HisPatientTypeSub\HisPatientTypeSubViewFilterQuery.cs" />
+    <Compile Include="HisPatient\HisPatientManagerView.cs" />
+    <Compile Include="HisProgram\HisProgramFilterQuery.cs" />
+    <Compile Include="HisProgram\HisProgramGet.cs" />
+    <Compile Include="HisProgram\HisProgramGetByCode.cs" />
+    <Compile Include="HisProgram\HisProgramManager.cs" />
+    <Compile Include="HisPtttGroup\HisPtttGroupFilterQuery.cs" />
+    <Compile Include="HisPtttGroup\HisPtttGroupGet.cs" />
+    <Compile Include="HisPtttGroup\HisPtttGroupManager.cs" />
+    <Compile Include="HisPtttPriority\HisPtttPriorityFilterQuery.cs" />
+    <Compile Include="HisPtttPriority\HisPtttPriorityGet.cs" />
+    <Compile Include="HisPtttPriority\HisPtttPriorityManager.cs" />
+    <Compile Include="HisPtttTable\HisPtttTableFilterQuery.cs" />
+    <Compile Include="HisPtttTable\HisPtttTableGet.cs" />
+    <Compile Include="HisPtttTable\HisPtttTableManager.cs" />
+    <Compile Include="HisReceptionRoom\HisReceptionRoomManagerView.cs" />
+    <Compile Include="HisRegisterGate\HisRegisterGateFilterQuery.cs" />
+    <Compile Include="HisRegisterGate\HisRegisterGateGet.cs" />
+    <Compile Include="HisRegisterGate\HisRegisterGateGetByCode.cs" />
+    <Compile Include="HisRegisterGate\HisRegisterGateManager.cs" />
+    <Compile Include="HisRegisterReq\HisRegisterReqFilterQuery.cs" />
+    <Compile Include="HisRegisterReq\HisRegisterReqGet.cs" />
+    <Compile Include="HisRegisterReq\HisRegisterReqGetView.cs" />
+    <Compile Include="HisRegisterReq\HisRegisterReqManager.cs" />
+    <Compile Include="HisRegisterReq\HisRegisterReqManagerView.cs" />
+    <Compile Include="HisRegisterReq\HisRegisterReqViewFilterQuery.cs" />
+    <Compile Include="HisRehaTrainType\HisRehaTrainTypeManagerView.cs" />
+    <Compile Include="HisRehaTrain\HisRehaTrainFilterQuery.cs" />
+    <Compile Include="HisRehaTrain\HisRehaTrainGet.cs" />
+    <Compile Include="HisRehaTrain\HisRehaTrainManager.cs" />
+    <Compile Include="HisRehaTrain\HisRehaTrainViewFilterQuery.cs" />
+    <Compile Include="HisRemuneration\HisRemunerationFilterQuery.cs" />
+    <Compile Include="HisRemuneration\HisRemunerationGet.cs" />
+    <Compile Include="HisRemuneration\HisRemunerationGetView.cs" />
+    <Compile Include="HisRemuneration\HisRemunerationManager.cs" />
+    <Compile Include="HisRemuneration\HisRemunerationManagerView.cs" />
+    <Compile Include="HisRemuneration\HisRemunerationViewFilterQuery.cs" />
+    <Compile Include="HisRepayReason\HisRepayReasonFilterQuery.cs" />
+    <Compile Include="HisRepayReason\HisRepayReasonGet.cs" />
+    <Compile Include="HisRepayReason\HisRepayReasonGetByCode.cs" />
+    <Compile Include="HisRepayReason\HisRepayReasonManager.cs" />
+    <Compile Include="HisRestRetrType\HisRestRetrTypeManagerView.cs" />
+    <Compile Include="HisRoomGroup\HisRoomGroupFilterQuery.cs" />
+    <Compile Include="HisRoomGroup\HisRoomGroupGet.cs" />
+    <Compile Include="HisRoomGroup\HisRoomGroupManager.cs" />
+    <Compile Include="HisRoomTypeModule\HisRoomTypeModuleFilterQuery.cs" />
+    <Compile Include="HisRoomTypeModule\HisRoomTypeModuleGet.cs" />
+    <Compile Include="HisRoomTypeModule\HisRoomTypeModuleGetView.cs" />
+    <Compile Include="HisRoomTypeModule\HisRoomTypeModuleManager.cs" />
+    <Compile Include="HisRoomTypeModule\HisRoomTypeModuleManagerView.cs" />
+    <Compile Include="HisRoomTypeModule\HisRoomTypeModuleViewFilterQuery.cs" />
+    <Compile Include="HisSampleRoom\HisSampleRoomManagerView.cs" />
+    <Compile Include="HisSaroExro\HisSaroExroFilterQuery.cs" />
+    <Compile Include="HisSaroExro\HisSaroExroGet.cs" />
+    <Compile Include="HisSaroExro\HisSaroExroManager.cs" />
+    <Compile Include="HisSaroExro\HisSaroExroViewFilterQuery.cs" />
+    <Compile Include="HisAccidentHurtType\HisAccidentHurtTypeFilterQuery.cs" />
+    <Compile Include="HisAccidentHurtType\HisAccidentHurtTypeGet.cs" />
+    <Compile Include="HisExecuteGroup\HisExecuteGroupFilterQuery.cs" />
+    <Compile Include="HisExecuteGroup\HisExecuteGroupGet.cs" />
+    <Compile Include="HisExecuteGroup\HisExecuteGroupManager.cs" />
+    <Compile Include="HisSampleRoom\HisSampleRoomFilterQuery.cs" />
+    <Compile Include="HisSampleRoom\HisSampleRoomGet.cs" />
+    <Compile Include="HisSampleRoom\HisSampleRoomManager.cs" />
+    <Compile Include="HisSampleRoom\HisSampleRoomViewFilterQuery.cs" />
+    <Compile Include="HisIcdGroup\HisIcdGroupFilterQuery.cs" />
+    <Compile Include="HisIcdGroup\HisIcdGroupGet.cs" />
+    <Compile Include="HisIcdGroup\HisIcdGroupManager.cs" />
+    <Compile Include="HisEmergencyWtime\HisEmergencyWtimeFilterQuery.cs" />
+    <Compile Include="HisEmergencyWtime\HisEmergencyWtimeGet.cs" />
+    <Compile Include="HisEmergencyWtime\HisEmergencyWtimeManager.cs" />
+    <Compile Include="HisSereServBill\HisSereServBillFilterQuery.cs" />
+    <Compile Include="HisSereServBill\HisSereServBillGet.cs" />
+    <Compile Include="HisSereServBill\HisSereServBillGetView.cs" />
+    <Compile Include="HisSereServBill\HisSereServBillManager.cs" />
+    <Compile Include="HisSereServBill\HisSereServBillManagerView.cs" />
+    <Compile Include="HisSereServBill\HisSereServBillViewFilterQuery.cs" />
+    <Compile Include="HisSereServDebt\HisSereServDebtFilterQuery.cs" />
+    <Compile Include="HisSereServDebt\HisSereServDebtGet.cs" />
+    <Compile Include="HisSereServDebt\HisSereServDebtGetView.cs" />
+    <Compile Include="HisSereServDebt\HisSereServDebtManager.cs" />
+    <Compile Include="HisSereServDebt\HisSereServDebtManagerView.cs" />
+    <Compile Include="HisSereServDebt\HisSereServDebtViewFilterQuery.cs" />
+    <Compile Include="HisSereServDeposit\HisSereServDepositFilterQuery.cs" />
+    <Compile Include="HisSereServDeposit\HisSereServDepositGet.cs" />
+    <Compile Include="HisSereServDeposit\HisSereServDepositGetView.cs" />
+    <Compile Include="HisSereServDeposit\HisSereServDepositManager.cs" />
+    <Compile Include="HisSereServDeposit\HisSereServDepositManagerView.cs" />
+    <Compile Include="HisSereServDeposit\HisSereServDepositViewFilterQuery.cs" />
+    <Compile Include="HisSereServExt\HisSereServExtFilterQuery.cs" />
+    <Compile Include="HisSereServExt\HisSereServExtGet.cs" />
+    <Compile Include="HisSereServExt\HisSereServExtManager.cs" />
+    <Compile Include="HisSereServMaty\HisSereServMatyFilterQuery.cs" />
+    <Compile Include="HisSereServMaty\HisSereServMatyGet.cs" />
+    <Compile Include="HisSereServMaty\HisSereServMatyGetView.cs" />
+    <Compile Include="HisSereServMaty\HisSereServMatyManager.cs" />
+    <Compile Include="HisSereServMaty\HisSereServMatyManagerView.cs" />
+    <Compile Include="HisSereServMaty\HisSereServMatyViewFilterQuery.cs" />
+    <Compile Include="HisSereServPttt\HisSereServPtttManagerView.cs" />
+    <Compile Include="HisSereServReha\HisSereServRehaManagerView.cs" />
+    <Compile Include="HisSereServSuin\HisSereServSuinManagerView.cs" />
+    <Compile Include="HisSereServTein\HisSereServTeinManagerView.cs" />
+    <Compile Include="HisSereServTemp\HisSereServTempFilterQuery.cs" />
+    <Compile Include="HisSereServTemp\HisSereServTempGet.cs" />
+    <Compile Include="HisSereServTemp\HisSereServTempGetByCode.cs" />
+    <Compile Include="HisSereServTemp\HisSereServTempManager.cs" />
+    <Compile Include="HisSereServ\Get\HisSereServFilterQuery.cs" />
+    <Compile Include="HisSereServ\Get\HisSereServGet.cs" />
+    <Compile Include="HisSereServ\Get\HisSereServGetView1.cs" />
+    <Compile Include="HisSereServ\Get\HisSereServGetView11.cs" />
+    <Compile Include="HisSereServ\Get\HisSereServGetView12.cs" />
+    <Compile Include="HisSereServ\Get\HisSereServGetView2.cs" />
+    <Compile Include="HisSereServ\Get\HisSereServGetView3.cs" />
+    <Compile Include="HisSereServ\Get\HisSereServGetView4.cs" />
+    <Compile Include="HisSereServ\Get\HisSereServGetView5.cs" />
+    <Compile Include="HisSereServ\Get\HisSereServGetView6.cs" />
+    <Compile Include="HisSereServ\Get\HisSereServGetView7.cs" />
+    <Compile Include="HisSereServ\Get\HisSereServGetView9.cs" />
+    <Compile Include="HisSereServ\Get\HisSereServView11FilterQuery.cs" />
+    <Compile Include="HisSereServ\Get\HisSereServView12FilterQuery.cs" />
+    <Compile Include="HisSereServ\Get\HisSereServView1FilterQuery.cs" />
+    <Compile Include="HisSereServ\Get\HisSereServView2FilterQuery.cs" />
+    <Compile Include="HisSereServ\Get\HisSereServView3FilterQuery.cs" />
+    <Compile Include="HisSereServ\Get\HisSereServView4FilterQuery.cs" />
+    <Compile Include="HisSereServ\Get\HisSereServView5FilterQuery.cs" />
+    <Compile Include="HisSereServ\Get\HisSereServView6FilterQuery.cs" />
+    <Compile Include="HisSereServ\Get\HisSereServView7FilterQuery.cs" />
+    <Compile Include="HisSereServ\Get\HisSereServView9FilterQuery.cs" />
+    <Compile Include="HisSereServ\Get\HisSereServViewFilterQuery.cs" />
+    <Compile Include="HisSereServ\HisSereServManagerSql.cs" />
+    <Compile Include="HisSereServ\HisSereServManagerView.cs" />
+    <Compile Include="HisSereServ\HisSereServManagerView1.cs" />
+    <Compile Include="HisSereServ\HisSereServManagerView12.cs" />
+    <Compile Include="HisSereServ\HisSereServManagerView11.cs" />
+    <Compile Include="HisSereServ\HisSereServManagerView9.cs" />
+    <Compile Include="HisSereServ\HisSereServManagerView7.cs" />
+    <Compile Include="HisSereServ\HisSereServManagerView6.cs" />
+    <Compile Include="HisSereServ\HisSereServManagerView5.cs" />
+    <Compile Include="HisSereServ\HisSereServManagerView4.cs" />
+    <Compile Include="HisSereServ\HisSereServManagerView3.cs" />
+    <Compile Include="HisSereServ\HisSereServManagerView2.cs" />
+    <Compile Include="HisServiceFollow\HisServiceFollowFilterQuery.cs" />
+    <Compile Include="HisServiceFollow\HisServiceFollowGet.cs" />
+    <Compile Include="HisServiceFollow\HisServiceFollowGetView.cs" />
+    <Compile Include="HisServiceFollow\HisServiceFollowManager.cs" />
+    <Compile Include="HisServiceFollow\HisServiceFollowManagerView.cs" />
+    <Compile Include="HisServiceFollow\HisServiceFollowViewFilterQuery.cs" />
+    <Compile Include="HisServiceMachine\HisServiceMachineFilterQuery.cs" />
+    <Compile Include="HisServiceMachine\HisServiceMachineGet.cs" />
+    <Compile Include="HisServiceMachine\HisServiceMachineManager.cs" />
+    <Compile Include="HisServiceMaty\HisServiceMatyManagerView.cs" />
+    <Compile Include="HisServiceMety\HisServiceMetyManagerView.cs" />
+    <Compile Include="HisServicePackage\HisServicePackageManagerView.cs" />
+    <Compile Include="HisServicePaty\HisServicePatyManagerView.cs" />
+    <Compile Include="HisServicePaty\ServicePatyUtil.cs" />
+    <Compile Include="HisServiceReqMaty\HisServiceReqMatyFilterQuery.cs" />
+    <Compile Include="HisServiceReqMaty\HisServiceReqMatyGet.cs" />
+    <Compile Include="HisServiceReqMaty\HisServiceReqMatyManager.cs" />
+    <Compile Include="HisServiceReqMety\HisServiceReqMetyFilterQuery.cs" />
+    <Compile Include="HisServiceReqMety\HisServiceReqMetyGet.cs" />
+    <Compile Include="HisServiceReqMety\HisServiceReqMetyManager.cs" />
+    <Compile Include="HisServiceReq\Common\Get\HisServiceReqView9FilterQuery.cs" />
+    <Compile Include="HisServiceReq\Common\Get\HisServiceReqGetView9.cs" />
+    <Compile Include="HisServiceReq\Common\Get\HisServiceReqGetView7.cs" />
+    <Compile Include="HisServiceReq\Common\Get\HisServiceReqView7FilterQuery.cs" />
+    <Compile Include="HisServiceReq\Common\Get\HisServiceReqFilterQuery.cs" />
+    <Compile Include="HisServiceReq\Common\Get\HisServiceReqGet.cs" />
+    <Compile Include="HisServiceReq\Common\Get\HisServiceReqGetSql.cs" />
+    <Compile Include="HisServiceReq\Common\Get\HisServiceReqGetView1.cs" />
+    <Compile Include="HisServiceReq\Common\Get\HisServiceReqGetView2.cs" />
+    <Compile Include="HisServiceReq\Common\Get\HisServiceReqGetView3.cs" />
+    <Compile Include="HisServiceReq\Common\Get\HisServiceReqGetView6.cs" />
+    <Compile Include="HisServiceReq\Common\Get\HisServiceReqView1FilterQuery.cs" />
+    <Compile Include="HisServiceReq\Common\Get\HisServiceReqView2FilterQuery.cs" />
+    <Compile Include="HisServiceReq\Common\Get\HisServiceReqView3FilterQuery.cs" />
+    <Compile Include="HisServiceReq\Common\Get\HisServiceReqView6FilterQuery.cs" />
+    <Compile Include="HisServiceReq\Common\Get\HisServiceReqViewFilterQuery.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqManagerView9.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqManagerView.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqManagerView7.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqManagerView6.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqManagerView3.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqManagerSql.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqManagerView1.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqManagerView2.cs" />
+    <Compile Include="HisServiceRetyCat\HisServiceRetyCatFilterQuery.cs" />
+    <Compile Include="HisServiceRetyCat\HisServiceRetyCatGet.cs" />
+    <Compile Include="HisServiceRetyCat\HisServiceRetyCatManager.cs" />
+    <Compile Include="HisServiceRetyCat\HisServiceRetyCatManagerView.cs" />
+    <Compile Include="HisServiceRetyCat\HisServiceRetyCatViewFilterQuery.cs" />
+    <Compile Include="HisReportTypeCat\HisReportTypeCatFilterQuery.cs" />
+    <Compile Include="HisReportTypeCat\HisReportTypeCatGet.cs" />
+    <Compile Include="HisReportTypeCat\HisReportTypeCatManager.cs" />
+    <Compile Include="HisServiceRoom\HisServiceRoomManagerView.cs" />
+    <Compile Include="HisService\HisServiceView1FilterQuery.cs" />
+    <Compile Include="HisService\HisServiceManagerView.cs" />
+    <Compile Include="HisServSegr\HisServSegrManagerView.cs" />
+    <Compile Include="HisSeseDepoRepay\HisSeseDepoRepayGetView.cs" />
+    <Compile Include="HisSeseDepoRepay\HisSeseDepoRepayManagerView.cs" />
+    <Compile Include="HisSeseDepoRepay\HisSeseDepoRepayFilterQuery.cs" />
+    <Compile Include="HisSeseDepoRepay\HisSeseDepoRepayGet.cs" />
+    <Compile Include="HisSeseDepoRepay\HisSeseDepoRepayManager.cs" />
+    <Compile Include="HisSeseDepoRepay\HisSeseDepoRepayViewFilterQuery.cs" />
+    <Compile Include="HisSuimIndex\HisSuimIndexManagerView.cs" />
+    <Compile Include="HisSuimSetySuin\HisSuimSetySuinManagerView.cs" />
+    <Compile Include="HisTestIndex\HisTestIndexManagerView.cs" />
+    <Compile Include="HisTracking\HisTrackingManagerView.cs" />
+    <Compile Include="HisTransaction\HisTransactionManagerView.cs" />
+    <Compile Include="HisTransaction\HisTransactionManagerView5.cs" />
+    <Compile Include="HisTransaction\HisTransactionGetView5.cs" />
+    <Compile Include="HisTransaction\HisTransactionView5FilterQuery.cs" />
+    <Compile Include="HisTreatmentBedRoom\HisTreatmentBedRoomManagerView.cs" />
+    <Compile Include="HisTreatmentLogging\HisTreatmentLoggingFilterQuery.cs" />
+    <Compile Include="HisTreatmentLogging\HisTreatmentLoggingGet.cs" />
+    <Compile Include="HisTreatmentLogging\HisTreatmentLoggingGetView.cs" />
+    <Compile Include="HisTreatmentLogging\HisTreatmentLoggingManager.cs" />
+    <Compile Include="HisTreatmentLogging\HisTreatmentLoggingManagerView.cs" />
+    <Compile Include="HisTreatmentLogging\HisTreatmentLoggingViewFilterQuery.cs" />
+    <Compile Include="HisTreatment\Get\HisTreatmentFeeView1FilterQuery.cs" />
+    <Compile Include="HisTreatment\Get\HisTreatmentFeeViewFilterQuery.cs" />
+    <Compile Include="HisTreatment\Get\HisTreatmentFilterQuery.cs" />
+    <Compile Include="HisTreatment\Get\HisTreatmentGet.cs" />
+    <Compile Include="HisTreatment\Get\HisTreatmentGetView1.cs" />
+    <Compile Include="HisTreatment\Get\HisTreatmentGetView2.cs" />
+    <Compile Include="HisTreatment\Get\HisTreatmentGetView3.cs" />
+    <Compile Include="HisTreatment\Get\HisTreatmentGetView4.cs" />
+    <Compile Include="HisTreatment\Get\HisTreatmentGetView6.cs" />
+    <Compile Include="HisTreatment\Get\HisTreatmentGetView7.cs" />
+    <Compile Include="HisTreatment\Get\HisTreatmentGetViewFee.cs" />
+    <Compile Include="HisTreatment\Get\HisTreatmentGetViewFee1.cs" />
+    <Compile Include="HisTreatment\Get\HisTreatmentView1FilterQuery.cs" />
+    <Compile Include="HisTreatment\Get\HisTreatmentView2FilterQuery.cs" />
+    <Compile Include="HisTreatment\Get\HisTreatmentView3FilterQuery.cs" />
+    <Compile Include="HisTreatment\Get\HisTreatmentView4FilterQuery.cs" />
+    <Compile Include="HisTreatment\Get\HisTreatmentView6FilterQuery.cs" />
+    <Compile Include="HisTreatment\Get\HisTreatmentView7FilterQuery.cs" />
+    <Compile Include="HisTreatment\Get\HisTreatmentViewFilterQuery.cs" />
+    <Compile Include="HisTreatment\HisTreatmentManagerView.cs" />
+    <Compile Include="HisTreatment\HisTreatmentManagerView6.cs" />
+    <Compile Include="HisTreatment\HisTreatmentManagerView7.cs" />
+    <Compile Include="HisTreatment\HisTreatmentManagerView4.cs" />
+    <Compile Include="HisTreatment\HisTreatmentManagerView3.cs" />
+    <Compile Include="HisTreatment\HisTreatmentManagerView2.cs" />
+    <Compile Include="HisTreatment\HisTreatmentManagerView1.cs" />
+    <Compile Include="HisMilitaryRank\HisMilitaryRankFilterQuery.cs" />
+    <Compile Include="HisMilitaryRank\HisMilitaryRankGet.cs" />
+    <Compile Include="HisMilitaryRank\HisMilitaryRankManager.cs" />
+    <Compile Include="HisInvoiceBook\HisInvoiceBookViewFilterQuery.cs" />
+    <Compile Include="HisRehaTrainType\HisRehaTrainTypeViewFilterQuery.cs" />
+    <Compile Include="HisRestRetrType\HisRestRetrTypeFilterQuery.cs" />
+    <Compile Include="HisRestRetrType\HisRestRetrTypeGet.cs" />
+    <Compile Include="HisRestRetrType\HisRestRetrTypeManager.cs" />
+    <Compile Include="HisRestRetrType\HisRestRetrTypeViewFilterQuery.cs" />
+    <Compile Include="HisRehaTrainType\HisRehaTrainTypeFilterQuery.cs" />
+    <Compile Include="HisRehaTrainType\HisRehaTrainTypeGet.cs" />
+    <Compile Include="HisRehaTrainType\HisRehaTrainTypeManager.cs" />
+    <Compile Include="HisInvoiceDetail\HisInvoiceDetailFilterQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HisInvoiceDetail\HisInvoiceDetailGet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HisInvoiceDetail\HisInvoiceDetailManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HisInvoice\HisInvoiceViewFilterQuery.cs" />
+    <Compile Include="HisInvoice\HisInvoiceFilterQuery.cs" />
+    <Compile Include="HisInvoice\HisInvoiceGet.cs" />
+    <Compile Include="HisInvoice\HisInvoiceManager.cs" />
+    <Compile Include="HisUserInvoiceBook\HisUserInvoiceBookManagerView.cs" />
+    <Compile Include="HisUserInvoiceBook\HisUserInvoiceBookViewFilterQuery.cs" />
+    <Compile Include="HisUserInvoiceBook\HisUserInvoiceBookFilterQuery.cs" />
+    <Compile Include="HisUserInvoiceBook\HisUserInvoiceBookGet.cs" />
+    <Compile Include="HisUserInvoiceBook\HisUserInvoiceBookManager.cs" />
+    <Compile Include="HisCareSum\HisCareSumFilterQuery.cs" />
+    <Compile Include="HisCareSum\HisCareSumGet.cs" />
+    <Compile Include="HisCareSum\HisCareSumManager.cs" />
+    <Compile Include="HisInvoiceBook\HisInvoiceBookFilterQuery.cs" />
+    <Compile Include="HisInvoiceBook\HisInvoiceBookGet.cs" />
+    <Compile Include="HisInvoiceBook\HisInvoiceBookManager.cs" />
+    <Compile Include="HisRehaSum\HisRehaSumFilterQuery.cs" />
+    <Compile Include="HisRehaSum\HisRehaSumGet.cs" />
+    <Compile Include="HisRehaSum\HisRehaSumManager.cs" />
+    <Compile Include="HisRehaTrainUnit\HisRehaTrainUnitFilterQuery.cs" />
+    <Compile Include="HisRehaTrainUnit\HisRehaTrainUnitGet.cs" />
+    <Compile Include="HisRehaTrainUnit\HisRehaTrainUnitManager.cs" />
+    <Compile Include="HisSereServReha\HisSereServRehaViewFilterQuery.cs" />
+    <Compile Include="HisSereServReha\HisSereServRehaFilterQuery.cs" />
+    <Compile Include="HisSereServReha\HisSereServRehaGet.cs" />
+    <Compile Include="HisSereServReha\HisSereServRehaManager.cs" />
+    <Compile Include="HisCard\HisCardViewFilterQuery.cs" />
+    <Compile Include="HisServiceMaty\HisServiceMatyFilterQuery.cs" />
+    <Compile Include="HisServiceMaty\HisServiceMatyGet.cs" />
+    <Compile Include="HisServiceMaty\HisServiceMatyManager.cs" />
+    <Compile Include="HisServiceMaty\HisServiceMatyViewFilterQuery.cs" />
+    <Compile Include="HisServiceMety\HisServiceMetyFilterQuery.cs" />
+    <Compile Include="HisServiceMety\HisServiceMetyGet.cs" />
+    <Compile Include="HisServiceMety\HisServiceMetyManager.cs" />
+    <Compile Include="HisServiceMety\HisServiceMetyViewFilterQuery.cs" />
+    <Compile Include="HisAnticipate\HisAnticipateFilterQuery.cs" />
+    <Compile Include="HisAnticipate\HisAnticipateGet.cs" />
+    <Compile Include="HisAnticipate\HisAnticipateManager.cs" />
+    <Compile Include="HisAnticipateMety\HisAnticipateMetyFilterQuery.cs" />
+    <Compile Include="HisAnticipateMety\HisAnticipateMetyGet.cs" />
+    <Compile Include="HisAnticipateMety\HisAnticipateMetyManager.cs" />
+    <Compile Include="HisAnticipateMety\HisAnticipateMetyViewFilterQuery.cs" />
+    <Compile Include="HisAnticipateMaty\HisAnticipateMatyFilterQuery.cs" />
+    <Compile Include="HisAnticipateMaty\HisAnticipateMatyGet.cs" />
+    <Compile Include="HisAnticipateMaty\HisAnticipateMatyManager.cs" />
+    <Compile Include="HisAnticipateMaty\HisAnticipateMatyViewFilterQuery.cs" />
+    <Compile Include="HisCareDetail\HisCareDetailFilterQuery.cs" />
+    <Compile Include="HisCareDetail\HisCareDetailGet.cs" />
+    <Compile Include="HisCareDetail\HisCareDetailManager.cs" />
+    <Compile Include="HisCareDetail\HisCareDetailViewFilterQuery.cs" />
+    <Compile Include="HisPackingType\HisPackingTypeFilterQuery.cs" />
+    <Compile Include="HisPackingType\HisPackingTypeGet.cs" />
+    <Compile Include="HisPackingType\HisPackingTypeManager.cs" />
+    <Compile Include="HisCareType\HisCareTypeFilterQuery.cs" />
+    <Compile Include="HisCareType\HisCareTypeGet.cs" />
+    <Compile Include="HisCareType\HisCareTypeManager.cs" />
+    <Compile Include="HisAwareness\HisAwarenessFilterQuery.cs" />
+    <Compile Include="HisAwareness\HisAwarenessGet.cs" />
+    <Compile Include="HisAwareness\HisAwarenessManager.cs" />
+    <Compile Include="HisDebate\HisDebateFilterQuery.cs" />
+    <Compile Include="HisDebate\HisDebateGet.cs" />
+    <Compile Include="HisDebate\HisDebateManager.cs" />
+    <Compile Include="HisDebateUser\HisDebateUserFilterQuery.cs" />
+    <Compile Include="HisDebateUser\HisDebateUserGet.cs" />
+    <Compile Include="HisDebateUser\HisDebateUserManager.cs" />
+    <Compile Include="HisRoom\HisRoomCounter1ViewFilterQuery.cs" />
+    <Compile Include="HisTracking\HisTrackingFilterQuery.cs" />
+    <Compile Include="HisTracking\HisTrackingGet.cs" />
+    <Compile Include="HisTracking\HisTrackingManager.cs" />
+    <Compile Include="HisTracking\HisTrackingViewFilterQuery.cs" />
+    <Compile Include="HisMedicineLine\HisMedicineLineFilterQuery.cs" />
+    <Compile Include="HisMedicineLine\HisMedicineLineGet.cs" />
+    <Compile Include="HisMedicineLine\HisMedicineLineManager.cs" />
+    <Compile Include="HisSuimIndexUnit\HisSuimIndexUnitFilterQuery.cs" />
+    <Compile Include="HisSuimIndexUnit\HisSuimIndexUnitGet.cs" />
+    <Compile Include="HisSuimIndexUnit\HisSuimIndexUnitManager.cs" />
+    <Compile Include="HisSuimIndex\HisSuimIndexFilterQuery.cs" />
+    <Compile Include="HisSuimIndex\HisSuimIndexGet.cs" />
+    <Compile Include="HisSuimIndex\HisSuimIndexManager.cs" />
+    <Compile Include="HisSuimIndex\HisSuimIndexViewFilterQuery.cs" />
+    <Compile Include="HisKskContract\HisKskContractFilterQuery.cs" />
+    <Compile Include="HisKskContract\HisKskContractGet.cs" />
+    <Compile Include="HisKskContract\HisKskContractManager.cs" />
+    <Compile Include="HisTreatmentBedRoom\HisTreatmentBedRoomViewFilterQuery.cs" />
+    <Compile Include="HisTreatmentBedRoom\HisTreatmentBedRoomFilterQuery.cs" />
+    <Compile Include="HisTreatmentBedRoom\HisTreatmentBedRoomGet.cs" />
+    <Compile Include="HisTreatmentBedRoom\HisTreatmentBedRoomManager.cs" />
+    <Compile Include="HisTreatmentType\HisTreatmentTypeFilterQuery.cs" />
+    <Compile Include="HisTreatmentType\HisTreatmentTypeGet.cs" />
+    <Compile Include="HisTreatmentType\HisTreatmentTypeManager.cs" />
+    <Compile Include="HisAccidentHurt\HisAccidentHurtFilterQuery.cs" />
+    <Compile Include="HisAccidentHurt\HisAccidentHurtGet.cs" />
+    <Compile Include="HisAccidentHurt\HisAccidentHurtManager.cs" />
+    <Compile Include="HisEmteMaterialType\HisEmteMaterialTypeFilterQuery.cs" />
+    <Compile Include="HisEmteMaterialType\HisEmteMaterialTypeGet.cs" />
+    <Compile Include="HisEmteMaterialType\HisEmteMaterialTypeManager.cs" />
+    <Compile Include="HisEmteMaterialType\HisEmteMaterialTypeViewFilterQuery.cs" />
+    <Compile Include="HisMestPatientType\HisMestPatientTypeFilterQuery.cs" />
+    <Compile Include="HisMestPatientType\HisMestPatientTypeGet.cs" />
+    <Compile Include="HisMestPatientType\HisMestPatientTypeManager.cs" />
+    <Compile Include="HisMestPatientType\HisMestPatientTypeViewFilterQuery.cs" />
+    <Compile Include="HisHeinServiceType\HisHeinServiceTypeFilterQuery.cs" />
+    <Compile Include="HisHeinServiceType\HisHeinServiceTypeGet.cs" />
+    <Compile Include="HisHeinServiceType\HisHeinServiceTypeManager.cs" />
+    <Compile Include="HisMestPeriodMate\HisMestPeriodMateFilterQuery.cs" />
+    <Compile Include="HisMestPeriodMate\HisMestPeriodMateGet.cs" />
+    <Compile Include="HisMestPeriodMate\HisMestPeriodMateManager.cs" />
+    <Compile Include="HisMestPeriodMate\HisMestPeriodMateViewFilterQuery.cs" />
+    <Compile Include="HisAcinInteractive\HisAcinInteractiveFilterQuery.cs" />
+    <Compile Include="HisAcinInteractive\HisAcinInteractiveGet.cs" />
+    <Compile Include="HisAcinInteractive\HisAcinInteractiveManager.cs" />
+    <Compile Include="HisAcinInteractive\HisAcinInteractiveViewFilterQuery.cs" />
+    <Compile Include="HisBloodRh\HisBloodRhFilterQuery.cs" />
+    <Compile Include="HisBloodRh\HisBloodRhGet.cs" />
+    <Compile Include="HisBloodRh\HisBloodRhManager.cs" />
+    <Compile Include="HisCare\HisCareFilterQuery.cs" />
+    <Compile Include="HisCare\HisCareGet.cs" />
+    <Compile Include="HisCare\HisCareManager.cs" />
+    <Compile Include="HisExamSereDire\HisExamSereDireFilterQuery.cs" />
+    <Compile Include="HisExamSereDire\HisExamSereDireGet.cs" />
+    <Compile Include="HisExamSereDire\HisExamSereDireManager.cs" />
+    <Compile Include="HisExamSereDire\HisExamSereDireViewFilterQuery.cs" />
+    <Compile Include="HisDataStore\HisDataStoreFilterQuery.cs" />
+    <Compile Include="HisDataStore\HisDataStoreGet.cs" />
+    <Compile Include="HisDataStore\HisDataStoreManager.cs" />
+    <Compile Include="HisDataStore\HisDataStoreViewFilterQuery.cs" />
+    <Compile Include="HisDeathCause\HisDeathCauseFilterQuery.cs" />
+    <Compile Include="HisDeathCause\HisDeathCauseGet.cs" />
+    <Compile Include="HisDeathCause\HisDeathCauseManager.cs" />
+    <Compile Include="HisDeathWithin\HisDeathWithinFilterQuery.cs" />
+    <Compile Include="HisDeathWithin\HisDeathWithinGet.cs" />
+    <Compile Include="HisDeathWithin\HisDeathWithinManager.cs" />
+    <Compile Include="HisDepartmentTran\HisDepartmentTranFilterQuery.cs" />
+    <Compile Include="HisDepartmentTran\HisDepartmentTranGet.cs" />
+    <Compile Include="HisDepartmentTran\HisDepartmentTranManager.cs" />
+    <Compile Include="HisDepartmentTran\HisDepartmentTranViewFilterQuery.cs" />
+    <Compile Include="HisDepartment\HisDepartmentGet.cs" />
+    <Compile Include="HisDepartment\HisDepartmentManager.cs" />
+    <Compile Include="HisEmotionlessMethod\HisEmotionlessMethodFilterQuery.cs" />
+    <Compile Include="HisEmotionlessMethod\HisEmotionlessMethodGet.cs" />
+    <Compile Include="HisEmotionlessMethod\HisEmotionlessMethodManager.cs" />
+    <Compile Include="HisHeinApproval\HisHeinApprovalFilterQuery.cs" />
+    <Compile Include="HisHeinApproval\HisHeinApprovalGet.cs" />
+    <Compile Include="HisHeinApproval\HisHeinApprovalManager.cs" />
+    <Compile Include="HisInfusion\HisInfusionFilterQuery.cs" />
+    <Compile Include="HisInfusion\HisInfusionGet.cs" />
+    <Compile Include="HisInfusion\HisInfusionManager.cs" />
+    <Compile Include="HisInfusion\HisInfusionViewFilterQuery.cs" />
+    <Compile Include="HisManufacturer\HisManufacturerFilterQuery.cs" />
+    <Compile Include="HisManufacturer\HisManufacturerGet.cs" />
+    <Compile Include="HisManufacturer\HisManufacturerManager.cs" />
+    <Compile Include="HisMaterialBean\Get\HisMaterialBeanFilterQuery.cs" />
+    <Compile Include="HisMaterialBean\Get\HisMaterialBeanGet.cs" />
+    <Compile Include="HisMaterialBean\HisMaterialBeanManager.cs" />
+    <Compile Include="HisMaterialBean\Get\HisMaterialBeanViewFilterQuery.cs" />
+    <Compile Include="HisMaterialPaty\HisMaterialPatyFilterQuery.cs" />
+    <Compile Include="HisMaterialPaty\HisMaterialPatyGet.cs" />
+    <Compile Include="HisMaterialPaty\HisMaterialPatyManager.cs" />
+    <Compile Include="HisMaterialPaty\HisMaterialPatyViewFilterQuery.cs" />
+    <Compile Include="HisMaterialType\HisMaterialTypeFilterQuery.cs" />
+    <Compile Include="HisMaterialType\HisMaterialTypeGet.cs" />
+    <Compile Include="HisMaterialType\HisMaterialTypeManager.cs" />
+    <Compile Include="HisMaterialType\HisMaterialTypeViewFilterQuery.cs" />
+    <Compile Include="HisMedicineTypeAcin\HisMedicineTypeAcinFilterQuery.cs" />
+    <Compile Include="HisMedicineTypeAcin\HisMedicineTypeAcinGet.cs" />
+    <Compile Include="HisMedicineTypeAcin\HisMedicineTypeAcinManager.cs" />
+    <Compile Include="HisMedicineTypeAcin\HisMedicineTypeAcinViewFilterQuery.cs" />
+    <Compile Include="HisMediReactType\HisMediReactTypeFilterQuery.cs" />
+    <Compile Include="HisMediReactType\HisMediReactTypeGet.cs" />
+    <Compile Include="HisMediReactType\HisMediReactTypeManager.cs" />
+    <Compile Include="HisMediReact\HisMediReactFilterQuery.cs" />
+    <Compile Include="HisMediReact\HisMediReactGet.cs" />
+    <Compile Include="HisMediReact\HisMediReactManager.cs" />
+    <Compile Include="HisMediReact\HisMediReactViewFilterQuery.cs" />
+    <Compile Include="HisMestPeriodMaty\HisMestPeriodMatyFilterQuery.cs" />
+    <Compile Include="HisMestPeriodMaty\HisMestPeriodMatyGet.cs" />
+    <Compile Include="HisMestPeriodMaty\HisMestPeriodMatyManager.cs" />
+    <Compile Include="HisMestPeriodMaty\HisMestPeriodMatyViewFilterQuery.cs" />
+    <Compile Include="HisAccountBook\HisAccountBookFilterQuery.cs" />
+    <Compile Include="HisAccountBook\HisAccountBookGet.cs" />
+    <Compile Include="HisAccountBook\HisAccountBookManager.cs" />
+    <Compile Include="HisAccountBook\HisAccountBookViewFilterQuery.cs" />
+    <Compile Include="HisActiveIngredient\HisActiveIngredientFilterQuery.cs" />
+    <Compile Include="HisActiveIngredient\HisActiveIngredientGet.cs" />
+    <Compile Include="HisActiveIngredient\HisActiveIngredientManager.cs" />
+    <Compile Include="HisBedRoom\HisBedRoomFilterQuery.cs" />
+    <Compile Include="HisBedRoom\HisBedRoomGet.cs" />
+    <Compile Include="HisBedRoom\HisBedRoomManager.cs" />
+    <Compile Include="HisBedRoom\HisBedRoomViewFilterQuery.cs" />
+    <Compile Include="HisCard\HisCardFilterQuery.cs" />
+    <Compile Include="HisCard\HisCardGet.cs" />
+    <Compile Include="HisCard\HisCardManager.cs" />
+    <Compile Include="HisCareer\HisCareerFilterQuery.cs" />
+    <Compile Include="HisCareer\HisCareerGet.cs" />
+    <Compile Include="HisCareer\HisCareerManager.cs" />
+    <Compile Include="HisDepartment\HisDepartmentFilterQuery.cs" />
+    <Compile Include="HisDhst\HisDhstFilterQuery.cs" />
+    <Compile Include="HisDhst\HisDhstGet.cs" />
+    <Compile Include="HisDhst\HisDhstManager.cs" />
+    <Compile Include="HisDiseaseRelation\HisDiseaseRelationFilterQuery.cs" />
+    <Compile Include="HisDiseaseRelation\HisDiseaseRelationGet.cs" />
+    <Compile Include="HisDiseaseRelation\HisDiseaseRelationManager.cs" />
+    <Compile Include="HisEmteMedicineType\HisEmteMedicineTypeFilterQuery.cs" />
+    <Compile Include="HisEmteMedicineType\HisEmteMedicineTypeGet.cs" />
+    <Compile Include="HisEmteMedicineType\HisEmteMedicineTypeManager.cs" />
+    <Compile Include="HisEmteMedicineType\HisEmteMedicineTypeViewFilterQuery.cs" />
+    <Compile Include="HisExecuteRoom\HisExecuteRoomFilterQuery.cs" />
+    <Compile Include="HisExecuteRoom\HisExecuteRoomGet.cs" />
+    <Compile Include="HisExecuteRoom\HisExecuteRoomManager.cs" />
+    <Compile Include="HisExecuteRoom\HisExecuteRoomViewFilterQuery.cs" />
+    <Compile Include="HisExpMestStt\HisExpMestSttFilterQuery.cs" />
+    <Compile Include="HisExpMestStt\HisExpMestSttGet.cs" />
+    <Compile Include="HisExpMestStt\HisExpMestSttManager.cs" />
+    <Compile Include="HisExpMestTemplate\HisExpMestTemplateFilterQuery.cs" />
+    <Compile Include="HisExpMestTemplate\HisExpMestTemplateGet.cs" />
+    <Compile Include="HisExpMestTemplate\HisExpMestTemplateManager.cs" />
+    <Compile Include="HisExpMestType\HisExpMestTypeFilterQuery.cs" />
+    <Compile Include="HisExpMestType\HisExpMestTypeGet.cs" />
+    <Compile Include="HisExpMestType\HisExpMestTypeManager.cs" />
+    <Compile Include="HisGender\HisGenderFilterQuery.cs" />
+    <Compile Include="HisGender\HisGenderGet.cs" />
+    <Compile Include="HisGender\HisGenderManager.cs" />
+    <Compile Include="HisImpMestStt\HisImpMestSttFilterQuery.cs" />
+    <Compile Include="HisImpMestStt\HisImpMestSttGet.cs" />
+    <Compile Include="HisImpMestStt\HisImpMestSttManager.cs" />
+    <Compile Include="HisImpMestType\HisImpMestTypeFilterQuery.cs" />
+    <Compile Include="HisImpMestType\HisImpMestTypeGet.cs" />
+    <Compile Include="HisImpMestType\HisImpMestTypeManager.cs" />
+    <Compile Include="HisMaterial\HisMaterialFilterQuery.cs" />
+    <Compile Include="HisMaterial\HisMaterialGet.cs" />
+    <Compile Include="HisMaterial\HisMaterialManager.cs" />
+    <Compile Include="HisMaterial\HisMaterialViewFilterQuery.cs" />
+    <Compile Include="HisMedicineBean\HisMedicineBeanManager.cs" />
+    <Compile Include="HisMedicinePaty\HisMedicinePatyFilterQuery.cs" />
+    <Compile Include="HisMedicinePaty\HisMedicinePatyGet.cs" />
+    <Compile Include="HisMedicinePaty\HisMedicinePatyManager.cs" />
+    <Compile Include="HisMedicinePaty\HisMedicinePatyViewFilterQuery.cs" />
+    <Compile Include="HisMedicineType\HisMedicineTypeFilterQuery.cs" />
+    <Compile Include="HisMedicineType\HisMedicineTypeGet.cs" />
+    <Compile Include="HisMedicineType\HisMedicineTypeManager.cs" />
+    <Compile Include="HisMedicineType\HisMedicineTypeViewFilterQuery.cs" />
+    <Compile Include="HisMedicineUseForm\HisMedicineUseFormFilterQuery.cs" />
+    <Compile Include="HisMedicineUseForm\HisMedicineUseFormGet.cs" />
+    <Compile Include="HisMedicineUseForm\HisMedicineUseFormManager.cs" />
+    <Compile Include="HisMedicine\HisMedicineFilterQuery.cs" />
+    <Compile Include="HisMedicine\HisMedicineGet.cs" />
+    <Compile Include="HisMedicine\HisMedicineManager.cs" />
+    <Compile Include="HisMedicine\HisMedicineViewFilterQuery.cs" />
+    <Compile Include="HisMestPeriodMedi\HisMestPeriodMediFilterQuery.cs" />
+    <Compile Include="HisMestPeriodMedi\HisMestPeriodMediGet.cs" />
+    <Compile Include="HisMestPeriodMedi\HisMestPeriodMediManager.cs" />
+    <Compile Include="HisMestPeriodMedi\HisMestPeriodMediViewFilterQuery.cs" />
+    <Compile Include="HisMestPeriodMety\HisMestPeriodMetyFilterQuery.cs" />
+    <Compile Include="HisMestPeriodMety\HisMestPeriodMetyGet.cs" />
+    <Compile Include="HisMestPeriodMety\HisMestPeriodMetyManager.cs" />
+    <Compile Include="HisMestPeriodMety\HisMestPeriodMetyViewFilterQuery.cs" />
+    <Compile Include="HisMestRoom\HisMestRoomFilterQuery.cs" />
+    <Compile Include="HisMestRoom\HisMestRoomGet.cs" />
+    <Compile Include="HisMestRoom\HisMestRoomManager.cs" />
+    <Compile Include="HisMestRoom\HisMestRoomViewFilterQuery.cs" />
+    <Compile Include="HisPatientTypeAllow\HisPatientTypeAllowViewFilterQuery.cs" />
+    <Compile Include="HisPatientTypeAllow\HisPatientTypeAllowFilterQuery.cs" />
+    <Compile Include="HisPatientTypeAllow\HisPatientTypeAllowGet.cs" />
+    <Compile Include="HisPatientTypeAllow\HisPatientTypeAllowManager.cs" />
+    <Compile Include="HisPatientTypeAlter\HisPatientTypeAlterFilterQuery.cs" />
+    <Compile Include="HisPatientTypeAlter\HisPatientTypeAlterGet.cs" />
+    <Compile Include="HisPatientTypeAlter\HisPatientTypeAlterManager.cs" />
+    <Compile Include="HisPatientTypeAlter\HisPatientTypeAlterViewFilterQuery.cs" />
+    <Compile Include="HisPatientType\HisPatientTypeManager.cs" />
+    <Compile Include="HisPtttCatastrophe\HisPtttCatastropheFilterQuery.cs" />
+    <Compile Include="HisPtttCatastrophe\HisPtttCatastropheGet.cs" />
+    <Compile Include="HisPtttCatastrophe\HisPtttCatastropheManager.cs" />
+    <Compile Include="HisPtttCondition\HisPtttConditionFilterQuery.cs" />
+    <Compile Include="HisPtttCondition\HisPtttConditionGet.cs" />
+    <Compile Include="HisPtttCondition\HisPtttConditionManager.cs" />
+    <Compile Include="HisPtttMethod\HisPtttMethodFilterQuery.cs" />
+    <Compile Include="HisPtttMethod\HisPtttMethodGet.cs" />
+    <Compile Include="HisPtttMethod\HisPtttMethodManager.cs" />
+    <Compile Include="HisReceptionRoom\HisReceptionRoomFilterQuery.cs" />
+    <Compile Include="HisReceptionRoom\HisReceptionRoomGet.cs" />
+    <Compile Include="HisReceptionRoom\HisReceptionRoomManager.cs" />
+    <Compile Include="HisReceptionRoom\HisReceptionRoomViewFilterQuery.cs" />
+    <Compile Include="HisRoomType\HisRoomTypeFilterQuery.cs" />
+    <Compile Include="HisRoomType\HisRoomTypeGet.cs" />
+    <Compile Include="HisRoomType\HisRoomTypeManager.cs" />
+    <Compile Include="HisSereServFile\HisSereServFileFilterQuery.cs" />
+    <Compile Include="HisSereServFile\HisSereServFileGet.cs" />
+    <Compile Include="HisSereServFile\HisSereServFileManager.cs" />
+    <Compile Include="HisSereServPttt\HisSereServPtttFilterQuery.cs" />
+    <Compile Include="HisSereServPttt\HisSereServPtttGet.cs" />
+    <Compile Include="HisSereServPttt\HisSereServPtttManager.cs" />
+    <Compile Include="HisSereServPttt\HisSereServPtttViewFilterQuery.cs" />
+    <Compile Include="HisSereServSuin\HisSereServSuinFilterQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HisSereServSuin\HisSereServSuinGet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HisSereServSuin\HisSereServSuinManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HisSereServSuin\HisSereServSuinViewFilterQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HisSereServTein\HisSereServTeinFilterQuery.cs" />
+    <Compile Include="HisSereServTein\HisSereServTeinGet.cs" />
+    <Compile Include="HisSereServTein\HisSereServTeinManager.cs" />
+    <Compile Include="HisSereServTein\HisSereServTeinViewFilterQuery.cs" />
+    <Compile Include="HisServiceReqType\HisServiceReqTypeFilterQuery.cs" />
+    <Compile Include="HisServiceReqType\HisServiceReqTypeGet.cs" />
+    <Compile Include="HisServiceReqType\HisServiceReqTypeManager.cs" />
+    <Compile Include="HisIcd\HisIcdFilterQuery.cs" />
+    <Compile Include="HisIcd\HisIcdGet.cs" />
+    <Compile Include="HisIcd\HisIcdManager.cs" />
+    <Compile Include="HisPatientType\HisPatientTypeFilterQuery.cs" />
+    <Compile Include="HisPatientType\HisPatientTypeGet.cs" />
+    <Compile Include="HisPatient\HisPatientFilterQuery.cs" />
+    <Compile Include="HisPatient\HisPatientGet.cs" />
+    <Compile Include="HisPatient\HisPatientManager.cs" />
+    <Compile Include="HisPatient\HisPatientViewFilterQuery.cs" />
+    <Compile Include="HisPayForm\HisPayFormFilterQuery.cs" />
+    <Compile Include="HisPayForm\HisPayFormGet.cs" />
+    <Compile Include="HisPayForm\HisPayFormManager.cs" />
+    <Compile Include="HisRoom\HisRoomCounterViewFilterQuery.cs" />
+    <Compile Include="HisRoom\HisRoomFilterQuery.cs" />
+    <Compile Include="HisRoom\HisRoomGet.cs" />
+    <Compile Include="HisRoom\HisRoomManager.cs" />
+    <Compile Include="HisRoom\HisRoomViewFilterQuery.cs" />
+    <Compile Include="HisSereServ\HisSereServManager.cs" />
+    <Compile Include="HisServiceGroup\HisServiceGroupFilterQuery.cs" />
+    <Compile Include="HisServiceGroup\HisServiceGroupGet.cs" />
+    <Compile Include="HisServiceGroup\HisServiceGroupManager.cs" />
+    <Compile Include="HisServicePackage\HisServicePackageFilterQuery.cs" />
+    <Compile Include="HisServicePackage\HisServicePackageGet.cs" />
+    <Compile Include="HisServicePackage\HisServicePackageManager.cs" />
+    <Compile Include="HisServicePackage\HisServicePackageViewFilterQuery.cs" />
+    <Compile Include="HisServicePaty\HisServicePatyFilterQuery.cs" />
+    <Compile Include="HisServicePaty\HisServicePatyGet.cs" />
+    <Compile Include="HisServicePaty\HisServicePatyManager.cs" />
+    <Compile Include="HisServicePaty\HisServicePatyViewFilterQuery.cs" />
+    <Compile Include="HisServiceReqStt\HisServiceReqSttFilterQuery.cs" />
+    <Compile Include="HisServiceReqStt\HisServiceReqSttGet.cs" />
+    <Compile Include="HisServiceReqStt\HisServiceReqSttManager.cs" />
+    <Compile Include="HisServiceReq\HisServiceReqManager.cs" />
+    <Compile Include="HisSuimSetySuin\HisSuimSetySuinFilterQuery.cs" />
+    <Compile Include="HisSuimSetySuin\HisSuimSetySuinGet.cs" />
+    <Compile Include="HisSuimSetySuin\HisSuimSetySuinManager.cs" />
+    <Compile Include="HisSuimSetySuin\HisSuimSetySuinViewFilterQuery.cs" />
+    <Compile Include="HisServiceRoom\HisServiceRoomFilterQuery.cs" />
+    <Compile Include="HisServiceRoom\HisServiceRoomGet.cs" />
+    <Compile Include="HisServiceRoom\HisServiceRoomManager.cs" />
+    <Compile Include="HisServiceRoom\HisServiceRoomViewFilterQuery.cs" />
+    <Compile Include="HisServiceType\HisServiceTypeFilterQuery.cs" />
+    <Compile Include="HisServiceType\HisServiceTypeGet.cs" />
+    <Compile Include="HisServiceType\HisServiceTypeManager.cs" />
+    <Compile Include="HisServiceUnit\HisServiceUnitFilterQuery.cs" />
+    <Compile Include="HisServiceUnit\HisServiceUnitGet.cs" />
+    <Compile Include="HisServiceUnit\HisServiceUnitManager.cs" />
+    <Compile Include="HisService\HisServiceFilterQuery.cs" />
+    <Compile Include="HisService\HisServiceGet.cs" />
+    <Compile Include="HisService\HisServiceManager.cs" />
+    <Compile Include="HisService\HisServiceViewFilterQuery.cs" />
+    <Compile Include="HisServSegr\HisServSegrFilterQuery.cs" />
+    <Compile Include="HisServSegr\HisServSegrGet.cs" />
+    <Compile Include="HisServSegr\HisServSegrManager.cs" />
+    <Compile Include="HisServSegr\HisServSegrViewFilterQuery.cs" />
+    <Compile Include="HisSupplier\HisSupplierFilterQuery.cs" />
+    <Compile Include="HisSupplier\HisSupplierGet.cs" />
+    <Compile Include="HisSupplier\HisSupplierManager.cs" />
+    <Compile Include="HisTestIndexRange\HisTestIndexRangeFilterQuery.cs" />
+    <Compile Include="HisTestIndexRange\HisTestIndexRangeGet.cs" />
+    <Compile Include="HisTestIndexRange\HisTestIndexRangeManager.cs" />
+    <Compile Include="HisTestIndexRange\HisTestIndexRangeViewFilterQuery.cs" />
+    <Compile Include="HisTestIndexUnit\HisTestIndexUnitFilterQuery.cs" />
+    <Compile Include="HisTestIndexUnit\HisTestIndexUnitGet.cs" />
+    <Compile Include="HisTestIndexUnit\HisTestIndexUnitManager.cs" />
+    <Compile Include="HisTestIndex\HisTestIndexFilterQuery.cs" />
+    <Compile Include="HisTestIndex\HisTestIndexGet.cs" />
+    <Compile Include="HisTestIndex\HisTestIndexManager.cs" />
+    <Compile Include="HisTestIndex\HisTestIndexViewFilterQuery.cs" />
+    <Compile Include="HisTextLib\HisTextLibFilterQuery.cs" />
+    <Compile Include="HisTextLib\HisTextLibGet.cs" />
+    <Compile Include="HisTextLib\HisTextLibManager.cs" />
+    <Compile Include="HisTranPatiForm\HisTranPatiFormFilterQuery.cs" />
+    <Compile Include="HisTranPatiForm\HisTranPatiFormGet.cs" />
+    <Compile Include="HisTranPatiForm\HisTranPatiFormManager.cs" />
+    <Compile Include="HisTranPatiReason\HisTranPatiReasonFilterQuery.cs" />
+    <Compile Include="HisTranPatiReason\HisTranPatiReasonGet.cs" />
+    <Compile Include="HisTranPatiReason\HisTranPatiReasonManager.cs" />
+    <Compile Include="HisTransactionType\HisTransactionTypeFilterQuery.cs" />
+    <Compile Include="HisTransactionType\HisTransactionTypeGet.cs" />
+    <Compile Include="HisTransactionType\HisTransactionTypeManager.cs" />
+    <Compile Include="HisTransaction\HisTransactionFilterQuery.cs" />
+    <Compile Include="HisTransaction\HisTransactionGet.cs" />
+    <Compile Include="HisTransaction\HisTransactionManager.cs" />
+    <Compile Include="HisTransaction\HisTransactionViewFilterQuery.cs" />
+    <Compile Include="HisTreatmentEndType\HisTreatmentEndTypeFilterQuery.cs" />
+    <Compile Include="HisTreatmentEndType\HisTreatmentEndTypeGet.cs" />
+    <Compile Include="HisTreatmentEndType\HisTreatmentEndTypeManager.cs" />
+    <Compile Include="HisTreatmentResult\HisTreatmentResultFilterQuery.cs" />
+    <Compile Include="HisTreatmentResult\HisTreatmentResultGet.cs" />
+    <Compile Include="HisTreatmentResult\HisTreatmentResultManager.cs" />
+    <Compile Include="HisTreatment\HisTreatmentManager.cs" />
+    <Compile Include="HisUserRoom\HisUserRoomFilterQuery.cs" />
+    <Compile Include="HisUserRoom\HisUserRoomGet.cs" />
+    <Compile Include="HisUserRoom\HisUserRoomManager.cs" />
+    <Compile Include="HisUserRoom\HisUserRoomManagerView.cs" />
+    <Compile Include="HisUserRoom\HisUserRoomViewFilterQuery.cs" />
+    <Compile Include="HisVitaminA\HisVitaminAFilterQuery.cs" />
+    <Compile Include="HisVitaminA\HisVitaminAGet.cs" />
+    <Compile Include="HisVitaminA\HisVitaminAManagerView.cs" />
+    <Compile Include="HisVitaminA\HisVitaminAViewFilterQuery.cs" />
+    <Compile Include="HisVitaminA\HisVitaminAManager.cs" />
+    <Compile Include="HisWorkPlace\HisWorkPlaceFilterQuery.cs" />
+    <Compile Include="HisWorkPlace\HisWorkPlaceGet.cs" />
+    <Compile Include="HisWorkPlace\HisWorkPlaceManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MOS.Filter\MOS.Filter.csproj">
+      <Project>{cd9aaed8-b621-4075-91f7-ededa6531b46}</Project>
+      <Name>MOS.Filter</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\PostSharp.4.2.22\tools\PostSharp.targets" Condition="Exists('..\packages\PostSharp.4.2.22\tools\PostSharp.targets')" />
+  <Target Name="EnsurePostSharpImported" BeforeTargets="BeforeBuild" Condition="'$(PostSharp30Imported)' == ''">
+    <Error Condition="!Exists('..\packages\PostSharp.4.2.22\tools\PostSharp.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://www.postsharp.net/links/nuget-restore." />
+    <Error Condition="Exists('..\packages\PostSharp.4.2.22\tools\PostSharp.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://www.postsharp.net/links/nuget-restore." />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

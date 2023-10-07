@@ -1,0 +1,608 @@
+using MOS.MANAGER.HisTreatmentEndType;
+using MOS.MANAGER.HisTreatment;
+using MOS.MANAGER.HisSereServ;
+using MOS.MANAGER.HisDepartment;
+using MOS.MANAGER.HisBranch;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Inventec.Common.FlexCellExport;
+using Inventec.Common.Logging;
+using Inventec.Core;
+using MOS.EFMODEL.DataModels;
+using MOS.Filter;
+using MRS.MANAGER.Base;
+using MRS.MANAGER.Core.MrsReport;
+using MOS.MANAGER.HisInvoice;
+using MOS.MANAGER.HisInvoiceDetail;
+using MOS.MANAGER.HisHeinApproval;
+using MRS.MANAGER.Config;
+using HIS.Common.Treatment;
+using System.Reflection;
+
+namespace MRS.Processor.Mrs00540
+{
+    public class Mrs00540Processor : AbstractProcessor
+    {
+        List<Mrs00540RDO> ListRdo = new List<Mrs00540RDO>();
+        List<V_HIS_HEIN_APPROVAL> ListHeinApproval = new List<V_HIS_HEIN_APPROVAL>();
+        List<HIS_MATERIAL_TYPE> listMaterialType = new List<HIS_MATERIAL_TYPE>();
+        Dictionary<long, Mrs00540RDO> dicRdo = new Dictionary<long, Mrs00540RDO>();
+        Dictionary<long, TREATMENT_PRICE> dicTreatmentPrice = new Dictionary<long, TREATMENT_PRICE>();
+        Mrs00540Filter castFilter = null;
+        string MaterialPriceOption = "";
+        HIS_BRANCH _Branch = null;
+
+        public Mrs00540Processor(CommonParam param, string reportTypeCode)
+            : base(param, reportTypeCode)
+        {
+        }
+
+        public override Type FilterType()
+        {
+            return typeof(Mrs00540Filter);
+        }
+
+        string NumDigits = NumDigitsOptionCFG.NUM_DIGITS_OPTION_VALUE;
+		protected override bool GetData()
+		{
+            bool result = true;
+            CommonParam paramGet = new CommonParam();
+            try
+            {
+                castFilter = ((Mrs00540Filter)this.reportFilter);
+                MaterialPriceOption = MaterialPriceOptionCFG.MATERIAL_PRICE_OPTION_VALUE;
+                HisHeinApprovalViewFilterQuery approvalFilter = new HisHeinApprovalViewFilterQuery();
+                approvalFilter.EXECUTE_TIME_FROM = castFilter.TIME_FROM;
+                approvalFilter.EXECUTE_TIME_TO = castFilter.TIME_TO;
+                approvalFilter.BRANCH_ID = castFilter.BRANCH_ID;
+                approvalFilter.BRANCH_IDs = castFilter.BRANCH_IDs;
+                
+                approvalFilter.ORDER_DIRECTION = "ASC";
+                approvalFilter.ORDER_FIELD = "EXECUTE_TIME";
+                ListHeinApproval = new HisHeinApprovalManager(paramGet).GetView(approvalFilter);
+
+                
+
+                //ListHeinApproval = new HisHeinApprovalManager(paramGet).GetView(approvalFilter);
+
+                //if (castFilter.REQUEST_LOGINNAMEs != null && castFilter.REQUEST_LOGINNAMEs.Count > 0 && ListHeinApproval != null && ListHeinApproval.Count > 0)
+                //{
+                //    ListHeinApproval = ListHeinApproval.Where(o => castFilter.REQUEST_LOGINNAMEs.Contains(o.EXECUTE_LOGINNAME)).ToList();
+                //}
+
+                
+
+                if (castFilter.CASHIER_LOGINNAMEs != null && castFilter.CASHIER_LOGINNAMEs.Count > 0 && ListHeinApproval != null && ListHeinApproval.Count > 0)
+                {
+                    ListHeinApproval = ListHeinApproval.Where(o => castFilter.CASHIER_LOGINNAMEs.Contains(o.EXECUTE_LOGINNAME)).ToList();
+                }
+
+                MOS.MANAGER.HisMaterialType.HisMaterialTypeFilterQuery mateFilter = new MOS.MANAGER.HisMaterialType.HisMaterialTypeFilterQuery();
+                Inventec.Common.Logging.LogSystem.Info("ListHeinApproval" + ListHeinApproval.Count);
+                listMaterialType = new MOS.MANAGER.HisMaterialType.HisMaterialTypeManager(paramGet).Get(mateFilter);
+                if (paramGet.HasException)
+                {
+                    throw new DataMisalignedException("Co loi xay ra trong qua trinh lay du lieu V_HIS_HEIN_APPROVAL, Mrs00540");
+                }
+            }
+            catch (Exception ex)
+            {
+                Inventec.Common.Logging.LogSystem.Error(ex);
+                result = false;
+            }
+            return result;
+        }
+
+        protected override bool ProcessData()
+        {
+            bool result = true;
+            try
+            {
+                if (IsNotNullOrEmpty(ListHeinApproval))
+                {
+                    CommonParam paramGet = new CommonParam();
+                    int start = 0;
+                    int count = ListHeinApproval.Count;
+                    while (count > 0)
+                    {
+                        int limit = (count <= ManagerConstant.MAX_REQUEST_LENGTH_PARAM) ? count : ManagerConstant.MAX_REQUEST_LENGTH_PARAM;
+                        var hisHeinApprovals = ListHeinApproval.Skip(start).Take(limit).ToList();
+
+                        HisSereServView3FilterQuery ssFilter = new HisSereServView3FilterQuery();
+                        //ssFilter.HEIN_APPROVAL_IDs = hisHeinApprovals.Select(s => s.ID).ToList();
+                        ssFilter.TREATMENT_IDs = hisHeinApprovals.Select(s => s.TREATMENT_ID).Distinct().ToList();
+                        List<V_HIS_SERE_SERV_3> ListSereServ = new MOS.MANAGER.HisSereServ.HisSereServManager(paramGet).GetView3(ssFilter);
+
+                        //cap nhat du lieu tien benh nhan
+                        AddToTreatmentPrice(ListSereServ);
+
+                        var heinApprovalIds = hisHeinApprovals.Select(s => s.ID).ToList();
+                        if (ListSereServ != null)
+                        {
+                            ListSereServ = ListSereServ.Where(o => heinApprovalIds.Contains(o.HEIN_APPROVAL_ID??0) && o.VIR_TOTAL_HEIN_PRICE > 0).ToList();
+                        }
+                        if (castFilter.REQUEST_LOGINNAMEs != null && castFilter.REQUEST_LOGINNAMEs.Count > 0 && ListSereServ != null && ListSereServ.Count > 0)
+                        {
+                            ListSereServ = ListSereServ.Where(ss => castFilter.REQUEST_LOGINNAMEs.Contains(ss.TDL_REQUEST_LOGINNAME)).ToList();
+                        }
+                        var heinapprovalIDs = ListSereServ.Select(ss => ss.HEIN_APPROVAL_ID).ToList();
+                        hisHeinApprovals = hisHeinApprovals.Where(ss => heinapprovalIDs.Contains(ss.ID)).ToList();
+
+                        HisTreatmentViewFilterQuery treatmentFilter = new HisTreatmentViewFilterQuery();
+                        treatmentFilter.IDs = hisHeinApprovals.Select(s => s.TREATMENT_ID).ToList().Distinct().ToList();
+                        List<V_HIS_TREATMENT> ListTreatment = new MOS.MANAGER.HisTreatment.HisTreatmentManager(paramGet).GetView(treatmentFilter);
+
+                        if (castFilter.END_DEPARTMENT_IDs != null && castFilter.END_DEPARTMENT_IDs.Count > 0 && ListHeinApproval != null && ListHeinApproval.Count > 0)
+
+                        //1. lọc chỉ lấy các ListTreatment có END_DEPARTMENT_ID trong tập filter.END_DEPARTMENT_IDs
+                        {
+                            ListTreatment = ListTreatment.Where(tr => castFilter.END_DEPARTMENT_IDs.Contains(tr.END_DEPARTMENT_ID ?? 0)).ToList();
+
+                            ////2. lọc chỉ lấy các hisHeinApprovals có TREATMENT_ID trong tập ListTreatment đã xử lý ở 1.
+                            var treatmentIDs = ListTreatment.Select(o => o.ID).ToList();
+                            hisHeinApprovals = hisHeinApprovals.Where(o => treatmentIDs.Contains(o.TREATMENT_ID)).ToList();
+                        }
+                        if (paramGet.HasException)
+                        {
+                            throw new DataMisalignedException("Co exception xay ra tai DAOGET trong qua trinh tong hop du lieu Mrs00540.");
+                        }
+                        GeneralDataByListHeinApproval(hisHeinApprovals, ListSereServ, ListTreatment);
+                        start += ManagerConstant.MAX_REQUEST_LENGTH_PARAM;
+                        count -= ManagerConstant.MAX_REQUEST_LENGTH_PARAM;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                result = false;
+                Inventec.Common.Logging.LogSystem.Error(ex);
+            }
+            return result;
+        }
+
+        private void AddToTreatmentPrice(List<V_HIS_SERE_SERV_3> ListSereServ)
+        {
+            var groupByTreatmentId = ListSereServ.GroupBy(o=>o.TDL_TREATMENT_ID??0).ToList();
+
+            foreach (var item in groupByTreatmentId)
+            {
+                if (dicTreatmentPrice.ContainsKey(item.Key))//<#Aggregate(Sum;TreatmentPrice;<#Evaluate(<#TreatmentPrice.TOTAL_PRICE;>-<#TreatmentPrice.TOTAL_PRICE_BHYT;>-<#TreatmentPrice.DIF_PRIMARY_PRICE;>)>)>	<#Aggregate(Sum;TreatmentPrice;<#Evaluate(<#TreatmentPrice.DIF_PRIMARY_PRICE;>)>)>
+
+                { 
+                    continue;
+                }
+                dicTreatmentPrice[item.Key] = new TREATMENT_PRICE();
+                dicTreatmentPrice[item.Key].DIF_PRIMARY_PRICE = item.Where(ss => ss.PRIMARY_PATIENT_TYPE_ID != null && (ss.PRIMARY_PRICE ?? 0) > (ss.LIMIT_PRICE ?? 0)).Sum(ss => ss.AMOUNT * ((ss.PRIMARY_PRICE ?? 0) - (ss.LIMIT_PRICE ?? 0)));
+                dicTreatmentPrice[item.Key].TOTAL_PRICE = item.Sum(o => o.VIR_TOTAL_PRICE ?? 0);
+                dicTreatmentPrice[item.Key].DIC_HSVT_TOTAL_PRICE = item.GroupBy(o=>o.HEIN_SERVICE_TYPE_CODE??"NONE").ToDictionary(p=>p.Key,q=>q.Sum(o => o.VIR_TOTAL_PRICE ?? 0));
+            }
+        }
+
+        private void GeneralDataByListHeinApproval(List<V_HIS_HEIN_APPROVAL> hisHeinApprovals, List<V_HIS_SERE_SERV_3> ListSereServ, List<V_HIS_TREATMENT> ListTreatment)
+        {
+            try
+            {
+                if (IsNotNullOrEmpty(hisHeinApprovals))
+                {
+                    Dictionary<long, V_HIS_TREATMENT> dicTreatment = new Dictionary<long, V_HIS_TREATMENT>();
+                    Dictionary<long, List<V_HIS_SERE_SERV_3>> dicSereServ = new Dictionary<long, List<V_HIS_SERE_SERV_3>>();
+
+                    if (IsNotNullOrEmpty(ListTreatment))
+                    {
+                        foreach (var treatment in ListTreatment)
+                        {
+                            dicTreatment[treatment.ID] = treatment;
+                        }
+                    }
+
+                    if (IsNotNullOrEmpty(ListSereServ))
+                    {
+                        foreach (var sere in ListSereServ)
+                        {
+                            if (sere.IS_EXPEND != IMSys.DbConfig.HIS_RS.COMMON.IS_ACTIVE__TRUE && sere.AMOUNT > 0 && sere.HEIN_APPROVAL_ID.HasValue && sere.IS_NO_EXECUTE != IMSys.DbConfig.HIS_RS.COMMON.IS_ACTIVE__TRUE && sere.PRICE != 0)
+                            {
+                                if (!dicSereServ.ContainsKey(sere.HEIN_APPROVAL_ID.Value))
+                                    dicSereServ[sere.HEIN_APPROVAL_ID.Value] = new List<V_HIS_SERE_SERV_3>();
+                                dicSereServ[sere.HEIN_APPROVAL_ID.Value].Add(sere);
+                            }
+                        }
+                    }
+
+                    foreach (var heinApproval in hisHeinApprovals)
+                    {
+                        if ((castFilter.TREATMENT_TYPE_IDs == null && heinApproval.HEIN_TREATMENT_TYPE_CODE == MOS.LibraryHein.Bhyt.HeinTreatmentType.HeinTreatmentTypeCode.TREAT || castFilter.TREATMENT_TYPE_IDs != null && castFilter.TREATMENT_TYPE_IDs.Contains(heinApproval.TREATMENT_TYPE_ID)) && CheckHeinCardNumberType(heinApproval.HEIN_CARD_NUMBER))
+                        {
+                            this._Branch = HisBranchCFG.HisBranchs.FirstOrDefault(o => o.ID == heinApproval.BRANCH_ID);
+
+
+                            if (dicSereServ.ContainsKey(heinApproval.ID))
+                            {
+                                var existsedRdo = ListRdo.FirstOrDefault(o => o.TREATMENT_CODE == heinApproval.TREATMENT_CODE && o.HEIN_CARD_NUMBER == heinApproval.HEIN_CARD_NUMBER && o.HEIN_CARD_TO_TIME == heinApproval.HEIN_CARD_TO_TIME);
+                                if (existsedRdo != null)
+                                {
+                                    int id = ListRdo.IndexOf(existsedRdo);
+                                    ProcessTotalPrice(ListRdo[id], dicSereServ[heinApproval.ID]);
+                                }
+                                else
+                                {
+                                    Mrs00540RDO rdo = new Mrs00540RDO(heinApproval);
+                                    //Loai kham chua benh:(1: kham benh;  2: dieu tri ngoai tru;  3: dieu tri noi tru
+                                    if (heinApproval.TREATMENT_TYPE_ID == IMSys.DbConfig.HIS_RS.HIS_TREATMENT_TYPE.ID__KHAM)
+                                    {
+                                        rdo.TREATMENT_TYPE_CODE = "1";
+                                    }
+                                    else if (heinApproval.TREATMENT_TYPE_ID == IMSys.DbConfig.HIS_RS.HIS_TREATMENT_TYPE.ID__DTNGOAITRU)
+                                    {
+                                        rdo.TREATMENT_TYPE_CODE = "2";
+                                    }
+                                    else if (heinApproval.TREATMENT_TYPE_ID == IMSys.DbConfig.HIS_RS.HIS_TREATMENT_TYPE.ID__DTNOITRU)
+                                    {
+                                        rdo.TREATMENT_TYPE_CODE = "3";
+                                    }
+                                    else
+                                        rdo.TREATMENT_TYPE_CODE = "";
+                                    if (dicTreatment.ContainsKey(heinApproval.TREATMENT_ID))
+                                    {
+                                        var treatment = dicTreatment[heinApproval.TREATMENT_ID];
+                                        rdo.ICD_CODE_MAIN = treatment.ICD_CODE;
+                                        rdo.IN_TIME_STR = treatment.IN_TIME.ToString().Substring(0, 12);
+                                        if (treatment.OUT_TIME.HasValue)
+                                        {
+                                            rdo.MAIN_DAY = CountDay(treatment);
+                                        }
+
+                                        if (treatment.OUT_TIME.HasValue && treatment.CLINICAL_IN_TIME.HasValue)
+                                        {
+                                            rdo.OPEN_TIME_SEPARATE_STR = treatment.CLINICAL_IN_TIME.Value.ToString().Substring(0, 12);
+                                            rdo.CLOSE_TIME_SEPARATE_STR = treatment.OUT_TIME.Value.ToString().Substring(0, 12);
+                                            //rdo.TOTAL_DAY = HIS.Treatment.DateTime.Calculation.DayOfTreatment(treatment.CLINICAL_IN_TIME.Value, treatment.OUT_TIME.Value);
+
+                                            rdo.TOTAL_DAY = CountDay(treatment);
+                                        }
+                                        else if (treatment.CLINICAL_IN_TIME.HasValue)
+                                        {
+                                            rdo.OPEN_TIME_SEPARATE_STR = treatment.CLINICAL_IN_TIME.Value.ToString().Substring(0, 12);
+                                        }
+
+                                        if (treatment.END_DEPARTMENT_ID.HasValue)
+                                        {
+                                            var departmentCodeBHYT = MRS.MANAGER.Config.HisDepartmentCFG.DEPARTMENTs.FirstOrDefault(o => o.ID == treatment.END_DEPARTMENT_ID);
+                                            if (departmentCodeBHYT != null)
+                                            {
+                                                rdo.DEPARTMENT_CODE = departmentCodeBHYT.BHYT_CODE;
+                                                rdo.END_DEPARTMENT_NAME = departmentCodeBHYT.DEPARTMENT_NAME;
+                                            }
+                                        }
+
+                                        //Ket qua dieu tri: 1: Khỏi;  2: Đỡ;  3: Không thay đổi;  4: Nặng hơn;  5: Tử vong
+                                        if (treatment.TREATMENT_RESULT_ID == IMSys.DbConfig.HIS_RS.HIS_TREATMENT_RESULT.ID__KHOI)
+                                        {
+                                            rdo.TREATMENT_RESULT_CODE = "1";
+                                        }
+                                        else if (treatment.TREATMENT_RESULT_ID == IMSys.DbConfig.HIS_RS.HIS_TREATMENT_RESULT.ID__DO)
+                                        {
+                                            rdo.TREATMENT_RESULT_CODE = "2";
+                                        }
+                                        else if (treatment.TREATMENT_RESULT_ID == IMSys.DbConfig.HIS_RS.HIS_TREATMENT_RESULT.ID__KTD)
+                                        {
+                                            rdo.TREATMENT_RESULT_CODE = "3";
+                                        }
+                                        else if (treatment.TREATMENT_RESULT_ID == IMSys.DbConfig.HIS_RS.HIS_TREATMENT_RESULT.ID__NANG)
+                                        {
+                                            rdo.TREATMENT_RESULT_CODE = "4";
+                                        }
+                                        else if (treatment.TREATMENT_RESULT_ID == IMSys.DbConfig.HIS_RS.HIS_TREATMENT_RESULT.ID__CHET)
+                                        {
+                                            rdo.TREATMENT_RESULT_CODE = "5";
+                                        }
+                                        //Tinh trang ra vien: 1: Ra viện;  2: Chuyển viện;  3: Trốn viện;  4: Xin ra viện
+                                        if (treatment.TREATMENT_END_TYPE_ID == MRS.MANAGER.Config.HisTreatmentEndType_BHYTCFG.TREATMENT_END_TYPE_ID__RAVIEN)
+                                        {
+                                            rdo.TREATMENT_END_TYPE_CODE = "1";
+                                        }
+                                        else if (treatment.TREATMENT_END_TYPE_ID == MRS.MANAGER.Config.HisTreatmentEndType_BHYTCFG.TREATMENT_END_TYPE_ID__CHUYENVIEN)
+                                        {
+                                            rdo.TREATMENT_END_TYPE_CODE = "2";
+                                        }
+                                        else if (treatment.TREATMENT_END_TYPE_ID == MRS.MANAGER.Config.HisTreatmentEndType_BHYTCFG.TREATMENT_END_TYPE_ID__TRONVIEN)
+                                        {
+                                            rdo.TREATMENT_END_TYPE_CODE = "3";
+                                        }
+                                        else if (treatment.TREATMENT_END_TYPE_ID == MRS.MANAGER.Config.HisTreatmentEndType_BHYTCFG.TREATMENT_END_TYPE_ID__XINRAVIEN)
+                                        {
+                                            rdo.TREATMENT_END_TYPE_CODE = "4";
+                                        }
+                                        rdo.ICD_CODE_EXTRA = treatment.ICD_SUB_CODE; //
+                                    }
+                                    rdo.CURRENT_MEDI_ORG_CODE = this._Branch.HEIN_MEDI_ORG_CODE;
+                                    rdo.MEDI_ORG_FROM_CODE = dicTreatment[heinApproval.TREATMENT_ID].TRANSFER_IN_MEDI_ORG_CODE;
+
+
+                                    ProcessTotalPrice(rdo, dicSereServ[heinApproval.ID]);
+
+                                    //khong co gia thi bo qua
+                                    if (!CheckPrice(rdo)) continue;
+
+                                    #region them vao datatable dictionary theo treatment
+                                    if (dicRdo.ContainsKey(heinApproval.TREATMENT_ID))
+                                    {
+                                        dicRdo[heinApproval.TREATMENT_ID].HEIN_CARD_NUMBER += ";" + rdo.HEIN_CARD_NUMBER;
+                                        ProcessTotalPrice(dicRdo[heinApproval.TREATMENT_ID], dicSereServ[heinApproval.ID]);
+                                    }
+                                    else
+                                    {
+                                        dicRdo[heinApproval.TREATMENT_ID] = new Mrs00540RDO();
+                                        Inventec.Common.Mapper.DataObjectMapper.Map<Mrs00540RDO>(dicRdo[heinApproval.TREATMENT_ID], rdo);
+                                    }
+                                    #endregion
+
+
+                                    ListRdo.Add(rdo);
+                                    UpdateTreatmentPrice(rdo);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Inventec.Common.Logging.LogSystem.Error(ex);
+            }
+        }
+
+        private void UpdateTreatmentPrice(Mrs00540RDO rdo)
+        {
+            if (dicTreatmentPrice.ContainsKey(rdo.TREATMENT_ID))
+            {
+                dicTreatmentPrice[rdo.TREATMENT_ID].TOTAL_PRICE_BHYT += rdo.TOTAL_PRICE;
+                if (dicTreatmentPrice[rdo.TREATMENT_ID].HEIN_APPROVAL_CODE == null)
+                {
+                    dicTreatmentPrice[rdo.TREATMENT_ID].HEIN_APPROVAL_CODE = rdo.HEIN_APPROVAL_CODE;
+                }
+            }
+        }
+
+        private void ProcessTotalPrice(Mrs00540RDO rdo, List<V_HIS_SERE_SERV_3> hisSereServs)
+        {
+            try
+            {
+                foreach (var sereServ in hisSereServs)
+                {
+                    if (!sereServ.TDL_TREATMENT_ID.HasValue)
+                        continue;
+                    if (sereServ.IS_NO_EXECUTE == 1 || sereServ.IS_EXPEND == 1)
+                        continue;
+                    var TotalPriceTreatment = Mrs.Bhyt.PayRateAndTotalPrice.Caculator.TotalPrice(NumDigits,sereServ, HisBranchCFG.HisBranchs.FirstOrDefault(o => o.ID == rdo.BRANCH_ID) ?? new HIS_BRANCH(), MaterialPriceOption == "1");
+
+
+                    if (sereServ.TDL_HEIN_SERVICE_TYPE_ID != null)
+                    {
+                        if (sereServ.TDL_HEIN_SERVICE_TYPE_ID == IMSys.DbConfig.HIS_RS.HIS_HEIN_SERVICE_TYPE.ID__XN)
+                        {
+                            rdo.TEST_PRICE += TotalPriceTreatment;
+                        }
+                        else if (sereServ.TDL_HEIN_SERVICE_TYPE_ID == IMSys.DbConfig.HIS_RS.HIS_HEIN_SERVICE_TYPE.ID__CDHA || sereServ.TDL_HEIN_SERVICE_TYPE_ID == IMSys.DbConfig.HIS_RS.HIS_HEIN_SERVICE_TYPE.ID__TDCN)
+                        {
+                            rdo.DIIM_PRICE += TotalPriceTreatment;
+                        }
+                        else if (sereServ.TDL_HEIN_SERVICE_TYPE_ID == IMSys.DbConfig.HIS_RS.HIS_HEIN_SERVICE_TYPE.ID__TH_TDM || sereServ.TDL_HEIN_SERVICE_TYPE_ID == IMSys.DbConfig.HIS_RS.HIS_HEIN_SERVICE_TYPE.ID__TH_NDM)
+                        {
+                            rdo.MEDICINE_PRICE += TotalPriceTreatment;
+                        }
+                        else if (sereServ.TDL_HEIN_SERVICE_TYPE_ID == IMSys.DbConfig.HIS_RS.HIS_HEIN_SERVICE_TYPE.ID__MAU)
+                        {
+                            rdo.BLOOD_PRICE += TotalPriceTreatment;
+                        }
+                        else if (sereServ.TDL_HEIN_SERVICE_TYPE_ID == IMSys.DbConfig.HIS_RS.HIS_HEIN_SERVICE_TYPE.ID__PTTT)
+                        {
+                            rdo.SURGMISU_PRICE += TotalPriceTreatment;
+                            if (sereServ.TDL_SERVICE_TYPE_ID == IMSys.DbConfig.HIS_RS.HIS_SERVICE_TYPE.ID__PT)
+                            {
+                                rdo.SURG_PRICE += TotalPriceTreatment;
+                            }
+                        }
+                        else if (sereServ.TDL_HEIN_SERVICE_TYPE_ID == IMSys.DbConfig.HIS_RS.HIS_HEIN_SERVICE_TYPE.ID__VT_TDM || sereServ.TDL_HEIN_SERVICE_TYPE_ID == IMSys.DbConfig.HIS_RS.HIS_HEIN_SERVICE_TYPE.ID__VT_NDM)
+                        {
+                            rdo.MATERIAL_PRICE += TotalPriceTreatment;
+                        }
+                        else if (sereServ.TDL_HEIN_SERVICE_TYPE_ID == IMSys.DbConfig.HIS_RS.HIS_HEIN_SERVICE_TYPE.ID__VT_TL || sereServ.TDL_HEIN_SERVICE_TYPE_ID == IMSys.DbConfig.HIS_RS.HIS_HEIN_SERVICE_TYPE.ID__VT_TT)
+                        {
+                            rdo.MATERIAL_PRICE_RATIO += TotalPriceTreatment;
+                        }
+                        else if (sereServ.TDL_HEIN_SERVICE_TYPE_ID == IMSys.DbConfig.HIS_RS.HIS_HEIN_SERVICE_TYPE.ID__TH_TL || sereServ.TDL_HEIN_SERVICE_TYPE_ID == IMSys.DbConfig.HIS_RS.HIS_HEIN_SERVICE_TYPE.ID__TH_UT)
+                        {
+                            rdo.MEDICINE_PRICE_RATIO += TotalPriceTreatment;
+                        }
+                        else if (sereServ.TDL_HEIN_SERVICE_TYPE_ID == IMSys.DbConfig.HIS_RS.HIS_HEIN_SERVICE_TYPE.ID__GI_NT || sereServ.TDL_HEIN_SERVICE_TYPE_ID == IMSys.DbConfig.HIS_RS.HIS_HEIN_SERVICE_TYPE.ID__GI_NGT || sereServ.TDL_HEIN_SERVICE_TYPE_ID == IMSys.DbConfig.HIS_RS.HIS_HEIN_SERVICE_TYPE.ID__GI_BN || sereServ.TDL_HEIN_SERVICE_TYPE_ID == IMSys.DbConfig.HIS_RS.HIS_HEIN_SERVICE_TYPE.ID__GI_L)
+                        {
+                            rdo.BED_PRICE += TotalPriceTreatment;
+                        }
+                        else if (sereServ.TDL_HEIN_SERVICE_TYPE_ID == IMSys.DbConfig.HIS_RS.HIS_HEIN_SERVICE_TYPE.ID__KH)
+                        {
+                            rdo.EXAM_PRICE += TotalPriceTreatment;
+                        }
+                        else if (sereServ.TDL_HEIN_SERVICE_TYPE_ID == IMSys.DbConfig.HIS_RS.HIS_HEIN_SERVICE_TYPE.ID__DVKTC)
+                        {
+                            rdo.SERVICE_PRICE_RATIO += TotalPriceTreatment;
+                        }
+                        else if (sereServ.TDL_HEIN_SERVICE_TYPE_ID == IMSys.DbConfig.HIS_RS.HIS_HEIN_SERVICE_TYPE.ID__VC)
+                        {
+                            rdo.TRAN_PRICE += TotalPriceTreatment;
+                        }
+                        else if (sereServ.TDL_HEIN_SERVICE_TYPE_ID == IMSys.DbConfig.HIS_RS.HIS_HEIN_SERVICE_TYPE.ID__TT)
+                        {
+                            rdo.TT_PRICE += TotalPriceTreatment;
+                        }
+                        else
+                        {
+                            if (!rdo.DIC_OTHER_HSVT_PRICE.ContainsKey((sereServ.TDL_HEIN_SERVICE_TYPE_ID ?? 0).ToString()))
+                            {
+                                rdo.DIC_OTHER_HSVT_PRICE[(sereServ.TDL_HEIN_SERVICE_TYPE_ID ?? 0).ToString()] = TotalPriceTreatment;
+                            }
+                            else
+                            {
+                                rdo.DIC_OTHER_HSVT_PRICE[(sereServ.TDL_HEIN_SERVICE_TYPE_ID ?? 0).ToString()] += TotalPriceTreatment;
+                            }
+                        }
+                        rdo.TOTAL_PRICE += TotalPriceTreatment;
+
+                        rdo.TOTAL_PATIENT_PRICE += Math.Round(TotalPriceTreatment - (sereServ.VIR_TOTAL_HEIN_PRICE ?? 0), 2);
+                        rdo.TOTAL_HEIN_PRICE += TotalPriceTreatment - Math.Round(TotalPriceTreatment - (sereServ.VIR_TOTAL_HEIN_PRICE ?? 0), 2);
+                        rdo.TOTAL_OTHER_SOURCE_PRICE += (sereServ.OTHER_SOURCE_PRICE ?? 0) * sereServ.AMOUNT;
+                    }
+                }
+                if (checkBhytNsd(rdo))
+                {
+                    rdo.TOTAL_HEIN_PRICE_NDS = rdo.TOTAL_HEIN_PRICE;
+                    rdo.TOTAL_HEIN_PRICE = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                Inventec.Common.Logging.LogSystem.Error(ex);
+            }
+        }
+
+        private bool CheckPrice(Mrs00540RDO rdo)
+        {
+            bool result = false;
+            try
+            {
+                result = rdo.BED_PRICE > 0 || rdo.BLOOD_PRICE > 0 || rdo.DIIM_PRICE > 0 || rdo.EXAM_PRICE > 0 ||
+                    rdo.MATERIAL_PRICE > 0 || rdo.MEDICINE_PRICE > 0 || rdo.SURGMISU_PRICE > 0 || rdo.TEST_PRICE > 0 ||
+                    rdo.TOTAL_HEIN_PRICE > 0 || rdo.TOTAL_HEIN_PRICE_NDS > 0 || rdo.TOTAL_PATIENT_PRICE > 0 || rdo.TOTAL_PRICE > 0 || rdo.TRAN_PRICE > 0 || rdo.TT_PRICE > 0;
+            }
+            catch (Exception ex)
+            {
+                result = false;
+                Inventec.Common.Logging.LogSystem.Error(ex);
+            }
+            return result;
+        }
+
+        private bool CheckHeinCardNumberType(string HeinCardNumber)
+        {
+            bool result = false;
+            try
+            {
+                if (!String.IsNullOrEmpty(HeinCardNumber))
+                {
+                    result = true;
+                    if (IsNotNullOrEmpty(MANAGER.Config.HeinCardNumberTypeCFG.HeinCardNumber__HeinType__All))
+                    {
+                        foreach (var type in MANAGER.Config.HeinCardNumberTypeCFG.HeinCardNumber__HeinType__All)
+                        {
+                            if (HeinCardNumber.StartsWith(type))
+                            {
+                                result = false;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Inventec.Common.Logging.LogSystem.Error(ex);
+                result = false;
+            }
+            return result;
+        }
+
+        private bool checkBhytNsd(Mrs00540RDO rdo)
+        {
+            bool result = false;
+            try
+            {
+                if (MRS.MANAGER.Config.ReportBhytNdsIcdCodeCFG.ReportBhytNdsIcdCode__Other.Contains(rdo.ICD_CODE_MAIN))
+                {
+                    result = true;
+                }
+                else if (!String.IsNullOrEmpty(rdo.ICD_CODE_MAIN))
+                {
+                    if (rdo.HEIN_CARD_NUMBER.Substring(0, 2).Equals("TE") && MRS.MANAGER.Config.ReportBhytNdsIcdCodeCFG.ReportBhytNdsIcdCode__Te.Contains(rdo.ICD_CODE_MAIN.Substring(0, 3)))
+                    {
+                        result = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Inventec.Common.Logging.LogSystem.Error(ex);
+            }
+            return result;
+        }
+
+        private long CountDay(V_HIS_TREATMENT treatment)
+        {
+            long result = 0;
+            try
+            {
+                PropertyInfo p = typeof(V_HIS_TREATMENT).GetProperty("TREATMENT_DAY_COUNT");
+                if (p != null)
+                {
+                    var DayCount = p.GetValue(treatment);
+                    if (DayCount != null)
+                    {
+                        result = Int64.Parse(DayCount.ToString());
+                    }
+                    else
+                    {
+                        result = Calculation.DayOfTreatment(treatment.CLINICAL_IN_TIME.HasValue ? treatment.CLINICAL_IN_TIME : treatment.IN_TIME, treatment.OUT_TIME, treatment.TREATMENT_END_TYPE_ID, treatment.TREATMENT_RESULT_ID, treatment.TDL_HEIN_CARD_NUMBER != null ? PatientTypeEnum.TYPE.BHYT : PatientTypeEnum.TYPE.THU_PHI) ?? 0;
+                    }
+                }
+                else
+                {
+                    result = Calculation.DayOfTreatment(treatment.CLINICAL_IN_TIME.HasValue ? treatment.CLINICAL_IN_TIME : treatment.IN_TIME, treatment.OUT_TIME, treatment.TREATMENT_END_TYPE_ID, treatment.TREATMENT_RESULT_ID, treatment.TDL_HEIN_CARD_NUMBER != null ? PatientTypeEnum.TYPE.BHYT : PatientTypeEnum.TYPE.THU_PHI) ?? 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                Inventec.Common.Logging.LogSystem.Error(ex);
+                result = 0;
+            }
+            return result;
+        }
+
+
+        protected override void SetTag(Dictionary<string, object> dicSingleTag, ProcessObjectTag objectTag, Store store)
+        {
+            try
+            {
+                if (castFilter.TIME_FROM > 0)
+                {
+                    dicSingleTag.Add("EXECUTE_DATE_FROM_STR", Inventec.Common.DateTime.Convert.TimeNumberToDateString(castFilter.TIME_FROM));
+                }
+
+                if (castFilter.TIME_TO > 0)
+                {
+                    dicSingleTag.Add("EXECUTE_DATE_TO_STR", Inventec.Common.DateTime.Convert.TimeNumberToDateString(castFilter.TIME_TO));
+                }
+
+                bool exportSuccess = true;
+                if (castFilter.IS_MERGE_TREATMENT == true)
+                {
+                    exportSuccess = exportSuccess && objectTag.AddObjectData(store, "Report", dicRdo.Values.ToList());
+                }
+                else
+                {
+                    exportSuccess = exportSuccess && objectTag.AddObjectData(store, "Report", ListRdo);
+                }
+                exportSuccess = exportSuccess && objectTag.AddObjectData(store, "ReportTreatment", dicRdo.Values.ToList());
+
+
+                exportSuccess = exportSuccess && objectTag.AddObjectData(store, "TreatmentPrice", dicTreatmentPrice.Values.ToList());
+                exportSuccess = exportSuccess && objectTag.AddRelationship(store, "Report", "TreatmentPrice", "HEIN_APPROVAL_CODE", "HEIN_APPROVAL_CODE");
+                exportSuccess = exportSuccess && objectTag.AddRelationship(store, "ReportTreatment", "TreatmentPrice", "HEIN_APPROVAL_CODE", "HEIN_APPROVAL_CODE");
+            }
+            catch (Exception ex)
+            {
+                Inventec.Common.Logging.LogSystem.Error(ex);
+            }
+        }
+    }
+}

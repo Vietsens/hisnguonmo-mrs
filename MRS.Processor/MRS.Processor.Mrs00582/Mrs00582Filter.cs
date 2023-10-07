@@ -1,0 +1,41 @@
+using MOS.Filter;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks; 
+
+namespace MRS.Processor.Mrs00582
+{
+    public class Mrs00582Filter 
+    {
+        public long? REPORT_TYPE_CAT_ID { get; set; }
+        public long? BRANCH_ID { get; set; }
+        public List<long> REPORT_TYPE_CAT_IDs { get; set; }
+        public bool? HAS_RESULT { get; set; }
+
+        public long? EXECUTE_DEPARTMENT_ID { get; set; }
+        public long? EXECUTE_ROOM_ID { get; set; }
+        public List<long> EXECUTE_ROOM_IDs { get; set; }
+        public long? FINISH_TIME_FROM { get; set; }
+        public long? FINISH_TIME_TO { get; set; }
+        public long? INTRUCTION_DATE_FROM { get; set; }
+        public long? INTRUCTION_DATE_TO { get; set; }
+        public long? INTRUCTION_TIME_FROM { get; set; }
+        public long? INTRUCTION_TIME_TO { get; set; }
+        public List<long> NOT_IN_SERVICE_REQ_TYPE_IDs { get; set; }
+        public long? REQUEST_DEPARTMENT_ID { get; set; }
+        public long? REQUEST_ROOM_ID { get; set; }
+        public List<long> REQUEST_ROOM_IDs { get; set; }
+        public long? SERVICE_REQ_STT_ID { get; set; }
+        public List<long> SERVICE_REQ_STT_IDs { get; set; }
+        public long? SERVICE_REQ_TYPE_ID { get; set; }
+        public List<long> SERVICE_REQ_TYPE_IDs { get; set; }
+        public long? START_TIME_FROM { get; set; }
+        public long? START_TIME_TO { get; set; }
+        public string TREATMENT_CODE__EXACT { get; set; }
+        public long? TREATMENT_ID { get; set; }
+        public List<long> TREATMENT_IDs { get; set; }
+        public string KEY_GROUP_SV { get; set; }
+    }
+}

@@ -1,0 +1,1357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DataModels.Store" Alias="Self" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="12.1" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="SARDataModelsStoreContainer">
+          <EntitySet Name="SAR_FORM_FIELD" EntityType="DataModels.Store.SAR_FORM_FIELD" store:Type="Tables" Schema="SAR_RS" />
+          <EntitySet Name="SAR_PRINT" EntityType="DataModels.Store.SAR_PRINT" store:Type="Tables" Schema="SAR_RS" />
+          <EntitySet Name="SAR_PRINT_TYPE" EntityType="DataModels.Store.SAR_PRINT_TYPE" store:Type="Tables" Schema="SAR_RS" />
+          <EntitySet Name="SAR_REPORT" EntityType="DataModels.Store.SAR_REPORT" store:Type="Tables" Schema="SAR_RS" />
+          <EntitySet Name="SAR_REPORT_CALENDAR" EntityType="DataModels.Store.SAR_REPORT_CALENDAR" store:Type="Tables" Schema="SAR_RS" />
+          <EntitySet Name="SAR_REPORT_STT" EntityType="DataModels.Store.SAR_REPORT_STT" store:Type="Tables" Schema="SAR_RS" />
+          <EntitySet Name="SAR_REPORT_TEMPLATE" EntityType="DataModels.Store.SAR_REPORT_TEMPLATE" store:Type="Tables" Schema="SAR_RS" />
+          <EntitySet Name="SAR_REPORT_TYPE" EntityType="DataModels.Store.SAR_REPORT_TYPE" store:Type="Tables" Schema="SAR_RS" />
+          <EntitySet Name="SAR_RETY_FOFI" EntityType="DataModels.Store.SAR_RETY_FOFI" store:Type="Tables" Schema="SAR_RS" />
+          <EntitySet Name="SAR_USER_REPORT_TYPE" EntityType="DataModels.Store.SAR_USER_REPORT_TYPE" store:Type="Tables" Schema="SAR_RS" />
+          <EntitySet Name="V_SAR_REPORT" EntityType="DataModels.Store.V_SAR_REPORT" store:Type="Views" Schema="SAR_RS" />
+          <EntitySet Name="V_SAR_REPORT_TEMPLATE" EntityType="DataModels.Store.V_SAR_REPORT_TEMPLATE" store:Type="Views" Schema="SAR_RS" />
+          <EntitySet Name="V_SAR_RETY_FOFI" EntityType="DataModels.Store.V_SAR_RETY_FOFI" store:Type="Views" Schema="SAR_RS" />
+          <EntitySet Name="V_SAR_USER_REPORT_TYPE" EntityType="DataModels.Store.V_SAR_USER_REPORT_TYPE" store:Type="Views" Schema="SAR_RS" />
+          <AssociationSet Name="SAR_REPORT_CALENDAR_FK1" Association="DataModels.Store.SAR_REPORT_CALENDAR_FK1">
+            <End Role="SAR_REPORT" EntitySet="SAR_REPORT" />
+            <End Role="SAR_REPORT_CALENDAR" EntitySet="SAR_REPORT_CALENDAR" />
+          </AssociationSet>
+          <AssociationSet Name="SAR_REPORT_CALENDAR_FK2" Association="DataModels.Store.SAR_REPORT_CALENDAR_FK2">
+            <End Role="SAR_REPORT_CALENDAR" EntitySet="SAR_REPORT_CALENDAR" />
+            <End Role="SAR_REPORT_CALENDAR1" EntitySet="SAR_REPORT_CALENDAR" />
+          </AssociationSet>
+          <AssociationSet Name="SAR_REPORT_FK1" Association="DataModels.Store.SAR_REPORT_FK1">
+            <End Role="SAR_REPORT_STT" EntitySet="SAR_REPORT_STT" />
+            <End Role="SAR_REPORT" EntitySet="SAR_REPORT" />
+          </AssociationSet>
+          <AssociationSet Name="SAR_REPORT_FK2" Association="DataModels.Store.SAR_REPORT_FK2">
+            <End Role="SAR_REPORT_TYPE" EntitySet="SAR_REPORT_TYPE" />
+            <End Role="SAR_REPORT" EntitySet="SAR_REPORT" />
+          </AssociationSet>
+          <AssociationSet Name="SAR_REPORT_FK3" Association="DataModels.Store.SAR_REPORT_FK3">
+            <End Role="SAR_REPORT_TEMPLATE" EntitySet="SAR_REPORT_TEMPLATE" />
+            <End Role="SAR_REPORT" EntitySet="SAR_REPORT" />
+          </AssociationSet>
+          <AssociationSet Name="SAR_REPORT_TEMPLATE_FK1" Association="DataModels.Store.SAR_REPORT_TEMPLATE_FK1">
+            <End Role="SAR_REPORT_TYPE" EntitySet="SAR_REPORT_TYPE" />
+            <End Role="SAR_REPORT_TEMPLATE" EntitySet="SAR_REPORT_TEMPLATE" />
+          </AssociationSet>
+          <AssociationSet Name="SAR_RETY_FOFI_FK1" Association="DataModels.Store.SAR_RETY_FOFI_FK1">
+            <End Role="SAR_REPORT_TYPE" EntitySet="SAR_REPORT_TYPE" />
+            <End Role="SAR_RETY_FOFI" EntitySet="SAR_RETY_FOFI" />
+          </AssociationSet>
+          <AssociationSet Name="SAR_RETY_FOFI_FK2" Association="DataModels.Store.SAR_RETY_FOFI_FK2">
+            <End Role="SAR_FORM_FIELD" EntitySet="SAR_FORM_FIELD" />
+            <End Role="SAR_RETY_FOFI" EntitySet="SAR_RETY_FOFI" />
+          </AssociationSet>
+          <AssociationSet Name="SAR_USER_REPORT_TYPE_FK1" Association="DataModels.Store.SAR_USER_REPORT_TYPE_FK1">
+            <End Role="SAR_REPORT_TYPE" EntitySet="SAR_REPORT_TYPE" />
+            <End Role="SAR_USER_REPORT_TYPE" EntitySet="SAR_USER_REPORT_TYPE" />
+          </AssociationSet>
+        </EntityContainer>
+                <EntityType Name="SAR_FORM_FIELD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="FORM_FIELD_CODE" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="DESCRIPTION" Type="varchar2" MaxLength="4000" />
+        </EntityType>
+                <EntityType Name="SAR_PRINT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="TITLE" Type="varchar2" MaxLength="500" />
+          <Property Name="DESCRIPTION" Type="varchar2" MaxLength="2000" />
+          <Property Name="CONTENT" Type="blob" />
+        </EntityType>
+                <EntityType Name="SAR_PRINT_TYPE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="PRINT_TYPE_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="FILE_PATTERN" Type="varchar2" Nullable="false" MaxLength="200" />
+          <Property Name="PRINT_TYPE_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="IS_NO_GROUP" Type="number" Precision="2" />
+        </EntityType>
+                <EntityType Name="SAR_REPORT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="REPORT_CODE" Type="varchar2" Nullable="false" MaxLength="10" StoreGeneratedPattern="Identity" />
+          <Property Name="REPORT_NAME" Type="varchar2" MaxLength="200" />
+          <Property Name="REPORT_TYPE_ID" Type="number" Nullable="false" Precision="19" />
+          <Property Name="REPORT_STT_ID" Type="number" Nullable="false" Precision="19" />
+          <Property Name="REPORT_TEMPLATE_ID" Type="number" Precision="19" />
+          <Property Name="IS_PUBLIC" Type="number" Precision="2" />
+          <Property Name="REPORT_URL" Type="varchar2" MaxLength="2000" />
+          <Property Name="IS_URL_ERROR" Type="number" Precision="2" />
+          <Property Name="DESCRIPTION" Type="varchar2" MaxLength="2000" />
+          <Property Name="START_TIME" Type="number" Precision="14" />
+          <Property Name="FINISH_QUERY_TIME" Type="number" Precision="14" />
+          <Property Name="START_PREPARE_DATA_TIME" Type="number" Precision="14" />
+          <Property Name="FINISH_PREPARE_DATA_TIME" Type="number" Precision="14" />
+          <Property Name="START_GENERATE_FILE_TIME" Type="number" Precision="14" />
+          <Property Name="FINISH_TIME" Type="number" Precision="14" />
+          <Property Name="JSON_FILTER" Type="clob" />
+          <Property Name="JSON_READER" Type="varchar2" MaxLength="4000" />
+          <Property Name="VIR_TOTAL_TIME" Type="number" StoreGeneratedPattern="Computed" />
+          <Property Name="VIR_QUERY_TIME" Type="number" StoreGeneratedPattern="Computed" />
+          <Property Name="VIR_PREPARE_DATA_TIME" Type="number" StoreGeneratedPattern="Computed" />
+          <Property Name="VIR_GENERATE_FILE_TIME" Type="number" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        
+        <EntityType Name="SAR_REPORT_CALENDAR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="REPORT_CALENDAR_CODE" Type="varchar2" Nullable="false" MaxLength="12" StoreGeneratedPattern="Identity" />
+          <Property Name="IS_DAY_REPEAT" Type="number" Precision="2" />
+          <Property Name="IS_WEEK_REPEAT" Type="number" Precision="2" />
+          <Property Name="IS_MONTH_REPEAT" Type="number" Precision="2" />
+          <Property Name="EXECUTE_TIME" Type="number" Nullable="false" Precision="14" />
+          <Property Name="END_TIME" Type="number" Precision="14" />
+          <Property Name="IS_DONE" Type="number" Precision="2" />
+          <Property Name="FILTER_TOTAL_JSON" Type="clob" />
+          <Property Name="REPORT_ID" Type="number" Precision="19" />
+          <Property Name="SOURCE_ID" Type="number" Precision="19" />
+        </EntityType>
+        
+        <EntityType Name="SAR_REPORT_STT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="REPORT_STT_CODE" Type="varchar2" Nullable="false" MaxLength="2" />
+          <Property Name="REPORT_STT_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+        </EntityType>
+                <EntityType Name="SAR_REPORT_TEMPLATE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="REPORT_TEMPLATE_CODE" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="REPORT_TEMPLATE_NAME" Type="varchar2" Nullable="false" MaxLength="200" />
+          <Property Name="REPORT_TYPE_ID" Type="number" Nullable="false" Precision="19" />
+          <Property Name="REPORT_TEMPLATE_URL" Type="varchar2" MaxLength="2000" />
+          <Property Name="EXTENSION_RECEIVE" Type="varchar2" MaxLength="20" />
+          <Property Name="TUTORIAL" Type="varchar2" MaxLength="2000" />
+        </EntityType>
+                <EntityType Name="SAR_REPORT_TYPE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="REPORT_TYPE_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="REPORT_TYPE_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="DESCRIPTION" Type="varchar2" MaxLength="2000" />
+          <Property Name="DLL_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+        </EntityType>
+                <EntityType Name="SAR_RETY_FOFI">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="REPORT_TYPE_ID" Type="number" Nullable="false" Precision="19" />
+          <Property Name="FORM_FIELD_ID" Type="number" Nullable="false" Precision="19" />
+          <Property Name="NUM_ORDER" Type="number" Precision="19" />
+          <Property Name="DESCRIPTION" Type="varchar2" MaxLength="500" />
+          <Property Name="JSON_OUTPUT" Type="varchar2" MaxLength="4000" />
+          <Property Name="IS_REQUIRE" Type="number" Precision="2" />
+        </EntityType>
+                <EntityType Name="SAR_USER_REPORT_TYPE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="LOGINNAME" Type="varchar2" Nullable="false" MaxLength="50" />
+          <Property Name="REPORT_TYPE_ID" Type="number" Nullable="false" Precision="19" />
+        </EntityType>
+                <EntityType Name="V_SAR_REPORT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="REPORT_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="REPORT_NAME" Type="varchar2" MaxLength="200" />
+          <Property Name="REPORT_TYPE_ID" Type="number" Nullable="false" Precision="19" />
+          <Property Name="REPORT_STT_ID" Type="number" Nullable="false" Precision="19" />
+          <Property Name="REPORT_TEMPLATE_ID" Type="number" Precision="19" />
+          <Property Name="IS_PUBLIC" Type="number" Precision="2" />
+          <Property Name="REPORT_URL" Type="varchar2" MaxLength="2000" />
+          <Property Name="IS_URL_ERROR" Type="number" Precision="2" />
+          <Property Name="DESCRIPTION" Type="varchar2" MaxLength="2000" />
+          <Property Name="START_TIME" Type="number" Precision="14" />
+          <Property Name="FINISH_QUERY_TIME" Type="number" Precision="14" />
+          <Property Name="START_PREPARE_DATA_TIME" Type="number" Precision="14" />
+          <Property Name="FINISH_PREPARE_DATA_TIME" Type="number" Precision="14" />
+          <Property Name="START_GENERATE_FILE_TIME" Type="number" Precision="14" />
+          <Property Name="FINISH_TIME" Type="number" Precision="14" />
+          <Property Name="JSON_FILTER" Type="clob" />
+          <Property Name="JSON_READER" Type="varchar2" MaxLength="4000" />
+          <Property Name="VIR_TOTAL_TIME" Type="number" StoreGeneratedPattern="Computed" />
+          <Property Name="VIR_QUERY_TIME" Type="number" StoreGeneratedPattern="Computed" />
+          <Property Name="VIR_PREPARE_DATA_TIME" Type="number" StoreGeneratedPattern="Computed" />
+          <Property Name="VIR_GENERATE_FILE_TIME" Type="number" StoreGeneratedPattern="Computed" />
+          <Property Name="REPORT_TYPE_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="REPORT_TYPE_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="REPORT_STT_CODE" Type="varchar2" Nullable="false" MaxLength="2" />
+          <Property Name="REPORT_STT_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="REPORT_TEMPLATE_CODE" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="REPORT_TEMPLATE_NAME" Type="varchar2" Nullable="false" MaxLength="200" />
+          <Property Name="EXTENSION_RECEIVE" Type="varchar2" MaxLength="20" />
+        </EntityType>
+                <EntityType Name="V_SAR_REPORT_TEMPLATE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="REPORT_TEMPLATE_CODE" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="REPORT_TEMPLATE_NAME" Type="varchar2" Nullable="false" MaxLength="200" />
+          <Property Name="REPORT_TYPE_ID" Type="number" Nullable="false" Precision="19" />
+          <Property Name="REPORT_TEMPLATE_URL" Type="varchar2" MaxLength="2000" />
+          <Property Name="EXTENSION_RECEIVE" Type="varchar2" MaxLength="20" />
+          <Property Name="TUTORIAL" Type="varchar2" MaxLength="2000" />
+          <Property Name="REPORT_TYPE_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="REPORT_TYPE_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+        </EntityType>
+                <EntityType Name="V_SAR_RETY_FOFI">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="REPORT_TYPE_ID" Type="number" Nullable="false" Precision="19" />
+          <Property Name="FORM_FIELD_ID" Type="number" Nullable="false" Precision="19" />
+          <Property Name="NUM_ORDER" Type="number" Precision="19" />
+          <Property Name="DESCRIPTION" Type="varchar2" MaxLength="500" />
+          <Property Name="JSON_OUTPUT" Type="varchar2" MaxLength="4000" />
+          <Property Name="IS_REQUIRE" Type="number" Precision="2" />
+          <Property Name="REPORT_TYPE_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="REPORT_TYPE_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="FORM_FIELD_CODE" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="FORM_FIELD_DESCRIPTION" Type="varchar2" MaxLength="4000" />
+        </EntityType>
+                <EntityType Name="V_SAR_USER_REPORT_TYPE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Nullable="false" Precision="19" StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="number" Precision="14" />
+          <Property Name="MODIFY_TIME" Type="number" Precision="14" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_CREATOR" Type="varchar2" MaxLength="50" />
+          <Property Name="APP_MODIFIER" Type="varchar2" MaxLength="50" />
+          <Property Name="IS_ACTIVE" Type="number" Precision="2" />
+          <Property Name="IS_DELETE" Type="number" Precision="2" />
+          <Property Name="GROUP_CODE" Type="varchar2" MaxLength="50" />
+          <Property Name="LOGINNAME" Type="varchar2" Nullable="false" MaxLength="50" />
+          <Property Name="REPORT_TYPE_ID" Type="number" Nullable="false" Precision="19" />
+          <Property Name="REPORT_TYPE_CODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="REPORT_TYPE_NAME" Type="varchar2" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <Association Name="SAR_REPORT_CALENDAR_FK1">
+          <End Role="SAR_REPORT" Type="DataModels.Store.SAR_REPORT" Multiplicity="0..1" />
+          <End Role="SAR_REPORT_CALENDAR" Type="DataModels.Store.SAR_REPORT_CALENDAR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAR_REPORT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SAR_REPORT_CALENDAR">
+              <PropertyRef Name="REPORT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SAR_REPORT_CALENDAR_FK2">
+          <End Role="SAR_REPORT_CALENDAR" Type="DataModels.Store.SAR_REPORT_CALENDAR" Multiplicity="0..1" />
+          <End Role="SAR_REPORT_CALENDAR1" Type="DataModels.Store.SAR_REPORT_CALENDAR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAR_REPORT_CALENDAR">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SAR_REPORT_CALENDAR1">
+              <PropertyRef Name="SOURCE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SAR_REPORT_FK1">
+          <End Role="SAR_REPORT_STT" Type="DataModels.Store.SAR_REPORT_STT" Multiplicity="1" />
+          <End Role="SAR_REPORT" Type="DataModels.Store.SAR_REPORT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAR_REPORT_STT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SAR_REPORT">
+              <PropertyRef Name="REPORT_STT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SAR_REPORT_FK2">
+          <End Role="SAR_REPORT_TYPE" Type="DataModels.Store.SAR_REPORT_TYPE" Multiplicity="1" />
+          <End Role="SAR_REPORT" Type="DataModels.Store.SAR_REPORT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAR_REPORT_TYPE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SAR_REPORT">
+              <PropertyRef Name="REPORT_TYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SAR_REPORT_FK3">
+          <End Role="SAR_REPORT_TEMPLATE" Type="DataModels.Store.SAR_REPORT_TEMPLATE" Multiplicity="0..1" />
+          <End Role="SAR_REPORT" Type="DataModels.Store.SAR_REPORT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAR_REPORT_TEMPLATE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SAR_REPORT">
+              <PropertyRef Name="REPORT_TEMPLATE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SAR_REPORT_TEMPLATE_FK1">
+          <End Role="SAR_REPORT_TYPE" Type="DataModels.Store.SAR_REPORT_TYPE" Multiplicity="1" />
+          <End Role="SAR_REPORT_TEMPLATE" Type="DataModels.Store.SAR_REPORT_TEMPLATE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAR_REPORT_TYPE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SAR_REPORT_TEMPLATE">
+              <PropertyRef Name="REPORT_TYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SAR_RETY_FOFI_FK1">
+          <End Role="SAR_REPORT_TYPE" Type="DataModels.Store.SAR_REPORT_TYPE" Multiplicity="1" />
+          <End Role="SAR_RETY_FOFI" Type="DataModels.Store.SAR_RETY_FOFI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAR_REPORT_TYPE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SAR_RETY_FOFI">
+              <PropertyRef Name="REPORT_TYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SAR_RETY_FOFI_FK2">
+          <End Role="SAR_FORM_FIELD" Type="DataModels.Store.SAR_FORM_FIELD" Multiplicity="1" />
+          <End Role="SAR_RETY_FOFI" Type="DataModels.Store.SAR_RETY_FOFI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAR_FORM_FIELD">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SAR_RETY_FOFI">
+              <PropertyRef Name="FORM_FIELD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SAR_USER_REPORT_TYPE_FK1">
+          <End Role="SAR_REPORT_TYPE" Type="DataModels.Store.SAR_REPORT_TYPE" Multiplicity="1" />
+          <End Role="SAR_USER_REPORT_TYPE" Type="DataModels.Store.SAR_USER_REPORT_TYPE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAR_REPORT_TYPE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SAR_USER_REPORT_TYPE">
+              <PropertyRef Name="REPORT_TYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DataModels" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="SAREntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="SAR_FORM_FIELD" EntityType="DataModels.SAR_FORM_FIELD" />
+          <EntitySet Name="SAR_PRINT" EntityType="DataModels.SAR_PRINT" />
+          <EntitySet Name="SAR_PRINT_TYPE" EntityType="DataModels.SAR_PRINT_TYPE" />
+          <EntitySet Name="SAR_REPORT" EntityType="DataModels.SAR_REPORT" />
+          <EntitySet Name="SAR_REPORT_CALENDAR" EntityType="DataModels.SAR_REPORT_CALENDAR" />
+          <EntitySet Name="SAR_REPORT_STT" EntityType="DataModels.SAR_REPORT_STT" />
+          <EntitySet Name="SAR_REPORT_TEMPLATE" EntityType="DataModels.SAR_REPORT_TEMPLATE" />
+          <EntitySet Name="SAR_REPORT_TYPE" EntityType="DataModels.SAR_REPORT_TYPE" />
+          <EntitySet Name="SAR_RETY_FOFI" EntityType="DataModels.SAR_RETY_FOFI" />
+          <EntitySet Name="SAR_USER_REPORT_TYPE" EntityType="DataModels.SAR_USER_REPORT_TYPE" />
+          <EntitySet Name="V_SAR_REPORT" EntityType="DataModels.V_SAR_REPORT" />
+          <EntitySet Name="V_SAR_REPORT_TEMPLATE" EntityType="DataModels.V_SAR_REPORT_TEMPLATE" />
+          <EntitySet Name="V_SAR_RETY_FOFI" EntityType="DataModels.V_SAR_RETY_FOFI" />
+          <EntitySet Name="V_SAR_USER_REPORT_TYPE" EntityType="DataModels.V_SAR_USER_REPORT_TYPE" />
+          <AssociationSet Name="SAR_RETY_FOFI_FK2" Association="DataModels.SAR_RETY_FOFI_FK2">
+            <End Role="SAR_FORM_FIELD" EntitySet="SAR_FORM_FIELD" />
+            <End Role="SAR_RETY_FOFI" EntitySet="SAR_RETY_FOFI" />
+          </AssociationSet>
+          <AssociationSet Name="SAR_REPORT_CALENDAR_FK1" Association="DataModels.SAR_REPORT_CALENDAR_FK1">
+            <End Role="SAR_REPORT" EntitySet="SAR_REPORT" />
+            <End Role="SAR_REPORT_CALENDAR" EntitySet="SAR_REPORT_CALENDAR" />
+          </AssociationSet>
+          <AssociationSet Name="SAR_REPORT_FK1" Association="DataModels.SAR_REPORT_FK1">
+            <End Role="SAR_REPORT_STT" EntitySet="SAR_REPORT_STT" />
+            <End Role="SAR_REPORT" EntitySet="SAR_REPORT" />
+          </AssociationSet>
+          <AssociationSet Name="SAR_REPORT_FK2" Association="DataModels.SAR_REPORT_FK2">
+            <End Role="SAR_REPORT_TYPE" EntitySet="SAR_REPORT_TYPE" />
+            <End Role="SAR_REPORT" EntitySet="SAR_REPORT" />
+          </AssociationSet>
+          <AssociationSet Name="SAR_REPORT_FK3" Association="DataModels.SAR_REPORT_FK3">
+            <End Role="SAR_REPORT_TEMPLATE" EntitySet="SAR_REPORT_TEMPLATE" />
+            <End Role="SAR_REPORT" EntitySet="SAR_REPORT" />
+          </AssociationSet>
+          <AssociationSet Name="SAR_REPORT_CALENDAR_FK2" Association="DataModels.SAR_REPORT_CALENDAR_FK2">
+            <End Role="SAR_REPORT_CALENDAR" EntitySet="SAR_REPORT_CALENDAR" />
+            <End Role="SAR_REPORT_CALENDAR1" EntitySet="SAR_REPORT_CALENDAR" />
+          </AssociationSet>
+          <AssociationSet Name="SAR_REPORT_TEMPLATE_FK1" Association="DataModels.SAR_REPORT_TEMPLATE_FK1">
+            <End Role="SAR_REPORT_TYPE" EntitySet="SAR_REPORT_TYPE" />
+            <End Role="SAR_REPORT_TEMPLATE" EntitySet="SAR_REPORT_TEMPLATE" />
+          </AssociationSet>
+          <AssociationSet Name="SAR_RETY_FOFI_FK1" Association="DataModels.SAR_RETY_FOFI_FK1">
+            <End Role="SAR_REPORT_TYPE" EntitySet="SAR_REPORT_TYPE" />
+            <End Role="SAR_RETY_FOFI" EntitySet="SAR_RETY_FOFI" />
+          </AssociationSet>
+          <AssociationSet Name="SAR_USER_REPORT_TYPE_FK1" Association="DataModels.SAR_USER_REPORT_TYPE_FK1">
+            <End Role="SAR_REPORT_TYPE" EntitySet="SAR_REPORT_TYPE" />
+            <End Role="SAR_USER_REPORT_TYPE" EntitySet="SAR_USER_REPORT_TYPE" />
+          </AssociationSet>
+        </EntityContainer>
+                <EntityType Name="SAR_FORM_FIELD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="FORM_FIELD_CODE" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="SAR_RETY_FOFI" Relationship="DataModels.SAR_RETY_FOFI_FK2" FromRole="SAR_FORM_FIELD" ToRole="SAR_RETY_FOFI" />
+        </EntityType>
+                <EntityType Name="SAR_PRINT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="TITLE" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="CONTENT" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+                <EntityType Name="SAR_PRINT_TYPE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PRINT_TYPE_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="FILE_PATTERN" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="PRINT_TYPE_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="IS_NO_GROUP" Type="Int16" />
+        </EntityType>
+                <EntityType Name="SAR_REPORT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="REPORT_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="REPORT_NAME" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="REPORT_TYPE_ID" Type="Int64" Nullable="false" />
+          <Property Name="REPORT_STT_ID" Type="Int64" Nullable="false" />
+          <Property Name="REPORT_TEMPLATE_ID" Type="Int64" />
+          <Property Name="IS_PUBLIC" Type="Int16" />
+          <Property Name="REPORT_URL" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="IS_URL_ERROR" Type="Int16" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="START_TIME" Type="Int64" />
+          <Property Name="FINISH_QUERY_TIME" Type="Int64" />
+          <Property Name="START_PREPARE_DATA_TIME" Type="Int64" />
+          <Property Name="FINISH_PREPARE_DATA_TIME" Type="Int64" />
+          <Property Name="START_GENERATE_FILE_TIME" Type="Int64" />
+          <Property Name="FINISH_TIME" Type="Int64" />
+          <Property Name="JSON_FILTER" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="JSON_READER" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+          <Property Name="VIR_TOTAL_TIME" Type="Decimal" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="VIR_QUERY_TIME" Type="Decimal" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="VIR_PREPARE_DATA_TIME" Type="Decimal" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="VIR_GENERATE_FILE_TIME" Type="Decimal" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="SAR_REPORT_CALENDAR" Relationship="DataModels.SAR_REPORT_CALENDAR_FK1" FromRole="SAR_REPORT" ToRole="SAR_REPORT_CALENDAR" />
+          <NavigationProperty Name="SAR_REPORT_STT" Relationship="DataModels.SAR_REPORT_FK1" FromRole="SAR_REPORT" ToRole="SAR_REPORT_STT" />
+          <NavigationProperty Name="SAR_REPORT_TYPE" Relationship="DataModels.SAR_REPORT_FK2" FromRole="SAR_REPORT" ToRole="SAR_REPORT_TYPE" />
+          <NavigationProperty Name="SAR_REPORT_TEMPLATE" Relationship="DataModels.SAR_REPORT_FK3" FromRole="SAR_REPORT" ToRole="SAR_REPORT_TEMPLATE" />
+        </EntityType>
+        
+        <EntityType Name="SAR_REPORT_CALENDAR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="REPORT_CALENDAR_CODE" Type="String" Nullable="false" MaxLength="12" Unicode="false" FixedLength="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IS_DAY_REPEAT" Type="Int16" />
+          <Property Name="IS_WEEK_REPEAT" Type="Int16" />
+          <Property Name="IS_MONTH_REPEAT" Type="Int16" />
+          <Property Name="EXECUTE_TIME" Type="Int64" Nullable="false" />
+          <Property Name="END_TIME" Type="Int64" />
+          <Property Name="IS_DONE" Type="Int16" />
+          <Property Name="FILTER_TOTAL_JSON" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="REPORT_ID" Type="Int64" />
+          <Property Name="SOURCE_ID" Type="Int64" />
+          <NavigationProperty Name="SAR_REPORT" Relationship="DataModels.SAR_REPORT_CALENDAR_FK1" FromRole="SAR_REPORT_CALENDAR" ToRole="SAR_REPORT" />
+          <NavigationProperty Name="SAR_REPORT_CALENDAR1" Relationship="DataModels.SAR_REPORT_CALENDAR_FK2" FromRole="SAR_REPORT_CALENDAR" ToRole="SAR_REPORT_CALENDAR1" />
+          <NavigationProperty Name="SAR_REPORT_CALENDAR2" Relationship="DataModels.SAR_REPORT_CALENDAR_FK2" FromRole="SAR_REPORT_CALENDAR1" ToRole="SAR_REPORT_CALENDAR" />
+        </EntityType>
+        
+        <EntityType Name="SAR_REPORT_STT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="REPORT_STT_CODE" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="REPORT_STT_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="SAR_REPORT" Relationship="DataModels.SAR_REPORT_FK1" FromRole="SAR_REPORT_STT" ToRole="SAR_REPORT" />
+        </EntityType>
+                <EntityType Name="SAR_REPORT_TEMPLATE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="REPORT_TEMPLATE_CODE" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="REPORT_TEMPLATE_NAME" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="REPORT_TYPE_ID" Type="Int64" Nullable="false" />
+          <Property Name="REPORT_TEMPLATE_URL" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="EXTENSION_RECEIVE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="TUTORIAL" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="SAR_REPORT" Relationship="DataModels.SAR_REPORT_FK3" FromRole="SAR_REPORT_TEMPLATE" ToRole="SAR_REPORT" />
+          <NavigationProperty Name="SAR_REPORT_TYPE" Relationship="DataModels.SAR_REPORT_TEMPLATE_FK1" FromRole="SAR_REPORT_TEMPLATE" ToRole="SAR_REPORT_TYPE" />
+        </EntityType>
+                <EntityType Name="SAR_REPORT_TYPE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="REPORT_TYPE_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="REPORT_TYPE_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="DLL_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="SAR_REPORT" Relationship="DataModels.SAR_REPORT_FK2" FromRole="SAR_REPORT_TYPE" ToRole="SAR_REPORT" />
+          <NavigationProperty Name="SAR_REPORT_TEMPLATE" Relationship="DataModels.SAR_REPORT_TEMPLATE_FK1" FromRole="SAR_REPORT_TYPE" ToRole="SAR_REPORT_TEMPLATE" />
+          <NavigationProperty Name="SAR_RETY_FOFI" Relationship="DataModels.SAR_RETY_FOFI_FK1" FromRole="SAR_REPORT_TYPE" ToRole="SAR_RETY_FOFI" />
+          <NavigationProperty Name="SAR_USER_REPORT_TYPE" Relationship="DataModels.SAR_USER_REPORT_TYPE_FK1" FromRole="SAR_REPORT_TYPE" ToRole="SAR_USER_REPORT_TYPE" />
+        </EntityType>
+                <EntityType Name="SAR_RETY_FOFI">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="REPORT_TYPE_ID" Type="Int64" Nullable="false" />
+          <Property Name="FORM_FIELD_ID" Type="Int64" Nullable="false" />
+          <Property Name="NUM_ORDER" Type="Int64" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="JSON_OUTPUT" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+          <Property Name="IS_REQUIRE" Type="Int16" />
+          <NavigationProperty Name="SAR_FORM_FIELD" Relationship="DataModels.SAR_RETY_FOFI_FK2" FromRole="SAR_RETY_FOFI" ToRole="SAR_FORM_FIELD" />
+          <NavigationProperty Name="SAR_REPORT_TYPE" Relationship="DataModels.SAR_RETY_FOFI_FK1" FromRole="SAR_RETY_FOFI" ToRole="SAR_REPORT_TYPE" />
+        </EntityType>
+                <EntityType Name="SAR_USER_REPORT_TYPE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LOGINNAME" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="REPORT_TYPE_ID" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="SAR_REPORT_TYPE" Relationship="DataModels.SAR_USER_REPORT_TYPE_FK1" FromRole="SAR_USER_REPORT_TYPE" ToRole="SAR_REPORT_TYPE" />
+        </EntityType>
+                <EntityType Name="V_SAR_REPORT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="REPORT_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="REPORT_NAME" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="REPORT_TYPE_ID" Type="Int64" Nullable="false" />
+          <Property Name="REPORT_STT_ID" Type="Int64" Nullable="false" />
+          <Property Name="REPORT_TEMPLATE_ID" Type="Int64" />
+          <Property Name="IS_PUBLIC" Type="Int16" />
+          <Property Name="REPORT_URL" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="IS_URL_ERROR" Type="Int16" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="START_TIME" Type="Int64" />
+          <Property Name="FINISH_QUERY_TIME" Type="Int64" />
+          <Property Name="START_PREPARE_DATA_TIME" Type="Int64" />
+          <Property Name="FINISH_PREPARE_DATA_TIME" Type="Int64" />
+          <Property Name="START_GENERATE_FILE_TIME" Type="Int64" />
+          <Property Name="FINISH_TIME" Type="Int64" />
+          <Property Name="JSON_FILTER" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="JSON_READER" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+          <Property Name="VIR_TOTAL_TIME" Type="Decimal" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="VIR_QUERY_TIME" Type="Decimal" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="VIR_PREPARE_DATA_TIME" Type="Decimal" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="VIR_GENERATE_FILE_TIME" Type="Decimal" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="REPORT_TYPE_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="REPORT_TYPE_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="REPORT_STT_CODE" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="REPORT_STT_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="REPORT_TEMPLATE_CODE" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="REPORT_TEMPLATE_NAME" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="EXTENSION_RECEIVE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+        </EntityType>
+                <EntityType Name="V_SAR_REPORT_TEMPLATE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="REPORT_TEMPLATE_CODE" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="REPORT_TEMPLATE_NAME" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="REPORT_TYPE_ID" Type="Int64" Nullable="false" />
+          <Property Name="REPORT_TEMPLATE_URL" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="EXTENSION_RECEIVE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="TUTORIAL" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="REPORT_TYPE_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="REPORT_TYPE_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+                <EntityType Name="V_SAR_RETY_FOFI">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="REPORT_TYPE_ID" Type="Int64" Nullable="false" />
+          <Property Name="FORM_FIELD_ID" Type="Int64" Nullable="false" />
+          <Property Name="NUM_ORDER" Type="Int64" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="JSON_OUTPUT" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+          <Property Name="IS_REQUIRE" Type="Int16" />
+          <Property Name="REPORT_TYPE_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="REPORT_TYPE_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="FORM_FIELD_CODE" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="FORM_FIELD_DESCRIPTION" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+        </EntityType>
+                <EntityType Name="V_SAR_USER_REPORT_TYPE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CREATE_TIME" Type="Int64" />
+          <Property Name="MODIFY_TIME" Type="Int64" />
+          <Property Name="CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_CREATOR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="APP_MODIFIER" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IS_ACTIVE" Type="Int16" />
+          <Property Name="IS_DELETE" Type="Int16" />
+          <Property Name="GROUP_CODE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LOGINNAME" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="REPORT_TYPE_ID" Type="Int64" Nullable="false" />
+          <Property Name="REPORT_TYPE_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="REPORT_TYPE_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <Association Name="SAR_RETY_FOFI_FK2">
+          <End Role="SAR_FORM_FIELD" Type="DataModels.SAR_FORM_FIELD" Multiplicity="1" />
+          <End Role="SAR_RETY_FOFI" Type="DataModels.SAR_RETY_FOFI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAR_FORM_FIELD">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SAR_RETY_FOFI">
+              <PropertyRef Name="FORM_FIELD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SAR_REPORT_CALENDAR_FK1">
+          <End Role="SAR_REPORT" Type="DataModels.SAR_REPORT" Multiplicity="0..1" />
+          <End Role="SAR_REPORT_CALENDAR" Type="DataModels.SAR_REPORT_CALENDAR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAR_REPORT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SAR_REPORT_CALENDAR">
+              <PropertyRef Name="REPORT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SAR_REPORT_FK1">
+          <End Role="SAR_REPORT_STT" Type="DataModels.SAR_REPORT_STT" Multiplicity="1" />
+          <End Role="SAR_REPORT" Type="DataModels.SAR_REPORT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAR_REPORT_STT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SAR_REPORT">
+              <PropertyRef Name="REPORT_STT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SAR_REPORT_FK2">
+          <End Role="SAR_REPORT_TYPE" Type="DataModels.SAR_REPORT_TYPE" Multiplicity="1" />
+          <End Role="SAR_REPORT" Type="DataModels.SAR_REPORT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAR_REPORT_TYPE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SAR_REPORT">
+              <PropertyRef Name="REPORT_TYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SAR_REPORT_FK3">
+          <End Role="SAR_REPORT_TEMPLATE" Type="DataModels.SAR_REPORT_TEMPLATE" Multiplicity="0..1" />
+          <End Role="SAR_REPORT" Type="DataModels.SAR_REPORT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAR_REPORT_TEMPLATE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SAR_REPORT">
+              <PropertyRef Name="REPORT_TEMPLATE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SAR_REPORT_CALENDAR_FK2">
+          <End Role="SAR_REPORT_CALENDAR" Type="DataModels.SAR_REPORT_CALENDAR" Multiplicity="0..1" />
+          <End Role="SAR_REPORT_CALENDAR1" Type="DataModels.SAR_REPORT_CALENDAR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAR_REPORT_CALENDAR">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SAR_REPORT_CALENDAR1">
+              <PropertyRef Name="SOURCE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SAR_REPORT_TEMPLATE_FK1">
+          <End Role="SAR_REPORT_TYPE" Type="DataModels.SAR_REPORT_TYPE" Multiplicity="1" />
+          <End Role="SAR_REPORT_TEMPLATE" Type="DataModels.SAR_REPORT_TEMPLATE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAR_REPORT_TYPE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SAR_REPORT_TEMPLATE">
+              <PropertyRef Name="REPORT_TYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SAR_RETY_FOFI_FK1">
+          <End Role="SAR_REPORT_TYPE" Type="DataModels.SAR_REPORT_TYPE" Multiplicity="1" />
+          <End Role="SAR_RETY_FOFI" Type="DataModels.SAR_RETY_FOFI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAR_REPORT_TYPE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SAR_RETY_FOFI">
+              <PropertyRef Name="REPORT_TYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SAR_USER_REPORT_TYPE_FK1">
+          <End Role="SAR_REPORT_TYPE" Type="DataModels.SAR_REPORT_TYPE" Multiplicity="1" />
+          <End Role="SAR_USER_REPORT_TYPE" Type="DataModels.SAR_USER_REPORT_TYPE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAR_REPORT_TYPE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SAR_USER_REPORT_TYPE">
+              <PropertyRef Name="REPORT_TYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SARDataModelsStoreContainer" CdmEntityContainer="SAREntities">
+          <EntitySetMapping Name="SAR_FORM_FIELD">
+            <EntityTypeMapping TypeName="DataModels.SAR_FORM_FIELD">
+              <MappingFragment StoreEntitySet="SAR_FORM_FIELD">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="FORM_FIELD_CODE" ColumnName="FORM_FIELD_CODE" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SAR_PRINT">
+            <EntityTypeMapping TypeName="DataModels.SAR_PRINT">
+              <MappingFragment StoreEntitySet="SAR_PRINT">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SAR_PRINT_TYPE">
+            <EntityTypeMapping TypeName="DataModels.SAR_PRINT_TYPE">
+              <MappingFragment StoreEntitySet="SAR_PRINT_TYPE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="PRINT_TYPE_CODE" ColumnName="PRINT_TYPE_CODE" />
+                <ScalarProperty Name="FILE_PATTERN" ColumnName="FILE_PATTERN" />
+                <ScalarProperty Name="PRINT_TYPE_NAME" ColumnName="PRINT_TYPE_NAME" />
+                <ScalarProperty Name="IS_NO_GROUP" ColumnName="IS_NO_GROUP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SAR_REPORT">
+            <EntityTypeMapping TypeName="DataModels.SAR_REPORT">
+              <MappingFragment StoreEntitySet="SAR_REPORT">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="REPORT_CODE" ColumnName="REPORT_CODE" />
+                <ScalarProperty Name="REPORT_NAME" ColumnName="REPORT_NAME" />
+                <ScalarProperty Name="REPORT_TYPE_ID" ColumnName="REPORT_TYPE_ID" />
+                <ScalarProperty Name="REPORT_STT_ID" ColumnName="REPORT_STT_ID" />
+                <ScalarProperty Name="REPORT_TEMPLATE_ID" ColumnName="REPORT_TEMPLATE_ID" />
+                <ScalarProperty Name="IS_PUBLIC" ColumnName="IS_PUBLIC" />
+                <ScalarProperty Name="REPORT_URL" ColumnName="REPORT_URL" />
+                <ScalarProperty Name="IS_URL_ERROR" ColumnName="IS_URL_ERROR" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="START_TIME" ColumnName="START_TIME" />
+                <ScalarProperty Name="FINISH_QUERY_TIME" ColumnName="FINISH_QUERY_TIME" />
+                <ScalarProperty Name="START_PREPARE_DATA_TIME" ColumnName="START_PREPARE_DATA_TIME" />
+                <ScalarProperty Name="FINISH_PREPARE_DATA_TIME" ColumnName="FINISH_PREPARE_DATA_TIME" />
+                <ScalarProperty Name="START_GENERATE_FILE_TIME" ColumnName="START_GENERATE_FILE_TIME" />
+                <ScalarProperty Name="FINISH_TIME" ColumnName="FINISH_TIME" />
+                <ScalarProperty Name="JSON_FILTER" ColumnName="JSON_FILTER" />
+                <ScalarProperty Name="JSON_READER" ColumnName="JSON_READER" />
+                <ScalarProperty Name="VIR_TOTAL_TIME" ColumnName="VIR_TOTAL_TIME" />
+                <ScalarProperty Name="VIR_QUERY_TIME" ColumnName="VIR_QUERY_TIME" />
+                <ScalarProperty Name="VIR_PREPARE_DATA_TIME" ColumnName="VIR_PREPARE_DATA_TIME" />
+                <ScalarProperty Name="VIR_GENERATE_FILE_TIME" ColumnName="VIR_GENERATE_FILE_TIME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SAR_REPORT_CALENDAR">
+            <EntityTypeMapping TypeName="DataModels.SAR_REPORT_CALENDAR">
+              <MappingFragment StoreEntitySet="SAR_REPORT_CALENDAR">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="REPORT_CALENDAR_CODE" ColumnName="REPORT_CALENDAR_CODE" />
+                <ScalarProperty Name="IS_DAY_REPEAT" ColumnName="IS_DAY_REPEAT" />
+                <ScalarProperty Name="IS_WEEK_REPEAT" ColumnName="IS_WEEK_REPEAT" />
+                <ScalarProperty Name="IS_MONTH_REPEAT" ColumnName="IS_MONTH_REPEAT" />
+                <ScalarProperty Name="EXECUTE_TIME" ColumnName="EXECUTE_TIME" />
+                <ScalarProperty Name="END_TIME" ColumnName="END_TIME" />
+                <ScalarProperty Name="IS_DONE" ColumnName="IS_DONE" />
+                <ScalarProperty Name="FILTER_TOTAL_JSON" ColumnName="FILTER_TOTAL_JSON" />
+                <ScalarProperty Name="REPORT_ID" ColumnName="REPORT_ID" />
+                <ScalarProperty Name="SOURCE_ID" ColumnName="SOURCE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SAR_REPORT_STT">
+            <EntityTypeMapping TypeName="DataModels.SAR_REPORT_STT">
+              <MappingFragment StoreEntitySet="SAR_REPORT_STT">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="REPORT_STT_CODE" ColumnName="REPORT_STT_CODE" />
+                <ScalarProperty Name="REPORT_STT_NAME" ColumnName="REPORT_STT_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SAR_REPORT_TEMPLATE">
+            <EntityTypeMapping TypeName="DataModels.SAR_REPORT_TEMPLATE">
+              <MappingFragment StoreEntitySet="SAR_REPORT_TEMPLATE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="REPORT_TEMPLATE_CODE" ColumnName="REPORT_TEMPLATE_CODE" />
+                <ScalarProperty Name="REPORT_TEMPLATE_NAME" ColumnName="REPORT_TEMPLATE_NAME" />
+                <ScalarProperty Name="REPORT_TYPE_ID" ColumnName="REPORT_TYPE_ID" />
+                <ScalarProperty Name="REPORT_TEMPLATE_URL" ColumnName="REPORT_TEMPLATE_URL" />
+                <ScalarProperty Name="EXTENSION_RECEIVE" ColumnName="EXTENSION_RECEIVE" />
+                <ScalarProperty Name="TUTORIAL" ColumnName="TUTORIAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SAR_REPORT_TYPE">
+            <EntityTypeMapping TypeName="DataModels.SAR_REPORT_TYPE">
+              <MappingFragment StoreEntitySet="SAR_REPORT_TYPE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="REPORT_TYPE_CODE" ColumnName="REPORT_TYPE_CODE" />
+                <ScalarProperty Name="REPORT_TYPE_NAME" ColumnName="REPORT_TYPE_NAME" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="DLL_CODE" ColumnName="DLL_CODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SAR_RETY_FOFI">
+            <EntityTypeMapping TypeName="DataModels.SAR_RETY_FOFI">
+              <MappingFragment StoreEntitySet="SAR_RETY_FOFI">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="REPORT_TYPE_ID" ColumnName="REPORT_TYPE_ID" />
+                <ScalarProperty Name="FORM_FIELD_ID" ColumnName="FORM_FIELD_ID" />
+                <ScalarProperty Name="NUM_ORDER" ColumnName="NUM_ORDER" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="JSON_OUTPUT" ColumnName="JSON_OUTPUT" />
+                <ScalarProperty Name="IS_REQUIRE" ColumnName="IS_REQUIRE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SAR_USER_REPORT_TYPE">
+            <EntityTypeMapping TypeName="DataModels.SAR_USER_REPORT_TYPE">
+              <MappingFragment StoreEntitySet="SAR_USER_REPORT_TYPE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="LOGINNAME" ColumnName="LOGINNAME" />
+                <ScalarProperty Name="REPORT_TYPE_ID" ColumnName="REPORT_TYPE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_SAR_REPORT">
+            <EntityTypeMapping TypeName="DataModels.V_SAR_REPORT">
+              <MappingFragment StoreEntitySet="V_SAR_REPORT">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="REPORT_CODE" ColumnName="REPORT_CODE" />
+                <ScalarProperty Name="REPORT_NAME" ColumnName="REPORT_NAME" />
+                <ScalarProperty Name="REPORT_TYPE_ID" ColumnName="REPORT_TYPE_ID" />
+                <ScalarProperty Name="REPORT_STT_ID" ColumnName="REPORT_STT_ID" />
+                <ScalarProperty Name="REPORT_TEMPLATE_ID" ColumnName="REPORT_TEMPLATE_ID" />
+                <ScalarProperty Name="IS_PUBLIC" ColumnName="IS_PUBLIC" />
+                <ScalarProperty Name="REPORT_URL" ColumnName="REPORT_URL" />
+                <ScalarProperty Name="IS_URL_ERROR" ColumnName="IS_URL_ERROR" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="START_TIME" ColumnName="START_TIME" />
+                <ScalarProperty Name="FINISH_QUERY_TIME" ColumnName="FINISH_QUERY_TIME" />
+                <ScalarProperty Name="START_PREPARE_DATA_TIME" ColumnName="START_PREPARE_DATA_TIME" />
+                <ScalarProperty Name="FINISH_PREPARE_DATA_TIME" ColumnName="FINISH_PREPARE_DATA_TIME" />
+                <ScalarProperty Name="START_GENERATE_FILE_TIME" ColumnName="START_GENERATE_FILE_TIME" />
+                <ScalarProperty Name="FINISH_TIME" ColumnName="FINISH_TIME" />
+                <ScalarProperty Name="JSON_FILTER" ColumnName="JSON_FILTER" />
+                <ScalarProperty Name="JSON_READER" ColumnName="JSON_READER" />
+                <ScalarProperty Name="VIR_TOTAL_TIME" ColumnName="VIR_TOTAL_TIME" />
+                <ScalarProperty Name="VIR_QUERY_TIME" ColumnName="VIR_QUERY_TIME" />
+                <ScalarProperty Name="VIR_PREPARE_DATA_TIME" ColumnName="VIR_PREPARE_DATA_TIME" />
+                <ScalarProperty Name="VIR_GENERATE_FILE_TIME" ColumnName="VIR_GENERATE_FILE_TIME" />
+                <ScalarProperty Name="REPORT_TYPE_CODE" ColumnName="REPORT_TYPE_CODE" />
+                <ScalarProperty Name="REPORT_TYPE_NAME" ColumnName="REPORT_TYPE_NAME" />
+                <ScalarProperty Name="REPORT_STT_CODE" ColumnName="REPORT_STT_CODE" />
+                <ScalarProperty Name="REPORT_STT_NAME" ColumnName="REPORT_STT_NAME" />
+                <ScalarProperty Name="REPORT_TEMPLATE_CODE" ColumnName="REPORT_TEMPLATE_CODE" />
+                <ScalarProperty Name="REPORT_TEMPLATE_NAME" ColumnName="REPORT_TEMPLATE_NAME" />
+                <ScalarProperty Name="EXTENSION_RECEIVE" ColumnName="EXTENSION_RECEIVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_SAR_REPORT_TEMPLATE">
+            <EntityTypeMapping TypeName="DataModels.V_SAR_REPORT_TEMPLATE">
+              <MappingFragment StoreEntitySet="V_SAR_REPORT_TEMPLATE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="REPORT_TEMPLATE_CODE" ColumnName="REPORT_TEMPLATE_CODE" />
+                <ScalarProperty Name="REPORT_TEMPLATE_NAME" ColumnName="REPORT_TEMPLATE_NAME" />
+                <ScalarProperty Name="REPORT_TYPE_ID" ColumnName="REPORT_TYPE_ID" />
+                <ScalarProperty Name="REPORT_TEMPLATE_URL" ColumnName="REPORT_TEMPLATE_URL" />
+                <ScalarProperty Name="EXTENSION_RECEIVE" ColumnName="EXTENSION_RECEIVE" />
+                <ScalarProperty Name="TUTORIAL" ColumnName="TUTORIAL" />
+                <ScalarProperty Name="REPORT_TYPE_CODE" ColumnName="REPORT_TYPE_CODE" />
+                <ScalarProperty Name="REPORT_TYPE_NAME" ColumnName="REPORT_TYPE_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_SAR_RETY_FOFI">
+            <EntityTypeMapping TypeName="DataModels.V_SAR_RETY_FOFI">
+              <MappingFragment StoreEntitySet="V_SAR_RETY_FOFI">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="REPORT_TYPE_ID" ColumnName="REPORT_TYPE_ID" />
+                <ScalarProperty Name="FORM_FIELD_ID" ColumnName="FORM_FIELD_ID" />
+                <ScalarProperty Name="NUM_ORDER" ColumnName="NUM_ORDER" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="JSON_OUTPUT" ColumnName="JSON_OUTPUT" />
+                <ScalarProperty Name="IS_REQUIRE" ColumnName="IS_REQUIRE" />
+                <ScalarProperty Name="REPORT_TYPE_CODE" ColumnName="REPORT_TYPE_CODE" />
+                <ScalarProperty Name="REPORT_TYPE_NAME" ColumnName="REPORT_TYPE_NAME" />
+                <ScalarProperty Name="FORM_FIELD_CODE" ColumnName="FORM_FIELD_CODE" />
+                <ScalarProperty Name="FORM_FIELD_DESCRIPTION" ColumnName="FORM_FIELD_DESCRIPTION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_SAR_USER_REPORT_TYPE">
+            <EntityTypeMapping TypeName="DataModels.V_SAR_USER_REPORT_TYPE">
+              <MappingFragment StoreEntitySet="V_SAR_USER_REPORT_TYPE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+                <ScalarProperty Name="MODIFY_TIME" ColumnName="MODIFY_TIME" />
+                <ScalarProperty Name="CREATOR" ColumnName="CREATOR" />
+                <ScalarProperty Name="MODIFIER" ColumnName="MODIFIER" />
+                <ScalarProperty Name="APP_CREATOR" ColumnName="APP_CREATOR" />
+                <ScalarProperty Name="APP_MODIFIER" ColumnName="APP_MODIFIER" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="IS_DELETE" ColumnName="IS_DELETE" />
+                <ScalarProperty Name="GROUP_CODE" ColumnName="GROUP_CODE" />
+                <ScalarProperty Name="LOGINNAME" ColumnName="LOGINNAME" />
+                <ScalarProperty Name="REPORT_TYPE_ID" ColumnName="REPORT_TYPE_ID" />
+                <ScalarProperty Name="REPORT_TYPE_CODE" ColumnName="REPORT_TYPE_CODE" />
+                <ScalarProperty Name="REPORT_TYPE_NAME" ColumnName="REPORT_TYPE_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

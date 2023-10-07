@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FE6A029F-456C-4406-BBBB-E9E44C95E328}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MRS.MANAGER</RootNamespace>
+    <AssemblyName>MRS.MANAGER</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\..\..\RELEASE\MRS\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="FlexCel, Version=6.18.5.0, Culture=neutral, PublicKeyToken=cb8f6080e6d5a4d6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\FlexCellReport\6.18.5\FlexCel.dll</HintPath>
+    </Reference>
+    <Reference Include="HIS.Common.Treatment">
+      <HintPath>..\..\..\RELEASE\HIS\HIS.Common\HIS.Common.Treatment\HIS.Common.Treatment.dll</HintPath>
+    </Reference>
+    <Reference Include="HIS.Treatment.DateTime">
+      <HintPath>..\..\..\RELEASE\HIS\HIS.Treatment.DateTime\HIS.Treatment.DateTime.dll</HintPath>
+    </Reference>
+    <Reference Include="HTC.EFMODEL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\MRSv3\HTC.EFMODEL.dll</HintPath>
+    </Reference>
+    <Reference Include="HTC.Filter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\MRSv3\HTC.Filter.dll</HintPath>
+    </Reference>
+    <Reference Include="HTC.MANAGER, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\MRSv3\HTC.MANAGER.dll</HintPath>
+    </Reference>
+    <Reference Include="IcdVn">
+      <HintPath>..\..\..\RELEASE\MRSv3\IcdVn.dll</HintPath>
+    </Reference>
+    <Reference Include="IMSys.DbConfig.HIS_RS">
+      <HintPath>..\..\..\RELEASE\IMSys.DbConfig\IMSys.DbConfig.HIS_RS\IMSys.DbConfig.HIS_RS.dll</HintPath>
+    </Reference>
+    <Reference Include="IMSys.DbConfig.SAR_RS">
+      <HintPath>..\..\..\RELEASE\IMSys.DbConfig\IMSys.DbConfig.SAR_RS\IMSys.DbConfig.SAR_RS.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Backend.MANAGER">
+      <HintPath>..\..\..\RELEASE\Inventec.Backend\Inventec.Backend.MANAGER\Inventec.Backend.MANAGER.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.Adapter">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.Adapter\Inventec.Common.Adapter.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.BarcodeLib, Version=1.0.0.19, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.BarcodeLib\Inventec.Common.BarcodeLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.DateTime">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.DateTime\Inventec.Common.DateTime.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.FileFolder">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.FileFolder\Inventec.Common.FileFolder.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.FlexCelExport">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.FlexCelExport\6.18.5\Inventec.Common.FlexCelExport.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.HardDrive">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.HardDrive\Inventec.Common.HardDrive.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.LicenseCrypto">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.LicenseCrypto\Inventec.Common.LicenseCrypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.Logging">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.Logging\Inventec.Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.Number, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.Number\Inventec.Common.Number.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.Repository">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.Repository\Inventec.Common.Repository.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.String">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.String\Inventec.Common.String.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.TypeConvert">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.TypeConvert\Inventec.Common.TypeConvert.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.WebApiClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.WebApiClient\Inventec.Common.WebApiClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Core">
+      <HintPath>..\..\..\RELEASE\Inventec.Core\Inventec.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Fss.Client">
+      <HintPath>..\..\..\RELEASE\Inventec.Fss.Client\Inventec.Fss.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Fss.Utility">
+      <HintPath>..\..\..\RELEASE\Inventec.Fss.Client\Inventec.Fss.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Token.ClientSystem">
+      <HintPath>..\..\..\RELEASE\Inventec.Token\Inventec.Token.ClientSystem\Inventec.Token.ClientSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Token.Core">
+      <HintPath>..\..\..\RELEASE\Inventec.Token\Inventec.Token.Core\Inventec.Token.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Token.ResourceSystem">
+      <HintPath>..\..\..\RELEASE\Inventec.Token\Inventec.Token.ResourceSystem\Inventec.Token.ResourceSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="MOS.DAO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\MRSv3\MOS.DAO.dll</HintPath>
+    </Reference>
+    <Reference Include="MOS.EFMODEL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\MRSv3\MOS.EFMODEL.dll</HintPath>
+    </Reference>
+    <Reference Include="MOS.Filter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\MRSv3\MOS.Filter.dll</HintPath>
+    </Reference>
+    <Reference Include="MOS.LibraryHein.Bhyt, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\MRSv3\MOS.LibraryHein.Bhyt.dll</HintPath>
+    </Reference>
+    <Reference Include="MOS.MANAGER, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\MRSv3\MOS.MANAGER.dll</HintPath>
+    </Reference>
+    <Reference Include="MOS.SDO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\MRSv3\MOS.SDO.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="QCS.EFMODEL">
+      <HintPath>..\..\..\RELEASE\QCS\QCS.EFMODEL.dll</HintPath>
+    </Reference>
+    <Reference Include="QCS.Filter">
+      <HintPath>..\..\..\RELEASE\QCS\QCS.Filter.dll</HintPath>
+    </Reference>
+    <Reference Include="QCS.LibraryBug">
+      <HintPath>..\..\..\RELEASE\QCS\QCS.LibraryBug.dll</HintPath>
+    </Reference>
+    <Reference Include="QCS.SDO">
+      <HintPath>..\..\..\RELEASE\QCS\QCS.SDO.dll</HintPath>
+    </Reference>
+    <Reference Include="QCS.TDO">
+      <HintPath>..\..\..\RELEASE\QCS\QCS.TDO.dll</HintPath>
+    </Reference>
+    <Reference Include="QCS.URI">
+      <HintPath>..\..\..\RELEASE\QCS\QCS.URI.dll</HintPath>
+    </Reference>
+    <Reference Include="SAR.DAO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\MRSv3\SAR.DAO.dll</HintPath>
+    </Reference>
+    <Reference Include="SAR.EFMODEL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\MRSv3\SAR.EFMODEL.dll</HintPath>
+    </Reference>
+    <Reference Include="SAR.Filter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\MRSv3\SAR.Filter.dll</HintPath>
+    </Reference>
+    <Reference Include="SAR.MANAGER, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\MRSv3\SAR.MANAGER.dll</HintPath>
+    </Reference>
+    <Reference Include="SDA.EFMODEL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\MRSv3\SDA.EFMODEL.dll</HintPath>
+    </Reference>
+    <Reference Include="SDA.Filter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\MRSv3\SDA.Filter.dll</HintPath>
+    </Reference>
+    <Reference Include="SDA.MANAGER, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\MRSv3\SDA.MANAGER.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\ApplicationConfig.cs" />
+    <Compile Include="Base\BaseUriStore.cs" />
+    <Compile Include="Base\BugUtil.cs" />
+    <Compile Include="Base\BusinessBase.cs" />
+    <Compile Include="Base\ClientTokenManagerStore.cs" />
+    <Compile Include="Base\FileStoreLocation.cs" />
+    <Compile Include="Base\ManagerConstant.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Base\MessageUtil.cs" />
+    <Compile Include="Base\OrderProcessorBase.cs" />
+    <Compile Include="Base\TokenCodeStore.cs" />
+    <Compile Include="Base\TroubleCache.cs" />
+    <Compile Include="Config\ConfigUtil.cs" />
+    <Compile Include="Config\InputDataGetCFG.cs" />
+    <Compile Include="Config\NumDigitsOptionCFG.cs" />
+    <Compile Include="Config\TNguonKhacOption.cs" />
+    <Compile Include="Config\HisFilmSizeCFG.cs" />
+    <Compile Include="Config\HisPtttMethodCFG.cs" />
+    <Compile Include="Config\HisEmotionlessResultCFG.cs" />
+    <Compile Include="Config\HisPtttPriorityCFG.cs" />
+    <Compile Include="Config\HisAccountBookCFG.cs" />
+    <Compile Include="Config\HisBillTypeCFG.cs" />
+    <Compile Include="Config\HisEmotionlessMethodCFG.cs" />
+    <Compile Include="Config\HisExpMestReasonCFG.cs" />
+    <Compile Include="Config\HisGenderCFG.cs" />
+    <Compile Include="Config\HisHeinServiceTypeCFG.cs" />
+    <Compile Include="Config\HisBloodAboCFG.cs" />
+    <Compile Include="Config\HisBloodTypeCFG.cs" />
+    <Compile Include="Config\HisIcdCFG.cs" />
+    <Compile Include="Config\HisMediStockTypeCFG.cs" />
+    <Compile Include="Config\HisPayFormCFG.cs" />
+    <Compile Include="Config\HisPtttTableCFG.cs" />
+    <Compile Include="Config\HisRepayReasonCFG.cs" />
+    <Compile Include="Config\HisServiceCFG.cs" />
+    <Compile Include="Config\HeinCardNumberGroups.cs" />
+    <Compile Include="Config\HeinCardNumberTypeCFG.cs" />
+    <Compile Include="Config\HeinGroupServiceReportCFG.cs" />
+    <Compile Include="Config\HisBranchCFG.cs" />
+    <Compile Include="Config\HisCareerCFG.cs" />
+    <Compile Include="Config\HisDeathWithinCFG.cs" />
+    <Compile Include="Config\HisDepartmentCFG.cs" />
+    <Compile Include="Config\HisExecuteRoleCFG.cs" />
+    <Compile Include="Config\HisIcdMedicalGroupCFG.cs" />
+    <Compile Include="Config\HisMedicineTypeCFG.cs" />
+    <Compile Include="Config\HisMediStockCFG.cs" />
+    <Compile Include="Config\HisMilitaryRankCFG.cs" />
+    <Compile Include="Config\HisPatientTypeCFG.cs" />
+    <Compile Include="Config\HisPtttGroupCFG.cs" />
+    <Compile Include="Config\HisReportTypeCatCFG.cs" />
+    <Compile Include="Config\HisRoomCFG.cs" />
+    <Compile Include="Config\HisServicePatyCFG.cs" />
+    <Compile Include="Config\HisServiceRetyCatCFG.cs" />
+    <Compile Include="Config\HisServiceTypeCFG.cs" />
+    <Compile Include="Config\HisServiceUnitCFG.cs" />
+    <Compile Include="Config\HisTranPatiFormCFG.cs" />
+    <Compile Include="Config\HisTranPatiReasonCFG.cs" />
+    <Compile Include="Config\HisTreatmentEndTypeCFG.cs" />
+    <Compile Include="Config\HisTreatmentEndType_BHYTCFG.cs" />
+    <Compile Include="Config\HisTreatmentTypeCFG.cs" />
+    <Compile Include="Config\HtcExpenseTypeCFG.cs" />
+    <Compile Include="Config\IsNegativeLimination.cs" />
+    <Compile Include="Config\Loader.cs" />
+    <Compile Include="Config\MaterialPriceOptionCFG.cs" />
+    <Compile Include="Config\MilitaryHeinCFG.cs" />
+    <Compile Include="Config\ReportBhytNdsIcdCodeCFG.cs" />
+    <Compile Include="Config\SarReportTemplateCFG.cs" />
+    <Compile Include="Config\SarReportTypeCFG.cs" />
+    <Compile Include="Core\BeanObjectBase.cs" />
+    <Compile Include="Core\BusinessObjectBase.cs" />
+    <Compile Include="Core\MrsReport\AbsProcessDelegate.cs" />
+    <Compile Include="Core\MrsReport\AbstractProcessor.cs" />
+    <Compile Include="Core\MrsReport\DelegateMrs.cs" />
+    <Compile Include="Core\MrsReport\Lib\ForExcel\ExcelDataADO.cs" />
+    <Compile Include="Core\MrsReport\Lib\ForExcel\ManagerQcs.cs" />
+    <Compile Include="Core\MrsReport\Lib\ForExcel\ManagerSql.cs" />
+    <Compile Include="Core\MrsReport\Lib\ForExcel\ProcessExcel.cs" />
+    <Compile Include="Core\MrsReport\Lib\ForExcel\GetCellValue.cs" />
+    <Compile Include="Core\MrsReport\Lib\ForExcel\RoleUserADO.cs" />
+    <Compile Include="Core\MrsReport\Lib\ForFilter\GetTableName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\MrsReport\MrsReportBO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\MrsReport\RDO\RDODistinctListText.cs" />
+    <Compile Include="Core\MrsReport\RDO\RDOSelectSheet.cs" />
+    <Compile Include="Core\MrsReport\RDO\RDOSelectSheetChart.cs" />
+    <Compile Include="Core\MrsReport\RDO\RDOTextInList.cs" />
+    <Compile Include="Core\MrsReport\RDO\RDODayOfTreatment6556.cs" />
+    <Compile Include="Core\MrsReport\RDO\RDOSerializeObject.cs" />
+    <Compile Include="Core\MrsReport\RDO\RDODecompressString.cs" />
+    <Compile Include="Core\MrsReport\RDO\RDODbValueOfJson.cs" />
+    <Compile Include="Core\MrsReport\RDO\RDOCompressString.cs" />
+    <Compile Include="Core\MrsReport\RDO\RDOElement.cs" />
+    <Compile Include="Core\MrsReport\RDO\RDOIcdVnCode.cs" />
+    <Compile Include="Core\MrsReport\RDO\RDOCommon.cs" />
+    <Compile Include="Core\MrsReport\RDO\RDOConstant.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\MrsReport\RDO\RDOCustomerFuncGroupSum.cs" />
+    <Compile Include="Core\MrsReport\RDO\RDOCustomerFuncMapFilter.cs" />
+    <Compile Include="Core\MrsReport\RDO\RDOCustomerFuncMergeSameData.cs" />
+    <Compile Include="Core\MrsReport\RDO\RDOCustomerFuncRownumberData.cs" />
+    <Compile Include="Core\MrsReport\ProcessorFactory.cs" />
+    <Compile Include="Core\MrsReport\RDO\RDOImpExpMestType\IMP_EXP_MEST_TYPE.cs" />
+    <Compile Include="Core\MrsReport\RDO\RDOImpExpMestType\RDOImpExpMestTypeContext.cs" />
+    <Compile Include="Core\MrsReport\RDO\RDOTimeSpan.cs" />
+    <Compile Include="Core\MrsReport\ReportException\CreateReportFolderException.cs" />
+    <Compile Include="Core\MrsReport\ReportException\ReportTemplateNotFoundException.cs" />
+    <Compile Include="Core\MrsReport\ReportException\ReportTemplateNotMatchTypeException.cs" />
+    <Compile Include="Core\MrsReport\ReportException\ReportTemplateUrlNullException.cs" />
+    <Compile Include="Core\MrsReport\ReportException\ReportTypeNotFoundException.cs" />
+    <Compile Include="Core\MrsReport\ReportException\TemplateFileNotFoundException.cs" />
+    <Compile Include="Core\MrsReport\SarReportUtil.cs" />
+    <Compile Include="Manager\MrsOtherSysManager.cs" />
+    <Compile Include="Manager\MrsReportManager.cs" />
+    <Compile Include="Manager\ManagerBase.cs" />
+    <Compile Include="Manager\ManagerContainer.cs" />
+    <Compile Include="Manager\TokenManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MRS.LibraryBug\MRS.LibraryBug.csproj">
+      <Project>{65a721b3-9c07-4f00-b62e-6a044b11448f}</Project>
+      <Name>MRS.LibraryBug</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MRS.LibraryMessage\MRS.LibraryMessage.csproj">
+      <Project>{c8939852-2996-4b4e-98b2-69f586998048}</Project>
+      <Name>MRS.LibraryMessage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MRS.SDO\MRS.SDO.csproj">
+      <Project>{bcc88997-2a17-4b69-8ac7-a3c8cf029852}</Project>
+      <Name>MRS.SDO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

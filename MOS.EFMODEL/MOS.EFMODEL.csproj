@@ -1,0 +1,2852 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{76187D64-5BD9-48D2-839F-89B62E0419C4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MOS.EFMODEL</RootNamespace>
+    <AssemblyName>MOS.EFMODEL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_Library\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataModels\DataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\DataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\DataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\D_HIS_CARD_PATIENT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\D_HIS_EXP_MEST_DETAIL.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\D_HIS_EXP_MEST_DETAIL_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\D_HIS_MATERIAL_TYPE_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\D_HIS_MEDICINE_TYPE_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\D_HIS_MEDI_STOCK_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\D_HIS_MEDI_STOCK_2.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\D_HIS_PATIENT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\D_HIS_PATIENT_CARD.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\D_HIS_PATIENT_PROGRAM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\D_HIS_PATIENT_TREATMENT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\D_HIS_PATIENT_TYPE_ALTER_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\D_HIS_SERE_SERV_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\D_HIS_SERVICE_REQ_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\D_HIS_SERVICE_REQ_2.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\D_HIS_TREATMENT_BED_ROOM_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_ACCIDENT_BODY_PART.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_ACCIDENT_CARE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_ACCIDENT_HELMET.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_ACCIDENT_HURT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_ACCIDENT_HURT_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_ACCIDENT_LOCATION.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_ACCIDENT_POISON.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_ACCIDENT_RESULT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_ACCIDENT_VEHICLE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_ACCOUNT_BOOK.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_ACIN_INTERACTIVE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_ACTIVE_INGREDIENT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_ADR.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_ADR_MEDICINE_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_AGE_TYPE.cs" />
+    <Compile Include="DataModels\HIS_ALERT.cs" />
+    <Compile Include="DataModels\HIS_ALLERGENIC.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_ALLERGY_CARD.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_ANTIBIOTIC_MICROBI.cs" />
+    <Compile Include="DataModels\HIS_ANTIBIOTIC_NEW_REG.cs" />
+    <Compile Include="DataModels\HIS_ANTIBIOTIC_OLD_REG.cs" />
+    <Compile Include="DataModels\HIS_ANTIBIOTIC_REQUEST.cs" />
+    <Compile Include="DataModels\HIS_ANTICIPATE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_ANTICIPATE_BLTY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_ANTICIPATE_MATY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_ANTICIPATE_METY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_ANTIGEN.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_ANTIGEN_METY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_APPOINTMENT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_APPOINTMENT_PERIOD.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_APPOINTMENT_SERV.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_AREA.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_ASSESSMENT_MEMBER.cs" />
+    <Compile Include="DataModels\HIS_ASSESSMENT_OBJECT.cs" />
+    <Compile Include="DataModels\HIS_ASSIGN_REASON.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_ATC.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_AWARENESS.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_BABY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_BANK.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_BCS_MATY_REQ_DT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_BCS_MATY_REQ_REQ.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_BCS_METY_REQ_DT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_BCS_METY_REQ_REQ.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_BED.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_BED_BSTY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_BED_LOG.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_BED_ROOM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_BED_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_BHYT_BLACKLIST.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_BHYT_PARAM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_BHYT_WHITELIST.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_BID.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_BID_BLOOD_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_BID_MATERIAL_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_BID_MEDICINE_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_BID_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_BILL_FUND.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_BILL_GOODS.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_BIRTH_CERT_BOOK.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_BLOOD.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_BLOOD_ABO.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_BLOOD_GIVER.cs" />
+    <Compile Include="DataModels\HIS_BLOOD_GROUP.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_BLOOD_RH.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_BLOOD_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_BLOOD_VOLUME.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_BLTY_SERVICE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_BLTY_VOLUME.cs" />
+    <Compile Include="DataModels\HIS_BODY_PART.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_BORN_POSITION.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_BORN_RESULT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_BORN_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_BRANCH.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_BRANCH_TIME.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_CACHE_MONITOR.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_CANCEL_REASON.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_CARD.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_CARE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_CAREER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_CARER_CARD.cs" />
+    <Compile Include="DataModels\HIS_CARER_CARD_BORROW.cs" />
+    <Compile Include="DataModels\HIS_CARE_DETAIL.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_CARE_SUM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_CARE_TEMP.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_CARE_TEMP_DETAIL.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_CARE_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_CARO_ACCOUNT_BOOK.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_CARO_DEPARTMENT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_CASHIER_ADD_CONFIG.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_CASHIER_ROOM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_CASHOUT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_CONFIG.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_CONFIG_GROUP.cs" />
+    <Compile Include="DataModels\HIS_CONTACT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_CONTACT_POINT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_CONTRAINDICATION.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_CO_TREATMENT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_DATA_STORE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_DB_LOG.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_DEATH_CAUSE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_DEATH_CERT_BOOK.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_DEATH_WITHIN.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_DEBATE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_DEBATE_EKIP_USER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_DEBATE_INVITE_USER.cs" />
+    <Compile Include="DataModels\HIS_DEBATE_REASON.cs" />
+    <Compile Include="DataModels\HIS_DEBATE_TEMP.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_DEBATE_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_DEBATE_USER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_DEBT_GOODS.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_DEPARTMENT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_DEPARTMENT_TRAN.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_DEPOSIT_REASON.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_DEPOSIT_REQ.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_DESK.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_DHST.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_DIIM_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_DISEASE_RELATION.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_DISEASE_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_DISPENSE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_DISPENSE_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_DOCUMENT_BOOK.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_DOC_HOLD_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_DOSAGE_FORM.cs" />
+    <Compile Include="DataModels\HIS_DRUG_INTERVENTION.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EINVOICE_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EKIP.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EKIP_PLAN.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EKIP_PLAN_USER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EKIP_TEMP.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EKIP_TEMP_USER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EKIP_USER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EMERGENCY_WTIME.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EMOTIONLESS_METHOD.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EMOTIONLESS_RESULT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EMPLOYEE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EMPLOYEE_SCHEDULE.cs" />
+    <Compile Include="DataModels\HIS_EMR_COVER_CONFIG.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EMR_COVER_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EMR_DOCUMENT_STT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EMR_FORM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EMTE_MATERIAL_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EMTE_MEDICINE_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EQUIPMENT_SET.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EQUIPMENT_SET_MATY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EVENTS_CAUSES_DEATH.cs" />
+    <Compile Include="DataModels\HIS_EXAM_SCHEDULE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EXAM_SERE_DIRE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EXAM_SERVICE_TEMP.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EXECUTE_GROUP.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EXECUTE_ROLE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EXECUTE_ROLE_USER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EXECUTE_ROOM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EXE_SERVICE_MODULE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EXME_REASON_CFG.cs" />
+    <Compile Include="DataModels\HIS_EXPIRED_DATE_CFG.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EXP_BLTY_SERVICE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EXP_MEST.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EXP_MEST_BLOOD.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EXP_MEST_BLTY_REQ.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EXP_MEST_DELETED.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EXP_MEST_MATERIAL.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EXP_MEST_MATY_REQ.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EXP_MEST_MEDICINE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EXP_MEST_METY_REQ.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EXP_MEST_REASON.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EXP_MEST_STT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EXP_MEST_TEMPLATE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EXP_MEST_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EXP_MEST_USER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EXRO_ROOM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_EYE_SURGRY_DESC.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_FILE_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_FILM_SIZE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_FINANCE_PERIOD.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_FORM_TYPE_CFG.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_FORM_TYPE_CFG_DATA.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_FUEX_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_FUND.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_GENDER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_HEALTH_EXAM_RANK.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_HEIN_APPROVAL.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_HEIN_SERVICE_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_HIV_TREATMENT.cs" />
+    <Compile Include="DataModels\HIS_HOLD_RETURN.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_HORE_DHTY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_HORE_HANDOVER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_HORE_HANDOVER_STT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_HORE_HOHA.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_HOSPITALIZE_REASON.cs" />
+    <Compile Include="DataModels\HIS_HTU.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_ICD.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_ICD_CM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_ICD_GROUP.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_ICD_SERVICE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_IMP_MEST.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_IMP_MEST_BLOOD.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_IMP_MEST_MATERIAL.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_IMP_MEST_MATE_REQ.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_IMP_MEST_MEDICINE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_IMP_MEST_MEDI_REQ.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_IMP_MEST_PAY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_IMP_MEST_PROPOSE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_IMP_MEST_STT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_IMP_MEST_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_IMP_MEST_TYPE_USER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_IMP_MEST_USER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_IMP_SOURCE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_IMP_USER_TEMP.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_IMP_USER_TEMP_DT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_INFUSION.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_INFUSION_SUM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_INTERACTIVE_GRADE.cs" />
+    <Compile Include="DataModels\HIS_INVOICE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_INVOICE_BOOK.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_INVOICE_DETAIL.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_INVOICE_PRINT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_KSK.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_KSK_ACCESS.cs" />
+    <Compile Include="DataModels\HIS_KSK_CONTRACT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_KSK_DRIVER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_KSK_DRIVER_CAR.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_KSK_GENERAL.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_KSK_OCCUPATIONAL.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_KSK_OTHER.cs" />
+    <Compile Include="DataModels\HIS_KSK_OVER_EIGHTEEN.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_KSK_PERIOD_DRIVER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_KSK_SERVICE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_KSK_UNDER_EIGHTEEN.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_KSK_UNEI_VATY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_LICENSE_CLASS.cs" />
+    <Compile Include="DataModels\HIS_MACHINE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MACHINE_SERV_MATY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MANUFACTURER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MATERIAL.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MATERIAL_BEAN.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MATERIAL_MATERIAL.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MATERIAL_PATY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MATERIAL_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MATERIAL_TYPE_MAP.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MATY_MATY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEDICAL_ASSESSMENT.cs" />
+    <Compile Include="DataModels\HIS_MEDICAL_CONTRACT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEDICINE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEDICINE_BEAN.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEDICINE_GROUP.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEDICINE_INTERACTIVE.cs" />
+    <Compile Include="DataModels\HIS_MEDICINE_LINE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEDICINE_MATERIAL.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEDICINE_MEDICINE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEDICINE_PATY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEDICINE_SERVICE.cs" />
+    <Compile Include="DataModels\HIS_MEDICINE_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEDICINE_TYPE_ACIN.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEDICINE_TYPE_ROOM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEDICINE_TYPE_TUT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEDICINE_USE_FORM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEDI_CONTRACT_MATY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEDI_CONTRACT_METY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEDI_ORG.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEDI_REACT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEDI_REACT_SUM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEDI_REACT_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEDI_RECORD.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEDI_RECORD_BORROW.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEDI_RECORD_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEDI_STOCK.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEDI_STOCK_BLTY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEDI_STOCK_EXTY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEDI_STOCK_IMTY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEDI_STOCK_MATY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEDI_STOCK_METY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEDI_STOCK_PERIOD.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEMA_GROUP.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MESSAGE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEST_INVENTORY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEST_INVE_USER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEST_MATY_DEPA.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEST_METY_DEPA.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEST_METY_UNIT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEST_PATIENT_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEST_PATY_SUB.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEST_PATY_TRTY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEST_PERIOD_BLOOD.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEST_PERIOD_BLTY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEST_PERIOD_MATE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEST_PERIOD_MATY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEST_PERIOD_MEDI.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEST_PERIOD_METY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MEST_ROOM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_METY_MATY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_METY_METY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_METY_PRODUCT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MILITARY_RANK.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MIXED_MEDICINE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_MR_CHECKLIST.cs" />
+    <Compile Include="DataModels\HIS_MR_CHECK_ITEM.cs" />
+    <Compile Include="DataModels\HIS_MR_CHECK_ITEM_TYPE.cs" />
+    <Compile Include="DataModels\HIS_MR_CHECK_SUMMARY.cs" />
+    <Compile Include="DataModels\HIS_NEXT_TREA_INTR.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_NONE_MEDI_SERVICE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_NUM_ORDER_BLOCK.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_NUM_ORDER_ISSUE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_OBEY_CONTRAINDI.cs" />
+    <Compile Include="DataModels\HIS_ORDINAL.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_ORDINAL_REUSE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_OTHER_PAY_SOURCE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_OWE_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_PAAN_LIQUID.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_PAAN_POSITION.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_PACKAGE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_PACKAGE_DETAIL.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_PACKING_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_PATIENT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_PATIENT_CASE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_PATIENT_CLASSIFY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_PATIENT_OBSERVATION.cs" />
+    <Compile Include="DataModels\HIS_PATIENT_PROGRAM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_PATIENT_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_PATIENT_TYPE_ALLOW.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_PATIENT_TYPE_ALTER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_PATIENT_TYPE_ROOM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_PATIENT_TYPE_SUB.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_PAY_FORM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_PERIOD_DRIVER_DITY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_PERMISSION.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_PETROLEUM.cs" />
+    <Compile Include="DataModels\HIS_POSITION.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_PREPARE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_PREPARE_MATY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_PREPARE_METY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_PRIORITY_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_PROCESSING_METHOD.cs" />
+    <Compile Include="DataModels\HIS_PROGRAM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_PTTT_APPROVAL_STT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_PTTT_CALENDAR.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_PTTT_CATASTROPHE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_PTTT_CONDITION.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_PTTT_GROUP.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_PTTT_GROUP_BEST.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_PTTT_HIGH_TECH.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_PTTT_METHOD.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_PTTT_PRIORITY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_PTTT_TABLE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_QC_NORMATION.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_QC_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_RATION_GROUP.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_RATION_SCHEDULE.cs" />
+    <Compile Include="DataModels\HIS_RATION_SUM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_RATION_SUM_STT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_RATION_TIME.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_RECEPTION_ROOM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_REFECTORY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_REGIMEN_HIV.cs" />
+    <Compile Include="DataModels\HIS_REGISTER_GATE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_REGISTER_REQ.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_REHA_SUM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_REHA_TRAIN.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_REHA_TRAIN_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_REHA_TRAIN_UNIT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_REJECT_ALERT.cs" />
+    <Compile Include="DataModels\HIS_REMUNERATION.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_REPAY_REASON.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_REPORT_TYPE_CAT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_REST_RETR_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_ROOM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_ROOM_GROUP.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_ROOM_SARO.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_ROOM_TIME.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_ROOM_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_ROOM_TYPE_MODULE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SALE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SALE_PROFIT_CFG.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SAMPLE_ROOM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SARO_EXRO.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERE_CHANGE_DEBT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERE_IS_WAIT_CHILD.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERE_SERV.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERE_SERV_BILL.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERE_SERV_DEBT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERE_SERV_DEPOSIT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERE_SERV_EXT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERE_SERV_FILE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERE_SERV_MATY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERE_SERV_PTTT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERE_SERV_PTTT_TEMP.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERE_SERV_RATION.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERE_SERV_REHA.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERE_SERV_SUIN.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERE_SERV_TEIN.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERE_SERV_TEMP.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERVICE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERVICE_CHANGE_REQ.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERVICE_CONDITION.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERVICE_FOLLOW.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERVICE_GROUP.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERVICE_HEIN.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERVICE_MACHINE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERVICE_MATY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERVICE_METY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERVICE_NUM_ORDER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERVICE_PACKAGE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERVICE_PATY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERVICE_RATI.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERVICE_REQ.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERVICE_REQ_MATY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERVICE_REQ_METY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERVICE_REQ_STT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERVICE_REQ_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERVICE_RERE_TIME.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERVICE_RETY_CAT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERVICE_ROOM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERVICE_SAME.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERVICE_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERVICE_UNIT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SERV_SEGR.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SESE_DEPO_REPAY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SESE_PTTT_METHOD.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SESE_TRANS_REQ.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SEVERE_ILLNESS_INFO.cs" />
+    <Compile Include="DataModels\HIS_SKIN_SURGERY_DESC.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SOURCE_MEDICINE.cs" />
+    <Compile Include="DataModels\HIS_SPECIALITY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SPEED_UNIT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_STATION.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_STENT_CONCLUDE.cs" />
+    <Compile Include="DataModels\HIS_STORAGE_CONDITION.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SUBCLINICAL_RS_ADD.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SUIM_INDEX.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SUIM_INDEX_UNIT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SUIM_SETY_SUIN.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SUPPLIER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SURG_REMUNERATION.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_SURG_REMU_DETAIL.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_TEST_INDEX.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_TEST_INDEX_GROUP.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_TEST_INDEX_RANGE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_TEST_INDEX_UNIT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_TEST_SAMPLE_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_TEST_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_TEXT_LIB.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_TRACKING.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_TRACKING_TEMP.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_TRANSACTION.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_TRANSACTION_EXP.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_TRANSACTION_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_TRANSFUSION.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_TRANSFUSION_SUM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_TRANS_REQ.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_TRAN_PATI_FORM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_TRAN_PATI_REASON.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_TRAN_PATI_TECH.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_TRAN_PATI_TEMP.cs" />
+    <Compile Include="DataModels\HIS_TREATMENT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_TREATMENT_BED_ROOM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_TREATMENT_BORROW.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_TREATMENT_END_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_TREATMENT_END_TYPE_EXT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_TREATMENT_FILE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_TREATMENT_LOGGING.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_TREATMENT_LOG_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_TREATMENT_RESULT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_TREATMENT_ROOM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_TREATMENT_STT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_TREATMENT_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_TREATMENT_UNLIMIT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_UNLIMIT_REASON.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_UNLIMIT_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_USER_ACCOUNT_BOOK.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_USER_GROUP_TEMP.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_USER_GROUP_TEMP_DT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_USER_INVOICE_BOOK.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_USER_ROOM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_VACCINATION.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_VACCINATION_EXAM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_VACCINATION_REACT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_VACCINATION_RESULT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_VACCINATION_STT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_VACCINATION_VRPL.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_VACCINATION_VRTY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_VACCINE_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_VACC_APPOINTMENT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_VACC_EXAM_RESULT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_VACC_HEALTH_STT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_VACC_REACT_PLACE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_VACC_REACT_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_VAEX_VAER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_VARE_VART.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_VITAMIN_A.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_WARNING_FEE_CFG.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_WELFARE_TYPE.cs" />
+    <Compile Include="DataModels\HIS_WORKING_SHIFT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\HIS_WORK_PLACE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\L_HIS_EXP_MEST_MATERIAL.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\L_HIS_EXP_MEST_MATERIAL_2.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\L_HIS_EXP_MEST_MATY_REQ.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\L_HIS_EXP_MEST_MEDICINE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\L_HIS_EXP_MEST_MEDICINE_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\L_HIS_EXP_MEST_MEDICINE_2.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\L_HIS_EXP_MEST_METY_REQ.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\L_HIS_MATERIAL_BEAN.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\L_HIS_MEDICINE_BEAN.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\L_HIS_ROOM_COUNTER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\L_HIS_ROOM_COUNTER_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\L_HIS_SERVICE_REQ.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\L_HIS_SERVICE_REQ_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\L_HIS_TREATMENT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\L_HIS_TREATMENT_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\L_HIS_TREATMENT_2.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\L_HIS_TREATMENT_3.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\L_HIS_TREATMENT_BED_ROOM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_ACCIDENT_HURT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_ACCOUNT_BOOK.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_ACIN_INTERACTIVE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_ADR.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_ADR_MEDICINE_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_ALLERGENIC.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_ALLERGY_CARD.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_ANTIBIOTIC_NEW_REG.cs" />
+    <Compile Include="DataModels\V_HIS_ANTIBIOTIC_REQUEST.cs" />
+    <Compile Include="DataModels\V_HIS_ANTICIPATE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_ANTICIPATE_BLTY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_ANTICIPATE_MATY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_ANTICIPATE_METY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_ANTIGEN_METY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_APPOINTMENT_PERIOD.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_APPOINTMENT_SERV.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_BABY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_BED.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_BED_BSTY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_BED_LOG.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_BED_LOG_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_BED_LOG_2.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_BED_LOG_3.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_BED_LOG_4.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_BED_ROOM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_BED_ROOM_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_BHYT_WHITELIST.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_BID.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_BID_1.cs" />
+    <Compile Include="DataModels\V_HIS_BID_BLOOD_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_BID_MATERIAL_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_BID_MEDICINE_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_BILL_FUND.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_BIRTH_CERT_BOOK.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_BLOOD.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_BLOOD_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_BLOOD_TYPE_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_BLTY_SERVICE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_BRANCH_TIME.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_CARD.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_CARER_CARD.cs" />
+    <Compile Include="DataModels\V_HIS_CARER_CARD_BORROW.cs" />
+    <Compile Include="DataModels\V_HIS_CARE_DETAIL.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_CARO_ACCOUNT_BOOK.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_CASHIER_ADD_CONFIG.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_CASHIER_ROOM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_CONFIG.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_CONTACT_POINT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_CO_TREATMENT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_DATA_STORE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_DATA_STORE_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_DEATH_CERT_BOOK.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_DEBATE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_DEBATE_EKIP_USER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_DEBATE_USER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_DEPARTMENT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_DEPARTMENT_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_DEPARTMENT_TRAN.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_DEPOSIT_REQ.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_DESK.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_DHST.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_DISPENSE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_DOCUMENT_BOOK.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EKIP_PLAN_USER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EKIP_TEMP_USER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EKIP_USER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EMPLOYEE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EMR_COVER_CONFIG.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EMTE_MATERIAL_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EMTE_MEDICINE_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EQUIPMENT_SET_MATY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EXAM_SCHEDULE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EXAM_SERE_DIRE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EXECUTE_ROOM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EXECUTE_ROOM_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EXME_REASON_CFG.cs" />
+    <Compile Include="DataModels\V_HIS_EXP_BLTY_SERVICE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EXP_MEST.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EXP_MEST_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EXP_MEST_2.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EXP_MEST_3.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EXP_MEST_4.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EXP_MEST_5.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EXP_MEST_BLOOD.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EXP_MEST_BLTY_REQ.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EXP_MEST_BLTY_REQ_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EXP_MEST_BLTY_REQ_2.cs" />
+    <Compile Include="DataModels\V_HIS_EXP_MEST_CHMS.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EXP_MEST_CHMS_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EXP_MEST_CHMS_2.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EXP_MEST_MANU.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EXP_MEST_MATERIAL.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EXP_MEST_MATERIAL_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EXP_MEST_MATERIAL_2.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EXP_MEST_MATERIAL_3.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EXP_MEST_MATERIAL_4.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EXP_MEST_MATY_REQ.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EXP_MEST_MEDICINE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EXP_MEST_MEDICINE_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EXP_MEST_MEDICINE_2.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EXP_MEST_MEDICINE_3.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EXP_MEST_MEDICINE_4.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EXP_MEST_MEDICINE_5.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EXP_MEST_MEDICINE_6.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EXP_MEST_METY_REQ.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EXP_MEST_METY_REQ_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EXP_MEST_USER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_EXRO_ROOM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_FINANCE_PERIOD.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_FORM_TYPE_CFG_DATA.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_HEIN_APPROVAL.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_HIV_TREATMENT.cs" />
+    <Compile Include="DataModels\V_HIS_HOLD_RETURN.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_HORE_DHTY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_HORE_HANDOVER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_HORE_HOHA.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_ICD.cs" />
+    <Compile Include="DataModels\V_HIS_IMP_MEST.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_IMP_MEST_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_IMP_MEST_2.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_IMP_MEST_BLOOD.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_IMP_MEST_MANU.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_IMP_MEST_MATERIAL.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_IMP_MEST_MATERIAL_2.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_IMP_MEST_MATERIAL_3.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_IMP_MEST_MATERIAL_4.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_IMP_MEST_MEDICINE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_IMP_MEST_MEDICINE_2.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_IMP_MEST_MEDICINE_3.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_IMP_MEST_MEDICINE_4.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_IMP_MEST_PAY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_IMP_MEST_PROPOSE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_IMP_MEST_USER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_IMP_USER_TEMP_DT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_INFUSION.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_INFUSION_SUM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_INVOICE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_INVOICE_BOOK.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_KSK_ACCESS.cs" />
+    <Compile Include="DataModels\V_HIS_KSK_CONTRACT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_KSK_DRIVER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_KSK_SERVICE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MACHINE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MATERIAL.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MATERIAL_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MATERIAL_2.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MATERIAL_BEAN.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MATERIAL_BEAN_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MATERIAL_BEAN_2.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MATERIAL_PATY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MATERIAL_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MATERIAL_TYPE_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEDICAL_ASSESSMENT.cs" />
+    <Compile Include="DataModels\V_HIS_MEDICAL_CONTRACT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEDICINE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEDICINE_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEDICINE_2.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEDICINE_BEAN.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEDICINE_BEAN_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEDICINE_BEAN_2.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEDICINE_MATERIAL.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEDICINE_MEDICINE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEDICINE_PATY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEDICINE_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEDICINE_TYPE_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEDICINE_TYPE_ACIN.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEDICINE_TYPE_ROOM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEDICINE_TYPE_TUT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEDI_CONTRACT_MATY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEDI_CONTRACT_MATY_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEDI_CONTRACT_METY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEDI_CONTRACT_METY_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEDI_REACT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEDI_REACT_SUM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEDI_RECORD.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEDI_RECORD_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEDI_RECORD_2.cs" />
+    <Compile Include="DataModels\V_HIS_MEDI_RECORD_BORROW.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEDI_RECORD_BORROW_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEDI_STOCK.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEDI_STOCK_EXTY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEDI_STOCK_IMTY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEDI_STOCK_MATY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEDI_STOCK_MATY_1.cs" />
+    <Compile Include="DataModels\V_HIS_MEDI_STOCK_METY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEDI_STOCK_METY_1.cs" />
+    <Compile Include="DataModels\V_HIS_MEDI_STOCK_PERIOD.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEST_INVE_USER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEST_MATY_DEPA.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEST_METY_DEPA.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEST_METY_UNIT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEST_PATIENT_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEST_PATY_SUB.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEST_PATY_TRTY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEST_PERIOD_BLOOD.cs" />
+    <Compile Include="DataModels\V_HIS_MEST_PERIOD_BLTY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEST_PERIOD_MATE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEST_PERIOD_MATY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEST_PERIOD_MEDI.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEST_PERIOD_METY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_MEST_ROOM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_METY_MATY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_METY_METY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_METY_PRODUCT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_NONE_MEDI_SERVICE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_PACKAGE_DETAIL.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_PATIENT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_PATIENT_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_PATIENT_PROGRAM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_PATIENT_TYPE_ALLOW.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_PATIENT_TYPE_ALTER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_PATIENT_TYPE_ROOM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_PATIENT_TYPE_SUB.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_PREPARE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_PREPARE_MATY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_PREPARE_METY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_PROGRAM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_PTTT_CALENDAR.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_PTTT_GROUP_BEST.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_PTTT_TABLE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_QC_NORMATION.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_RATION_SCHEDULE.cs" />
+    <Compile Include="DataModels\V_HIS_RATION_SUM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_RECEPTION_ROOM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_REFECTORY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_REGISTER_GATE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_REGISTER_REQ.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_REHA_TRAIN.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_REHA_TRAIN_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_REMUNERATION.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_REST_RETR_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_ROOM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_ROOM_COUNTER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_ROOM_COUNTER_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_ROOM_SARO.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_ROOM_TIME.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_ROOM_TYPE_MODULE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SAMPLE_ROOM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SARO_EXRO.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERE_SERV.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERE_SERV_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERE_SERV_10.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERE_SERV_11.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERE_SERV_12.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERE_SERV_13.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERE_SERV_14.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERE_SERV_15.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERE_SERV_16.cs" />
+    <Compile Include="DataModels\V_HIS_SERE_SERV_17.cs" />
+    <Compile Include="DataModels\V_HIS_SERE_SERV_2.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERE_SERV_3.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERE_SERV_4.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERE_SERV_5.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERE_SERV_6.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERE_SERV_7.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERE_SERV_8.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERE_SERV_9.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERE_SERV_BILL.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERE_SERV_DEBT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERE_SERV_DEPOSIT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERE_SERV_MATY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERE_SERV_PTTT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERE_SERV_PTTT_1.cs" />
+    <Compile Include="DataModels\V_HIS_SERE_SERV_RATION.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERE_SERV_REHA.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERE_SERV_SUIN.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERE_SERV_TEIN.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERE_SERV_TEIN_1.cs" />
+    <Compile Include="DataModels\V_HIS_SERE_SERV_TEMP.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERVICE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERVICE_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERVICE_CHANGE_REQ.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERVICE_CONDITION.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERVICE_FOLLOW.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERVICE_HEIN.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERVICE_MATY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERVICE_METY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERVICE_NUM_ORDER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERVICE_PACKAGE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERVICE_PATY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERVICE_REQ.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERVICE_REQ_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERVICE_REQ_10.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERVICE_REQ_11.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERVICE_REQ_12.cs" />
+    <Compile Include="DataModels\V_HIS_SERVICE_REQ_13.cs" />
+    <Compile Include="DataModels\V_HIS_SERVICE_REQ_2.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERVICE_REQ_3.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERVICE_REQ_5.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERVICE_REQ_6.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERVICE_REQ_7.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERVICE_REQ_8.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERVICE_REQ_9.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERVICE_REQ_METY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERVICE_RERE_TIME.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERVICE_RETY_CAT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERVICE_ROOM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERVICE_SAME.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERVICE_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SERV_SEGR.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SESE_DEPO_REPAY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SESE_TRANS_REQ.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_STATION.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SUBCLINICAL_RS_ADD.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SUIM_INDEX.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SUIM_SETY_SUIN.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SURG_REMUNERATION.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SURG_REMU_DETAIL.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_SURG_REMU_DETAIL_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_TEST_INDEX.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_TEST_INDEX_RANGE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_TRACKING.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_TRANSACTION.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_TRANSACTION_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_TRANSACTION_5.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_TRANSFUSION_SUM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_TREATMENT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_TREATMENT_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_TREATMENT_10.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_TREATMENT_11.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_TREATMENT_12.cs" />
+    <Compile Include="DataModels\V_HIS_TREATMENT_2.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_TREATMENT_3.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_TREATMENT_4.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_TREATMENT_5.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_TREATMENT_6.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_TREATMENT_7.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_TREATMENT_8.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_TREATMENT_9.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_TREATMENT_BED_ROOM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_TREATMENT_BED_ROOM_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_TREATMENT_BORROW.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_TREATMENT_FEE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_TREATMENT_FEE_1.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_TREATMENT_FEE_2.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_TREATMENT_FEE_3.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_TREATMENT_FEE_4.cs" />
+    <Compile Include="DataModels\V_HIS_TREATMENT_LOGGING.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_TREATMENT_ROOM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_TREATMENT_UNLIMIT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_USER_ACCOUNT_BOOK.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_USER_GROUP_TEMP_DT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_USER_INVOICE_BOOK.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_USER_ROOM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_VACCINATION.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_VACCINATION_EXAM.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_VACC_APPOINTMENT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_VAEX_VAER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_HIS_VITAMIN_A.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Decorator\AppCreatorDecorator.cs" />
+    <Compile Include="Decorator\AppModifierDecorator.cs" />
+    <Compile Include="Decorator\CreatorDecorator.cs" />
+    <Compile Include="Decorator\DenyUpdateDecorator.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisCacheMonitor.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisEkipTemp.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisEkipTempUser.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisEquipmentSet.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisEquipmentSetMaty.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisExpMestBltyReq.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisIcdService.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisMachine.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisMediStockExty.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisMediStockImty.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisRepayReason.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisRoomGroup.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisSampleRoom.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisAccidentBodyPart.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisAccidentCare.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisAccidentHelmet.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisAccidentLocation.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisAccidentPoison.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisAccidentResult.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisAccidentVehicle.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisAnticipateBlty.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisAnticipatePlus.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisAccidentHurtType.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisAwareness.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisBaby.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisBed.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisBedBsty.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisBedLog.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisBedType.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisBhytBlacklist.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisBhytWhitelist.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisBid.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisBidBloodType.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisBidMaterialType.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisBidMedicineType.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisBidType.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisBillFund.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisBillGoods.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisBloodAbo.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisBloodGroup.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisBloodType.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisBloodVolume.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisBornPosition.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisBornResult.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisBornType.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisBranch.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisCareDetail.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisCareSum.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisCareType.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisCaroDepartment.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisCashierRoomPlus.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisCashout.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisConfig.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisDebate.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisDebateUser.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisDepositReq.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisEkip.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisEkipUser.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisEmergencyWtime.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisEmployee.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisExamServiceTemp.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisExecuteGroup.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisExecuteRole.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisExecuteRoleUser.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisExpMestBlood.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisExpMestMatyReq.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisExpMestMetyReq.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisExpMestReason.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisExpMestUser.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisFund.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisHtu.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisIcdCm.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisIcdGroup.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisImpMestBlood.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisImpMestTypeUser.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisImpMestUser.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisImpSource.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisInfusionSum.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisInvoice.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisInvoiceBook.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisInvoiceDetail.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisInvoicePrint.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisKskContract.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisMedicineLine.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisMedicineTypeTut.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisMediOrg.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisMediReactSum.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisMemaGroup.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisMestInventory.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisMestInveUser.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisMestMetyDepa.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisMestPatySub.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisMestPeriodBlood.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisMestPeriodBlty.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisMilitaryRank.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisOweType.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisPaanLiquid.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisPaanPosition.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisPackage.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisPackingType.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisPatientProgram.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisPatientTypeSub.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisProgram.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisRegisterGate.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisRegisterReq.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisRehaSum.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisRehaTrain.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisRehaTrainType.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisRehaTrainUnit.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisRemuneration.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisReportTypeCat.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisRestRetrType.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisRoomTypeModule.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisSaroExro.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisSereServBill.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisSereServDeposit.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisSereServExt.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisSereServMaty.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisSereServReha.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisSereServTemp.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisServiceFollow.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisServiceMachine.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisServiceMaty.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisServiceMety.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisServiceReqMaty.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisServiceReqMety.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisServiceReqType.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisServiceRetyCat.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisSeseDepoRepay.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisTracking.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisTreatmentBedRoom.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisTreatmentLogging.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisTreatmentPlus.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisTransactionPlus.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisServiceReqPlus.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisServicePatyPlus.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisPatientPlus.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisAccidentHurt.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisAccountBookPlus.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisAcinInteractive.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisActiveIngredient.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisBedRoomPlus.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisBlood.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisBloodRh.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisCard.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisCarePlus.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisCareer.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisDataStorePlus.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisDbLog.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisDeathCause.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisDeathWithin.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisDepartmentPlus.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisDepartmentTran.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisDhstPlus.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisDiseaseRelation.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisEmotionlessMethod.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisEmteMaterialType.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisEmteMedicineType.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisExamSereDire.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisExecuteRoomPlus.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisExpMestPlus.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisExpMestMaterial.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisExpMestMedicine.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisExpMestStt.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisExpMestTemplate.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisExpMestType.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisGender.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisHeinApproval.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisIcd.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisImpMestMaterial.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisImpMestMedicine.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisImpMestPlus.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisImpMestStt.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisImpMestType.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisInfusionPlus.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisManufacturer.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisMaterial.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisMaterialBean.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisMaterialPaty.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisMaterialTypePlus.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisMedicine.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisMedicineBean.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisMedicinePaty.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisMedicineTypePlus.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisMedicineTypeAcin.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisMedicineUseForm.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisMediReact.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisMediReactType.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisMediStockPlus.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisMediStockMaty.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisMediStockMety.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisMediStockPeriod.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisMestPatientType.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisMestPeriodMate.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisMestPeriodMaty.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisMestPeriodMedi.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisMestPeriodMety.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisMestRoom.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisPatientType.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisPatientTypeAllow.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisPatientTypeAlterPlus.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisPayForm.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisPtttCatastrophe.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisPtttCondition.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisPtttGroup.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisPtttMethod.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisReceptionRoomPlus.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisRoom.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisRoomType.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisSereServ.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisSereServFile.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisSereServPttt.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisSereServSuin.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisSereServTein.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisService.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisServiceGroup.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisServicePackage.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisServiceReqStt.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisServiceRoom.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisServiceType.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisServiceUnit.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisServSegr.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisSuimIndex.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisSuimIndexUnit.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisSuimSetySuin.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisSupplier.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisTestIndex.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisTestIndexRange.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisTestIndexUnit.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisTextLib.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisTranPatiForm.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisTranPatiReason.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisTransactionType.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisTreatmentEndType.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisTreatmentLogType.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisTreatmentResult.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisTreatmentType.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisUserInvoiceBook.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadHisUserRoom.cs" />
+    <Compile Include="Decorator\DummyDecorator.cs" />
+    <Compile Include="Decorator\DummyDecoratorLoad\LoadHisDepositReq.cs" />
+    <Compile Include="Decorator\DummyDecoratorLoad\LoadHisAnticipate.cs" />
+    <Compile Include="Decorator\DummyDecoratorLoad\LoadHisHeinApproval.cs" />
+    <Compile Include="Decorator\DummyDecoratorLoad\LoadHisTreatment.cs" />
+    <Compile Include="Decorator\DummyDecoratorLoad\LoadHisExpMest.cs" />
+    <Compile Include="Decorator\DummyDecoratorLoad\LoadHisTransaction.cs" />
+    <Compile Include="Decorator\DummyDecoratorLoad\LoadHisServiceReq.cs" />
+    <Compile Include="Decorator\DummyDecoratorLoad\LoadHisPatient.cs" />
+    <Compile Include="Decorator\DummyDecoratorLoad\LoadHisImpMest.cs" />
+    <Compile Include="Decorator\GroupCodeDecorator.cs" />
+    <Compile Include="Decorator\IsActiveDecorator.cs" />
+    <Compile Include="Decorator\IsDeleteDecorator.cs" />
+    <Compile Include="Decorator\ModifierDecorator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="DataModels\DataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DataModels\DataModel.edmx.diagram">
+      <DependentUpon>DataModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataModels\DataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DataModel.edmx</DependentUpon>
+      <LastGenOutput>DataModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DataModels\DataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DataModel.edmx</DependentUpon>
+      <LastGenOutput>DataModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

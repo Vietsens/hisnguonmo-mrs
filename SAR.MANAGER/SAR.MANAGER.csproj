@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1C7CB687-4C46-4EC8-A2B2-497DDCB3E34F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAR.MANAGER</RootNamespace>
+    <AssemblyName>SAR.MANAGER</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>lib\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="IMSys.DbConfig.SAR_RS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\IMSys.DbConfig\IMSys.DbConfig.SAR_RS\IMSys.DbConfig.SAR_RS.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Inventec.Common.DateTime">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.DateTime\Inventec.Common.DateTime.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.FileFolder">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.FileFolder\Inventec.Common.FileFolder.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.HardDrive">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.HardDrive\Inventec.Common.HardDrive.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.LicenseCrypto">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.LicenseCrypto\Inventec.Common.LicenseCrypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.Logging">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.Logging\Inventec.Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.Mapper">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.Mapper\Inventec.Common.Mapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.Repository">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.Repository\Inventec.Common.Repository.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.WebApiClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.WebApiClient\Inventec.Common.WebApiClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Core">
+      <HintPath>..\..\..\RELEASE\Inventec.Core\Inventec.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Fss.Client">
+      <HintPath>..\..\..\RELEASE\Inventec.Fss.Client\Inventec.Fss.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Fss.Utility">
+      <HintPath>..\..\..\RELEASE\Inventec.Fss.Client\Inventec.Fss.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Token.Core">
+      <HintPath>..\..\..\RELEASE\Inventec.Token\Inventec.Token.Core\Inventec.Token.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Token.ResourceSystem">
+      <HintPath>..\..\..\RELEASE\Inventec.Token\Inventec.Token.ResourceSystem\Inventec.Token.ResourceSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="MRS.Filter">
+      <HintPath>..\..\..\RELEASE\MRS\MRS.Filter.dll</HintPath>
+    </Reference>
+    <Reference Include="MRS.SDO">
+      <HintPath>..\..\..\RELEASE\MRS\MRS.SDO.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SDA.EFMODEL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\SDA\SDA.EFMODEL.dll</HintPath>
+    </Reference>
+    <Reference Include="SDA.Filter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\SDA\SDA.Filter.dll</HintPath>
+    </Reference>
+    <Reference Include="SDA.SDO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\SDA\SDA.SDO.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\BusinessBase.cs" />
+    <Compile Include="Base\DAOWorker.cs" />
+    <Compile Include="Base\OrderProcessorBase.cs" />
+    <Compile Include="Base\TokenCodeStore.cs" />
+    <Compile Include="Base\TroubleCache.cs" />
+    <Compile Include="Core\BeanObjectBase.cs" />
+    <Compile Include="Core\BusinessObjectBase.cs" />
+    <Compile Include="Core\Check\SarReportCheckVerifyExistsCode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\Check\SarReportCheckVerifyIsUnlock.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\Check\SarReportCheckVerifyValidData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\IDelegacy.cs" />
+    <Compile Include="Core\IDelegacyT.cs" />
+    <Compile Include="Core\SarReportStt\Get\Ev\ISarReportSttGetEv.cs" />
+    <Compile Include="Core\SarReportStt\Get\Ev\SarReportSttGetEvBehaviorByCode.cs" />
+    <Compile Include="Core\SarReportStt\Get\Ev\SarReportSttGetEvBehaviorById.cs" />
+    <Compile Include="Core\SarReportStt\Get\Ev\SarReportSttGetEvBehaviorFactory.cs" />
+    <Compile Include="Core\SarReportStt\Get\ListEv\ISarReportSttGetListEv.cs" />
+    <Compile Include="Core\SarReportStt\Get\ListEv\SarReportSttGetListEvBehaviorByFilterQuery.cs" />
+    <Compile Include="Core\SarReportStt\Get\ListEv\SarReportSttGetListEvBehaviorFactory.cs" />
+    <Compile Include="Core\SarReportStt\Get\SarReportSttFilterQuery.cs" />
+    <Compile Include="Core\SarReportStt\SarReportSttBO.cs" />
+    <Compile Include="Core\SarReportStt\SarReportSttGet.cs" />
+    <Compile Include="Core\SarReportStt\TypeCollection.cs" />
+    <Compile Include="Core\SarReportTemplate\Get\Ev\ISarReportTemplateGetEv.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\SarReportTemplate\Get\Ev\SarReportTemplateGetEvBehaviorByCode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\SarReportTemplate\Get\Ev\SarReportTemplateGetEvBehaviorById.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\SarReportTemplate\Get\Ev\SarReportTemplateGetEvBehaviorFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\SarReportTemplate\Get\ListEv\ISarReportTemplateGetListEv.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\SarReportTemplate\Get\ListEv\SarReportTemplateGetListEvBehaviorByFilterQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\SarReportTemplate\Get\ListEv\SarReportTemplateGetListEvBehaviorFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\SarReportTemplate\Get\ListV\ISarReportTemplateGetListV.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\SarReportTemplate\Get\ListV\SarReportTemplateGetListVBehaviorByViewFilterQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\SarReportTemplate\Get\ListV\SarReportTemplateGetListVBehaviorFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\SarReportTemplate\Get\SarReportTemplateFilterQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\SarReportTemplate\Get\SarReportTemplateViewFilterQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\SarReportTemplate\Get\V\ISarReportTemplateGetV.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\SarReportTemplate\Get\V\ISarReportTemplateGetVBehaviorByCode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\SarReportTemplate\Get\V\SarReportTemplateGetVBehaviorById.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\SarReportTemplate\Get\V\SarReportTemplateGetVBehaviorFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\SarReportTemplate\IDelegacyReportTemplate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\SarReportTemplate\SarReportTemplateBO.cs" />
+    <Compile Include="Core\SarReportTemplate\SarReportTemplateGet_Full.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\SarReportType\Get\Ev\ISarReportTypeGetEv.cs" />
+    <Compile Include="Core\SarReportType\Get\Ev\SarReportTypeGetEvBehaviorByCode.cs" />
+    <Compile Include="Core\SarReportType\Get\Ev\SarReportTypeGetEvBehaviorById.cs" />
+    <Compile Include="Core\SarReportType\Get\Ev\SarReportTypeGetEvBehaviorFactory.cs" />
+    <Compile Include="Core\SarReportType\Get\ListEv\ISarReportTypeGetListEv.cs" />
+    <Compile Include="Core\SarReportType\Get\ListEv\SarReportTypeGetListEvBehaviorByFilterQuery.cs" />
+    <Compile Include="Core\SarReportType\Get\ListEv\SarReportTypeGetListEvBehaviorFactory.cs" />
+    <Compile Include="Core\SarReportType\Get\SarReportTypeFilterQuery.cs" />
+    <Compile Include="Core\SarReportType\SarReportTypeBO.cs" />
+    <Compile Include="Core\SarReportType\SarReportTypeGet.cs" />
+    <Compile Include="Core\SarReportType\TypeCollection.cs" />
+    <Compile Include="Core\SarReport\Create\ISarReportCreate.cs" />
+    <Compile Include="Core\SarReport\Create\SarReportCreateBehaviorEv.cs" />
+    <Compile Include="Core\SarReport\Create\SarReportCreateBehaviorFactory.cs" />
+    <Compile Include="Core\SarReport\Create\SarReportCreateBehaviorListEv.cs" />
+    <Compile Include="Core\SarReport\IDelegacyFile.cs" />
+    <Compile Include="Core\SarReport\Get\Ev\ISarReportGetEv.cs" />
+    <Compile Include="Core\SarReport\Get\Ev\SarReportGetEvBehaviorByCode.cs" />
+    <Compile Include="Core\SarReport\Get\Ev\SarReportGetEvBehaviorById.cs" />
+    <Compile Include="Core\SarReport\Get\Ev\SarReportGetEvBehaviorFactory.cs" />
+    <Compile Include="Core\SarReport\Get\ListEv\ISarReportGetListEv.cs" />
+    <Compile Include="Core\SarReport\Get\ListEv\SarReportGetListEvBehaviorByFilterQuery.cs" />
+    <Compile Include="Core\SarReport\Get\ListEv\SarReportGetListEvBehaviorFactory.cs" />
+    <Compile Include="Core\SarReport\Get\ListV\ISarReportGetListV.cs" />
+    <Compile Include="Core\SarReport\Get\ListV\SarReportGetListVBehaviorByViewFilterQuery.cs" />
+    <Compile Include="Core\SarReport\Get\ListV\SarReportGetListVBehaviorFactory.cs" />
+    <Compile Include="Core\SarReport\Get\SarReportFilterQuery.cs" />
+    <Compile Include="Core\SarReport\Get\SarReportViewFilterQuery.cs" />
+    <Compile Include="Core\SarReport\Get\V\ISarReportGetV.cs" />
+    <Compile Include="Core\SarReport\Get\V\ISarReportGetVBehaviorByCode.cs" />
+    <Compile Include="Core\SarReport\Get\V\SarReportGetVBehaviorById.cs" />
+    <Compile Include="Core\SarReport\Get\V\SarReportGetVBehaviorFactory.cs" />
+    <Compile Include="Core\SarReport\SarReportBO.cs" />
+    <Compile Include="Core\SarReport\SarReportBOPlus.cs" />
+    <Compile Include="Core\SarReport\SarReportCreate.cs" />
+    <Compile Include="Core\SarReport\SarReportGet.cs" />
+    <Compile Include="Core\SarReport\SarReportUpdate.cs" />
+    <Compile Include="Core\SarReport\SarReportUpdateStt.cs" />
+    <Compile Include="Core\SarReport\TypeCollection.cs" />
+    <Compile Include="Core\SarReport\UpdateStt\ISarReportUpdateStt.cs" />
+    <Compile Include="Core\SarReport\UpdateStt\SarReportUpdateSttBehavior.cs" />
+    <Compile Include="Core\SarReport\UpdateStt\SarReportUpdateSttBehaviorFactory.cs" />
+    <Compile Include="Core\SarReport\Update\ISarReportUpdate.cs" />
+    <Compile Include="Core\SarReport\Update\SarReportUpdateBehaviorEv.cs" />
+    <Compile Include="Core\SarReport\Update\SarReportUpdateBehaviorFactory.cs" />
+    <Compile Include="Manager\ManagerBase.cs" />
+    <Compile Include="Manager\ManagerContainer.cs" />
+    <Compile Include="Manager\SarReportManager.cs" />
+    <Compile Include="Manager\SarReportManagerPlus.cs" />
+    <Compile Include="Manager\SarReportSttManager.cs" />
+    <Compile Include="Manager\SarReportTemplateManager.cs" />
+    <Compile Include="Manager\SarReportTypeManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAR.Filter\SAR.Filter.csproj">
+      <Project>{ab7b5beb-abb9-4f1d-9de0-c077d7faae87}</Project>
+      <Name>SAR.Filter</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

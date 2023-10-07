@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FB8B48E3-3677-4667-B6D8-697602B557C6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HTC.DAO</RootNamespace>
+    <AssemblyName>HTC.DAO</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\_Library\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.Logging">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.Logging\Inventec.Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.Repository">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.Repository\Inventec.Common.Repository.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Core">
+      <HintPath>..\..\..\RELEASE\Inventec.Core\Inventec.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Token.ResourceSystem">
+      <HintPath>..\..\..\RELEASE\Inventec.Token\Inventec.Token.ResourceSystem\Inventec.Token.ResourceSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\_Library\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\AppContext.cs" />
+    <Compile Include="Base\BridgeDAO.cs" />
+    <Compile Include="Base\ContextUtil.cs" />
+    <Compile Include="Base\ReflectionQueryable.cs" />
+    <Compile Include="Base\StagingObjectBase.cs" />
+    <Compile Include="HtcExpenseType\HtcExpenseTypeDAO.cs" />
+    <Compile Include="HtcExpenseType\HtcExpenseTypeGet.cs" />
+    <Compile Include="HtcExpense\HtcExpenseDAO.cs" />
+    <Compile Include="HtcExpense\HtcExpenseDAOPlus_Full_NoCode.cs" />
+    <Compile Include="HtcExpense\HtcExpenseGet.cs" />
+    <Compile Include="HtcExpense\HtcExpenseGetView.cs" />
+    <Compile Include="HtcExpense\HtcExpenseGetViewById.cs" />
+    <Compile Include="HtcPeriodDepartment\HtcPeriodDepartmentDAO.cs" />
+    <Compile Include="HtcPeriodDepartment\HtcPeriodDepartmentGet.cs" />
+    <Compile Include="HtcPeriodDepartment\HtcPeriodDepartmentGetView.cs" />
+    <Compile Include="HtcPeriodDepartment\HtcPeriodDepartmentGetViewById.cs" />
+    <Compile Include="HtcPeriod\HtcPeriodDAO.cs" />
+    <Compile Include="HtcPeriod\HtcPeriodGet.cs" />
+    <Compile Include="HtcRevenue\HtcRevenueDAO.cs" />
+    <Compile Include="HtcRevenue\HtcRevenueGet.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StagingObject\HtcExpenseSO.cs" />
+    <Compile Include="StagingObject\HtcExpenseTypeSO.cs" />
+    <Compile Include="StagingObject\HtcPeriodDepartmentSO.cs" />
+    <Compile Include="StagingObject\HtcPeriodSO.cs" />
+    <Compile Include="StagingObject\HtcRevenueSO.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HTC.EFMODEL\HTC.EFMODEL.csproj">
+      <Project>{a1c16277-7eb5-41d3-8d76-7d763277b3b1}</Project>
+      <Name>HTC.EFMODEL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

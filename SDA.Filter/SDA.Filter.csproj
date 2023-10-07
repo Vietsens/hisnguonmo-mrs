@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A9F20183-402D-4AA5-A06F-D3299837B3E8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SDA.Filter</RootNamespace>
+    <AssemblyName>SDA.Filter</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FilterBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SarReportCalendarFilter.cs" />
+    <Compile Include="SarReportFilter.cs" />
+    <Compile Include="SarReportSttFilter.cs" />
+    <Compile Include="SarReportTemplateFilter.cs" />
+    <Compile Include="SarReportTemplateViewFilter.cs" />
+    <Compile Include="SarReportTypeFilter.cs" />
+    <Compile Include="SarReportViewFilter.cs" />
+    <Compile Include="SdaCommuneFilter.cs" />
+    <Compile Include="SdaCommuneViewFilter.cs" />
+    <Compile Include="SdaConfigAppFilter.cs" />
+    <Compile Include="SdaConfigAppUserFilter.cs" />
+    <Compile Include="SdaConfigAppUserViewFilter.cs" />
+    <Compile Include="SdaConfigAppViewFilter.cs" />
+    <Compile Include="SdaConfigFilter.cs" />
+    <Compile Include="SdaCurrencyFilter.cs" />
+    <Compile Include="SdaDbLogFilter.cs" />
+    <Compile Include="SdaDistrictFilter.cs" />
+    <Compile Include="SdaDistrictViewFilter.cs" />
+    <Compile Include="SdaEthnicFilter.cs" />
+    <Compile Include="SdaEventLogFilter.cs" />
+    <Compile Include="SdaEventLogTypeFilter.cs" />
+    <Compile Include="SdaEventLogViewFilter.cs" />
+    <Compile Include="SdaFeedbackFilter.cs" />
+    <Compile Include="SdaGroupFilter.cs" />
+    <Compile Include="SdaGroupTypeFilter.cs" />
+    <Compile Include="SdaGroupViewFilter.cs" />
+    <Compile Include="SdaHashtagFilter.cs" />
+    <Compile Include="SdaJsonRedundancyFilter.cs" />
+    <Compile Include="SdaLanguageFilter.cs" />
+    <Compile Include="SdaLicenseFilter.cs" />
+    <Compile Include="SdaMessageBroadcastFilter.cs" />
+    <Compile Include="SdaMessageBroadcastViewFilter.cs" />
+    <Compile Include="SdaMessageFilter.cs" />
+    <Compile Include="SdaNationalFilter.cs" />
+    <Compile Include="SdaNationalViewFilter.cs" />
+    <Compile Include="SdaNotifyFilter.cs" />
+    <Compile Include="SdaProvinceFilter.cs" />
+    <Compile Include="SdaProvinceViewFilter.cs" />
+    <Compile Include="SdaReligionFilter.cs" />
+    <Compile Include="SdaTranslateFilter.cs" />
+    <Compile Include="SdaTroubleFilter.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

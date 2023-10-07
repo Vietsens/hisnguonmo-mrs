@@ -1,0 +1,126 @@
+﻿<div>
+    <h3 style="text-align: center">MRS</h3>
+    <div>
+        <ol>
+            <li>Phiên bản: 1.28</li>
+            <li>Nội dung chỉnh sửa:
+                <div>
+                    <ul>
+                        Phiên bản 1.28
+                        Ngày 27/08/2016
+                    </ul>
+                    <ul>
+                        Phiên bản 1.26
+                        Ngày 25/08/2016
+                    </ul>
+                    <ul>
+                        Phiên bản 1.26
+                        Ngày 24/08/2016
+                    </ul>
+                    <ul>
+                        Phiên bản 1.19
+                        Ngày 28/07/2016
+                    </ul>
+                    <ul>
+                        Phiên bản 1.18
+                        Ngày 25/07/2016
+                    </ul>
+                    <ul>
+                        Phiên bản 1.17
+                        Ngày 20/07/2016
+                    </ul>
+                    <ul>
+                        Phiên bản 1.16
+                        Ngày 19/07/2016
+                    </ul>
+                    <ul>
+                        Phiên bản 1.15
+                        Ngày 20/07/2016
+                    </ul>
+                    <ul>
+                        Phiên bản 1.14
+                        Ngày 15/07/2016
+                    </ul>
+                    <ul>
+                        Phiên bản 1.13
+                        Ngày 13/07/2016
+                    </ul>
+                    <ul>
+                        Phiên bản 1.12
+                        Ngày 11/07/2016
+                    </ul>
+                    <ul>
+                        Phiên bản 1.11
+                        Ngày 09/07/2016
+                    </ul>
+                    <ul>
+                        Phiên bản 1.10
+                        Ngày 08/07/2016
+                    </ul>
+                    <ul>
+                        Phiên bản 1.9
+                        Ngày 07/07/2016
+                    </ul>
+                    <ul>
+                        Phiên bản 1.8
+                        - Bổ xung thêm báo cáo
+                    </ul>
+                    <ul>
+                        Phiên bản 1.5
+                        - Chuyển chỗ lưu trữ file báo cáo đã thực hiện xong
+                        - Bổ xung thêm báo cáo
+                        - Bỏ api GetFile
+                    </ul>
+                    <ul>
+                        Phiên bản 1.4
+                        - Bổ xung thêm báo cáo
+                    </ul>
+                    <ul>
+                        Phiên bản 1.3
+                        - Chuyển chỗ lưu trữ file báo cáo đã thực hiện xong
+                        - Bổ xung thêm báo cáo
+                        - Bỏ api GetFile
+                    </ul>
+                    <ul>
+                        Phiên bản 1.2
+                        - Bổ xung báo cáo "Sổ khám bênh", "Báo cáo hoạt động khám", "Thống kê 15 ngày sử dụng", "Thẻ kho vật tư", "Thẻ kho thuốc", "Sổ kiểm nhập", "Báo cáo sử dụng vật tư", "Báo cáo sử dụng thuốc", "Báo cáo hoạt động khám"
+                    </ul>
+                </div>
+            </li>
+            <li>Lưu ý:
+                <div>
+                    Trong file web.config tìm đến các dòng sau để sửa lại giá trị tương ứng với hệ thống triển khai:
+                    <ul>
+                        <li>"Inventec.Token.ResourceSystem.AcsTokenGet.Uri.Base": Địa chỉ kết nối backend phân quyền ACS</li>
+                        <li>"MRS.MANAGER.Base.ApiConsumerStore.Sar": Địa chỉ kết nối backend SAR</li>
+                        <li>"MRS.MANAGER.Base.ApiConsumerStore.Sda": Địa chỉ kết nối backend SDA</li>
+                        <li>"MRS.MANAGER.Base.ApiConsumerStore.Acs": Địa chỉ kết nối backend ACS</li>
+                        <li>"MRS.MANAGER.Base.ApiConsumerStore.Mos": Địa chỉ kết nối backend MOS</li>
+                        <li>"MRS.MANAGER.Base.ApiConsumerStore.Fss": Địa chỉ kết nối backend FSS</li>
+                        <li>"Inventec.SdaConsumer.Base.Uri": Địa chỉ kết nối backend SDA </li>
+                        <li>"Inventec.AcsConsumer.Base.Uri": Địa chỉ kết nối backend ACS </li>
+                        <li>"fss.uri.base": Địa chỉ kết nối backend FSS </li>
+                        <li>"MRS.API.Scheduler.ScanLicenseJob": Thời gian tự động quét license hệ thống (tính theo mili giây)</li>
+                        <li>"MRS.API.Scheduler.ScanTroubleJob": Thời gian tự động quét sự cố hệ thống (tính theo mili giây)</li>
+                        <li>"MRS.API.Scheduler.ScanTimeOutCredentialsJob": Thời gian tự động quét các phiên làm việc bị time-out trên hệ thống (tính theo mili giây)</li>
+                    </ul>
+                </div>
+            </li>
+            <li>Hướng dẫn cập nhật từ phiên bản trước đó:
+                <ul>
+                    <li>Ghi đè lại thư mục bin</li>
+                    <li>Ghi đè lại thư mục Views</li>
+                    <li>Nâng phiên bản của backend</li>
+                </ul>
+            </li>
+            <li>Phiên bản backend tương thích:
+                <ul>
+                    <li>ACS: 1</li>
+                    <li>MOS: 1.12</li>
+                    <li>SDA: 1.2</li>
+                    <li>SAR: 1.5</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+</div>

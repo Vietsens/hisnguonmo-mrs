@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{674D9C9C-DC1F-4915-BA8C-253C23095487}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MRS.Processor.Mrs00670</RootNamespace>
+    <AssemblyName>MRS.Processor.Mrs00670</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG; TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ACS.DAO">
+      <HintPath>..\..\..\..\RELEASE\MRSv3\ACS.DAO.dll</HintPath>
+    </Reference>
+    <Reference Include="ACS.EFMODEL">
+      <HintPath>..\..\..\..\RELEASE\MRSv3\ACS.EFMODEL.dll</HintPath>
+    </Reference>
+    <Reference Include="ACS.Filter">
+      <HintPath>..\..\..\..\RELEASE\MRSv3\ACS.Filter.dll</HintPath>
+    </Reference>
+    <Reference Include="ACS.MANAGER">
+      <HintPath>..\..\..\..\RELEASE\MRSv3\ACS.MANAGER.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper">
+      <HintPath>..\..\..\..\RELEASE\MRSv3\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="FlexCel, Version=6.26.0.0, Culture=neutral, PublicKeyToken=cb8f6080e6d5a4d6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>G:\SVN\PROJECT\IMSys\RELEASE\FlexCellReport\6.18.5\FlexCel.dll</HintPath>
+    </Reference>
+    <Reference Include="HIS.Treatment.DateTime">
+      <HintPath>..\..\..\..\RELEASE\HIS\HIS.Treatment.DateTime\HIS.Treatment.DateTime.dll</HintPath>
+    </Reference>
+    <Reference Include="HTC.DAO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\RELEASE\MRSv3\HTC.DAO.dll</HintPath>
+    </Reference>
+    <Reference Include="HTC.EFMODEL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\RELEASE\MRSv3\HTC.EFMODEL.dll</HintPath>
+    </Reference>
+    <Reference Include="HTC.Filter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\RELEASE\MRSv3\HTC.Filter.dll</HintPath>
+    </Reference>
+    <Reference Include="HTC.MANAGER, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\RELEASE\MRSv3\HTC.MANAGER.dll</HintPath>
+    </Reference>
+    <Reference Include="IMSys.DbConfig.HIS_RS">
+      <HintPath>..\..\..\..\RELEASE\IMSys.DbConfig\IMSys.DbConfig.HIS_RS\IMSys.DbConfig.HIS_RS.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Backend.MANAGER">
+      <HintPath>..\..\..\..\RELEASE\Inventec.Backend\Inventec.Backend.MANAGER\Inventec.Backend.MANAGER.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.DateTime">
+      <HintPath>..\..\..\..\RELEASE\Inventec.Common\Inventec.Common.DateTime\Inventec.Common.DateTime.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.FlexCelExport">
+      <HintPath>..\..\..\..\RELEASE\Inventec.Common\Inventec.Common.FlexCelExport\6.18.5\Inventec.Common.FlexCelExport.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.Logging">
+      <HintPath>..\..\..\..\RELEASE\Inventec.Common\Inventec.Common.Logging\Inventec.Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.Number">
+      <HintPath>..\..\..\..\RELEASE\Inventec.Common\Inventec.Common.Number\Inventec.Common.Number.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.TypeConvert">
+      <HintPath>..\..\..\..\RELEASE\Inventec.Common\Inventec.Common.TypeConvert\Inventec.Common.TypeConvert.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Core">
+      <HintPath>..\..\..\..\RELEASE\Inventec.Core\Inventec.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MOS.DAO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\RELEASE\MRSv3\MOS.DAO.dll</HintPath>
+    </Reference>
+    <Reference Include="MOS.EFMODEL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\RELEASE\MRSv3\MOS.EFMODEL.dll</HintPath>
+    </Reference>
+    <Reference Include="MOS.Filter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\RELEASE\MRSv3\MOS.Filter.dll</HintPath>
+    </Reference>
+    <Reference Include="MOS.LibraryHein.Bhyt">
+      <HintPath>..\..\..\..\RELEASE\MRSv3\MOS.LibraryHein.Bhyt.dll</HintPath>
+    </Reference>
+    <Reference Include="MOS.LibraryHein.Bhyt, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\RELEASE\MRSv3\MOS.LibraryHein.Bhyt.dll</HintPath>
+    </Reference>
+    <Reference Include="MOS.LibraryHein.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\RELEASE\MRSv3\MOS.LibraryHein.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MOS.LibraryHein.Factory">
+      <HintPath>..\..\..\..\RELEASE\MRSv3\MOS.LibraryHein.Factory.dll</HintPath>
+    </Reference>
+    <Reference Include="MOS.LibraryHein.HcmPoorFund">
+      <HintPath>..\..\..\..\RELEASE\MRSv3\MOS.LibraryHein.HcmPoorFund.dll</HintPath>
+    </Reference>
+    <Reference Include="MOS.LibraryHein.Ksk">
+      <HintPath>..\..\..\..\RELEASE\MRSv3\MOS.LibraryHein.Ksk.dll</HintPath>
+    </Reference>
+    <Reference Include="MOS.MANAGER, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\RELEASE\MRSv3\MOS.MANAGER.dll</HintPath>
+    </Reference>
+    <Reference Include="Mrs.Bhyt.PayRateAndTotalPrice">
+      <HintPath>..\..\..\..\RELEASE\MRSv3\Mrs.Bhyt.PayRateAndTotalPrice.dll</HintPath>
+    </Reference>
+    <Reference Include="MRS.ConfigManager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\RELEASE\MRSv3\MRS.ConfigManager.dll</HintPath>
+    </Reference>
+    <Reference Include="MRS.MANAGER, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\RELEASE\MRSv3\MRS.MANAGER.dll</HintPath>
+    </Reference>
+    <Reference Include="SAR.DAO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\RELEASE\MRSv3\SAR.DAO.dll</HintPath>
+    </Reference>
+    <Reference Include="SAR.EFMODEL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\RELEASE\MRSv3\SAR.EFMODEL.dll</HintPath>
+    </Reference>
+    <Reference Include="SAR.Filter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\RELEASE\MRSv3\SAR.Filter.dll</HintPath>
+    </Reference>
+    <Reference Include="SAR.MANAGER, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\RELEASE\MRSv3\SAR.MANAGER.dll</HintPath>
+    </Reference>
+    <Reference Include="SDA.DAO">
+      <HintPath>..\..\..\..\RELEASE\MRSv3\SDA.DAO.dll</HintPath>
+    </Reference>
+    <Reference Include="SDA.EFMODEL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\RELEASE\MRSv3\SDA.EFMODEL.dll</HintPath>
+    </Reference>
+    <Reference Include="SDA.Filter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\RELEASE\MRSv3\SDA.Filter.dll</HintPath>
+    </Reference>
+    <Reference Include="SDA.MANAGER">
+      <HintPath>..\..\..\..\RELEASE\MRSv3\SDA.MANAGER.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ManagerSql.cs" />
+    <Compile Include="Mrs00670Filter.cs" />
+    <Compile Include="Mrs00670Processor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)$(TargetName).dll" "$(SolutionDir)$(SolutionName).API\bin\ProcessorInstanceDll" /Y /I</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

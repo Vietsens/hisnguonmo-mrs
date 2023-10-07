@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F96F55ED-7E8B-4F82-896B-FBF16CC4205B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TYT.MANAGER</RootNamespace>
+    <AssemblyName>TYT.MANAGER</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Inventec.Backend.MANAGER">
+      <HintPath>..\..\..\RELEASE\Inventec.Backend\Inventec.Backend.MANAGER\Inventec.Backend.MANAGER.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.Logging">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.Logging\Inventec.Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.Repository">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.Repository\Inventec.Common.Repository.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Core">
+      <HintPath>..\..\..\RELEASE\Inventec.Core\Inventec.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Token.ResourceSystem">
+      <HintPath>..\..\..\RELEASE\Inventec.Token\Inventec.Token.ResourceSystem\Inventec.Token.ResourceSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\BusinessBase.cs" />
+    <Compile Include="Base\DAOWorker.cs" />
+    <Compile Include="Base\OrderProcessorBase.cs" />
+    <Compile Include="Base\TroubleCache.cs" />
+    <Compile Include="Core\BeanObjectBase.cs" />
+    <Compile Include="Core\BusinessObjectBase.cs" />
+    <Compile Include="Core\IDelegacy.cs" />
+    <Compile Include="Core\IDelegacyT.cs" />
+    <Compile Include="Core\TytDeath\Get\Ev\ITytDeathGetEv.cs" />
+    <Compile Include="Core\TytDeath\Get\Ev\TytDeathGetEvBehaviorById.cs" />
+    <Compile Include="Core\TytDeath\Get\Ev\TytDeathGetEvBehaviorFactory_NoCode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\TytDeath\Get\ListEv\ITytDeathGetListEv.cs" />
+    <Compile Include="Core\TytDeath\Get\ListEv\TytDeathGetListEvBehaviorByFilterQuery.cs" />
+    <Compile Include="Core\TytDeath\Get\ListEv\TytDeathGetListEvBehaviorFactory.cs" />
+    <Compile Include="Core\TytDeath\Get\TytDeathFilterQuery.cs" />
+    <Compile Include="Core\TytDeath\TypeCollection.cs" />
+    <Compile Include="Core\TytDeath\TytDeathBO.cs" />
+    <Compile Include="Core\TytDeath\TytDeathGet.cs" />
+    <Compile Include="Core\TytFetusAbortion\Get\Ev\ITytFetusAbortionGetEv.cs" />
+    <Compile Include="Core\TytFetusAbortion\Get\Ev\TytFetusAbortionGetEvBehaviorById.cs" />
+    <Compile Include="Core\TytFetusAbortion\Get\Ev\TytFetusAbortionGetEvBehaviorFactory_NoCode.cs" />
+    <Compile Include="Core\TytFetusAbortion\Get\ListEv\ITytFetusAbortionGetListEv.cs" />
+    <Compile Include="Core\TytFetusAbortion\Get\ListEv\TytFetusAbortionGetListEvBehaviorByFilterQuery.cs" />
+    <Compile Include="Core\TytFetusAbortion\Get\ListEv\TytFetusAbortionGetListEvBehaviorFactory.cs" />
+    <Compile Include="Core\TytFetusAbortion\Get\TytFetusAbortionFilterQuery.cs" />
+    <Compile Include="Core\TytFetusAbortion\TypeCollection.cs" />
+    <Compile Include="Core\TytFetusAbortion\TytFetusAbortionBO.cs" />
+    <Compile Include="Core\TytFetusAbortion\TytFetusAbortionGet.cs" />
+    <Compile Include="Core\TytFetusBorn\Get\Ev\ITytFetusBornGetEv.cs" />
+    <Compile Include="Core\TytFetusBorn\Get\Ev\TytFetusBornGetEvBehaviorById.cs" />
+    <Compile Include="Core\TytFetusBorn\Get\Ev\TytFetusBornGetEvBehaviorFactory_NoCode.cs" />
+    <Compile Include="Core\TytFetusBorn\Get\ListEv\ITytFetusBornGetListEv.cs" />
+    <Compile Include="Core\TytFetusBorn\Get\ListEv\TytFetusBornGetListEvBehaviorByFilterQuery.cs" />
+    <Compile Include="Core\TytFetusBorn\Get\ListEv\TytFetusBornGetListEvBehaviorFactory.cs" />
+    <Compile Include="Core\TytFetusBorn\Get\TytFetusBornFilterQuery.cs" />
+    <Compile Include="Core\TytFetusBorn\TypeCollection.cs" />
+    <Compile Include="Core\TytFetusBorn\TytFetusBornBO.cs" />
+    <Compile Include="Core\TytFetusBorn\TytFetusBornGet.cs" />
+    <Compile Include="Core\TytFetusExam\Get\Ev\ITytFetusExamGetEv.cs" />
+    <Compile Include="Core\TytFetusExam\Get\Ev\TytFetusExamGetEvBehaviorById.cs" />
+    <Compile Include="Core\TytFetusExam\Get\Ev\TytFetusExamGetEvBehaviorFactory_NoCode.cs" />
+    <Compile Include="Core\TytFetusExam\Get\ListEv\ITytFetusExamGetListEv.cs" />
+    <Compile Include="Core\TytFetusExam\Get\ListEv\TytFetusExamGetListEvBehaviorByFilterQuery.cs" />
+    <Compile Include="Core\TytFetusExam\Get\ListEv\TytFetusExamGetListEvBehaviorFactory.cs" />
+    <Compile Include="Core\TytFetusExam\Get\TytFetusExamFilterQuery.cs" />
+    <Compile Include="Core\TytFetusExam\TypeCollection.cs" />
+    <Compile Include="Core\TytFetusExam\TytFetusExamBO.cs" />
+    <Compile Include="Core\TytFetusExam\TytFetusExamGet.cs" />
+    <Compile Include="Core\TytGdsk\Get\Ev\ITytGdskGetEv.cs" />
+    <Compile Include="Core\TytGdsk\Get\Ev\TytGdskGetEvBehaviorById.cs" />
+    <Compile Include="Core\TytGdsk\Get\Ev\TytGdskGetEvBehaviorFactory_NoCode.cs" />
+    <Compile Include="Core\TytGdsk\Get\ListEv\ITytGdskGetListEv.cs" />
+    <Compile Include="Core\TytGdsk\Get\ListEv\TytGdskGetListEvBehaviorByFilterQuery.cs" />
+    <Compile Include="Core\TytGdsk\Get\ListEv\TytGdskGetListEvBehaviorFactory.cs" />
+    <Compile Include="Core\TytGdsk\Get\TytGdskFilterQuery.cs" />
+    <Compile Include="Core\TytGdsk\TypeCollection.cs" />
+    <Compile Include="Core\TytGdsk\TytGdskBO.cs" />
+    <Compile Include="Core\TytGdsk\TytGdskGet.cs" />
+    <Compile Include="Core\TytHiv\Get\Ev\ITytHivGetEv.cs" />
+    <Compile Include="Core\TytHiv\Get\Ev\TytHivGetEvBehaviorById.cs" />
+    <Compile Include="Core\TytHiv\Get\Ev\TytHivGetEvBehaviorFactory_NoCode.cs" />
+    <Compile Include="Core\TytHiv\Get\ListEv\ITytHivGetListEv.cs" />
+    <Compile Include="Core\TytHiv\Get\ListEv\TytHivGetListEvBehaviorByFilterQuery.cs" />
+    <Compile Include="Core\TytHiv\Get\ListEv\TytHivGetListEvBehaviorFactory.cs" />
+    <Compile Include="Core\TytHiv\Get\TytHivFilterQuery.cs" />
+    <Compile Include="Core\TytHiv\TypeCollection.cs" />
+    <Compile Include="Core\TytHiv\TytHivBO.cs" />
+    <Compile Include="Core\TytHiv\TytHivGet.cs" />
+    <Compile Include="Core\TytKhh\Get\Ev\ITytKhhGetEv.cs" />
+    <Compile Include="Core\TytKhh\Get\Ev\TytKhhGetEvBehaviorById.cs" />
+    <Compile Include="Core\TytKhh\Get\Ev\TytKhhGetEvBehaviorFactory_NoCode.cs" />
+    <Compile Include="Core\TytKhh\Get\ListEv\ITytKhhGetListEv.cs" />
+    <Compile Include="Core\TytKhh\Get\ListEv\TytKhhGetListEvBehaviorByFilterQuery.cs" />
+    <Compile Include="Core\TytKhh\Get\ListEv\TytKhhGetListEvBehaviorFactory.cs" />
+    <Compile Include="Core\TytKhh\Get\TytKhhFilterQuery.cs" />
+    <Compile Include="Core\TytKhh\TypeCollection.cs" />
+    <Compile Include="Core\TytKhh\TytKhhBO.cs" />
+    <Compile Include="Core\TytKhh\TytKhhGet.cs" />
+    <Compile Include="Core\TytMalaria\Get\Ev\ITytMalariaGetEv.cs" />
+    <Compile Include="Core\TytMalaria\Get\Ev\TytMalariaGetEvBehaviorById.cs" />
+    <Compile Include="Core\TytMalaria\Get\Ev\TytMalariaGetEvBehaviorFactory_NoCode.cs" />
+    <Compile Include="Core\TytMalaria\Get\ListEv\ITytMalariaGetListEv.cs" />
+    <Compile Include="Core\TytMalaria\Get\ListEv\TytMalariaGetListEvBehaviorByFilterQuery.cs" />
+    <Compile Include="Core\TytMalaria\Get\ListEv\TytMalariaGetListEvBehaviorFactory.cs" />
+    <Compile Include="Core\TytMalaria\Get\TytMalariaFilterQuery.cs" />
+    <Compile Include="Core\TytMalaria\TypeCollection.cs" />
+    <Compile Include="Core\TytMalaria\TytMalariaBO.cs" />
+    <Compile Include="Core\TytMalaria\TytMalariaGet.cs" />
+    <Compile Include="Core\TytNerves\Get\Ev\ITytNervesGetEv.cs" />
+    <Compile Include="Core\TytNerves\Get\Ev\TytNervesGetEvBehaviorById.cs" />
+    <Compile Include="Core\TytNerves\Get\Ev\TytNervesGetEvBehaviorFactory_NoCode.cs" />
+    <Compile Include="Core\TytNerves\Get\ListEv\ITytNervesGetListEv.cs" />
+    <Compile Include="Core\TytNerves\Get\ListEv\TytNervesGetListEvBehaviorByFilterQuery.cs" />
+    <Compile Include="Core\TytNerves\Get\ListEv\TytNervesGetListEvBehaviorFactory.cs" />
+    <Compile Include="Core\TytNerves\Get\TytNervesFilterQuery.cs" />
+    <Compile Include="Core\TytNerves\TypeCollection.cs" />
+    <Compile Include="Core\TytNerves\TytNervesBO.cs" />
+    <Compile Include="Core\TytNerves\TytNervesGet.cs" />
+    <Compile Include="Core\TytTuberculosis\Get\Ev\ITytTuberculosisGetEv.cs" />
+    <Compile Include="Core\TytTuberculosis\Get\Ev\TytTuberculosisGetEvBehaviorById.cs" />
+    <Compile Include="Core\TytTuberculosis\Get\Ev\TytTuberculosisGetEvBehaviorFactory_NoCode.cs" />
+    <Compile Include="Core\TytTuberculosis\Get\ListEv\ITytTuberculosisGetListEv.cs" />
+    <Compile Include="Core\TytTuberculosis\Get\ListEv\TytTuberculosisGetListEvBehaviorByFilterQuery.cs" />
+    <Compile Include="Core\TytTuberculosis\Get\ListEv\TytTuberculosisGetListEvBehaviorFactory.cs" />
+    <Compile Include="Core\TytTuberculosis\Get\TytTuberculosisFilterQuery.cs" />
+    <Compile Include="Core\TytTuberculosis\TypeCollection.cs" />
+    <Compile Include="Core\TytTuberculosis\TytTuberculosisBO.cs" />
+    <Compile Include="Core\TytTuberculosis\TytTuberculosisGet.cs" />
+    <Compile Include="Core\TytUninfectIcdGroup\Get\Ev\ITytUninfectIcdGroupGetEv.cs" />
+    <Compile Include="Core\TytUninfectIcdGroup\Get\Ev\TytUninfectIcdGroupGetEvBehaviorByCode.cs" />
+    <Compile Include="Core\TytUninfectIcdGroup\Get\Ev\TytUninfectIcdGroupGetEvBehaviorById.cs" />
+    <Compile Include="Core\TytUninfectIcdGroup\Get\Ev\TytUninfectIcdGroupGetEvBehaviorFactory.cs" />
+    <Compile Include="Core\TytUninfectIcdGroup\Get\ListEv\ITytUninfectIcdGroupGetListEv.cs" />
+    <Compile Include="Core\TytUninfectIcdGroup\Get\ListEv\TytUninfectIcdGroupGetListEvBehaviorByFilterQuery.cs" />
+    <Compile Include="Core\TytUninfectIcdGroup\Get\ListEv\TytUninfectIcdGroupGetListEvBehaviorFactory.cs" />
+    <Compile Include="Core\TytUninfectIcdGroup\Get\TytUninfectIcdGroupFilterQuery.cs" />
+    <Compile Include="Core\TytUninfectIcdGroup\TypeCollection.cs" />
+    <Compile Include="Core\TytUninfectIcdGroup\TytUninfectIcdGroupBO.cs" />
+    <Compile Include="Core\TytUninfectIcdGroup\TytUninfectIcdGroupGet.cs" />
+    <Compile Include="Core\TytUninfectIcd\Get\Ev\ITytUninfectIcdGetEv.cs" />
+    <Compile Include="Core\TytUninfectIcd\Get\Ev\TytUninfectIcdGetEvBehaviorByCode.cs" />
+    <Compile Include="Core\TytUninfectIcd\Get\Ev\TytUninfectIcdGetEvBehaviorById.cs" />
+    <Compile Include="Core\TytUninfectIcd\Get\Ev\TytUninfectIcdGetEvBehaviorFactory.cs" />
+    <Compile Include="Core\TytUninfectIcd\Get\ListEv\ITytUninfectIcdGetListEv.cs" />
+    <Compile Include="Core\TytUninfectIcd\Get\ListEv\TytUninfectIcdGetListEvBehaviorByFilterQuery.cs" />
+    <Compile Include="Core\TytUninfectIcd\Get\ListEv\TytUninfectIcdGetListEvBehaviorFactory.cs" />
+    <Compile Include="Core\TytUninfectIcd\Get\TytUninfectIcdFilterQuery.cs" />
+    <Compile Include="Core\TytUninfectIcd\TypeCollection.cs" />
+    <Compile Include="Core\TytUninfectIcd\TytUninfectIcdBO.cs" />
+    <Compile Include="Core\TytUninfectIcd\TytUninfectIcdGet.cs" />
+    <Compile Include="Core\TytUninfect\Get\Ev\ITytUninfectGetEv.cs" />
+    <Compile Include="Core\TytUninfect\Get\Ev\TytUninfectGetEvBehaviorById.cs" />
+    <Compile Include="Core\TytUninfect\Get\Ev\TytUninfectGetEvBehaviorFactory_NoCode.cs" />
+    <Compile Include="Core\TytUninfect\Get\ListEv\ITytUninfectGetListEv.cs" />
+    <Compile Include="Core\TytUninfect\Get\ListEv\TytUninfectGetListEvBehaviorByFilterQuery.cs" />
+    <Compile Include="Core\TytUninfect\Get\ListEv\TytUninfectGetListEvBehaviorFactory.cs" />
+    <Compile Include="Core\TytUninfect\Get\TytUninfectFilterQuery.cs" />
+    <Compile Include="Core\TytUninfect\TypeCollection.cs" />
+    <Compile Include="Core\TytUninfect\TytUninfectBO.cs" />
+    <Compile Include="Core\TytUninfect\TytUninfectGet.cs" />
+    <Compile Include="Manager\ManagerBase.cs" />
+    <Compile Include="Manager\ManagerContainer.cs" />
+    <Compile Include="Manager\TytDeathManager.cs" />
+    <Compile Include="Manager\TytFetusAbortionManager.cs" />
+    <Compile Include="Manager\TytFetusBornManager.cs" />
+    <Compile Include="Manager\TytFetusExamManager.cs" />
+    <Compile Include="Manager\TytGdskManager.cs" />
+    <Compile Include="Manager\TytHivManager.cs" />
+    <Compile Include="Manager\TytKhhManager.cs" />
+    <Compile Include="Manager\TytMalariaManager.cs" />
+    <Compile Include="Manager\TytNervesManager.cs" />
+    <Compile Include="Manager\TytTuberculosisManager.cs" />
+    <Compile Include="Manager\TytUninfectIcdGroupManager.cs" />
+    <Compile Include="Manager\TytUninfectIcdManager.cs" />
+    <Compile Include="Manager\TytUninfectManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TYT.DAO\TYT.DAO.csproj">
+      <Project>{0cd96be3-cc66-4cd0-85ea-7f9cfd2a897c}</Project>
+      <Name>TYT.DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TYT.EFMODEL\TYT.EFMODEL.csproj">
+      <Project>{2f6fb8a6-b3ff-4506-8c18-a443d85a453b}</Project>
+      <Name>TYT.EFMODEL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TYT.Filter\TYT.Filter.csproj">
+      <Project>{b430db1a-f4c7-4234-b757-ac7ce5726ed7}</Project>
+      <Name>TYT.Filter</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

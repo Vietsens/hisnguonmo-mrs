@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{987ABCC2-F944-4095-AC64-77FF6ABA29FE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SDA.EFMODEL</RootNamespace>
+    <AssemblyName>SDA.EFMODEL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataModels\DataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\DataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\DataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\SDA_COMMUNE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\SDA_CONFIG.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\SDA_CONFIG_APP.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\SDA_CONFIG_APP_USER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\SDA_DISTRICT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\SDA_ETHNIC.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\SDA_EVENT_LOG.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\SDA_GROUP.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\SDA_GROUP_TYPE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\SDA_LANGUAGE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\SDA_LICENSE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\SDA_NATIONAL.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\SDA_NOTIFY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\SDA_PROVINCE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\SDA_RELIGION.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\SDA_TRANSLATE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\SDA_TROUBLE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_SDA_COMMUNE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_SDA_CONFIG_APP_USER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_SDA_DISTRICT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_SDA_GROUP.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_SDA_NATIONAL.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\V_SDA_PROVINCE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Decorator\AppCreatorDecorator.cs" />
+    <Compile Include="Decorator\AppModifierDecorator.cs" />
+    <Compile Include="Decorator\CreatorDecorator.cs" />
+    <Compile Include="Decorator\DenyUpdateDecorator.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadSdaCommune.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadSdaConfig.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadSdaConfigApp.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadSdaConfigAppUser.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadSdaDistrict.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadSdaEthnic.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadSdaEventLog.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadSdaGroup.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadSdaGroupType.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadSdaLanguage.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadSdaLicense.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadSdaNational.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadSdaNotify.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadSdaProvince.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadSdaReligion.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadSdaTranslate.cs" />
+    <Compile Include="Decorator\DenyUpdateDecoratorLoad\LoadSdaTrouble.cs" />
+    <Compile Include="Decorator\DummyDecorator.cs" />
+    <Compile Include="Decorator\DummyDecoratorLoad\LoadSdaTrouble.cs" />
+    <Compile Include="Decorator\DummyDecoratorLoad\LoadSdaGroup.cs" />
+    <Compile Include="Decorator\GroupCodeDecorator.cs" />
+    <Compile Include="Decorator\IsActiveDecorator.cs" />
+    <Compile Include="Decorator\IsDeleteDecorator.cs" />
+    <Compile Include="Decorator\ModifierDecorator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="DataModels\DataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DataModels\DataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DataModel.edmx</DependentUpon>
+      <LastGenOutput>DataModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="DataModels\DataModel.edmx.diagram">
+      <DependentUpon>DataModel.edmx</DependentUpon>
+    </None>
+    <None Include="DataModels\DataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DataModel.edmx</DependentUpon>
+      <LastGenOutput>DataModel.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

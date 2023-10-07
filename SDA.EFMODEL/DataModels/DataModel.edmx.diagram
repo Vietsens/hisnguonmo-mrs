@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5809b4598763468085f0822e7332fd1a" Name="Diagram1">
+        <EntityTypeShape EntityType="DataModels.SDA_COMMUNE" Width="1.5" PointX="7.5" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.SDA_CONFIG" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.SDA_CONFIG_APP" Width="1.5" PointX="5.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.SDA_CONFIG_APP_USER" Width="1.5" PointX="8" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.SDA_DISTRICT" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.SDA_ETHNIC" Width="1.5" PointX="10.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.SDA_EVENT_LOG" Width="1.5" PointX="10.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.SDA_GROUP" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.SDA_GROUP_TYPE" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.SDA_LANGUAGE" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.SDA_LICENSE" Width="1.5" PointX="2.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.SDA_NATIONAL" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.SDA_NOTIFY" Width="1.5" PointX="4.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.SDA_PROVINCE" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.SDA_RELIGION" Width="1.5" PointX="12.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.SDA_TRANSLATE" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.SDA_TROUBLE" Width="1.5" PointX="6.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.V_SDA_COMMUNE" Width="1.5" PointX="12.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.V_SDA_CONFIG_APP_USER" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.V_SDA_DISTRICT" Width="1.5" PointX="14.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.V_SDA_GROUP" Width="1.5" PointX="14.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.V_SDA_NATIONAL" Width="1.5" PointX="15.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.V_SDA_PROVINCE" Width="1.5" PointX="8.75" PointY="15.75" IsExpanded="true" />
+        <AssociationConnector Association="DataModels.SDA_COMMUNE_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DataModels.SDA_CONFIG_APP_USER_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DataModels.SDA_DISTRICT_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DataModels.SDA_TRANSLATE_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DataModels.SDA_PROVINCE_FK1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

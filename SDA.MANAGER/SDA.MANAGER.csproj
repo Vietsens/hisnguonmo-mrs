@@ -1,0 +1,382 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A5874FBA-F517-459F-B5B2-7C853818E60C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SDA.MANAGER</RootNamespace>
+    <AssemblyName>SDA.MANAGER</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="IMSys.DbConfig.SAR_RS">
+      <HintPath>..\..\..\RELEASE\IMSys.DbConfig\IMSys.DbConfig.SAR_RS\IMSys.DbConfig.SAR_RS.dll</HintPath>
+    </Reference>
+    <Reference Include="IMSys.DbConfig.SDA_RS">
+      <HintPath>..\..\..\RELEASE\IMSys.DbConfig\IMSys.DbConfig.SDA_RS\IMSys.DbConfig.SDA_RS.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Backend.MANAGER">
+      <HintPath>..\..\..\RELEASE\Inventec.Backend\Inventec.Backend.MANAGER\Inventec.Backend.MANAGER.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.DateTime">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.DateTime\Inventec.Common.DateTime.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.HardDrive">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.HardDrive\Inventec.Common.HardDrive.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.LicenseCrypto">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.LicenseCrypto\Inventec.Common.LicenseCrypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.Logging">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.Logging\Inventec.Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.Mapper">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.Mapper\Inventec.Common.Mapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.Repository">
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.Repository\Inventec.Common.Repository.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Common.WebApiClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\RELEASE\Inventec.Common\Inventec.Common.WebApiClient\Inventec.Common.WebApiClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Core">
+      <HintPath>..\..\..\RELEASE\Inventec.Core\Inventec.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Token.AuthSystem">
+      <HintPath>..\..\..\RELEASE\Inventec.Token\Inventec.Token.AuthSystem\Inventec.Token.AuthSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Token.Core">
+      <HintPath>..\..\..\RELEASE\Inventec.Token\Inventec.Token.Core\Inventec.Token.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Inventec.Token.ResourceSystem">
+      <HintPath>..\..\..\RELEASE\Inventec.Token\Inventec.Token.ResourceSystem\Inventec.Token.ResourceSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\BusinessBase.cs" />
+    <Compile Include="Base\DAOWorker.cs" />
+    <Compile Include="Base\OrderProcessorBase.cs" />
+    <Compile Include="Base\TroubleCache.cs" />
+    <Compile Include="Config\Loader.cs" />
+    <Compile Include="Core\BeanObjectBase.cs" />
+    <Compile Include="Core\BusinessObjectBase.cs" />
+    <Compile Include="Core\IDelegacy.cs" />
+    <Compile Include="Core\IDelegacyT.cs" />
+    <Compile Include="Core\SdaCommune\Get\Ev\ISdaCommuneGetEv.cs" />
+    <Compile Include="Core\SdaCommune\Get\Ev\SdaCommuneGetEvBehaviorByCode.cs" />
+    <Compile Include="Core\SdaCommune\Get\Ev\SdaCommuneGetEvBehaviorById.cs" />
+    <Compile Include="Core\SdaCommune\Get\Ev\SdaCommuneGetEvBehaviorFactory.cs" />
+    <Compile Include="Core\SdaCommune\Get\ListEv\ISdaCommuneGetListEv.cs" />
+    <Compile Include="Core\SdaCommune\Get\ListEv\SdaCommuneGetListEvByDistrictBehaviorByFilterQuery.cs" />
+    <Compile Include="Core\SdaCommune\Get\ListEv\SdaCommuneGetListEvBehaviorByFilterQuery.cs" />
+    <Compile Include="Core\SdaCommune\Get\ListEv\SdaCommuneGetListEvBehaviorFactory.cs" />
+    <Compile Include="Core\SdaCommune\Get\ListV\ISdaCommuneGetListV.cs" />
+    <Compile Include="Core\SdaCommune\Get\ListV\SdaCommuneGetListVBehaviorByViewFilterQuery.cs" />
+    <Compile Include="Core\SdaCommune\Get\ListV\SdaCommuneGetListVBehaviorFactory.cs" />
+    <Compile Include="Core\SdaCommune\Get\SdaCommuneFilterQuery.cs" />
+    <Compile Include="Core\SdaCommune\Get\SdaCommuneViewFilterQuery.cs" />
+    <Compile Include="Core\SdaCommune\Get\V\ISdaCommuneGetV.cs" />
+    <Compile Include="Core\SdaCommune\Get\V\ISdaCommuneGetVBehaviorByCode.cs" />
+    <Compile Include="Core\SdaCommune\Get\V\SdaCommuneGetVBehaviorById.cs" />
+    <Compile Include="Core\SdaCommune\Get\V\SdaCommuneGetVBehaviorFactory.cs" />
+    <Compile Include="Core\SdaCommune\SdaCommuneBO.cs" />
+    <Compile Include="Core\SdaCommune\SdaCommuneGet_Full.cs" />
+    <Compile Include="Core\SdaCommune\TypeCollection.cs" />
+    <Compile Include="Core\SdaConfigAppUser\Get\Ev\ISdaConfigAppUserGetEv.cs" />
+    <Compile Include="Core\SdaConfigAppUser\Get\Ev\SdaConfigAppUserGetEvBehaviorById.cs" />
+    <Compile Include="Core\SdaConfigAppUser\Get\Ev\SdaConfigAppUserGetEvBehaviorFactory_NoCode.cs" />
+    <Compile Include="Core\SdaConfigAppUser\Get\ListEv\ISdaConfigAppUserGetListEv.cs" />
+    <Compile Include="Core\SdaConfigAppUser\Get\ListEv\SdaConfigAppUserGetListEvBehaviorByFilterQuery.cs" />
+    <Compile Include="Core\SdaConfigAppUser\Get\ListEv\SdaConfigAppUserGetListEvBehaviorFactory.cs" />
+    <Compile Include="Core\SdaConfigAppUser\Get\ListV\ISdaConfigAppUserGetListV.cs" />
+    <Compile Include="Core\SdaConfigAppUser\Get\ListV\SdaConfigAppUserGetListVBehaviorByViewFilterQuery.cs" />
+    <Compile Include="Core\SdaConfigAppUser\Get\ListV\SdaConfigAppUserGetListVBehaviorFactory.cs" />
+    <Compile Include="Core\SdaConfigAppUser\Get\SdaConfigAppUserFilterQuery.cs" />
+    <Compile Include="Core\SdaConfigAppUser\Get\SdaConfigAppUserViewFilterQuery.cs" />
+    <Compile Include="Core\SdaConfigAppUser\Get\V\ISdaConfigAppUserGetV.cs" />
+    <Compile Include="Core\SdaConfigAppUser\Get\V\SdaConfigAppUserGetVBehaviorById.cs" />
+    <Compile Include="Core\SdaConfigAppUser\Get\V\SdaConfigAppUserGetVBehaviorFactory_NoCode.cs" />
+    <Compile Include="Core\SdaConfigAppUser\SdaConfigAppUserBO.cs" />
+    <Compile Include="Core\SdaConfigAppUser\SdaConfigAppUserGet_Full.cs" />
+    <Compile Include="Core\SdaConfigAppUser\TypeCollection.cs" />
+    <Compile Include="Core\SdaConfigApp\Get\Ev\ISdaConfigAppGetEv.cs" />
+    <Compile Include="Core\SdaConfigApp\Get\Ev\SdaConfigAppGetEvBehaviorByCode.cs" />
+    <Compile Include="Core\SdaConfigApp\Get\Ev\SdaConfigAppGetEvBehaviorById.cs" />
+    <Compile Include="Core\SdaConfigApp\Get\Ev\SdaConfigAppGetEvBehaviorFactory.cs" />
+    <Compile Include="Core\SdaConfigApp\Get\ListEv\ISdaConfigAppGetListEv.cs" />
+    <Compile Include="Core\SdaConfigApp\Get\ListEv\SdaConfigAppGetListEvBehaviorByFilterQuery.cs" />
+    <Compile Include="Core\SdaConfigApp\Get\ListEv\SdaConfigAppGetListEvBehaviorFactory.cs" />
+    <Compile Include="Core\SdaConfigApp\Get\SdaConfigAppFilterQuery.cs" />
+    <Compile Include="Core\SdaConfigApp\SdaConfigAppBO.cs" />
+    <Compile Include="Core\SdaConfigApp\SdaConfigAppGet.cs" />
+    <Compile Include="Core\SdaConfigApp\TypeCollection.cs" />
+    <Compile Include="Core\SdaConfig\Get\Ev\ISdaConfigGetEv.cs" />
+    <Compile Include="Core\SdaConfig\Get\Ev\SdaConfigGetEvBehaviorByCode.cs" />
+    <Compile Include="Core\SdaConfig\Get\Ev\SdaConfigGetEvBehaviorById.cs" />
+    <Compile Include="Core\SdaConfig\Get\Ev\SdaConfigGetEvBehaviorFactory.cs" />
+    <Compile Include="Core\SdaConfig\Get\ListEv\ISdaConfigGetListEv.cs" />
+    <Compile Include="Core\SdaConfig\Get\ListEv\SdaConfigGetListEvBehaviorByFilterQuery.cs" />
+    <Compile Include="Core\SdaConfig\Get\ListEv\SdaConfigGetListEvBehaviorFactory.cs" />
+    <Compile Include="Core\SdaConfig\Get\SdaConfigFilterQuery.cs" />
+    <Compile Include="Core\SdaConfig\SdaConfigBO.cs" />
+    <Compile Include="Core\SdaConfig\SdaConfigGet.cs" />
+    <Compile Include="Core\SdaConfig\TypeCollection.cs" />
+    <Compile Include="Core\SdaDistrict\Get\Ev\ISdaDistrictGetEv.cs" />
+    <Compile Include="Core\SdaDistrict\Get\Ev\SdaDistrictGetEvBehaviorByCode.cs" />
+    <Compile Include="Core\SdaDistrict\Get\Ev\SdaDistrictGetEvBehaviorById.cs" />
+    <Compile Include="Core\SdaDistrict\Get\Ev\SdaDistrictGetEvBehaviorFactory.cs" />
+    <Compile Include="Core\SdaDistrict\Get\ListEv\SdaDistrictGetListEvBehaviorByProvinceIds.cs" />
+    <Compile Include="Core\SdaDistrict\Get\ListEv\ISdaDistrictGetListEv.cs" />
+    <Compile Include="Core\SdaDistrict\Get\ListEv\SdaDistrictGetListEvBehaviorByFilterQuery.cs" />
+    <Compile Include="Core\SdaDistrict\Get\ListEv\SdaDistrictGetListEvBehaviorFactory.cs" />
+    <Compile Include="Core\SdaDistrict\Get\ListV\ISdaDistrictGetListV.cs" />
+    <Compile Include="Core\SdaDistrict\Get\ListV\SdaDistrictGetListVBehaviorByViewFilterQuery.cs" />
+    <Compile Include="Core\SdaDistrict\Get\ListV\SdaDistrictGetListVBehaviorFactory.cs" />
+    <Compile Include="Core\SdaDistrict\Get\SdaDistrictFilterQuery.cs" />
+    <Compile Include="Core\SdaDistrict\Get\SdaDistrictViewFilterQuery.cs" />
+    <Compile Include="Core\SdaDistrict\Get\V\ISdaDistrictGetV.cs" />
+    <Compile Include="Core\SdaDistrict\Get\V\ISdaDistrictGetVBehaviorByCode.cs" />
+    <Compile Include="Core\SdaDistrict\Get\V\SdaDistrictGetVBehaviorById.cs" />
+    <Compile Include="Core\SdaDistrict\Get\V\SdaDistrictGetVBehaviorFactory.cs" />
+    <Compile Include="Core\SdaDistrict\SdaDistrictBO.cs" />
+    <Compile Include="Core\SdaDistrict\SdaDistrictGet_Full.cs" />
+    <Compile Include="Core\SdaDistrict\TypeCollection.cs" />
+    <Compile Include="Core\SdaEthnic\Get\Ev\ISdaEthnicGetEv.cs" />
+    <Compile Include="Core\SdaEthnic\Get\Ev\SdaEthnicGetEvBehaviorByCode.cs" />
+    <Compile Include="Core\SdaEthnic\Get\Ev\SdaEthnicGetEvBehaviorById.cs" />
+    <Compile Include="Core\SdaEthnic\Get\Ev\SdaEthnicGetEvBehaviorFactory.cs" />
+    <Compile Include="Core\SdaEthnic\Get\ListEv\ISdaEthnicGetListEv.cs" />
+    <Compile Include="Core\SdaEthnic\Get\ListEv\SdaEthnicGetListEvBehaviorByFilterQuery.cs" />
+    <Compile Include="Core\SdaEthnic\Get\ListEv\SdaEthnicGetListEvBehaviorFactory.cs" />
+    <Compile Include="Core\SdaEthnic\Get\SdaEthnicFilterQuery.cs" />
+    <Compile Include="Core\SdaEthnic\SdaEthnicBO.cs" />
+    <Compile Include="Core\SdaEthnic\SdaEthnicGet.cs" />
+    <Compile Include="Core\SdaEthnic\TypeCollection.cs" />
+    <Compile Include="Core\SdaEventLog\Get\Ev\SdaEventLogGetEvBehaviorFactory_NoCode.cs" />
+    <Compile Include="Core\SdaEventLog\Get\Ev\ISdaEventLogGetEv.cs" />
+    <Compile Include="Core\SdaEventLog\Get\Ev\SdaEventLogGetEvBehaviorById.cs" />
+    <Compile Include="Core\SdaEventLog\Get\ListEv\ISdaEventLogGetListEv.cs" />
+    <Compile Include="Core\SdaEventLog\Get\ListEv\SdaEventLogGetListEvBehaviorByFilterQuery.cs" />
+    <Compile Include="Core\SdaEventLog\Get\ListEv\SdaEventLogGetListEvBehaviorFactory.cs" />
+    <Compile Include="Core\SdaEventLog\Get\SdaEventLogFilterQuery.cs" />
+    <Compile Include="Core\SdaEventLog\SdaEventLogBO.cs" />
+    <Compile Include="Core\SdaEventLog\SdaEventLogGet.cs" />
+    <Compile Include="Core\SdaEventLog\TypeCollection.cs" />
+    <Compile Include="Core\SdaGroupType\Get\Ev\ISdaGroupTypeGetEv.cs" />
+    <Compile Include="Core\SdaGroupType\Get\Ev\SdaGroupTypeGetEvBehaviorByCode.cs" />
+    <Compile Include="Core\SdaGroupType\Get\Ev\SdaGroupTypeGetEvBehaviorById.cs" />
+    <Compile Include="Core\SdaGroupType\Get\Ev\SdaGroupTypeGetEvBehaviorFactory.cs" />
+    <Compile Include="Core\SdaGroupType\Get\ListEv\ISdaGroupTypeGetListEv.cs" />
+    <Compile Include="Core\SdaGroupType\Get\ListEv\SdaGroupTypeGetListEvBehaviorByFilterQuery.cs" />
+    <Compile Include="Core\SdaGroupType\Get\ListEv\SdaGroupTypeGetListEvBehaviorFactory.cs" />
+    <Compile Include="Core\SdaGroupType\Get\SdaGroupTypeFilterQuery.cs" />
+    <Compile Include="Core\SdaGroupType\SdaGroupTypeBO.cs" />
+    <Compile Include="Core\SdaGroupType\SdaGroupTypeGet.cs" />
+    <Compile Include="Core\SdaGroupType\TypeCollection.cs" />
+    <Compile Include="Core\SdaGroup\Get\Ev\ISdaGroupGetEv.cs" />
+    <Compile Include="Core\SdaGroup\Get\Ev\SdaGroupGetEvBehaviorByCode.cs" />
+    <Compile Include="Core\SdaGroup\Get\Ev\SdaGroupGetEvBehaviorById.cs" />
+    <Compile Include="Core\SdaGroup\Get\Ev\SdaGroupGetEvBehaviorFactory.cs" />
+    <Compile Include="Core\SdaGroup\Get\ListEv\ISdaGroupGetListEv.cs" />
+    <Compile Include="Core\SdaGroup\Get\ListEv\SdaGroupGetListEvBehaviorByFilterQuery.cs" />
+    <Compile Include="Core\SdaGroup\Get\ListEv\SdaGroupGetListEvBehaviorFactory.cs" />
+    <Compile Include="Core\SdaGroup\Get\ListV\ISdaGroupGetListV.cs" />
+    <Compile Include="Core\SdaGroup\Get\ListV\SdaGroupGetListVBehaviorByViewFilterQuery.cs" />
+    <Compile Include="Core\SdaGroup\Get\ListV\SdaGroupGetListVBehaviorFactory.cs" />
+    <Compile Include="Core\SdaGroup\Get\SdaGroupFilterQuery.cs" />
+    <Compile Include="Core\SdaGroup\Get\SdaGroupViewFilterQuery.cs" />
+    <Compile Include="Core\SdaGroup\Get\V\ISdaGroupGetV.cs" />
+    <Compile Include="Core\SdaGroup\Get\V\ISdaGroupGetVBehaviorByCode.cs" />
+    <Compile Include="Core\SdaGroup\Get\V\SdaGroupGetVBehaviorById.cs" />
+    <Compile Include="Core\SdaGroup\Get\V\SdaGroupGetVBehaviorFactory.cs" />
+    <Compile Include="Core\SdaGroup\SdaGroupBO.cs" />
+    <Compile Include="Core\SdaGroup\SdaGroupGet_Full.cs" />
+    <Compile Include="Core\SdaGroup\TypeCollection.cs" />
+    <Compile Include="Core\SdaLanguage\Get\Ev\ISdaLanguageGetEv.cs" />
+    <Compile Include="Core\SdaLanguage\Get\Ev\SdaLanguageGetEvBehaviorById.cs" />
+    <Compile Include="Core\SdaLanguage\Get\Ev\SdaLanguageGetEvBehaviorFactory_NoCode.cs" />
+    <Compile Include="Core\SdaLanguage\Get\ListEv\ISdaLanguageGetListEv.cs" />
+    <Compile Include="Core\SdaLanguage\Get\ListEv\SdaLanguageGetListEvBehaviorByFilterQuery.cs" />
+    <Compile Include="Core\SdaLanguage\Get\ListEv\SdaLanguageGetListEvBehaviorFactory.cs" />
+    <Compile Include="Core\SdaLanguage\Get\SdaLanguageFilterQuery.cs" />
+    <Compile Include="Core\SdaLanguage\SdaLanguageBO.cs" />
+    <Compile Include="Core\SdaLanguage\SdaLanguageGet.cs" />
+    <Compile Include="Core\SdaLanguage\TypeCollection.cs" />
+    <Compile Include="Core\SdaLicense\SdaLicenseBOPlus.cs" />
+    <Compile Include="Core\SdaLicense\SdaLicenseGetLast.cs" />
+    <Compile Include="Core\SdaLicense\Get\GetLast\ISdaLicenseGetLast.cs" />
+    <Compile Include="Core\SdaLicense\Get\GetLast\SdaLicenseGetLastBehavior.cs" />
+    <Compile Include="Core\SdaLicense\Get\GetLast\SdaLicenseGetLastBehaviorFactory.cs" />
+    <Compile Include="Core\SdaLicense\Get\Ev\ISdaLicenseGetEv.cs" />
+    <Compile Include="Core\SdaLicense\Get\Ev\SdaLicenseGetEvBehaviorById.cs" />
+    <Compile Include="Core\SdaLicense\Get\Ev\SdaLicenseGetEvBehaviorFactory_NoCode.cs" />
+    <Compile Include="Core\SdaLicense\Get\ListEv\ISdaLicenseGetListEv.cs" />
+    <Compile Include="Core\SdaLicense\Get\ListEv\SdaLicenseGetListEvBehaviorByFilterQuery.cs" />
+    <Compile Include="Core\SdaLicense\Get\ListEv\SdaLicenseGetListEvBehaviorFactory.cs" />
+    <Compile Include="Core\SdaLicense\Get\SdaLicenseFilterQuery.cs" />
+    <Compile Include="Core\SdaLicense\SdaLicenseBO.cs" />
+    <Compile Include="Core\SdaLicense\SdaLicenseGet.cs" />
+    <Compile Include="Core\SdaLicense\TypeCollection.cs" />
+    <Compile Include="Core\SdaNational\Get\Ev\ISdaNationalGetEv.cs" />
+    <Compile Include="Core\SdaNational\Get\Ev\SdaNationalGetEvBehaviorByCode.cs" />
+    <Compile Include="Core\SdaNational\Get\Ev\SdaNationalGetEvBehaviorById.cs" />
+    <Compile Include="Core\SdaNational\Get\Ev\SdaNationalGetEvBehaviorFactory.cs" />
+    <Compile Include="Core\SdaNational\Get\ListEv\ISdaNationalGetListEv.cs" />
+    <Compile Include="Core\SdaNational\Get\ListEv\SdaNationalGetListEvBehaviorByFilterQuery.cs" />
+    <Compile Include="Core\SdaNational\Get\ListEv\SdaNationalGetListEvBehaviorFactory.cs" />
+    <Compile Include="Core\SdaNational\Get\ListV\ISdaNationalGetListV.cs" />
+    <Compile Include="Core\SdaNational\Get\ListV\SdaNationalGetListVBehaviorByViewFilterQuery.cs" />
+    <Compile Include="Core\SdaNational\Get\ListV\SdaNationalGetListVBehaviorFactory.cs" />
+    <Compile Include="Core\SdaNational\Get\SdaNationalFilterQuery.cs" />
+    <Compile Include="Core\SdaNational\Get\SdaNationalViewFilterQuery.cs" />
+    <Compile Include="Core\SdaNational\Get\V\ISdaNationalGetV.cs" />
+    <Compile Include="Core\SdaNational\Get\V\ISdaNationalGetVBehaviorByCode.cs" />
+    <Compile Include="Core\SdaNational\Get\V\SdaNationalGetVBehaviorById.cs" />
+    <Compile Include="Core\SdaNational\Get\V\SdaNationalGetVBehaviorFactory.cs" />
+    <Compile Include="Core\SdaNational\SdaNationalBO.cs" />
+    <Compile Include="Core\SdaNational\SdaNationalGet_Full.cs" />
+    <Compile Include="Core\SdaNational\TypeCollection.cs" />
+    <Compile Include="Core\SdaNotify\Get\Ev\ISdaNotifyGetEv.cs" />
+    <Compile Include="Core\SdaNotify\Get\Ev\SdaNotifyGetEvBehaviorById.cs" />
+    <Compile Include="Core\SdaNotify\Get\Ev\SdaNotifyGetEvBehaviorFactory_NoCode.cs" />
+    <Compile Include="Core\SdaNotify\Get\ListEv\ISdaNotifyGetListEv.cs" />
+    <Compile Include="Core\SdaNotify\Get\ListEv\SdaNotifyGetListEvBehaviorByFilterQuery.cs" />
+    <Compile Include="Core\SdaNotify\Get\ListEv\SdaNotifyGetListEvBehaviorFactory.cs" />
+    <Compile Include="Core\SdaNotify\Get\SdaNotifyFilterQuery.cs" />
+    <Compile Include="Core\SdaNotify\SdaNotifyBO.cs" />
+    <Compile Include="Core\SdaNotify\SdaNotifyGet.cs" />
+    <Compile Include="Core\SdaNotify\TypeCollection.cs" />
+    <Compile Include="Core\SdaProvince\Get\Ev\ISdaProvinceGetEv.cs" />
+    <Compile Include="Core\SdaProvince\Get\Ev\SdaProvinceGetEvBehaviorByCode.cs" />
+    <Compile Include="Core\SdaProvince\Get\Ev\SdaProvinceGetEvBehaviorById.cs" />
+    <Compile Include="Core\SdaProvince\Get\Ev\SdaProvinceGetEvBehaviorFactory.cs" />
+    <Compile Include="Core\SdaProvince\Get\ListEv\SdaProvinceGetListEvBehaviorByNationalIds.cs" />
+    <Compile Include="Core\SdaProvince\Get\ListEv\ISdaProvinceGetListEv.cs" />
+    <Compile Include="Core\SdaProvince\Get\ListEv\SdaProvinceGetListEvBehaviorByFilterQuery.cs" />
+    <Compile Include="Core\SdaProvince\Get\ListEv\SdaProvinceGetListEvBehaviorFactory.cs" />
+    <Compile Include="Core\SdaProvince\Get\ListV\ISdaProvinceGetListV.cs" />
+    <Compile Include="Core\SdaProvince\Get\ListV\SdaProvinceGetListVBehaviorByViewFilterQuery.cs" />
+    <Compile Include="Core\SdaProvince\Get\ListV\SdaProvinceGetListVBehaviorFactory.cs" />
+    <Compile Include="Core\SdaProvince\Get\SdaProvinceFilterQuery.cs" />
+    <Compile Include="Core\SdaProvince\Get\SdaProvinceViewFilterQuery.cs" />
+    <Compile Include="Core\SdaProvince\Get\V\ISdaProvinceGetV.cs" />
+    <Compile Include="Core\SdaProvince\Get\V\ISdaProvinceGetVBehaviorByCode.cs" />
+    <Compile Include="Core\SdaProvince\Get\V\SdaProvinceGetVBehaviorById.cs" />
+    <Compile Include="Core\SdaProvince\Get\V\SdaProvinceGetVBehaviorFactory.cs" />
+    <Compile Include="Core\SdaProvince\SdaProvinceBO.cs" />
+    <Compile Include="Core\SdaProvince\SdaProvinceGet_Full.cs" />
+    <Compile Include="Core\SdaProvince\TypeCollection.cs" />
+    <Compile Include="Core\SdaReligion\Get\Ev\ISdaReligionGetEv.cs" />
+    <Compile Include="Core\SdaReligion\Get\Ev\SdaReligionGetEvBehaviorByCode.cs" />
+    <Compile Include="Core\SdaReligion\Get\Ev\SdaReligionGetEvBehaviorById.cs" />
+    <Compile Include="Core\SdaReligion\Get\Ev\SdaReligionGetEvBehaviorFactory.cs" />
+    <Compile Include="Core\SdaReligion\Get\ListEv\ISdaReligionGetListEv.cs" />
+    <Compile Include="Core\SdaReligion\Get\ListEv\SdaReligionGetListEvBehaviorByFilterQuery.cs" />
+    <Compile Include="Core\SdaReligion\Get\ListEv\SdaReligionGetListEvBehaviorFactory.cs" />
+    <Compile Include="Core\SdaReligion\Get\SdaReligionFilterQuery.cs" />
+    <Compile Include="Core\SdaReligion\SdaReligionBO.cs" />
+    <Compile Include="Core\SdaReligion\SdaReligionGet.cs" />
+    <Compile Include="Core\SdaReligion\TypeCollection.cs" />
+    <Compile Include="Core\SdaTranslate\Get\Ev\ISdaTranslateGetEv.cs" />
+    <Compile Include="Core\SdaTranslate\Get\Ev\SdaTranslateGetEvBehaviorById.cs" />
+    <Compile Include="Core\SdaTranslate\Get\Ev\SdaTranslateGetEvBehaviorFactory_NoCode.cs" />
+    <Compile Include="Core\SdaTranslate\Get\ListEv\ISdaTranslateGetListEv.cs" />
+    <Compile Include="Core\SdaTranslate\Get\ListEv\SdaTranslateGetListEvBehaviorByFilterQuery.cs" />
+    <Compile Include="Core\SdaTranslate\Get\ListEv\SdaTranslateGetListEvBehaviorFactory.cs" />
+    <Compile Include="Core\SdaTranslate\Get\SdaTranslateFilterQuery.cs" />
+    <Compile Include="Core\SdaTranslate\SdaTranslateBO.cs" />
+    <Compile Include="Core\SdaTranslate\SdaTranslateGet.cs" />
+    <Compile Include="Core\SdaTranslate\TypeCollection.cs" />
+    <Compile Include="Core\SdaTrouble\Get\Ev\ISdaTroubleGetEv.cs" />
+    <Compile Include="Core\SdaTrouble\Get\Ev\SdaTroubleGetEvBehaviorByCode.cs" />
+    <Compile Include="Core\SdaTrouble\Get\Ev\SdaTroubleGetEvBehaviorById.cs" />
+    <Compile Include="Core\SdaTrouble\Get\Ev\SdaTroubleGetEvBehaviorFactory.cs" />
+    <Compile Include="Core\SdaTrouble\Get\ListEv\ISdaTroubleGetListEv.cs" />
+    <Compile Include="Core\SdaTrouble\Get\ListEv\SdaTroubleGetListEvBehaviorByFilterQuery.cs" />
+    <Compile Include="Core\SdaTrouble\Get\ListEv\SdaTroubleGetListEvBehaviorFactory.cs" />
+    <Compile Include="Core\SdaTrouble\Get\SdaTroubleFilterQuery.cs" />
+    <Compile Include="Core\SdaTrouble\SdaTroubleBO.cs" />
+    <Compile Include="Core\SdaTrouble\SdaTroubleGet.cs" />
+    <Compile Include="Core\SdaTrouble\TypeCollection.cs" />
+    <Compile Include="Manager\SdaConfigAppManager.cs" />
+    <Compile Include="Manager\SdaConfigAppUserManager.cs" />
+    <Compile Include="Manager\SdaLanguageManager.cs" />
+    <Compile Include="Manager\SdaLicenseManagerPlus.cs" />
+    <Compile Include="Manager\SdaNotifyManager.cs" />
+    <Compile Include="Manager\SdaTranslateManager.cs" />
+    <Compile Include="Manager\ManagerBase.cs" />
+    <Compile Include="Manager\ManagerContainer.cs" />
+    <Compile Include="Manager\SdaCommuneManager.cs" />
+    <Compile Include="Manager\SdaConfigManager.cs" />
+    <Compile Include="Manager\SdaDistrictManager.cs" />
+    <Compile Include="Manager\SdaEthnicManager.cs" />
+    <Compile Include="Manager\SdaEventLogManager.cs" />
+    <Compile Include="Manager\SdaGroupManager.cs" />
+    <Compile Include="Manager\SdaGroupTypeManager.cs" />
+    <Compile Include="Manager\SdaLicenseManager.cs" />
+    <Compile Include="Manager\SdaNationalManager.cs" />
+    <Compile Include="Manager\SdaProvinceManager.cs" />
+    <Compile Include="Manager\SdaReligionManager.cs" />
+    <Compile Include="Manager\SdaTroubleManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Token\TokenManagerPlus.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SDA.DAO\SDA.DAO.csproj">
+      <Project>{eb0ca3da-628c-443b-9a5f-accc044bed84}</Project>
+      <Name>SDA.DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SDA.EFMODEL\SDA.EFMODEL.csproj">
+      <Project>{987abcc2-f944-4095-ac64-77ff6aba29fe}</Project>
+      <Name>SDA.EFMODEL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SDA.Filter\SDA.Filter.csproj">
+      <Project>{a9f20183-402d-4aa5-a06f-d3299837b3e8}</Project>
+      <Name>SDA.Filter</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+<<<<<<< .mine
+      <Diagram DiagramId="63f0db765e4f49bb93c30bf899c49eb8" Name="Diagram1" ZoomLevel="71">
+        <EntityTypeShape EntityType="Model.HTC_EXPENSE" Width="1.5" PointX="6" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.HTC_EXPENSE_TYPE" Width="1.5" PointX="3.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.HTC_PERIOD" Width="1.5" PointX="0.75" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.HTC_PERIOD_DEPARTMENT" Width="1.5" PointX="3" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.HTC_REPARTITION_RATIO" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.HTC_REPARTITION_TYPE" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.HTC_REVENUE" Width="1.5" PointX="3" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.V_HTC_EXPENSE" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.V_HTC_PERIOD_DEPARTMENT" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.V_HTC_REPARTITION_RATIO" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="Model.HTC_EXPENSE_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.HTC_EXPENSE_FK2" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.HTC_EXPENSE_TYPE_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.HTC_PERIOD_DEPARTMENT_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.HTC_REPARTITION_RATIO_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.HTC_REVENUE_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.HTC_REPARTITION_RATIO_FK2" ManuallyRouted="false" />
+=======
+      <Diagram DiagramId="c1f0f0144d564536bb9f551e0553ba32" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="DataModels.HTC_EXPENSE" Width="1.5" PointX="6" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.HTC_EXPENSE_TYPE" Width="1.5" PointX="3.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.HTC_PERIOD" Width="1.5" PointX="0.75" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.HTC_PERIOD_DEPARTMENT" Width="1.5" PointX="3" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.HTC_REPARTITION_RATIO" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.HTC_REPARTITION_TYPE" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.HTC_REVENUE" Width="1.5" PointX="3" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.V_HTC_EXPENSE" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.V_HTC_PERIOD_DEPARTMENT" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModels.V_HTC_REPARTITION_RATIO" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="DataModels.HTC_EXPENSE_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DataModels.HTC_EXPENSE_FK2" ManuallyRouted="false" />
+        <AssociationConnector Association="DataModels.HTC_EXPENSE_TYPE_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DataModels.HTC_PERIOD_DEPARTMENT_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DataModels.HTC_REPARTITION_RATIO_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="DataModels.HTC_REVENUE_FK1" ManuallyRouted="false" />
+>>>>>>> .r47811
+        <AssociationConnector Association="DataModels.HTC_REPARTITION_RATIO_FK2" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
